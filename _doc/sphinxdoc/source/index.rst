@@ -7,6 +7,42 @@
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`
 
+.. image:: phdoc_static/project_ico.png
+
+
+
+Petit voyage au pays du machine learning
+========================================
+
+
+
+.. toctree::
+    :maxdepth: 1
+
+    introduction
+    lectures/index
+    api/index
+    all_notebooks
+    i_ex
+    blog/blogindex
+    index_modules
+    i_index
+
+D'autres supports sont disponibles,
+:epkg:`teachpyx` se concentre sur le langage :epkg:`Python`,
+:epkg:`mlstatpy` cible plus les mathématiques,
+:epkg:`ensae_teaching_cs` ressemble plus à un ensemble
+d'exercices qu'à un cours qui se lit de façon linéaire.
+Il existe déjà beaucoup de sites sur le :epkg:`machine learning`,
+c'est une sorte de palimpseste. Disponible aussi en
+`PDF <papierstat_doc.pdf>`_.
+
+::
+
+    import papierstat
+    ...
+    
+
 .. only:: html
 
     .. image:: https://travis-ci.org/sdpython/papierstat.svg?branch=master
@@ -46,34 +82,6 @@
         :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
         :alt: Notebook Coverage
 
-Petit voyage au pays du machine learning
-========================================
-
-D'autres supports sont disponibles,
-:epkg:`teachpyx` se concentre sur le langage :epkg:`Python`,
-:epkg:`mlstatpy` cible plus les mathématiques,
-:epkg:`ensae_teaching_cs` ressemble plus à un ensemble
-d'exercices qu'à un cours qui se lit de façon linéaire.
-Il existe déjà beaucoup de sites sur le :epkg:`machine learning`,
-c'est une sorte de palimpseste.
-
-.. toctree::
-    :maxdepth: 1
-
-    lectures/index
-    api/index
-    all_notebooks
-    i_ex
-    blog/blogindex
-    index_modules
-    i_index
-
-.. image:: phdoc_static/project_ico.png
-
-::
-
-    import papierstat
-    ...
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
