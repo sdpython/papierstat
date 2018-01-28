@@ -9,17 +9,14 @@
 
 .. image:: phdoc_static/project_ico.png
 
-
-
 Petit voyage au pays du machine learning
 ========================================
-
-
 
 .. toctree::
     :maxdepth: 1
 
     introduction
+    rappel
     lectures/index
     api/index
     all_notebooks
@@ -41,7 +38,6 @@ c'est une sorte de palimpseste. Disponible aussi en
 
     import papierstat
     ...
-    
 
 .. only:: html
 
@@ -81,7 +77,6 @@ c'est une sorte de palimpseste. Disponible aussi en
     .. image:: nbcov.png
         :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
         :alt: Notebook Coverage
-
 
 +----------------------+---------------------+---------------------+--------------------+------------------------+------------------------------------------------+
 | :ref:`l-modules`     |  :ref:`l-functions` | :ref:`l-classes`    | :ref:`l-methods`   | :ref:`l-staticmethods` | :ref:`l-properties`                            |
