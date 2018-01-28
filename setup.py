@@ -202,7 +202,7 @@ if is_local():
         requirements=["pyquickhelper", "jyquickhelper", "pandas_streaming"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
-        fLOG=logging_function, covtoken=("covtoken", "'_UT_36_std' in outfile"))
+        fLOG=logging_function, covtoken=("c0bd10d2-a7ae-4ba3-8c88-d570676f6df3", "'_UT_36_std' in outfile"))
     if not r and not ({"bdist_msi", "sdist",
                        "bdist_wheel", "publish", "publish_doc", "register",
                        "upload_docs", "bdist_wininst", "build_ext"} & set(sys.argv)):
@@ -233,7 +233,6 @@ if not r:
         package_data=package_data,
         # data_files=data_files,
         install_requires=['scikit-learn', 'pandas',
-                          'pillow', 'matplotlib', 'h5py',
-                          'pandas_streaming'],
+                          'matplotlib', 'pandas_streaming'],
         # include_package_data=True,
     )
