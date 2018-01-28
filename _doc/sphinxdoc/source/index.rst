@@ -7,42 +7,44 @@
 :ref:`l-README`,
 :ref:`blog <ap-main-0>`
 
-.. image:: https://travis-ci.org/sdpython/papierstat.svg?branch=master
-    :target: https://travis-ci.org/sdpython/papierstat
-    :alt: Build status
+.. only:: html
 
-.. image:: https://ci.appveyor.com/api/projects/status/gqeh9w6hj7s27e88?svg=true
-    :target: https://ci.appveyor.com/project/sdpython/papierstat
-    :alt: Build Status Windows
+    .. image:: https://travis-ci.org/sdpython/papierstat.svg?branch=master
+        :target: https://travis-ci.org/sdpython/papierstat
+        :alt: Build status
 
-.. image:: https://circleci.com/gh/sdpython/papierstat/tree/master.svg?style=svg
-    :target: https://circleci.com/gh/sdpython/papierstat/tree/master
+    .. image:: https://ci.appveyor.com/api/projects/status/gqeh9w6hj7s27e88?svg=true
+        :target: https://ci.appveyor.com/project/sdpython/papierstat
+        :alt: Build Status Windows
 
-.. image:: https://badge.fury.io/py/papierstat.svg
-    :target: http://badge.fury.io/py/papierstat
+    .. image:: https://circleci.com/gh/sdpython/papierstat/tree/master.svg?style=svg
+        :target: https://circleci.com/gh/sdpython/papierstat/tree/master
 
-.. image:: https://img.shields.io/badge/license-MIT-blue.svg
-    :alt: MIT License
-    :target: http://opensource.org/licenses/MIT
+    .. image:: https://badge.fury.io/py/papierstat.svg
+        :target: http://badge.fury.io/py/papierstat
 
-.. image:: https://requires.io/github/sdpython/papierstat/requirements.svg?branch=master
-     :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
-     :alt: Requirements Status
+    .. image:: https://img.shields.io/badge/license-MIT-blue.svg
+        :alt: MIT License
+        :target: http://opensource.org/licenses/MIT
 
-.. image:: https://codecov.io/github/sdpython/papierstat/coverage.svg?branch=master
-    :target: https://codecov.io/github/sdpython/papierstat?branch=master
+    .. image:: https://requires.io/github/sdpython/papierstat/requirements.svg?branch=master
+         :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
+         :alt: Requirements Status
 
-.. image:: http://img.shields.io/github/issues/sdpython/papierstat.png
-    :alt: GitHub Issues
-    :target: https://github.com/sdpython/papierstat/issues
+    .. image:: https://codecov.io/github/sdpython/papierstat/coverage.svg?branch=master
+        :target: https://codecov.io/github/sdpython/papierstat?branch=master
 
-.. image:: https://badge.waffle.io/sdpython/papierstat.png?label=ready&title=Ready
-    :alt: Waffle
-    :target: https://waffle.io/sdpython/papierstat
+    .. image:: http://img.shields.io/github/issues/sdpython/papierstat.png
+        :alt: GitHub Issues
+        :target: https://github.com/sdpython/papierstat/issues
 
-.. image:: nbcov.png
-    :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
-    :alt: Notebook Coverage
+    .. image:: https://badge.waffle.io/sdpython/papierstat.png?label=ready&title=Ready
+        :alt: Waffle
+        :target: https://waffle.io/sdpython/papierstat
+
+    .. image:: nbcov.png
+        :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
+        :alt: Notebook Coverage
 
 Petit voyage au pays du machine learning
 ========================================

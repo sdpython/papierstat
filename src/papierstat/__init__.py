@@ -34,6 +34,20 @@ def check(log=False):
 
     @param      log     if True, display information, otherwise
     @return             0 or exception
+
+    .. faqref::
+        :title: Un exemple de FAQ
+
+        Simple exemple.
+
+    .. exref::
+        :title: Un exemple tout court.
+
+        .. runpython::
+            :showcode:
+
+            from datetime import datetime
+            print(datetime.now())
     """
     return True
 
