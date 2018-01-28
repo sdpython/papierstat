@@ -57,7 +57,8 @@ class TestNotebookAstuce(unittest.TestCase):
         self.assertTrue(src.papierstat is not None)
         folder = os.path.join(os.path.dirname(__file__),
                               "..", "..", "_doc", "notebooks", "astuces")
-        test_notebook_execution_coverage(__file__, "astuces", folder, 'papierstat', copy_files=[], fLOG=fLOG)
+        test_notebook_execution_coverage(
+            __file__, "", folder, 'papierstat', copy_files=[], fLOG=fLOG)
 
 
 if __name__ == "__main__":

@@ -6,4 +6,3 @@
     :categories: blog
 
     Ce module revisite le machine learning.
-    

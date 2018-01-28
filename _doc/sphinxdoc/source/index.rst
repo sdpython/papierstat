@@ -47,17 +47,26 @@
 Petit voyage au pays du machine learning
 ========================================
 
+D'autres supports sont disponibles,
+:epkg:`teachpyx` se concentre sur le langage :epkg:`Python`,
+:epkg:`mlstatpy` cible plus les mathématiques,
+:epkg:`ensae_teaching_cs` ressemble plus à un ensemble
+d'exercices qu'à un cours qui se lit de façon linéaire.
+Il existe déjà beaucoup de sites sur le :epkg:`machine learning`,
+c'est une sorte de palimpseste.
 
 .. toctree::
     :maxdepth: 1
 
     lectures/index
     api/index
-    i_index
-    i_ex
     all_notebooks
+    i_ex
     blog/blogindex
     index_modules
+    i_index
+
+.. image:: phdoc_static/project_ico.png
 
 ::
 

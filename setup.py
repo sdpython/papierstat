@@ -200,7 +200,6 @@ if is_local():
         additional_local_path=["pyquickhelper",
                                "jyquickhelper", "pandas_streaming"],
         requirements=["pyquickhelper", "jyquickhelper", "pandas_streaming"],
-        layout=["html"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
         fLOG=logging_function, covtoken=("covtoken", "'_UT_36_std' in outfile"))
