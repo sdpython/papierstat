@@ -19,10 +19,10 @@ Rappels mathématiques
 Fonction
 ++++++++
 
-Une :epkg:`fonction <https://fr.wikipedia.org/wiki/Fonction_(math%C3%A9matiques)>`_
+Une `fonction <https://fr.wikipedia.org/wiki/Fonction_(math%C3%A9matiques)>`_
 :math:`f` symbolise le lien entre deux grandeurs
 :math:`x` et :math:`f(x)` qu'on note
-:math:`x \rightarray f(x)` ou :math:`y=f(x)`.
+:math:`x \rightarrow f(x)` ou :math:`y=f(x)`.
 Par exemple, :math:`x \rightarrow f(x)=x^2` est la fonction
 qui associe à un nombre son carré.
 Le graphe suivant représente ce lien :
@@ -199,8 +199,8 @@ est la `corrélation de Pearson <https://en.wikipedia.org/wiki/Pearson_correlati
 
 .. math::
 
-    \begin{array}{rcl} \over{X} &=& \frac{1}{n} \sum_{i=1}^n X_i \\ \over{Y} &=& \frac{1}{n} \sum_{i=1}^n Y_i \\
-    cor(X,Y) = \frac{ \sum_{i=1}^n (X_i - \over{X})(Y_i - \over{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \over{X}} \pa{\sum_{i=1}^n Y_i - \over{Y}} }}
+    \begin{array}{rcl} \bar{X} &=& \frac{1}{n} \sum_{i=1}^n X_i \\ \bar{Y} &=& \frac{1}{n} \sum_{i=1}^n Y_i \\
+    cor(X,Y) &=& \frac{ \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \bar{X}} \pa{\sum_{i=1}^n Y_i - \br{Y}} }}
     \end{array}
 
 Nuage de points
