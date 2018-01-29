@@ -10,6 +10,7 @@ modèles de machine learning exposés.
 
 .. contents::
     :local:
+    :depth: 1
 
 *Les illustrations sont faites maisons soit extraites de Wikipedia.*
 
@@ -200,7 +201,7 @@ est la `corrélation de Pearson <https://en.wikipedia.org/wiki/Pearson_correlati
 .. math::
 
     \begin{array}{rcl} \bar{X} &=& \frac{1}{n} \sum_{i=1}^n X_i \\ \bar{Y} &=& \frac{1}{n} \sum_{i=1}^n Y_i \\
-    cor(X,Y) &=& \frac{ \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \bar{X}} \pa{\sum_{i=1}^n Y_i - \br{Y}} }}
+    cor(X,Y) &=& \frac{ \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \bar{X}} \pa{\sum_{i=1}^n Y_i - \bar{Y}} }}
     \end{array}
 
 Nuage de points
@@ -274,6 +275,32 @@ et des opérations qui lui sont associées.
 Pour vous exercez :
 `Calcul Matriciel, Optimisation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_2A.html>`_.
 
+Hash
+++++
+
+Les `fonctions de hashing <https://fr.wikipedia.org/wiki/Fonction_de_hachage>`_
+sont principalement dans deux cas. La fonction crypte les informations, il est impossible
+de retrouver la donnée originale à moins d'essayer toutes les possibilités. Elle ne crypte
+pas nécessairement de façon unique d'ailleurs puisque deux données peuvent être identiques
+une fois *hashées*. Cette fonction est aussi une façon d'uniformiser une distribution.
+Cette propriété est utilisée pour optimiser le coût de nombreux algorithmes. Elle
+garantit la construction d'arbres équilibrés et améliore la répartition des calculs.
+Pour en savoir plus à ce sujet :
+`Hash et distribution <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html>`_.
+
+Arbre
++++++
+
+Les `arbres <https://fr.wikipedia.org/wiki/Arbre_(th%C3%A9orie_des_graphes)>`_
+ou graphes sont des structures de données très utilisées en :epkg:`machine learning`.
+Le modèle le plus connu est l'`arbre de décision <https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision>`_.
+Les deux examens suivant illustrent en quoi les arbres de décision
+sont intéressants : 
+`ENSAE TD noté, mardi 12 décembre 2017 <http://www.xavierdupre.fr/site2013/enseignements/tdnoteseul/td_note_2018.pdf>`_.
+Les exercices suivant vous montre un cas concret d'utilisation :
+`Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session8.html>`_.
+
+
 Rappels algorithmiques
 ======================
 
@@ -299,3 +326,50 @@ temps exponentiel et quasiment infini pour le voyageur
 du commerce, temps logarithmique pour la recherche  dichotomique.
 Pour vous exercer :
 `Algorithmes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_1a.html#td-algorithmes>`_.
+
+Le plus court chemin dans un graphe
++++++++++++++++++++++++++++++++++++
+
+Il existe plusieurs versions de cet algorithme sans pour autant
+changer l'idée principale. Le plus connu est sans doute
+la version de `Dikstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
+On retrouve la même idée lorsqu'il s'agit de déterminer la séquence
+d'états la plus probable dans une 
+`chaîne de Markov <https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov>`_ avec
+l'`algorithme de Viterbi <https://fr.wikipedia.org/wiki/Algorithme_de_Viterbi>`_
+On le retrouve également dans la distance d'édition ou de
+`Levenstein <https://fr.wikipedia.org/wiki/Distance_de_Levenshtein>`_.
+Quelques exerices pour vous exercer : 
+`Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7.html>`_,
+`La distance d'édition <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7_edition.html>`_.
+La page suivante `Distance d'édition <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_dist/edit_distance.html>`_
+se propose d'aller un peu plus loin.
+
+
+La recherche dichotomique
++++++++++++++++++++++++++
+
+C'est en général le premier qu'on apprend dans un court d'algorithmie.
+Il consiste à optimiser la recherche d'un élément dans un tableau trié.
+La `recherche dichotomique <https://fr.wikipedia.org/wiki/Recherche_dichotomique>`_
+est une des petites choses qu'on teste lors d'un entretien d'embauche.
+Quelques exercices pour vous exercer :
+`Recherche dichotomique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/recherche_dichotomique.html?highlight=dichotomie>`_.
+
+Le voyageur du commerce
++++++++++++++++++++++++
+
+Le problème du `voyageur de commerce <https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_voyageur_de_commerce>`_
+consiste à parcourir une série de villes le plus rapidement possibles.
+C'est un des problèmes qu'on cite en premier pour illustrer
+les problèmes non `NP-complet <https://fr.wikipedia.org/wiki/Probl%C3%A8me_NP-complet>`_ :
+la solution de ceux-ci ne peut pas être trouvé avec un algorithme
+au coût polynômial. Il n'y a pas d'autres options que de tester toutes les
+permutations des villes pour déterminer le chemin le plus court.
+Et comme c'est rapidement très long, il faut rapidement proposer une solution approchée.
+
+
+
+
+
+
