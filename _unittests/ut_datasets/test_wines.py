@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 """
-@brief      test log(time=5s)
+@brief      test log(time=13s)
 """
 
 import sys
@@ -38,27 +38,29 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version
-from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
-import src.papierstat
+from pyquickhelper.pycode import ExtTestCase
+from src.papierstat.datasets import load_wines_datasets
 
 
-class TestNotebookAstuce(unittest.TestCase):
+class TestWines(ExtTestCase):
 
-    def setUp(self):
-        add_missing_development_version(["jyquickhelper"], __file__, hide=True)
-
-    def test_notebook_astuces(self):
+    def test_wines_download(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        self.assertTrue(src.papierstat is not None)
-        folder = os.path.join(os.path.dirname(__file__),
-                              "..", "..", "_doc", "notebooks", "astuces")
-        test_notebook_execution_coverage(
-            __file__, "", folder, 'papierstat', copy_files=[], fLOG=fLOG)
+        df = load_wines_datasets(download=True)
+        self.assertEqual(df.shape, (6497, 13))
+
+    def test_wines_local(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        df = load_wines_datasets(download=False)
+        self.assertEqual(df.shape, (6497, 13))
 
 
 if __name__ == "__main__":

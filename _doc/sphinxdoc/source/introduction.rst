@@ -40,7 +40,9 @@ trop nourri ou dépressif. Si vous enregistrez le temps à chaque fois
 que je frappe une touche sur le clavier de mon téléphone, vous en
 déduirez que je suis tout autant que vous fasciné par l'histoire de
 ce poisson rouge. Il parle malgré dans une langue que vous diriez peut
-être codée aujourd'hui et peut être limpide demain.
+être codée aujourd'hui et peut être limpide demain. Et si vous faites du
+jogging...
+`Une application de jogging menace la sécurité des bases militaires <http://www.lemonde.fr/pixels/article/2018/01/29/la-securite-des-bases-militaires-menacee-par-une-application-de-jogging_5248885_4408996.html>`_.
 
 Le machine Learning est une boîte à outils capable de tourmenter les
 traces numériques que nous laissons partout dès qu'un ustensile

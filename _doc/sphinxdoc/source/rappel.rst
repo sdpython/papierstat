@@ -295,11 +295,10 @@ Les `arbres <https://fr.wikipedia.org/wiki/Arbre_(th%C3%A9orie_des_graphes)>`_
 ou graphes sont des structures de données très utilisées en :epkg:`machine learning`.
 Le modèle le plus connu est l'`arbre de décision <https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision>`_.
 Les deux examens suivant illustrent en quoi les arbres de décision
-sont intéressants : 
+sont intéressants :
 `ENSAE TD noté, mardi 12 décembre 2017 <http://www.xavierdupre.fr/site2013/enseignements/tdnoteseul/td_note_2018.pdf>`_.
 Les exercices suivant vous montre un cas concret d'utilisation :
 `Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session8.html>`_.
-
 
 Rappels algorithmiques
 ======================
@@ -334,17 +333,16 @@ Il existe plusieurs versions de cet algorithme sans pour autant
 changer l'idée principale. Le plus connu est sans doute
 la version de `Dikstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
 On retrouve la même idée lorsqu'il s'agit de déterminer la séquence
-d'états la plus probable dans une 
+d'états la plus probable dans une
 `chaîne de Markov <https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov>`_ avec
 l'`algorithme de Viterbi <https://fr.wikipedia.org/wiki/Algorithme_de_Viterbi>`_
 On le retrouve également dans la distance d'édition ou de
 `Levenstein <https://fr.wikipedia.org/wiki/Distance_de_Levenshtein>`_.
-Quelques exerices pour vous exercer : 
+Quelques exerices pour vous exercer :
 `Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7.html>`_,
 `La distance d'édition <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7_edition.html>`_.
 La page suivante `Distance d'édition <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_dist/edit_distance.html>`_
 se propose d'aller un peu plus loin.
-
 
 La recherche dichotomique
 +++++++++++++++++++++++++
@@ -367,9 +365,3 @@ la solution de ceux-ci ne peut pas être trouvé avec un algorithme
 au coût polynômial. Il n'y a pas d'autres options que de tester toutes les
 permutations des villes pour déterminer le chemin le plus court.
 Et comme c'est rapidement très long, il faut rapidement proposer une solution approchée.
-
-
-
-
-
-
