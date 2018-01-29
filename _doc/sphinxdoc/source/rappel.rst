@@ -28,6 +28,7 @@ qui associe à un nombre son carré.
 Le graphe suivant représente ce lien :
 
 .. image:: images/fonction.png
+    :width: 200
 
 Fonction continue
 +++++++++++++++++
@@ -44,6 +45,7 @@ On résume visuellement cette propriété comme suit.
 La fonction de gauche est continue, celle de droite ne l'est pas.
 
 .. image:: images/fonctionc.png
+    :width: 400
 
 Les puristes vous diront qu'il existe quelques cas intéressants
 qui sont trompeurs visuellement mais cela suffira pour comprendre
@@ -60,6 +62,7 @@ signifie, quand on y regarde de près, qu'elle n'est pas très loin de
 ressembler à une droite.
 
 .. image:: images/fonctiond.png
+    :width: 200
 
 Et comme elle y ressemble fortement, on n'a pas besoin de la connaître
 très bien pour savoir si on monte ou on descend quand on va à gauche
@@ -116,7 +119,7 @@ de `Newton <https://fr.wikipedia.org/wiki/M%C3%A9thode_de_Newton>`_,
 l'algorithme du `gradient <https://fr.wikipedia.org/wiki/Algorithme_du_gradient>`_.
 
 .. image:: images/Gradient_descent.png
-    :width: 400
+    :width: 200
 
 Variable aléatoire
 ++++++++++++++++++
@@ -146,7 +149,7 @@ La loi la plus connue est la `loi normale <https://fr.wikipedia.org/wiki/Loi_nor
 qu'on connaît aussi sous la forme d'un chapeau.
 
 .. image:: images/gauss.png
-    :width: 400
+    :width: 200
 
 Ce graphique représente une fonction :math:`f(x)` et celle-ci indique la probabilité
 de tirer un nombre égale à :math:`x` selon une loi normale. Ce dessine nous dit
@@ -154,7 +157,7 @@ que ce nombre aléatoire a plus de chance d'être petit que grand. On peut même
 que ce nombre aléatoire a 95% de chance d'être entre -2 et 2.
 
 .. image:: images/gauss2.png
-    :width: 400
+    :width: 200
 
 Une variable aléatoire résume une dizaine, une centaine, un millier,
 une infinité de nombres fabriqués de la même manière, la taille d'une personne,
@@ -170,6 +173,7 @@ compter le nombre de nombres qui sont tombés dans une dizaine d'intervalles
 définis à l'avance.
 
 .. image:: images/hist.png
+    :width: 200
 
 C'est une vision plus fine de la taille de nos poissons rouges,
 plutôt que de déterminer une taille minimale et maximale,
@@ -208,6 +212,7 @@ On ne dessine jamais assez. Voici le
 `nuage de points <https://fr.wikipedia.org/wiki/Nuage_de_points_(statistique)>`_ :
 
 .. image:: images/nuage.png
+    :width: 200
 
 En dessinant chaque point du nuage, on observe que ceux-ci s'agence
 selon une droite. Elle n'est pas parfaite mais elle décrit
