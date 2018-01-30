@@ -12,7 +12,7 @@ modèles de machine learning exposés.
     :local:
     :depth: 1
 
-*Les illustrations sont faites maisons soit extraites de Wikipedia.*
+*Les illustrations sont soit faites maisons soit extraites de Wikipedia.*
 
 Rappels mathématiques
 =====================
@@ -29,7 +29,7 @@ qui associe à un nombre son carré.
 Le graphe suivant représente ce lien :
 
 .. image:: images/fonction.png
-    :width: 200
+    :width: 150
 
 Fonction continue
 +++++++++++++++++
@@ -46,7 +46,7 @@ On résume visuellement cette propriété comme suit.
 La fonction de gauche est continue, celle de droite ne l'est pas.
 
 .. image:: images/fonctionc.png
-    :width: 400
+    :width: 300
 
 Les puristes vous diront qu'il existe quelques cas intéressants
 qui sont trompeurs visuellement mais cela suffira pour comprendre
@@ -63,7 +63,7 @@ signifie, quand on y regarde de près, qu'elle n'est pas très loin de
 ressembler à une droite.
 
 .. image:: images/fonctiond.png
-    :width: 200
+    :width: 300
 
 Et comme elle y ressemble fortement, on n'a pas besoin de la connaître
 très bien pour savoir si on monte ou on descend quand on va à gauche
@@ -80,8 +80,8 @@ limite lorsque :math:`h` tend vers 0.
 
         g(x, h) = \frac{f(x+h) - f(x)}{h}
 
-Espace vectoriel, vecteur
-+++++++++++++++++++++++++
+Espace vectoriel
+++++++++++++++++
 
 Jusqu'à présent, :math:`x` avait plutôt la tête d'un nombre
 et c'était pratique à dessiner mais notre poisson rouge était
@@ -91,6 +91,37 @@ Beaucoup de fonctions en machine learning s'écrive
 de :math:`n` coordonnées. Ca ne change pas grand-chose sauf
 que c'est plus compliqué à dessiner voire impossible.
 Il faudra faire avec.
+
+Produit scalaire
+++++++++++++++++
+
+Le produit scalaire est un
+`opérateur bilinéaire <https://fr.wikipedia.org/wiki/Application_bilin%C3%A9aire>`_,
+il est utilisé pour définir la norme d'un vecteur, il est relié aussi à
+l'angle qui les sépare.
+
+.. math::
+
+    <X,Y> = \sum_{i=1}^n x_i y_i
+
+Norme
++++++
+
+La norme est pour simplifier une distance entre deux
+vecteurs. La distance euclidienne est nommé *norme L2* :
+
+.. math::
+
+    \norm{X}_2 = \sqrt{<X,X>}
+
+La norme L1 utilise les valeurs absolues :
+
+.. math::
+
+    \norm{X}_1 = \sum_{i=1}^n \abs{x_i}
+
+Ce sont les deux principales normes utilisées en
+:epkg:`machine learning`.
 
 Matrice
 +++++++
@@ -102,10 +133,20 @@ la `transposée <https://fr.wikipedia.org/wiki/Matrice_transpos%C3%A9e>`_...
 Elles simplifient beaoucoup l'écriture des calculs et interviennent
 dans tous les modèles linéaires.
 
+.. math::
+
+    M = \pa{\begin{array}{ccc} m_{11} & ... & m_{1k} \\ ... & ... & ... \\ m_{l1} & ... & m_{kl} \end{array}}
+
+Les notations mathématiques utilisent le plus souvent
+les minuscules pour représenter un nombre, les majuscules
+pour représenter un vecteur ou une matrice, les lettres grecques
+pour des nombres très petits utilisés comme intermédiaire de
+calcul.
+
 Problème d'optimisation
 +++++++++++++++++++++++
 
-C'est le vif du sujet. Le machine learning commence par
+C'est le vif du sujet. Le :epkg:`machine learning` commence par
 exprimer de façon mathématique un problème à résoudre,
 et le plus souvent cette réflexion à un problème
 d'optimisation comme le suivant :
@@ -365,3 +406,54 @@ la solution de ceux-ci ne peut pas être trouvé avec un algorithme
 au coût polynômial. Il n'y a pas d'autres options que de tester toutes les
 permutations des villes pour déterminer le chemin le plus court.
 Et comme c'est rapidement très long, il faut rapidement proposer une solution approchée.
+
+Modules incourtournables en Python
+==================================
+
+Le langage :epkg:`Python` est le langage le plus utilisé depuis
+quelques après que le modules qui suivent sont devenus matures.
+
+numpy
++++++
+
+:epkg:`numpy` gère tout ce qui est calcul matriciel.
+Le langage :epkg:`Python` est un des langages les plus lents
+qui soient. Tous les calculs rapides ne sont pas écrits
+en :epkg:`Python` mais en :epkg:`C++`, voire :epkg:`fortran`.
+C'est le cas du module :epkg:`numpy`, il est incontournable dès
+qu'on veut être rapide.
+Le module :epkg:`scipy` est une extension où l'on peut trouver
+des fonctions statistiques, d'optimisation.
+
+pandas
+++++++
+
+:epkg:`pandas` est incontournable dès qu'on veut manipuler des données.
+Il gère la plupart des formats de données. Il est lui aussi implémenté
+en :epkg:`C++`. Il est rapide mais pas tant que ça, il utilise en règle
+générale trois fois plus d'espace en mémoire que les données n'en
+prennent sur le disque.
+
+matplotlib
+++++++++++
+
+:epkg:`matplotlib` s'occupe de tout ce qui est graphique.
+Il faut également connaître :epkg:`seaborn` qui propose
+des graphiques étudiés pour un usgae statistique.
+
+scikit-learn
+++++++++++++
+
+:epkg:`scikit-learn` est le module le plus populaire
+pour deux raisons. Son design a été pensé pour être simple
+avec deux méthodes *fit* et *predict* pour apprendre
+et prédire. Sa documentation est un modèle à suivre.
+
+statsmodels
++++++++++++
+
+:epkg:`statsmodels` plaira plus aux statisticiens,
+il implémente des modèles similaires à :epkg:`scikit-learn`,
+il est meilleur pour tout ce qui est linéaire avec
+une présentation des résultats très proche de ce qu'on trouve
+en :epkg:`R`.

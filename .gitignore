@@ -269,7 +269,7 @@ _doc/sphinxdoc/source/phdoc_static/style_notebook_snippet.css
 dist
 _doc/sphinxdoc/source/papierstat
 _doc/sphinxdoc/source/nbcov.png
-_doc/sphinxdoc/source/nbcov-2018-01-29.png
+_doc/sphinxdoc/source/nbcov-*.png
 _doc/sphinxdoc/source/hist.png
 _doc/sphinxdoc/source/gauss.png
 _doc/sphinxdoc/source/gauss2.png
