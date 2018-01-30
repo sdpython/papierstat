@@ -97,6 +97,8 @@ cela aura son importance plus tard.
 Les plus proches voisins
 ++++++++++++++++++++++++
 
+.. index:: plus proches voisins
+
 Le modèle de prédiction le plus intuitif consiste à chercher pour
 chaque nouveau vin le vin qui lui ressemble le plus parmi tous ceux connus.
 On appelle cette méthode la méthode des
@@ -107,13 +109,41 @@ on pourra s'inspirer de l'exemple
 `Nearest Neighbors regression <http://scikit-learn.org/stable/auto_examples/neighbors/plot_regression.html#sphx-glr-auto-examples-neighbors-plot-regression-py>`_.
 
 .. toctree::
-    :max_depth: 1
+    :maxdepth: 1
 
     notebooks/wines_knn
     notebooks/wines_knn_eval
 
 Train / test
 ++++++++++++
+
+Il n'est pas facile d'avoir une idée la pertinence
+d'un modèle de prédiction. Le plus simple est de
+comparer les prédictions obtenus avec la valeur de l'expert.
+Mais on a vu qu'il fallait que le modèle n'en ai jamais eu
+connaissance. Le modèle des plus proches voisins retourne
+toujours la bonne prédiction s'il a déjà un vin.
+
+.. index:: base d'apprentissage, base de test
+
+On découpe alors les données en deux ensembles,
+un pour apprendre, un pour tester. On les appelle
+les bases d'apprentissage et de test. On compare
+les prédictions aux valeurs attendues sur la base
+de test.
+
+.. toctree::
+    :maxdepth: 1
+
+    notebooks/wines_knn_split
+
+*stratified*
+
+Cross-validation
+++++++++++++++++
+
+Hyper paramètres
+++++++++++++++++
 
 Un modèle de régression
 +++++++++++++++++++++++
