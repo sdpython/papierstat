@@ -18,6 +18,7 @@ Petit voyage au pays du machine learning
     introduction
     rappel
     lectures/index
+    biblio
     api/index
     all_notebooks
     i_ex

@@ -36,8 +36,8 @@ ci-dessous, pour deux vins.
     :rst:
 
     from pyquickhelper.pandashelper import df2rst
-    from papierstat.datasets import load_wines_datasets
-    df = load_wines_datasets()
+    from papierstat.datasets import load_wines_dataset
+    df = load_wines_dataset()
     print(df2rst(df.head(n=2).T.reset_index(drop=False)))
 
 On part du principe que si deux vins différents ont la même
@@ -75,14 +75,14 @@ Il peut être également obtenu avec le code suivant :
     :rst:
 
     from pyquickhelper.pandashelper import df2rst
-    from papierstat.datasets import load_wines_datasets
-    df = load_wines_datasets()
+    from papierstat.datasets import load_wines_dataset
+    df = load_wines_dataset()
     print(df2rst(df.head()))
 
 .. plot::
 
-    from papierstat.datasets import load_wines_datasets
-    df = load_wines_datasets()
+    from papierstat.datasets import load_wines_dataset
+    df = load_wines_dataset()
 
     import matplotlib.pyplot as plt
     plt.close('all')

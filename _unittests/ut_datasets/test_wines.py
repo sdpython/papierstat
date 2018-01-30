@@ -39,7 +39,7 @@ except ImportError:
 
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
-from src.papierstat.datasets import load_wines_datasets
+from src.papierstat.datasets import load_wines_dataset
 
 
 class TestWines(ExtTestCase):
@@ -50,7 +50,7 @@ class TestWines(ExtTestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        df = load_wines_datasets(download=True)
+        df = load_wines_dataset(download=True)
         self.assertEqual(df.shape, (6497, 13))
 
     def test_wines_local(self):
@@ -59,7 +59,7 @@ class TestWines(ExtTestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        df = load_wines_datasets(download=False)
+        df = load_wines_dataset(download=False)
         self.assertEqual(df.shape, (6497, 13))
 
 

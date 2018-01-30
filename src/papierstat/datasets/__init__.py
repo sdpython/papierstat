@@ -16,7 +16,7 @@ def get_data_folder():
     return os.path.abspath(this)
 
 
-def load_wines_datasets(download=False):
+def load_wines_dataset(download=False):
     """
     Retourne le jeu de données
     `wines quality <https://archive.ics.uci.edu/ml/datasets/wine+quality>`_.
