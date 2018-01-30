@@ -89,7 +89,7 @@ Il peut être également obtenu avec le code suivant :
     plt.style.use('ggplot')
     fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10,4))
     df.quality.hist(bins=18, ax=ax)
-    plt.set_title('Distribution des notes des vins')
+    plt.title('Distribution des notes des vins')
     plt.show()
 
 Il y a plus de 6000 vins répertoriés.

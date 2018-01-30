@@ -9,4 +9,4 @@ Jeu de données
 Régression
 ++++++++++
 
-.. autosignature:: papierstat.datasets.load_wines_datasets
+.. autosignature:: papierstat.datasets.load_wines_dataset
