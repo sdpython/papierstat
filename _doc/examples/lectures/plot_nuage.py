@@ -8,23 +8,12 @@ Dessine les corrélations pour un jeu de données.
 
 ###############
 # A remplacer.
-
 try:
     import papierstat
 except ImportError:
-    import os
     import sys
-    this = os.path.abspath(os.path.dirname(__file__))
-    if "papierstat" in this:
-        this = this.split("papierstat")[0].rstrip("\\/")
-    for module in ["papierstat"]:
-        try:
-            exec("import %s" % module)
-        except ImportError:
-            p = os.path.join(this, module, "src")
-            sys.path.append(p)
-            exec("import %s" % module)
-
+    sys.path.append("../../../src")
+    import papierstat
 
 #########################
 # Récupération des données
