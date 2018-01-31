@@ -28,7 +28,28 @@ la réponse qu'aux extrémités de cet intervalle.
 .. image:: images/regwhat.png
     :width: 200
 
+Quelques thèmes liés au machine learning
+seront abordées en partant d'un jeu de données
+pour explorer quelques points récurrents ou techniques.
+
 .. toctree::
     :maxdepth: 1
 
-    step1
+    regclass
+    gradienttree
+    seriestemp
+    nonsupervise
+    textembed
+    imagedeep
+    reinforce
+
+Le :epkg:`machine learning` répond à de plus en plus de
+problématiques, beaucoup d'entre elles sont citées
+sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a.html>`_
+proposé à l':epkg:`ENSAE` qui comprend des exercices, des articles et les modules
+qui implémentent quelques algorithmes.
+
+**Exercices**
+
+* `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+* `Reconstruction de synonymes <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_

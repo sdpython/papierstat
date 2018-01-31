@@ -24,6 +24,9 @@ composants.
 .. contents::
     :local:
 
+* `Problèmes classiques de machine learning illustrés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html>`_
+* `Machine Learning par Gaël Varoquaux <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/all_notebooks.html#a-sklearn-ensae-course>`_
+
 Finalité du machine learning
 ++++++++++++++++++++++++++++
 
@@ -121,6 +124,9 @@ on pourra s'inspirer de l'exemple
     ../notebooks/wines_knn
     ../notebooks/wines_knn_eval
 
+A propos des plus proches voisins :
+`Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_.
+
 Train / test
 ++++++++++++
 
@@ -149,6 +155,9 @@ de test.
 
 *stratified*
 
+Overfitting
++++++++++++
+
 Cross-validation
 ++++++++++++++++
 
@@ -169,13 +178,12 @@ apprentissage
 
 évaluation
 
+Modèles ou features
++++++++++++++++++++
+
+`Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_
+
 Les vins bons sont rares
 ++++++++++++++++++++++++
 
 smote
-
-Modèles non linéaires
-+++++++++++++++++++++
-
-Modèles continus et méthodes ensemblistes
-+++++++++++++++++++++++++++++++++++++++++

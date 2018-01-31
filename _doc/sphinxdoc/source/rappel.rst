@@ -272,7 +272,11 @@ qu'il vous faudra savoir maîtriser :
 `Rappel de ce que vous savez déjà mais avez peut-être oublié <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2_eco_rappels_1a.html>`_.
 Vous devriez également savoir faire sans regarder la solution
 les exercices
-`Exemples classiques <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/i_examples_classiques.html>`_.
+`Exemples classiques <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/i_examples_classiques.html>`_,
+vous devriez comprendre les gammes proposées par
+`D'une structure de données à l'autre <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/structures_donnees_conversion.html>`_
+et savoir choisir quel objet est le plus approprié :
+`Liste, tuple, ensemble, dictionnaire, liste chaînée, coût des opérations <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/code_liste_tuple.html>`_.
 La programmation a pris beaucoup d'ampleur aujourd'hui.
 Il faut imaginer que les mathématiciens ont fait tous leur calculs
 sans machine jusqu'à la seconde guerre mondiale alors qu'il est
@@ -281,7 +285,7 @@ en créant un programme qui la vérifie. Si ça ne marche, il est clair
 que le théorème est faux, si l'ordinateur dit que cela marche,
 c'est une bonne indication que le théorème peut être démontré.
 Une fois qu'il l'est, il peut être appliqué à l'infini sur quantité de
-problèmes.
+problèmes. Quelques `cheatsheets <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/cheat_sheets.html>`_.
 
 Le fichier csv
 ++++++++++++++
@@ -457,3 +461,12 @@ il implémente des modèles similaires à :epkg:`scikit-learn`,
 il est meilleur pour tout ce qui est linéaire avec
 une présentation des résultats très proche de ce qu'on trouve
 en :epkg:`R`.
+
+Exercices
+=========
+
+Si tous ces rappels vous sont connus, vous devriez être prêt
+à résoudre quelques exercices et énigmes :
+
+* `Tracer une pyramide bigarrée <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/pyramide_bigarree.html>`_
+* `Challenges algorithmiques <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/index.html#challenges>`_
