@@ -2,6 +2,10 @@
 Lectures
 ========
 
+.. contents::
+    :local:
+    :depth: 1
+
 Le machine learning cache bien des choses mais
 au final il s'agit de calculer une prédiction
 pour un événement jamais observé. Ces techniques
@@ -32,6 +36,9 @@ Quelques thèmes liés au machine learning
 seront abordées en partant d'un jeu de données
 pour explorer quelques points récurrents ou techniques.
 
+Plan
+====
+
 .. toctree::
     :maxdepth: 1
 
@@ -49,7 +56,9 @@ sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre
 proposé à l':epkg:`ENSAE` qui comprend des exercices, des articles et les modules
 qui implémentent quelques algorithmes.
 
-**Exercices**
+Exercices
+=========
 
 * `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+* `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
 * `Reconstruction de synonymes <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_

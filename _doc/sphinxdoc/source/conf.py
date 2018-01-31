@@ -27,7 +27,7 @@ set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2018,
                      "guzzle_sphinx_theme", guzzle_sphinx_theme.html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/papierstat/issues/%s', 'issue')),
-                     title="papierstat", book=True)
+                     title="papierstat", book=True, nblayout='table')
 
 blog_root = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/"
 extensions.append('guzzle_sphinx_theme')

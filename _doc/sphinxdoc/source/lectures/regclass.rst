@@ -130,6 +130,8 @@ A propos des plus proches voisins :
 Train / test
 ++++++++++++
 
+.. index:: bases apprentissage et test
+
 Il n'est pas facile d'avoir une idée la pertinence
 d'un modèle de prédiction. Le plus simple est de
 comparer les prédictions obtenus avec la valeur de l'expert.
@@ -152,17 +154,51 @@ de test.
     :maxdepth: 1
 
     ../notebooks/wines_knn_split
+    ../notebooks/wines_knn_split_strat
 
-*stratified*
+Validation croisée
+++++++++++++++++++
 
-Overfitting
-+++++++++++
+.. index:: validation croisée, cross-validation
 
-Cross-validation
+Il est acquis qu'un modèle doit être évalué sur une base de test différente
+de celle utilisée pour l'apprentissage. Mais la performance est peut-être
+juste l'effet d'une aubaine et d'un découpage particulièrement avantageux.
+Pour être sûr que le modèle est robuste, on recommence plusieurs fois. On appelle
+cela la *validation croisée* ou
+`cross validation <https://en.wikipedia.org/wiki/Cross-validation_(statistics)>`_
+en anglais. La base de données en découpée en :math:`n` segments,
+5 le plus souvent, 4 segments servent à apprendre, le dernier
+à tester. On permute 5 fois et cela donne cinq scores.
+
+.. image:: images/cross.png
+    :width: 200
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/wines_knn_cross_val
+
+Hyper-paramètres
 ++++++++++++++++
 
-Hyper paramètres
-++++++++++++++++
+.. index:: hyper-paramètre
+
+Un modèle de :epkg:`machine learning` est appris avec un
+algorithme d'optimisation. Celui dépend de plusieurs paramètres,
+le nombre de voisins dans le cas des plus proches voisins,
+le pas de gradient pour un
+`algorithme de descente de gradient <https://fr.wikipedia.org/wiki/Algorithme_du_gradient>`_.
+Il est illusoire de penser que les mêmes paramètres donnent les meilleurs
+résultats quelque soit le jeu de données considéré. Mais alors,
+quels paramètres donnent les meilleurs résultats ?
+La plus simple stratégie est d'essayer plusieurs valeurs et de
+choisir la meilleur.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/wines_knn_hyper
 
 Un modèle de régression
 +++++++++++++++++++++++
@@ -183,7 +219,13 @@ Modèles ou features
 
 `Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_
 
+Pipeline
+++++++++
+
 Les vins bons sont rares
 ++++++++++++++++++++++++
 
 smote
+
+Overfitting
++++++++++++
