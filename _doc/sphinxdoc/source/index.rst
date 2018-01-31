@@ -20,8 +20,7 @@ Petit voyage au pays du machine learning
     lectures/index
     biblio
     api/index
-    all_notebooks
-    i_ex
+    i_examples
     blog/blogindex
     index_modules
     i_index

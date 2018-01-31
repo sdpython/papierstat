@@ -27,8 +27,7 @@ print(df.head(n=2).T)
 
 from seaborn import clustermap
 
-clustermap(df.corr(), center=0, cmap="vlag",
-           linewidths=.75, figsize=(13, 13))
+clustermap(df.corr(), center=0, cmap="vlag", linewidths=.75, figsize=(4, 4))
 
 import matplotlib.pyplot as plt
 # plt.show()
