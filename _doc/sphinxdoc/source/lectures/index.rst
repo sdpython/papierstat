@@ -2,9 +2,25 @@
 Lectures
 ========
 
-.. contents::
-    :local:
-    :depth: 1
+Le :epkg:`machine learning` répond à de plus en plus de
+problématiques, beaucoup d'entre elles sont citées
+sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a.html>`_
+proposé à l':epkg:`ENSAE` qui comprend des exercices, des articles et les modules
+qui implémentent quelques algorithmes.
+Quelques thèmes liés au :epkg:`machine learning`
+seront abordés en partant d'un jeu de données
+pour explorer quelques points récurrents ou techniques.
+
+.. toctree::
+    :maxdepth: 1
+
+    regclass
+    gradienttree
+    seriestemp
+    nonsupervise
+    textembed
+    imagedeep
+    reinforce
 
 Le machine learning cache bien des choses mais
 au final il s'agit de calculer une prédiction
@@ -32,32 +48,7 @@ la réponse qu'aux extrémités de cet intervalle.
 .. image:: images/regwhat.png
     :width: 200
 
-Quelques thèmes liés au machine learning
-seront abordées en partant d'un jeu de données
-pour explorer quelques points récurrents ou techniques.
-
-Plan
-====
-
-.. toctree::
-    :maxdepth: 1
-
-    regclass
-    gradienttree
-    seriestemp
-    nonsupervise
-    textembed
-    imagedeep
-    reinforce
-
-Le :epkg:`machine learning` répond à de plus en plus de
-problématiques, beaucoup d'entre elles sont citées
-sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a.html>`_
-proposé à l':epkg:`ENSAE` qui comprend des exercices, des articles et les modules
-qui implémentent quelques algorithmes.
-
-Exercices
-=========
+**Exercices**
 
 * `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
 * `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
