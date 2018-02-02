@@ -408,7 +408,7 @@ Le voyageur du commerce
 Le problème du `voyageur de commerce <https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_voyageur_de_commerce>`_
 consiste à parcourir une série de villes le plus rapidement possibles.
 C'est un des problèmes qu'on cite en premier pour illustrer
-les problèmes non `NP-complet <https://fr.wikipedia.org/wiki/Probl%C3%A8me_NP-complet>`_ :
+les problèmes `NP-complet <https://fr.wikipedia.org/wiki/Probl%C3%A8me_NP-complet>`_ :
 la solution de ceux-ci ne peut pas être trouvé avec un algorithme
 au coût polynômial. Il n'y a pas d'autres options que de tester toutes les
 permutations des villes pour déterminer le chemin le plus court.
