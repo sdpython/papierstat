@@ -1,11 +1,13 @@
 
+.. _l-regclass:
+
 Classification et régression
 ============================
 
 Le site :epkg:`UCI` propose de nombreux jeux de
 de données utilisés dans un but pédagogique.
 Parmi ceux-ci, on y trouve un jeu de données
-sur le vin, `Wine Data Set <https://archive.ics.uci.edu/ml/datasets/wine>`_.
+sur le vin, `Wine Data Set <https://archive.ics.uci.edu/ml/datasets/wine+quality>`_.
 Pour ma part, j'ai goûté le vin assez tard, ne sachant véritablement
 l'apprécier qu'à la trentaine avérée. Je suis encore incapable de
 déchiffrer le vocabulaire qui sort de la bouche des experts

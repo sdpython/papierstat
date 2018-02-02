@@ -1,0 +1,29 @@
+
+.. blogpost::
+    :title: Session 1
+    :keywords: session 1
+    :date: 2018-02-01
+    :categories: session
+
+    Quelques liens sur cette première session 
+    et les notebooks associées :
+    
+    * :ref:`l-rappel`
+    * :ref:`l-regclass`
+
+    Il n'est pas facile de se souvenir des fonctions
+    importantes pour tel ou tel modules. Ce n'est pas
+    très important, d'autres l'ont déjà sous la forme
+    de cheet sheets :
+    `Cheat Sheet Pandas<https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf>`_.
+    Quelques exercices :
+    
+    * `DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_1.html>`_
+    * `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+    
+    Quelques réponses aux dernières questions mathématiques :
+    
+    * `Distance d’édition <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_dist/edit_distance.html>`_
+    * `Corrélation non linéaire <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/notebooks/correlation_non_lineaire.html>`_
+    
+    
