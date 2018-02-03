@@ -14,7 +14,7 @@
     Il n'est pas facile de se souvenir des fonctions
     importantes pour tel ou tel modules. Ce n'est pas
     très important, d'autres l'ont déjà sous la forme
-    de cheet sheets :
+    de cheat sheets :
     `Cheat Sheet Pandas <https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf>`_.
     Quelques exercices :
 

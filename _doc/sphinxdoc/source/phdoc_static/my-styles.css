@@ -6,3 +6,8 @@
 div.highlight-ipython3 pre {
 	background-color: #f8f8c8;
 }
+
+div.blogpost p {
+	font-weight: normal;
+	width: 50%;
+}
