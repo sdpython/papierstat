@@ -1,6 +1,7 @@
 
 .. _l-regclass:
 
+============================
 Classification et régression
 ============================
 
@@ -82,6 +83,8 @@ Il peut être également obtenu avec le code suivant :
     from pyquickhelper.pandashelper import df2rst
     from papierstat.datasets import load_wines_dataset
     df = load_wines_dataset()
+    df = df[['fixed_acidity', 'volatile_acidity', 'citric_acid', 'quality']].copy()
+    df['...'] = '...'
     print(df2rst(df.head()))
 
 .. plot::
@@ -106,10 +109,10 @@ plus à l'aise là où il a le plus d'information. Les vins extrêmes,
 peu représentés, seront sans doute moins bien appréhendés par
 le modèle de prédiction.
 
+.. index:: plus proches voisins
+
 Les plus proches voisins
 ++++++++++++++++++++++++
-
-.. index:: plus proches voisins
 
 Le modèle de prédiction le plus intuitif consiste à chercher pour
 chaque nouveau vin le vin qui lui ressemble le plus parmi tous ceux connus.
@@ -119,6 +122,21 @@ Le module :epkg:`scikit-learn` implémente cet algorithme
 `Nearest Neighbors <http://scikit-learn.org/stable/modules/neighbors.html>`_ et
 on pourra s'inspirer de l'exemple
 `Nearest Neighbors regression <http://scikit-learn.org/stable/auto_examples/neighbors/plot_regression.html#sphx-glr-auto-examples-neighbors-plot-regression-py>`_.
+De façon un peu plus mathématique, on considère les données d'apprentissage
+:math:`(X_i, y_i)_{i=1}^n`, le modèle construit une prédiction pour un :math:`x`
+donné à partir de :math:`k` plus proches voisins. Ceux-ci vérifie :
+
+.. math::
+
+    \begin{array}{ll} V(k, X) = \acc{ i_{\sigma(1)}, ..., i_{\sigma(k)}} \\
+    \text{avec} \; d(X, X_{\sigma(1)}) \leqslant ... \leqslant d(X, X_{\sigma(k)}) \leqslant d(X, X_j) \;
+    \forall j \notin \acc{\sigma(1), ..., \sigma(k)} \end{array}
+
+La prédiction est une moyenne des valeurs connues associées aux voisins trouvés :
+
+.. math::
+
+    f(X, k) = \frac{\sum_{i=1}^k y_{\sigma(i)}}{k}
 
 .. toctree::
     :maxdepth: 1
@@ -126,13 +144,23 @@ on pourra s'inspirer de l'exemple
     ../notebooks/wines_knn
     ../notebooks/wines_knn_eval
 
-A propos des plus proches voisins :
+.. index:: ball tree
+
+Les plus proches voisins est un des modèles les plus simples
+avec le modèle linéaire, il est néanmoins très coûteux à calculer
+puisqu'il faut a priori s'enquérir de toutes les distances entre
+un nouveau point et ceux déjà connus. Des algorithmes permettent
+d'accélérer la recherche de voisins comme les
+`ball tree <https://en.wikipedia.org/wiki/Ball_tree>`_.
+Ils sont de moins en moins
+efficaces au fur et à mesure que la dimension de l'espace
+des features augmente :
 `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_.
+
+.. index:: bases d'apprentissage et de test, train_test_split
 
 Train / test
 ++++++++++++
-
-.. index:: bases apprentissage et test
 
 Il n'est pas facile d'avoir une idée la pertinence
 d'un modèle de prédiction. Le plus simple est de
@@ -140,8 +168,6 @@ comparer les prédictions obtenus avec la valeur de l'expert.
 Comme le modèle des plus proches voisins retourne
 toujours la bonne prédiction s'il a déjà vu un vin,
 il faut nécessairement pouvoir lui en proposer de nouveau.
-
-.. index:: base d'apprentissage, base de test
 
 La base de données représente l'ensemble des données
 à disposition. Il est impossible d'en amener de nouvelles
@@ -158,10 +184,10 @@ de test.
     ../notebooks/wines_knn_split
     ../notebooks/wines_knn_split_strat
 
+.. index:: validation croisée, cross-validation
+
 Validation croisée
 ++++++++++++++++++
-
-.. index:: validation croisée, cross-validation
 
 Il est acquis qu'un modèle doit être évalué sur une base de test différente
 de celle utilisée pour l'apprentissage. Mais la performance est peut-être
@@ -181,10 +207,10 @@ en anglais. La base de données en découpée en :math:`n` segments,
 
     ../notebooks/wines_knn_cross_val
 
+.. index:: hyper-paramètre
+
 Hyper-paramètres
 ++++++++++++++++
-
-.. index:: hyper-paramètre
 
 Un modèle de :epkg:`machine learning` est appris avec un
 algorithme d'optimisation. Celui dépend de plusieurs paramètres,
@@ -195,7 +221,7 @@ Il est illusoire de penser que les mêmes paramètres donnent les meilleurs
 résultats quelque soit le jeu de données considéré. Mais alors,
 quels paramètres donnent les meilleurs résultats ?
 La plus simple stratégie est d'essayer plusieurs valeurs et de
-choisir la meilleur.
+choisir la meilleure.
 
 .. toctree::
     :maxdepth: 1
@@ -216,18 +242,10 @@ apprentissage
 
 évaluation
 
+Score de classification et courbe ROC
++++++++++++++++++++++++++++++++++++++
+
 Modèles ou features
 +++++++++++++++++++
 
 `Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_
-
-Pipeline
-++++++++
-
-Les vins bons sont rares
-++++++++++++++++++++++++
-
-smote
-
-Overfitting
-+++++++++++

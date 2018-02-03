@@ -5,7 +5,8 @@
 **Links:** `github <https://github.com/sdpython/papierstat/>`_,
 `documentation <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_,
 :ref:`l-README`,
-:ref:`blog <ap-main-0>`
+:ref:`blog <ap-main-0>`,
+:ref:`genindex`
 
 .. image:: phdoc_static/project_ico.png
 
@@ -22,8 +23,8 @@ Petit voyage au pays du machine learning
     api/index
     i_examples
     blog/blogindex
-    index_modules
     i_index
+    glossary
 
 D'autres supports sont disponibles,
 :epkg:`teachpyx` se concentre sur le langage :epkg:`Python`,

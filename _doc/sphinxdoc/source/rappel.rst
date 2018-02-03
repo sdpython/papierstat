@@ -20,6 +20,8 @@ modèles de machine learning exposés.
 Rappels mathématiques
 =====================
 
+.. index:: fonction
+
 Fonction
 ++++++++
 
@@ -33,6 +35,8 @@ Le graphe suivant représente ce lien :
 
 .. image:: images/fonction.png
     :width: 150
+
+.. index:: fonction continue
 
 Fonction continue
 +++++++++++++++++
@@ -55,8 +59,10 @@ Les puristes vous diront qu'il existe quelques cas intéressants
 qui sont trompeurs visuellement mais cela suffira pour comprendre
 les notions de machine learning.
 
-Dérivée
-+++++++
+.. index:: fonction dérivable
+
+Fonction dérivable
+++++++++++++++++++
 
 Beaucoup de fonctions continues sont dérivables mais ce qui est sûr,
 c'est la fonction qui n'est pas continue en un point :math:`x`
@@ -83,6 +89,8 @@ limite lorsque :math:`h` tend vers 0.
 
         g(x, h) = \frac{f(x+h) - f(x)}{h}
 
+.. index:: espace vectoriel
+
 Espace vectoriel
 ++++++++++++++++
 
@@ -95,6 +103,8 @@ de :math:`n` coordonnées. Ca ne change pas grand-chose sauf
 que c'est plus compliqué à dessiner voire impossible.
 Il faudra faire avec.
 
+.. index:: produit scalaire
+
 Produit scalaire
 ++++++++++++++++
 
@@ -106,6 +116,8 @@ l'angle qui les sépare.
 .. math::
 
     <X,Y> = \sum_{i=1}^n x_i y_i
+
+.. index:: norme, distance
 
 Norme
 +++++
@@ -125,6 +137,8 @@ La norme L1 utilise les valeurs absolues :
 
 Ce sont les deux principales normes utilisées en
 :epkg:`machine learning`.
+
+.. index:: matrice
 
 Matrice
 +++++++
@@ -146,6 +160,8 @@ pour représenter un vecteur ou une matrice, les lettres grecques
 pour des nombres très petits utilisés comme intermédiaire de
 calcul.
 
+.. index:: problème d'optimisation
+
 Problème d'optimisation
 +++++++++++++++++++++++
 
@@ -165,6 +181,8 @@ l'algorithme du `gradient <https://fr.wikipedia.org/wiki/Algorithme_du_gradient>
 
 .. image:: images/Gradient_descent.png
     :width: 200
+
+.. index:: variable aléatoire
 
 Variable aléatoire
 ++++++++++++++++++
@@ -208,6 +226,8 @@ Une variable aléatoire résume une dizaine, une centaine, un millier,
 une infinité de nombres fabriqués de la même manière, la taille d'une personne,
 la durée de vie d'une ampoule, l'efficacité d'un traitement médical...
 
+.. index:: histogramme
+
 Histogramme
 +++++++++++
 
@@ -223,6 +243,8 @@ définis à l'avance.
 C'est une vision plus fine de la taille de nos poissons rouges,
 plutôt que de déterminer une taille minimale et maximale,
 on donne une indication de ce qu'il se passe au milieu.
+
+.. index:: corrélation
 
 Corrélation
 +++++++++++
@@ -247,6 +269,8 @@ est la `corrélation de Pearson <https://en.wikipedia.org/wiki/Pearson_correlati
     \begin{array}{rcl} \bar{X} &=& \frac{1}{n} \sum_{i=1}^n X_i \\ \bar{Y} &=& \frac{1}{n} \sum_{i=1}^n Y_i \\
     cor(X,Y) &=& \frac{ \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \bar{X}} \pa{\sum_{i=1}^n Y_i - \bar{Y}} }}
     \end{array}
+
+.. index:: nuage de points
 
 Nuage de points
 +++++++++++++++
@@ -290,6 +314,8 @@ c'est une bonne indication que le théorème peut être démontré.
 Une fois qu'il l'est, il peut être appliqué à l'infini sur quantité de
 problèmes. Quelques `cheatsheets <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/cheat_sheets.html>`_.
 
+.. index:: csv
+
 Le fichier csv
 ++++++++++++++
 
@@ -303,6 +329,8 @@ et telle colonne. Un caractère indique qu'on passe à la colonne suivante,
 le plus souvent ``,``, un autre indique qu'on passe à la ligne suivante
 ``\n``.
 
+.. index:: dataframe
+
 DataFrame
 +++++++++
 
@@ -315,6 +343,8 @@ facilité leur utilisation en :epkg:`Python`.
 Pour vous exercez
 `DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_1.html>`_.
 
+.. index:: array
+
 Array
 +++++
 
@@ -323,8 +353,10 @@ et des opérations qui lui sont associées.
 Pour vous exercez :
 `Calcul Matriciel, Optimisation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_2A.html>`_.
 
-Hash
-++++
+.. index:: fonction de hash, hash
+
+Fonction de hash
+++++++++++++++++
 
 Les `fonctions de hashing <https://fr.wikipedia.org/wiki/Fonction_de_hachage>`_
 sont principalement dans deux cas. La fonction crypte les informations, il est impossible
@@ -335,6 +367,8 @@ Cette propriété est utilisée pour optimiser le coût de nombreux algorithmes.
 garantit la construction d'arbres équilibrés et améliore la répartition des calculs.
 Pour en savoir plus à ce sujet :
 `Hash et distribution <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html>`_.
+
+.. index:: arbre, graphe
 
 Arbre
 +++++
@@ -374,6 +408,8 @@ du commerce, temps logarithmique pour la recherche  dichotomique.
 Pour vous exercer :
 `Algorithmes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_1a.html#td-algorithmes>`_.
 
+.. index:: plus court chemin dans un graphe, Dikjstra
+
 Le plus court chemin dans un graphe
 +++++++++++++++++++++++++++++++++++
 
@@ -392,6 +428,8 @@ Quelques exerices pour vous exercer :
 La page suivante `Distance d'édition <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_dist/edit_distance.html>`_
 se propose d'aller un peu plus loin.
 
+.. index:: recherche dichotomique, k-d tree
+
 La recherche dichotomique
 +++++++++++++++++++++++++
 
@@ -401,6 +439,14 @@ La `recherche dichotomique <https://fr.wikipedia.org/wiki/Recherche_dichotomique
 est une des petites choses qu'on teste lors d'un entretien d'embauche.
 Quelques exercices pour vous exercer :
 `Recherche dichotomique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/recherche_dichotomique.html?highlight=dichotomie>`_.
+La recherche dichotomique en plusieurs dimensions
+est utilisée via des structures telles que
+`k-d tree <https://fr.wikipedia.org/wiki/Arbre_kd>`_.
+Ce besoin intervient dès qu'il faut accélérer la recherche des voisins
+d'un point :math:`X` dans un espace vectoriel de dimension :math:`d`
+(:math:`\R^d`).
+
+.. index:: voyageur du commerce, travelling salesman problem (TSP)
 
 Le voyageur du commerce
 +++++++++++++++++++++++
@@ -413,12 +459,16 @@ la solution de ceux-ci ne peut pas être trouvé avec un algorithme
 au coût polynômial. Il n'y a pas d'autres options que de tester toutes les
 permutations des villes pour déterminer le chemin le plus court.
 Et comme c'est rapidement très long, il faut rapidement proposer une solution approchée.
+La dénomination anglaise est parfois plus connue :
+`Travelling Salesman Problem (TSP) <https://en.wikipedia.org/wiki/Travelling_salesman_problem>`_.
 
 Modules incourtournables en Python
 ==================================
 
 Le langage :epkg:`Python` est le langage le plus utilisé depuis
 quelques après que le modules qui suivent sont devenus matures.
+
+.. index:: numpy
 
 numpy
 +++++
@@ -432,6 +482,8 @@ qu'on veut être rapide.
 Le module :epkg:`scipy` est une extension où l'on peut trouver
 des fonctions statistiques, d'optimisation.
 
+.. index:: pandas
+
 pandas
 ++++++
 
@@ -441,12 +493,16 @@ en :epkg:`C++`. Il est rapide mais pas tant que ça, il utilise en règle
 générale trois fois plus d'espace en mémoire que les données n'en
 prennent sur le disque.
 
+.. index:: matplotlib, seaborn, plot
+
 matplotlib
 ++++++++++
 
 :epkg:`matplotlib` s'occupe de tout ce qui est graphique.
 Il faut également connaître :epkg:`seaborn` qui propose
-des graphiques étudiés pour un usgae statistique.
+des graphiques étudiés pour un usage statistique.
+
+.. index:: scikit-learn
 
 scikit-learn
 ++++++++++++
@@ -455,6 +511,8 @@ scikit-learn
 pour deux raisons. Son design a été pensé pour être simple
 avec deux méthodes *fit* et *predict* pour apprendre
 et prédire. Sa documentation est un modèle à suivre.
+
+.. index:: statsmodels
 
 statsmodels
 +++++++++++

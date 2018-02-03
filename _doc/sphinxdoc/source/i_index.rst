@@ -12,16 +12,15 @@ En diagonal
         completed_todoextlist
         filechanges
         all_report
-        glossary
         README
         license
         blog/blogindex
+        index_module
 
 .. only:: not html
 
     .. toctree::
         :maxdepth: 2
 
-        glossary
         license
         blog/blogindex
