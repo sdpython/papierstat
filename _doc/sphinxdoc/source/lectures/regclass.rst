@@ -109,6 +109,11 @@ plus à l'aise là où il a le plus d'information. Les vins extrêmes,
 peu représentés, seront sans doute moins bien appréhendés par
 le modèle de prédiction.
 
+.. toctree::
+    :maxdepth: 1
+
+    notebooks/wines_knn_acp
+
 .. index:: plus proches voisins
 
 Les plus proches voisins
@@ -137,6 +142,28 @@ La prédiction est une moyenne des valeurs connues associées aux voisins trouv�
 .. math::
 
     f(X, k) = \frac{\sum_{i=1}^k y_{\sigma(i)}}{k}
+
+Il s'agit maintenant d'appliquer cet algorithme afin de
+prédire la note d'un vin pour trois vins représentés par
+les trois points d'interrogations qui suivent.
+
+.. image:: images/predict.png
+    :width: 200
+
+Cette représentation simplifiée montre deux vins
+plutôt simples à classer et un dernier - cercle jaune -
+dont les voisins sont en désaccord quant à la décision
+à prendre. Le vrai visage du jeu de données est plus
+difficile à lire. Il est obtenu grâce à une
+`analyse en composante principale (ACP) <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_
+qui projette un ensemble de points dans un espace de dimension réduite
+en maximisant la variance de l'ensemble projeté.
+
+.. image:: images/acp.png
+    :width: 300
+
+Peut-être que la prédiction sera facile mais ce n'est
+pas cette représentation qui permet de nous en assurer.
 
 .. toctree::
     :maxdepth: 1
@@ -228,15 +255,79 @@ choisir la meilleure.
 
     ../notebooks/wines_knn_hyper
 
-Un modèle de régression
-+++++++++++++++++++++++
+.. index:: régression
+
+Régression
+++++++++++
+
+Le bruit blanc est une variable aléatoire couramment utilisé
+pour désigner le hasard ou la part qui ne peut être modélisée
+dans une régression ou tout autre problème d'apprentissage.
+On suppose parfois que ce bruit suive une loi normale.
+
+.. mathdef::
+    :title: bruit blanc
+    :tag: Définition
+    :lid: def-bruit-blanc
+
+    Une suite de variables aléatoires réelles
+    :math:`\pa{\epsilon_i}_{1 \infegal i \infegal N}`
+    est un bruit blanc :
+
+    * :math:`\exists \sigma > 0`, :math:`\forall i \in \intervalle{1}{N}, \; \epsilon_i \sim \loinormale{0}{\sigma}`
+    * :math:`\forall \pa{i,j} \in \intervalle{1}{N}^2, \; i \neq j \Longrightarrow \epsilon_i \independant \epsilon_j`
+
+La prédiction de la note des vins est un problème de
+`régression <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_2_reg.html>`_
+et cela consiste à résoudre le problème suivant :
+
+.. mathdef::
+    :title: Régression
+    :tag: Problème
+    :lid: problem-regression
+
+    Soient deux variables aléatoires :math:`X` et :math:`Y`,
+    l'objectif est d'approximer la fonction
+    :math:`\esp\pa{Y | X} = f\pa{X}`.
+    Les données du problème sont
+    un échantillon de points :math:`\acc{ \pa{ X_{i},Y_{i} } | 1 \infegal i \infegal N }`
+    et un modèle paramétré avec :math:\theta` :
+
+    .. math::
+
+            \forall i \in \intervalle{1}{N}, \; Y_{i} = f \pa{\theta,X_{i}} + \epsilon_{i}
+
+    avec :math:`n \in \N`,
+    :math:`\pa{\epsilon_{i}}_{1 \infegal i \infegal N}` :ref:`bruit blanc <def-bruit-blanc>`,
+    :math:`f` est une fonction de paramètre :math:`\theta`.
+		
+
+La fonction :math:`f` peut être une fonction linéaire,
+un polynôme, un réseau de neurones...
+Lorsque le bruit blanc est normal, la théorie de l'estimateur
+de vraisemblance (voir [Saporta1990]_) permet d'affirmer
+que le meilleur paramètre :math:`\hat{\theta}`
+minimisant l'erreur de prédiction est :
+
+.. math::
+
+    \hat{\theta} = \underset {\theta \in \R^p}{\arg \min} \; \esp \pa {\theta}
+			     = \underset {\theta \in \R^p}{\arg \min}
+                   \cro{ \sum_{i=1}^{N} \cro{Y_{i}-f \pa{\theta,X_{i}}}^{2}}
+
+Le lien entre les variables :math:`X` et :math:`Y` dépend des hypothèses faites
+sur :math:`f`. Généralement, cette fonction n'est supposée non linéaire
+que lorsqu'une `régression linéaire <https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire>`_
+donne de mauvais résultats.
+
+-----------------------
 
 apprentissage
 
 évaluation
 
-Même problème sous l'angle de la classification
-+++++++++++++++++++++++++++++++++++++++++++++++
+Classification
+++++++++++++++
 
 apprentissage
 
