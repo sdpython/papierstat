@@ -61,8 +61,6 @@ np.random.seed = 2017  # pour des résultats reproductibles
 #    (changement de base si *n=k*).
 # 6. Projeter les données initiales dans cet espace de dimension *k*.
 #
-# .. image:: dr_pca.png
-#
 # Tout cela peut bien sur être implémenté from scratch avec Numpy mais
 # nous utiliserons ici scikit-learn pour raccourcir l'implémentation et
 # nous concentrer sur la visualisation des résultats. Cf.
