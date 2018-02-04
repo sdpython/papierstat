@@ -1,51 +1,51 @@
 
 =======================
-Devinettes et problèmes
+Devinettes et problÃ¨mes
 =======================
 
-Cette page regroupe quelques questions et problèmes
+Cette page regroupe quelques questions et problÃ¨mes
 dont les solutions figurent dans les pages de ce site
-intéressante du point de vue d'un data scientiste.
+intÃ©ressante du point de vue d'un data scientiste.
 
 .. contents::
     :depth: 1
     :local:
 
-Mathématiques
+MathÃ©matiques
 =============
 
 .. contents::
     :local:
 
-Corrélations non linéaires
+CorrÃ©lations non linÃ©aires
 ++++++++++++++++++++++++++
 
 Le `coefficient de Pearson <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_
-est sans aucun doute le coefficient de corrélation le plus
+est sans aucun doute le coefficient de corrÃ©lation le plus
 connu. Le `coefficient de Spearman <https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`_
-mesure la corrélation entre deux variables à partir de leur rang.
-Et si on essayait de définir un coefficient de corrélation
-non linéaire ? A base d'arbre de décision ? Pas forcémenet symétrique ?
+mesure la corrÃ©lation entre deux variables Ã  partir de leur rang.
+Et si on essayait de dÃ©finir un coefficient de corrÃ©lation
+non linÃ©aire ? A base d'arbre de dÃ©cision ? Pas forcÃ©menet symÃ©trique ?
 
-Décorrélation de variables
+DÃ©corrÃ©lation de variables
 ++++++++++++++++++++++++++
 
 On suppose que les variables :math:`(X_1, ..., X_n)` sont
-corrélées avec une matrice variance coveriance égale à :math:`\Sigma`.
-Comment construire des variables décorrélées à partir de
+corrÃ©lÃ©es avec une matrice variance coveriance Ã©gale Ã  :math:`\Sigma`.
+Comment construire des variables dÃ©corrÃ©lÃ©es Ã  partir de
 :math:`(X_1, ..., X_n)` ?
 
 p-value et intervalle de confiance
 ++++++++++++++++++++++++++++++++++
 
-L'école anglaise a tendance à préférer les
+L'Ã©cole anglaise a tendance Ã  prÃ©fÃ©rer les
 `p-values <https://en.wikipedia.org/wiki/P-value>`_,
-l'école française préfère les
+l'Ã©cole franÃ§aise prÃ©fÃ¨re les
 `intervalles de confiance <https://fr.wikipedia.org/wiki/Intervalle_de_confiance>`_.
-Ces deux notions sont équivalentes mais connaissez-vous le lien
+Ces deux notions sont Ã©quivalentes mais connaissez-vous le lien
 qui les unit ?
 
-Méthodologie
+MÃ©thodologie
 ============
 
 .. contents::
@@ -54,9 +54,9 @@ Méthodologie
 Normalisation
 +++++++++++++
 
-Le code suivant présente une erreur de méthodologie
+Le code suivant prÃ©sente une erreur de mÃ©thodologie
 qui a souvent peu d'incidence mais qui n'en reste pas moins
-problématique.
+problÃ©matique.
 
 ::
 
