@@ -37,7 +37,7 @@ html_theme_options = {
 }
 
 html_context = {
-    'css_files': get_default_stylesheet() + ['_static/my-styles.css'],
+    'css_files': get_default_stylesheet() + ['_static/my-styles.css', '_static/gallery.css'],
 }
 
 html_logo = "project_ico.png"
@@ -82,7 +82,7 @@ custom_preamble = """\n
 \\newcommand{\\fleche}[1]{\\overrightarrow{ #1 }}
 \\newcommand{\\intervalle}[2]{\\left\\{#1,\\cdots,#2\\right\\}}
 \\newcommand{\\loinormale}[2]{{\\cal N}\\pa{#1,#2}}
-\\newcommand{\\independant}[0]{\\;\\makebox[3ex]{\\makebox[0ex]{\\rule[-0.2ex]{3ex}{.1ex}}\\!\\!\\!\\!\\makebox[.5ex][l]{\\rule[-.2ex]{.1ex}{2ex}}\\makebox[.5ex][l]{\\rule[-.2ex]{.1ex}{2ex}}} \\,\\,}
+\\newcommand{\\independant}[0]{\\;\\makebox[3ex]{\\makebox[0ex]{\\rule[-0.2ex]{3ex}{.1ex}}\\!\\!\\!\\!\\makebox[.5ex][l]{\\rule[-.1ex]{.1ex}{2ex}}\\makebox[.5ex][l]{\\rule[-.1ex]{.1ex}{2ex}}} \\,\\,}
 \\newcommand{\\esp}{\\mathbb{E}}
 \\newcommand{\\var}{\\mathbb{V}}
 \\newcommand{\\pr}[1]{\\mathbb{P}\\pa{#1}}

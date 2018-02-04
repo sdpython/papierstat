@@ -30,8 +30,11 @@ composants.
 * `Problèmes classiques de machine learning illustrés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html>`_
 * `Machine Learning par Gaël Varoquaux <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/all_notebooks.html#a-sklearn-ensae-course>`_
 
-Finalité du machine learning
-++++++++++++++++++++++++++++
+Découverte du machine learning
+==============================
+
+Finalité
+++++++++
 
 On ne part pas de rien pour construire cette fonction, on dispose
 de plusieurs milliers de notes données par des experts à des milliers
@@ -112,7 +115,7 @@ le modèle de prédiction.
 .. toctree::
     :maxdepth: 1
 
-    notebooks/wines_knn_acp
+    ../notebooks/wines_knn_acp
 
 .. index:: plus proches voisins
 
@@ -183,6 +186,9 @@ Ils sont de moins en moins
 efficaces au fur et à mesure que la dimension de l'espace
 des features augmente :
 `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_.
+
+Trois étapes récurrentes
+========================
 
 .. index:: bases d'apprentissage et de test, train_test_split
 
@@ -255,6 +261,9 @@ choisir la meilleure.
 
     ../notebooks/wines_knn_hyper
 
+Deux problèmes à la base de beaucoup d'autres
+=============================================
+
 .. index:: régression
 
 Régression
@@ -316,15 +325,16 @@ minimisant l'erreur de prédiction est :
                    \cro{ \sum_{i=1}^{N} \cro{Y_{i}-f \pa{\theta,X_{i}}}^{2}}
 
 Le lien entre les variables :math:`X` et :math:`Y` dépend des hypothèses faites
-sur :math:`f`. Généralement, cette fonction n'est supposée non linéaire
+sur :math:`f`. Généralement, cethttp://scikit-learn.org/stable/supervised_learning.html#supervised-learningte fonction n'est supposée non linéaire
 que lorsqu'une `régression linéaire <https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire>`_
 donne de mauvais résultats.
+:epkg:`scikit-learn` implémente de nombreux modèles de
+`régression <http://scikit-learn.org/stable/supervised_learning.html#supervised-learning>`_.
 
------------------------
+.. toctree::
+    :maxdepth:
 
-apprentissage
-
-évaluation
+    ../notebooks/wines_reg
 
 Classification
 ++++++++++++++
@@ -333,8 +343,7 @@ apprentissage
 
 évaluation
 
-Score de classification et courbe ROC
-+++++++++++++++++++++++++++++++++++++
+**Score de classification et courbe ROC**
 
 Modèles ou features
 +++++++++++++++++++

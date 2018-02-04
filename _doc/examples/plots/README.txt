@@ -1,6 +1,7 @@
 
-.. _l-gallery-examples:
+.. _l-gallery-plot:
 
-Exemples longs
---------------
+Graphes classiques
+------------------
+
 
