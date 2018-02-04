@@ -1,0 +1,8 @@
+
+.. blogpost::
+    :title: Lien entre p-value et intervalle de confiance
+    :keywords: p-value, intervalle de confiance
+    :date: 2018-02-04
+    :categories: maths
+
+    Voir `Confidence Interval and p-Value <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/pvalues.html>`_.

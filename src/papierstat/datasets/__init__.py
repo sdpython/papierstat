@@ -23,6 +23,16 @@ def load_wines_dataset(download=False):
 
     @param  download    télécharge le jeu de données ou considères une copie en local.
     @return             :epkg:`pandas:DataFrame`
+
+    Notebooks associés à ce jeu de données :
+
+    .. runpython::
+        :rst:
+
+        from papierstat.datasets.documentation import list_notebooks_rst_links
+        links = list_notebooks_rst_links('lectures', 'wines')
+        links = ['    * %s' % s for s in links]
+        print('\\n'.join(links))
     """
     if download:
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/"

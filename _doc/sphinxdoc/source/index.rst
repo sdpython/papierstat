@@ -19,6 +19,7 @@ Petit voyage au pays du machine learning
     introduction
     rappel
     lectures/index
+    i_questions
     biblio
     api/index
     i_examples

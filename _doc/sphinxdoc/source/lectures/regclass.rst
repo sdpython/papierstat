@@ -332,9 +332,10 @@ donne de mauvais résultats.
 `régression <http://scikit-learn.org/stable/supervised_learning.html#supervised-learning>`_.
 
 .. toctree::
-    :maxdepth:
+    :maxdepth: 1
 
     ../notebooks/wines_reg
+    ../notebooks/wines_reg_poly
 
 Classification
 ++++++++++++++
