@@ -340,11 +340,103 @@ donne de mauvais résultats.
 Classification
 ++++++++++++++
 
+Le notebook sur l'ACP a mis en lumière que les vins blancs
+et rouges pourraient être différents chimiquement et il devrait
+être possible de prédire la couleur en fonction des données
+disponibles dans ce jeu de données.
+Ce problème n'est pas une régression puisque la cible à prédire
+n'est pas une quantité mais une information booléenne ou binaire :
+blanc ou rouge. La frontière dans les deux
+couleurs se dessine dans l'image ci-dessous mais comment
+déterminer cette frontière ?
+
+.. image:: images/acpcolor.png
+    :width: 220
+
+La modélisation de ce problème commence par définir deux probabilités
+pour un vin défini par :math:`X_i`
+:math:`\pr{rouge | X_i}` et :math:`\pr{blanc | X_i}` qu'on prononce
+comme étant la probabilité que la couleur du vin soit rouge ou blanche
+connaissant :math:`X_i`. Comme il n'y a que deux possibilités :
+:math:`\pr{rouge | X_i} + \pr{blanc | X_i} = 1`. La frontière est l'ensemble
+des points pour lesquelles ces probabilités sont égales,
+:math:`\acc{X | \pr{rouge | X} =\pr{blanc | X}}`, ou encore :
+
+.. math::
+
+    \frac{\pr{rouge | X}}{\pr{blanc | X}} = 1 \Leftrightarrow
+    \ln \frac{\pr{rouge | X}}{\pr{blanc | X}} = f(X) = 0
+
+Il reste à expliciter la fonction *f* mais il faut au préalable
+définir la probabilité d'appartenance à une classe.
+
+.. image:: images/logreg.png
+    :width: 200
+
+.. index:: loi logistique, régression logistique
+
+La `régression logisitique <https://fr.wikipedia.org/wiki/R%C3%A9gression_logistique>`_
+relie cette probabilité à la distance :math:`\bar{d}(X)` via une
+`loi logistique <https://fr.wikipedia.org/wiki/Loi_logistique>`_,
+enfin presqu'une distance dans la mesure où la fonction :math:`\bar{d}` est positive
+d'un côté et négative de l'autre.
+
+.. math::
+
+    \pr{rouge | X} = \frac{1}{1 + e^{\bar{d}(X)}}
+
+On vérifie que lorsque la distance est nulle, la probabilité
+vaut :math:`\frac{1}{2}` et que :math:`f(X) \in [0, 1] \; \forall X`.
+On écrit la fonction *f* :
+
+.. math::
+
+    f(X) = \ln\frac{ \frac{1}{1 + e^{\bar{d}(X)}} }{ 1 - \frac{1}{1 + e^{\bar{d}(X)}} } =
+    \ln\frac{ \frac{1}{1 + e^{\bar{d}(X)}} }{ \frac{e^{\bar{d}(X)}}{1 + e^{\bar{d}(X)}} } =
+    -\bar{d}(X)
+
+La régression logistique suppose que la fontière est une droite.
+Dans ce cas, la `distance à une droite <https://fr.wikipedia.org/wiki/Distance_d%27un_point_%C3%A0_une_droite>`_
+s'écrit :math:`f(X) = \beta_0 + \beta^T X` si :math:`\norme{X} = 1`.
+Maintenant que les probabilités sont définies, on peut écrire la
+log-vraisemblance du problème (:math:`y_i \in \acc{0,1}`).
+On suppose tous les points :math:`X_i` équiprobable.
+
+.. math::
+
+    \begin{array}{rcl}
+    \ln L(X_1,...,X_n, y_i,...,y_n)
+    &\prop& \sum_{i=1}^n y_i \ln \pr{rouge | X_i} + (1-y_i) \ln \pr{blanc| X_i}  \\
+    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)} + \frac{(1 - y_i)e^{f(X_i)}{1 + e^{f(X_i)} } \\
+    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)} + \frac{1 - y_i}{1 + e^{-f(X_i)} }
+    \end{array}
+
+.. note::
+
+    La quantité :math:`y_i \ln \pr{rouge | X_i} + (1-y_i) \ln \pr{blanc| X_i}`
+    correspond à la
+    `distance de Kullbak-Leiber <https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler>`_
+    entre deux distributions discrètes :math:`Y_i`
+    et la prédiction du modèle :math:`P_i`.
+
+.. toctree::
+    :maxdepth: 1
+
+    ..notebooks/wines_color
+
+Classification multi-classe
++++++++++++++++++++++++++++
+
+La régression nous a permis de prédire une note.
+La cible à prévoir est un peu particulière dans ce problème
+puisque la note est entière et prend peu de valeurs distinctes.
+Chaque vin peut être considéré comme faisant partie du groupe
+associé à tous les vins portant la même note. Ce problème
+est différent du précédent car il y a plus de deux classes.
+
 apprentissage
 
 évaluation
-
-**Score de classification et courbe ROC**
 
 Modèles ou features
 +++++++++++++++++++
