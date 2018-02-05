@@ -30,7 +30,7 @@ def list_notebooks(subfolder, name):
     if len(names) == 0:
         raise FileNotFoundError(
             "Unable to find any notebook in '{0}'.".format(nb))
-    return name
+    return names
 
 
 def list_notebooks_rst_links(subfolder, name):
@@ -42,4 +42,4 @@ def list_notebooks_rst_links(subfolder, name):
     @return                 liste des liens
     """
     names = list_notebooks(subfolder, name)
-    return [':ref:`{0}rst`'.format(os.path.split(name)[0].replace('_', '')) for name in names]
+    return [':ref:`{0}rst`'.format(os.path.splitext(os.path.split(name)[1])[0].replace('_', '')) for name in names]

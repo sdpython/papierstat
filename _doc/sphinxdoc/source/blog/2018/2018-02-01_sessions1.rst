@@ -27,4 +27,4 @@
     * `Corrélation non linéaire <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/notebooks/correlation_non_lineaire.html>`_
 
     Le contenu est hébergé sur `github/papierstat <https://github.com/sdpython/papierstat/>`_,
-    l'ajout d'une *issues* indiquera une partie à développer ou retravailler.
+    l'ajout d'une *issue* indiquera une partie à développer ou retravailler.

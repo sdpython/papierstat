@@ -52,6 +52,8 @@ class TestDocumentation(ExtTestCase):
 
         links = list_notebooks_rst_links('lectures', 'wines')
         self.assertNotEmpty(links)
+        self.assertEndsWith("rst`", links[0])
+        self.assertStartsWith(':ref:`wines', links[0])
 
 
 if __name__ == "__main__":

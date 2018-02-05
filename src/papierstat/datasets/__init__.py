@@ -9,7 +9,7 @@ import pandas
 
 def get_data_folder():
     """
-    Retourne le répertoire de données inclut dans ce module.
+    Retourne le répertoire de données inclus dans ce module.
     """
     this = os.path.dirname(__file__)
     data = os.path.join(this, "data")
@@ -21,9 +21,6 @@ def load_wines_dataset(download=False):
     Retourne le jeu de données
     `wines quality <https://archive.ics.uci.edu/ml/datasets/wine+quality>`_.
 
-    @param  download    télécharge le jeu de données ou considères une copie en local.
-    @return             :epkg:`pandas:DataFrame`
-
     Notebooks associés à ce jeu de données :
 
     .. runpython::
@@ -33,6 +30,9 @@ def load_wines_dataset(download=False):
         links = list_notebooks_rst_links('lectures', 'wines')
         links = ['    * %s' % s for s in links]
         print('\\n'.join(links))
+
+    @param  download    télécharge le jeu de données ou considères une copie en local.
+    @return             :epkg:`pandas:DataFrame`
     """
     if download:
         url = "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/"
