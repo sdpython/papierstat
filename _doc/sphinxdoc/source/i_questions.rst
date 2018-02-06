@@ -51,6 +51,31 @@ Méthodologie
 .. contents::
     :local:
 
+Courbe ROC
+++++++++++
+
+Voici deux courbes pour le même problème
+de prédiction de la couleur du vin en fonction
+de mesure sur sa composition chimique.
+La première répond à la question
+*"Le vin est-il rouge ?"* et le score
+utilisé est le score brut issu d'une régression
+logistique. La seconde courbe répond
+à la question *"Le vin est-il bien classé ?"*,
+le score utilisé est soit le score du vin blanc,
+c'est-à-dire si le score est positif,
+soit l'opposé du score s'il est négatif et
+le prédicteur le classe dans la catégorie
+vin rouge.
+
+.. image:: images/vinsroc.png
+    :width: 150
+
+.. image:: images/vinsroc2.png
+    :width: 150
+
+Pourquoi ces deux courbes ne sont-elles pas identiques ?
+
 Normalisation
 +++++++++++++
 
