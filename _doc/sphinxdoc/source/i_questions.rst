@@ -93,3 +93,16 @@ problématique.
     X_test_norm = normalize(X_test)
 
 Quelle est elle ?
+
+Programmation
+=============
+
+.. contents::
+    :local:
+
+Frontière polynomiale
++++++++++++++++++++++
+
+On considère un problème de classificatoin en deux dimensions.
+Comment tracer une frontière linéaire entre deux classes ?
+Et une frontière polynômiale ?

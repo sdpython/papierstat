@@ -422,7 +422,8 @@ On suppose tous les points :math:`X_i` équiprobable.
 .. toctree::
     :maxdepth: 1
 
-    ..notebooks/wines_color
+    ../notebooks/wines_color
+    ../notebooks/wines_color_line
 
 Classification multi-classe
 +++++++++++++++++++++++++++
