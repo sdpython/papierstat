@@ -352,6 +352,8 @@ C'est la représentation informatique d'une matrice
 et des opérations qui lui sont associées.
 Pour vous exercez :
 `Calcul Matriciel, Optimisation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_2A.html>`_.
+Lire également
+`Pourquoi pandas et numpy, pourquoi pas seulement pandas (2A) ? <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/blog/2017/2017-09-19_pandas_numpy.html>`_.
 
 .. index:: fonction de hash, hash
 

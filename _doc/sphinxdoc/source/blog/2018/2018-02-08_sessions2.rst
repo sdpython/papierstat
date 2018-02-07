@@ -1,0 +1,38 @@
+
+.. blogpost::
+    :title: Session 2
+    :keywords: session 2
+    :date: 2018-02-08
+    :categories: session
+
+    Suite :
+
+    * :ref:`l-regclass`
+    * formalisation de la :ref:`régression <l-regression-f>`,
+      de la :ref:`classification <l-classification-f>`
+    * :ref:`classification multi-classe <l-multiclass>`
+    * paramètres de régularisation,
+      `Ridge <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html>`_,
+      `Lasso <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso>`_,
+      `ElasticNet <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet>`_
+    * `clustering <http://scikit-learn.org/stable/modules/clustering.html#clustering>`_,
+      `k-means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_clus/kmeans.html>`_
+      un exemple avec
+      les `vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_challenge.html>`_
+      et l'utilisation du clustering pour trouver les
+      `profils de cyclistes à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>`_
+    * `ranking <https://github.com/dmlc/xgboost/tree/master/demo/rank>`_
+    * recommandations,
+      `Factorisation de matrices non-négatives <http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html>`_,
+      `Liens entre factorisation de matrices, ACP, k-means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/missing_values_mf.html>`_
+    * :ref:`l-cheatsheet-ml`
+    * résumé de l'`interface scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_
+
+    Exercices :
+
+    * Ecrire un programme qui construire deux prédicteurs de la note d'un vin,
+      un pour les vins blancs, un autre pour les rouges, comparer sa performance
+      avec le même modèle appris sur l'ensemble de la base
+    * Pourrait-on envisager l'écriture d'un régresseur un peu plus générique
+      qui estimerait un modèle sur chacune des modalités prises par une variable de la base.
+      On pourra s'inspirer de `SkLearnerBase <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ensae_teaching_cs/ml/sklearn_base_learner.html?highlight=skbaselearner#ensae_teaching_cs.ml.sklearn_base_learner.SkBaseLearner>`_.

@@ -266,6 +266,8 @@ Deux problèmes à la base de beaucoup d'autres
 
 .. index:: régression
 
+.. _l-regression-f:
+
 Régression
 ++++++++++
 
@@ -336,6 +338,8 @@ donne de mauvais résultats.
 
     ../notebooks/wines_reg
     ../notebooks/wines_reg_poly
+
+.. _l-classification-f:
 
 Classification
 ++++++++++++++
@@ -431,6 +435,16 @@ la classification utilise une fonction
 
     ../notebooks/wines_color
     ../notebooks/wines_color_line
+    ../notebooks/wines_color_roc
+
+Les modèles linéaires sont simples, robustes, interprétables.
+Un modèle plus compliqué améliore souvent les performances.
+Il est possible aussi d'ajouter des variables construites
+de façon non linéaire à partir des premières. Le procédé est plus
+ou moins automatique mais donne parfois de bons résultats :
+`Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_.
+
+.. _l-multiclass:
 
 Classification multi-classe
 +++++++++++++++++++++++++++
@@ -441,12 +455,3 @@ puisque la note est entière et prend peu de valeurs distinctes.
 Chaque vin peut être considéré comme faisant partie du groupe
 associé à tous les vins portant la même note. Ce problème
 est différent du précédent car il y a plus de deux classes.
-
-apprentissage
-
-évaluation
-
-Modèles ou features
-+++++++++++++++++++
-
-`Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_

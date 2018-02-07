@@ -1,4 +1,5 @@
 
+.. _l-cheatsheet-ml:
 
 Problèmes standard de machine learning
 --------------------------------------
