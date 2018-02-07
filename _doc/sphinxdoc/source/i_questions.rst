@@ -71,7 +71,7 @@ vin rouge.
 .. image:: images/vinsroc.png
     :width: 150
 
-.. image:: images/vinsroc2.png
+.. image:: images/vinroc2.png
     :width: 150
 
 Pourquoi ces deux courbes ne sont-elles pas identiques ?

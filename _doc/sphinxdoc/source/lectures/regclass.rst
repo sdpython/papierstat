@@ -397,7 +397,7 @@ On écrit la fonction *f* :
 
 La régression logistique suppose que la fontière est une droite.
 Dans ce cas, la `distance à une droite <https://fr.wikipedia.org/wiki/Distance_d%27un_point_%C3%A0_une_droite>`_
-s'écrit :math:`f(X) = \beta_0 + \beta^T X` si :math:`\norme{X} = 1`.
+s'écrit :math:`f(X) = \beta_0 + \beta^T X` si :math:`\norme{\beta} = 1`.
 Maintenant que les probabilités sont définies, on peut écrire la
 log-vraisemblance du problème (:math:`y_i \in \acc{0,1}`).
 On suppose tous les points :math:`X_i` équiprobable.
@@ -406,18 +406,25 @@ On suppose tous les points :math:`X_i` équiprobable.
 
     \begin{array}{rcl}
     \ln L(X_1,...,X_n, y_i,...,y_n)
-    &\prop& \sum_{i=1}^n y_i \ln \pr{rouge | X_i} + (1-y_i) \ln \pr{blanc| X_i}  \\
-    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)} + \frac{(1 - y_i)e^{f(X_i)}{1 + e^{f(X_i)} } \\
-    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)} + \frac{1 - y_i}{1 + e^{-f(X_i)} }
+    &\propto& \sum_{i=1}^n y_i \ln \pr{rouge | X_i} + (1-y_i) \ln \pr{blanc| X_i}  \\
+    &=& \sum_{i=1}^n y_i \ln \frac{\pr{rouge | X_i}}{\pr{blanc| X_i}}  + \ln \pr{blanc| X_i}  \\
+    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)}} + \frac{(1 - y_i)e^{f(X_i)}}{1 + e^{f(X_i)} } \\
+    &=& \sum_{i=1}^n \frac{y_i}{1 + e^{f(X_i)}} + \frac{1 - y_i}{1 + e^{-f(X_i)}}
     \end{array}
 
-.. note::
+.. index:: Kullbak-Leiber, log-loss, fonction de coût
 
-    La quantité :math:`y_i \ln \pr{rouge | X_i} + (1-y_i) \ln \pr{blanc| X_i}`
-    correspond à la
-    `distance de Kullbak-Leiber <https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler>`_
-    entre deux distributions discrètes :math:`Y_i`
-    et la prédiction du modèle :math:`P_i`.
+La quantité :math:`y_i \ln \pr{rouge | X_i} + (1-y_i) \ln(1 - \pr{rouge | X_i}) = y_i \ln p(X_i) + (1-y_i) \ln(1 - p(X_i)))`
+correspond à la
+`distance de Kullbak-Leiber <https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler>`_
+entre deux distributions discrètes :math:`Y_i`
+et la prédiction du modèle :math:`P_i`.
+Les deux problèmes, classification et régression, sont sont similaires.
+Seule la fonction de coût change : cette fonction évalue quantitativement
+la distance entre la prédiction du modèle et la réponse attendue.
+La régression précédente utilise une fonction de coût quadratique,
+la classification utilise une fonction
+`log-loss <http://wiki.fast.ai/index.php/Log_Loss>`_.
 
 .. toctree::
     :maxdepth: 1
