@@ -11,6 +11,17 @@ intéressante du point de vue d'un data scientiste.
     :depth: 1
     :local:
 
+Machine Learning
+================
+
+Ces exercices abordent des sujets liés au machine learning,
+inventés pour des examens, un entretien d'embauche,
+ou tirés de l'expérience d'un data-scientiste.
+
+* `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+* `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
+* `Reconstruction de synonymes <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_
+
 Mathématiques
 =============
 

@@ -48,9 +48,3 @@ la réponse qu'aux extrémités de cet intervalle.
 
 .. image:: images/regwhat.png
     :width: 200
-
-**Exercices**
-
-* `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
-* `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
-* `Reconstruction de synonymes <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_

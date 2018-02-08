@@ -13,6 +13,10 @@
 Petit voyage au pays du machine learning
 ========================================
 
+Les données sont le pétrole du vingt-et-unième siècle.
+Si c'est vrai, le machine learning est peut-être la foreuse
+qui permet d'y creuser un accès.
+
 .. toctree::
     :maxdepth: 1
 
