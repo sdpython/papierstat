@@ -302,7 +302,7 @@ et cela consiste à résoudre le problème suivant :
     :math:`\esp\pa{Y | X} = f\pa{X}`.
     Les données du problème sont
     un échantillon de points :math:`\acc{ \pa{ X_{i},Y_{i} } | 1 \infegal i \infegal N }`
-    et un modèle paramétré avec :math:\theta` :
+    et un modèle paramétré avec :math:`\theta` :
 
     .. math::
 
@@ -429,6 +429,30 @@ la distance entre la prédiction du modèle et la réponse attendue.
 La régression précédente utilise une fonction de coût quadratique,
 la classification utilise une fonction
 `log-loss <http://wiki.fast.ai/index.php/Log_Loss>`_.
+Pour résumer :
+
+.. mathdef::
+    :title: Classification binaire
+    :tag: Problème
+    :lid: problem-classification
+
+    Soient deux variables aléatoires :math:`X` et :math:`Y \in \N`,
+    l'objectif est d'approximer la fonction
+    :math:`\esp\pa{Y | X} = f\pa{X}`.
+    Les données du problème sont
+    un échantillon de points :math:`\acc{ \pa{ X_{i},Y_{i} } | 1 \infegal i \infegal N }`
+    et un modèle paramétré avec :math:`\theta` :
+
+    .. math::
+
+            \forall i \in \intervalle{1}{N}, \; Y_{i} = \left\{ \begin{array}{l}
+            1 \text{ si } f \pa{\theta, X_{i}} + \epsilon_i > 0 \\
+            0 \text{ sinon }
+            \end{array}\right.
+
+    avec :math:`n \in \N`,
+    :math:`\pa{\epsilon_{i}}_{1 \infegal i \infegal N}` une variable aléatoire,
+    :math:`f` est une fonction de paramètre :math:`\theta`.
 
 .. toctree::
     :maxdepth: 1
@@ -455,3 +479,40 @@ puisque la note est entière et prend peu de valeurs distinctes.
 Chaque vin peut être considéré comme faisant partie du groupe
 associé à tous les vins portant la même note. Ce problème
 est différent du précédent car il y a plus de deux classes.
+Certains modèles sont estimées de la même façon que s'il
+s'agissait de deux classes comme les réseaux de neurones.
+D'autres converstissent d'abord le problème en une succession
+de problème de classification binaires avant de fusionner leurs
+réponses. Il existe deux stratégies :
+`OneVsRest <http://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html>`_,
+`OneVsOne <http://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsOneClassifier.html#sklearn.multiclass.OneVsOneClassifier>`_.
+
+La première stratégie consiste à apprendre *K* classifieurs
+pour *K* classes. Chaque classe apprend une classe contre toutes
+les autres. Supposons qu'on dispose des données :math:`(X_i, y_i)`
+avec :math:`y_i \in \acc{1, ..., k}`. Le classifieur binaire :math:`C_k`
+est appris avec les données :math:`(X_i, \indicatrice{y_i = k})`.
+L'observation est affectée à la classe qui maximise
+le score de classification :
+
+.. math::
+
+    k^* = \argmax_{k \in \acc{1,...,K}} C_k(X_i)
+
+L'autre approche convertit le problème initiale en
+:math:`\frac{k(k-1)}{2}` classifications binaires. Une classifieur
+est appris pour chaque paire de classes. Cette stratégie n'est pas
+nécessairement plus longue lors de l'apprentissage, mais elle l'est
+certainement lors de la prédiction. La classe prédite est celle
+qui a remporté le plus de *match* en un contre un.
+
+.. index:: imbalanced
+
+Paradoxalement, cette stratégie est préférable lorsque le
+nombre de classes est grand car les jeux de données ne sont pas
+déséquilibrés lors de l'apprentissage.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/wines_multi

@@ -11,7 +11,7 @@
     * formalisation de la :ref:`régression <l-regression-f>`,
       de la :ref:`classification <l-classification-f>`
     * :ref:`classification multi-classe <l-multiclass>`
-    * paramètres de régularisation,
+    * `régularisation <https://rasbt.github.io/mlxtend/user_guide/general_concepts/regularization-linear/>`_,
       `Ridge <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Ridge.html>`_,
       `Lasso <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html#sklearn.linear_model.Lasso>`_,
       `ElasticNet <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet>`_
@@ -36,3 +36,6 @@
     * Pourrait-on envisager l'écriture d'un régresseur un peu plus générique
       qui estimerait un modèle sur chacune des modalités prises par une variable de la base.
       On pourra s'inspirer de `SkLearnerBase <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ensae_teaching_cs/ml/sklearn_base_learner.html?highlight=skbaselearner#ensae_teaching_cs.ml.sklearn_base_learner.SkBaseLearner>`_.
+    * Comparer un arbre de décision appris sur un problème multi-classe
+      et un ensemble d'arbre de décision binaire avec
+      `OneVsRestClassifier <http://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html>`_.
