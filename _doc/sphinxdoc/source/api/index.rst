@@ -7,3 +7,4 @@ API
     :maxdepth: 1
 
     datasets
+    mltricks

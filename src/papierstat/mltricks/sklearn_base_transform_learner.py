@@ -4,6 +4,7 @@
 @brief Implémente un *transform* qui suit la même API que tout :epkg:`scikit-learn` transform.
 """
 import textwrap
+import numpy
 from .sklearn_base_transform import SkBaseTransform
 
 
@@ -110,7 +111,10 @@ class SkBaseTransformLearner(SkBaseTransform):
         @param      X   features
         @return         prédictions
         """
-        return self.method(X)
+        res = self.method(X)
+        if len(res.shape) == 1:
+            res = res[:, numpy.newaxis]
+        return res
 
     ##############
     # cloning API
