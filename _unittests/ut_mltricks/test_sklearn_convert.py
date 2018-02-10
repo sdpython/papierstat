@@ -92,7 +92,7 @@ class TestPipelineHelper(ExtTestCase):
         self.assertStartsWith(
             'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
 
-    def _test_pipeline_with_two_regressors(self):
+    def test_pipeline_with_two_regressors(self):
         fLOG(
             __file__,
             self._testMethodName,
