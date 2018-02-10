@@ -50,7 +50,7 @@ class SkBaseTransformLearner(SkBaseTransform):
             print(score)
     """
 
-    def __init__(self, model, method='predict_proba', **kwargs):
+    def __init__(self, model, method=None, **kwargs):
         """
         @param  model   instance d'un learner
         @param  method  méthode à appeler pour transformer les features (voir-ci-dessous)
@@ -62,9 +62,19 @@ class SkBaseTransformLearner(SkBaseTransform):
         * ``'predict_proba'``
         * ``'decision_function'``
         * une fonction
+
+        Si *method is None*, la fonction essaye dans l'ordre
+        ``predict_proba`` puis ``predict``.
         """
         super().__init__(**kwargs)
         self.model = model
+        if method is None:
+            for name in {'predict_proba', 'predict'}:
+                if hasattr(model.__class__, name):
+                    method = name
+            if method is None:
+                raise ValueError(
+                    "Unable to guess a default method for '{0}'".format(repr(model)))
         if isinstance(method, str):
             if method == 'predict':
                 self.method = self.model.predict
@@ -123,7 +133,8 @@ class SkBaseTransformLearner(SkBaseTransform):
         """
         usual
         """
-        res = "{0}(model={1}, method={2}, {3})".format(self.__class__.__name__,
-                                                       repr(self.model),
-                                                       self.method, repr(self.P))
-        return textwrap.wrap(res)
+        rp = repr(self.model)
+        rps = repr(self.P)
+        res = "{0}(model={1}, method={2}, {3})".format(
+            self.__class__.__name__, rp, self.method, rps)
+        return "\n".join(textwrap.wrap(res, subsequent_indent="    "))

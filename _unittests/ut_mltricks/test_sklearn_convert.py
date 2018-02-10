@@ -37,18 +37,19 @@ except ImportError:
     import pyquickhelper as skip_
 
 from pyquickhelper.loghelper import fLOG
+from pyquickhelper.pycode import ExtTestCase
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
 from src.papierstat.mltricks import SkBaseTransformLearner
 
 
-class TestPipelineHelper(unittest.TestCase):
+class TestPipelineHelper(ExtTestCase):
 
-    def test_pipeline_with_two_learners(self):
+    def test_pipeline_with_two_classifiers(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -57,12 +58,60 @@ class TestPipelineHelper(unittest.TestCase):
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
-        pipe = make_pipeline(SkBaseTransformLearner(LogisticRegression()),
-                             DecisionTreeClassifier())
+        conv = SkBaseTransformLearner(LogisticRegression())
+        pipe = make_pipeline(conv, DecisionTreeClassifier())
         pipe.fit(X_train, y_train)
         pred = pipe.predict(X_test)
         score = accuracy_score(y_test, pred)
-        self.assertGreater(score, 0.95)
+        self.assertGreater(score, 0.92)
+        score2 = pipe.score(X_test, y_test)
+        self.assertEqual(score, score2)
+        rp = repr(conv)
+        self.assertStartsWith(
+            'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
+
+    def test_pipeline_with_callable(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        data = load_iris()
+        X, y = data.data, data.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        tmod = LogisticRegression()
+        conv = SkBaseTransformLearner(tmod, method=tmod.decision_function)
+        pipe = make_pipeline(conv, DecisionTreeClassifier())
+        pipe.fit(X_train, y_train)
+        pred = pipe.predict(X_test)
+        score = accuracy_score(y_test, pred)
+        self.assertGreater(score, 0.92)
+        score2 = pipe.score(X_test, y_test)
+        self.assertEqual(score, score2)
+        rp = repr(conv)
+        self.assertStartsWith(
+            'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
+
+    def _test_pipeline_with_two_regressors(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        data = load_iris()
+        X, y = data.data, data.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        conv = SkBaseTransformLearner(LinearRegression())
+        pipe = make_pipeline(conv, DecisionTreeRegressor())
+        pipe.fit(X_train, y_train)
+        pred = pipe.predict(X_test)
+        score = accuracy_score(y_test, pred)
+        self.assertGreater(score, 0.92)
+        score2 = pipe.score(X_test, y_test)
+        self.assertEqual(score, score2)
+        rp = repr(conv)
+        self.assertStartsWith(
+            'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
 
 
 if __name__ == "__main__":

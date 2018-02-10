@@ -85,8 +85,8 @@ class SkBaseLearner:
     # common methods
     #################
 
-    def __str__(self):
+    def __repr__(self):
         """
         usual
         """
-        return "{0}({1})".format(self.__class__.__name__, str(self.P))
+        return "{0}({1})".format(self.__class__.__name__, repr(self.P))

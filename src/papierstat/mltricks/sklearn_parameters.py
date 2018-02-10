@@ -3,6 +3,7 @@
 @file
 @brief Defines @see cl SkLearnParameters
 """
+import textwrap
 
 
 class SkException (Exception):
@@ -47,7 +48,7 @@ class SkLearnParameters:
         """
         return self._keys
 
-    def __str__(self):
+    def __repr__(self):
         """
         classique
         """
@@ -55,9 +56,10 @@ class SkLearnParameters:
             if isinstance(v, str):
                 return "'{0}'".format(v)
             else:
-                return str(v)
-        return ", ".join("{0}={1}".format(k, fmt(getattr(self, k)))
+                return repr(v)
+        text = ", ".join("{0}={1}".format(k, fmt(getattr(self, k)))
                          for k in sorted(self.Keys))
+        return "\n".join(textwrap.wrap(text, subsequent_indent="    "))
 
     def to_dict(self):
         """

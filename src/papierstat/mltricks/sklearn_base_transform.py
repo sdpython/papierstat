@@ -17,15 +17,10 @@ class SkBaseTransform:
         """
         Stocke les paramètres.
         """
-
         #: *P* est une instance de :class:`SkLearnParameters <ensae_teaching_cs.ml.sklearn_parameters.SkLearnParameters>`,
         #: elle garde une copie des paramètres pour implémenter facilement *get_params*
         #: et ainsi cloner un modèle
         self.P = SkLearnParameters(**kwargs)
-
-    ###################
-    # API scikit-learn
-    ###################
 
     def fit(self, X, y=None, sample_weight=None):
         """
@@ -47,10 +42,6 @@ class SkBaseTransform:
         """
         raise NotImplementedError()
 
-    ##############
-    # cloning API
-    ##############
-
     def get_params(self, deep=True):
         """
         returns the parameters mandatory to clone the class
@@ -60,13 +51,9 @@ class SkBaseTransform:
         """
         return self.P.to_dict()
 
-    #################
-    # common methods
-    #################
-
     def __repr__(self):
         """
         usual
         """
         res = "{0}({1})".format(self.__class__.__name__, str(self.P))
-        return textwrap.wrap(res)
+        return "\n".join(textwrap.wrap(res), subsequent_indent="    ")
