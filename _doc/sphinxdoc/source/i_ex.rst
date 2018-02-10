@@ -7,7 +7,7 @@ Exemples rapides
 .. contents::
     :local:
 
-Exemples génériques
+Exemples gÃ©nÃ©riques
 +++++++++++++++++++
 
 .. exreflist::
