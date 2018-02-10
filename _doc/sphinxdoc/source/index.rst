@@ -37,7 +37,9 @@ D'autres supports sont disponibles,
 :epkg:`ensae_teaching_cs` ressemble plus à un ensemble
 d'exercices qu'à un cours qui se lit de façon linéaire.
 Il existe déjà beaucoup de sites sur le :epkg:`machine learning`,
-c'est une sorte de palimpseste. Disponible aussi en
+j'ai pris l'excuse d'un cours dans le
+:epkg:`Master 2 ISF` à l'université :epkg:`Paris 2`
+pour rédiger cette sorte de palimpseste. Disponible aussi en
 `PDF <papierstat_doc.pdf>`_.
 
 ::

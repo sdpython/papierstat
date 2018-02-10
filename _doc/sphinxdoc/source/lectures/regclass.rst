@@ -418,11 +418,15 @@ On suppose tous les points :math:`X_i` équiprobable.
 
 .. index:: Kullbak-Leiber, log-loss, fonction de coût
 
-La quantité :math:`y_i \ln \pr{rouge | X_i} + (1-y_i) \ln(1 - \pr{rouge | X_i}) = y_i \ln p(X_i) + (1-y_i) \ln(1 - p(X_i)))`
-correspond à la
+La quantité suivante correspond à la
 `distance de Kullbak-Leiber <https://fr.wikipedia.org/wiki/Divergence_de_Kullback-Leibler>`_
 entre deux distributions discrètes :math:`Y_i`
 et la prédiction du modèle :math:`P_i`.
+
+.. math::
+
+    `y_i \ln \pr{rouge | X_i} + (1-y_i) \ln(1 - \pr{rouge | X_i}) = y_i \ln p(X_i) + (1-y_i) \ln(1 - p(X_i)))`
+
 Les deux problèmes, classification et régression, sont sont similaires.
 Seule la fonction de coût change : cette fonction évalue quantitativement
 la distance entre la prédiction du modèle et la réponse attendue.
@@ -516,3 +520,19 @@ déséquilibrés lors de l'apprentissage.
     :maxdepth: 1
 
     ../notebooks/wines_multi
+
+Ces approches ont néanmoins un léger inconvénient qui est d'avoir
+plusieurs classifieurs dont les scores ne sont pas nécessairement
+comparables : le premier classifieur peut classer un élément dans
+la classe 1 avec une probabilité de 0.60 et le second dans la classe 2
+avec une probabilité de 0.59. Ces probabilités ne sont pas
+nécessairement comparables mais surtout comme elles sont très proches,
+il est raisonnable de penser que, si chaque classifieur est pertinent,
+l'ensemble est plutôt hésitant. On peut améliorer les performances
+avec une méthode de :ref:`stacking` et des modèles qui supportent
+nativement la mutli-classification.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/wines_multi_stacking
