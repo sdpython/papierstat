@@ -1,0 +1,32 @@
+
+.. blogpost::
+    :title: Session 3
+    :keywords: session 3
+    :date: 2018-02-11
+    :categories: session
+
+    Suite et fin :
+
+    * :ref:`l-regclass`
+    * formalisation de la :ref:`régression <l-regression-f>`,
+      de la :ref:`classification <l-classification-f>`
+    * :ref:`classification multi-classe <l-multiclass>`
+
+    Prétraitements :
+
+    * :ref:`l-preprocessing`
+
+    * `clustering <http://scikit-learn.org/stable/modules/clustering.html#clustering>`_,
+      `k-means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_clus/kmeans.html>`_
+      un exemple avec
+      les `vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_challenge.html>`_
+      et l'utilisation du clustering pour trouver les
+      `profils de cyclistes à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>`_
+    * `ranking <https://github.com/dmlc/xgboost/tree/master/demo/rank>`_
+    * :ref:`recommandations <l-recsys-section>`
+    * :ref:`l-cheatsheet-ml`
+    * résumé de l'`interface scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_
+
+    Exercices :
+
+    * :ref:`Utiliser deux learners dans un pipeline scikit-learn <ex-pipe2learner>`

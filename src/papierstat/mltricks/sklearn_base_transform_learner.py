@@ -15,8 +15,9 @@ class SkBaseTransformLearner(SkBaseTransform):
     deux learners peuvent être insérés dans le même pipeline.
 
     .. exref::
-        :title: Utiliser deux learners dans un pipeline.
+        :title: Utiliser deux learners dans un pipeline scikit-learn.
         :tag: sklearn
+        :lid: ex-pipe2learner
 
         Il est impossible d'utiliser deux *learners* dans un pipeline.
         Mais on peut utiliser la classe @see cl SkBaseTransformLearner

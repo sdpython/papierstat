@@ -1,6 +1,0 @@
-
-Reinforcement learning
-======================
-
-.. contents::
-    :local:

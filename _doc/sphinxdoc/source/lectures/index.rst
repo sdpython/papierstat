@@ -1,6 +1,6 @@
-========
-Lectures
-========
+================================
+Lectures sur le machine learning
+================================
 
 Le :epkg:`machine learning` répond à de plus en plus de
 problématiques, beaucoup d'entre elles sont citées
@@ -15,13 +15,13 @@ pour explorer quelques points récurrents ou techniques.
     :maxdepth: 1
 
     regclass
-    pipeline
-    gradienttree
-    seriestemp
     nonsupervise
+    otherml
+    preprocessing
+    gradienttree
     textembed
+    seriestemp
     imagedeep
-    reinforce
 
 Le machine learning cache bien des choses mais
 au final il s'agit de calculer une prédiction

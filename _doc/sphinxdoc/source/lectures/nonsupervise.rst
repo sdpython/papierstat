@@ -10,6 +10,8 @@ Hors texte.
 Réduction de dimension
 ++++++++++++++++++++++
 
+* `Analyse en Composantes Principales <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_
+
 Clustering
 ++++++++++
 

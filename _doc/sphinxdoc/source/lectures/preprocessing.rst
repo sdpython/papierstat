@@ -1,8 +1,10 @@
 
-.. _l-regclass:
+.. _l-preprocessing:
 
-Transformer, Learner
-====================
+Prétraitement
+=============
+
+.. index:: transformer
 
 Pipeline
 ++++++++

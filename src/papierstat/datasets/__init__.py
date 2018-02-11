@@ -64,6 +64,16 @@ def load_movielens_dataset(name='small', cache=None, fLOG=None):
 
     *cache* est un fichier, si celui-ci est présent, il recherché
     avec le module :epkg:`pickle`.
+
+    Notebooks associés à ce jeu de données :
+
+    .. runpython::
+        :rst:
+
+        from papierstat.datasets.documentation import list_notebooks_rst_links
+        links = list_notebooks_rst_links('lectures', 'movielens')
+        links = ['    * %s' % s for s in links]
+        print('\\n'.join(links))
     """
     if cache is not None and os.path.exists(cache):
         with open(cache, 'rb') as f:
