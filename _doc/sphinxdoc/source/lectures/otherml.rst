@@ -133,5 +133,13 @@ Cette méthode permet un peu plus facilement l'ajout d'un utilisateur, seules
 les features liées à l'interactions manquent. Les autres (titre, résumé, prix,
 âge, préférences...) sont disponibles.
 
+Valeurs manquantes
+^^^^^^^^^^^^^^^^^^
+
+C'est une application des systèmes de recommandations :
+on complète des valeurs manquantes en utilisant les résultats
+issus d'une factorisation de matrice :
+`Imputation de données manquantes <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_.
+
 Ranking
 +++++++
