@@ -36,5 +36,5 @@ def load_wines_dataset(download=False):
         return df
     else:
         fold = get_data_folder()
-        data = os.path.join(fold, 'data', 'wines-quality.csv')
+        data = os.path.join(fold, 'wines-quality.csv')
         return pandas.read_csv(data)
