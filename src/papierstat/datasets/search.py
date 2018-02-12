@@ -4,7 +4,6 @@
 @brief Jeux de données reliés aux vins.
 """
 import os
-import pandas
 from sklearn.datasets import load_svmlight_file
 from .data_helper import get_data_folder
 
