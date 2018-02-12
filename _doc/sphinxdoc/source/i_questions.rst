@@ -117,3 +117,11 @@ Frontière polynomiale
 On considère un problème de classificatoin en deux dimensions.
 Comment tracer une frontière linéaire entre deux classes ?
 Et une frontière polynômiale ?
+
+Implémenter un modèle de stacking
++++++++++++++++++++++++++++++++++
+
+Le *stacking* consiste à aggréger les sorties de plusieurs
+modèles de machine learning via un dernier modèle qui prend
+la décision en fonction des sorties de tous les autres.
+Il faut implémenter quelque chose de la sorte.

@@ -44,7 +44,7 @@ from src.papierstat.datasets.documentation import list_notebooks_rst_links
 
 class TestDocumentation(ExtTestCase):
 
-    def test_documentation(self):
+    def test_documentation_wines(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -54,6 +54,18 @@ class TestDocumentation(ExtTestCase):
         self.assertNotEmpty(links)
         self.assertEndsWith("rst`", links[0])
         self.assertStartsWith(':ref:`wines', links[0])
+
+    def test_documentation_movie(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        links = list_notebooks_rst_links('lectures', 'movielens')
+        self.assertNotEmpty(links)
+        self.assertEndsWith("rst`", links[0])
+        self.assertStartsWith(':ref:`movielens', links[0])
+        self.assertLesser(len(links), 5)
 
 
 if __name__ == "__main__":

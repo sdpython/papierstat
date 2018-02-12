@@ -42,14 +42,14 @@ class SkBaseTransformLearner(SkBaseTransform):
                 pipe = make_pipeline(LogisticRegression(),
                                      DecisionTreeClassifier())
             except Exception as e:
-                print(e)
+                print("ERREUR :", e)
 
             pipe = make_pipeline(SkBaseTransformLearner(LogisticRegression()),
                                  DecisionTreeClassifier())
             pipe.fit(X_train, y_train)
             pred = pipe.predict(X_test)
             score = accuracy_score(y_test, pred)
-            print(score)
+            print("pipeline avec deux learners :", score)
     """
 
     def __init__(self, model, method=None, **kwargs):
@@ -123,12 +123,31 @@ class SkBaseTransformLearner(SkBaseTransform):
 
     def get_params(self, deep=True):
         """
-        returns the parameters mandatory to clone the class
+        Returns the parameters mandatory to clone the class.
 
         @param      deep        unused here
         @return                 dict
         """
-        return self.P.to_dict()
+        res = self.P.to_dict()
+        if deep:
+            par = self.model.get_params(deep)
+            for k, v in par.items():
+                res["estimator__" + k] = v
+        return res
+
+    def set_params(self, **params):
+        """
+        Set parameters.
+
+        @param      params      parameters
+        """
+        for k, v in params.items():
+            if not k.startswith('estimator__'):
+                raise ValueError(
+                    "Parameter '{0}' must start with 'estimator__'.".format(k))
+        d = len('estimator__')
+        pars = {k[d:]: v for k, v in params.items()}
+        self.model.set_params(**pars)
 
     #################
     # common methods

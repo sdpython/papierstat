@@ -47,7 +47,7 @@ from sklearn.pipeline import make_pipeline
 from src.papierstat.mltricks import SkBaseTransformLearner
 
 
-class TestPipelineHelper(ExtTestCase):
+class TestSklearnConvert(ExtTestCase):
 
     def test_pipeline_with_two_classifiers(self):
         fLOG(
@@ -112,6 +112,29 @@ class TestPipelineHelper(ExtTestCase):
         rp = repr(conv)
         self.assertStartsWith(
             'SkBaseTransformLearner(model=LinearRegression(copy_X=True,', rp)
+
+    def test_pipeline_with_params(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        data = load_iris()
+        X, y = data.data, data.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        conv = SkBaseTransformLearner(LinearRegression(normalize=True))
+        pipe = make_pipeline(conv, DecisionTreeRegressor())
+        pars = pipe.get_params()
+        self.assertIn('skbasetransformlearner__estimator__fit_intercept', pars)
+        self.assertEqual(
+            pars['skbasetransformlearner__estimator__normalize'], True)
+        conv = SkBaseTransformLearner(LinearRegression(normalize=True))
+        pipe = make_pipeline(conv, DecisionTreeRegressor())
+        pipe.set_params(**pars)
+        pars = pipe.get_params()
+        self.assertIn('skbasetransformlearner__estimator__fit_intercept', pars)
+        self.assertEqual(
+            pars['skbasetransformlearner__estimator__normalize'], True)
 
 
 if __name__ == "__main__":
