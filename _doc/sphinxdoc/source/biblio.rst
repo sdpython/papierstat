@@ -10,6 +10,10 @@ Bibliographie
 
 * `Freakeconometrics <http://freakonometrics.hypotheses.org/>`_
 
+*Notebooks*
+
+* `Notebooks Olivier Grisel <https://github.com/ogrisel/notebooks>`_
+
 *Livres*
 
 * `The Elements of Statistical Learning <https://web.stanford.edu/~hastie/ElemStatLearn/>`_

@@ -152,6 +152,31 @@ La factorisation de matric et le collborative filtering
 peuvent aussi être combinées, la première méthode fournit
 des features que peut exploiter la seconde.
 
+Structure de graphes
+^^^^^^^^^^^^^^^^^^^^
+
+.. index:: matrice d'adjacence, Random Walk With Restart, marche aléatoire
+
+Avec d'un côté les utilisateurs, de l'autre les produits, le problème
+se présente naturellement sous la forme de graphe. La matrice
+des notes est une
+`matrice d'adjacence <https://fr.wikipedia.org/wiki/Matrice_d%27adjacence>`_.
+Cette représentation est à la fois plus souple, à la fois plus compliquée
+à manipuler. La méthode `Random Walk with Restard <http://www2.cs.uh.edu/~ceick/7363/Papers/tong.pdf>`_
+permet de construire des suggestions localement, pour un noeud précis.
+Le principe consiste à explorer de façon aléatoire
+à partir d'un noeud précis puis de compter les fois où ces marches
+aléatoires passent par le même noeud. Cela permet de construire des
+suggestions à partir des liens existant dans le voisinage d'un même noeud.
+
+.. images:: images/rwr.png
+    :width: 200
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/tinygraph_rwr
+
 .. index:: valeurs manquantes
 
 Valeurs manquantes

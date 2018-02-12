@@ -9,9 +9,11 @@ Jeux de données
 Recommandations
 ===============
 
-.. autosignature:: papierstat.datasets.load_movielens_dataset
+.. autosignature:: papierstat.datasets.graph.create_tiny_graph
+
+.. autosignature:: papierstat.datasets.movies.load_movielens_dataset
 
 Régression
 ==========
 
-.. autosignature:: papierstat.datasets.load_wines_dataset
+.. autosignature:: papierstat.datasets.wines.load_wines_dataset
