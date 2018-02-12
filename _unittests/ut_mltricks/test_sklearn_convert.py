@@ -87,7 +87,7 @@ class TestPipelineHelper(ExtTestCase):
         score = accuracy_score(y_test, pred)
         self.assertGreater(score, 0.8)
         score2 = pipe.score(X_test, y_test)
-        self.assertEqual(score, score2)
+        self.assertEqualFloat(score, score2, precision=1e-5)
         rp = repr(conv)
         self.assertStartsWith(
             'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
@@ -108,7 +108,7 @@ class TestPipelineHelper(ExtTestCase):
         score = r2_score(y_test, pred)
         self.assertLesser(score, 1.)
         score2 = pipe.score(X_test, y_test)
-        self.assertEqual(score, score2)
+        self.assertEqualFloat(score, score2, precision=1e-5)
         rp = repr(conv)
         self.assertStartsWith(
             'SkBaseTransformLearner(model=LinearRegression(copy_X=True,', rp)
