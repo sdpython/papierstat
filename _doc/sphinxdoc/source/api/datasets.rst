@@ -14,7 +14,7 @@ Classification
 Ranking
 =======
 
-.. autosignature:: papierstat.datasets.movies.search.load_search_engine_dataset
+.. autosignature:: papierstat.datasets.search.load_search_engine_dataset
 
 Recommandations
 ===============

@@ -16,4 +16,7 @@ Bibliographie
 
 *Livres*
 
-* `The Elements of Statistical Learning <https://web.stanford.edu/~hastie/ElemStatLearn/>`_
+* `The Elements of Statistical Learning <https://web.stanford.edu/~hastie/ElemStatLearn/>`_,
+  Trevor Hastie, Robert Tibshirani, Jerome Friedman
+* `Probabilités, analyse des données et statistique <http://www.editionstechnip.com/en/catalogue-detail/149/probabilites-analyse-des-donnees-et-statistique.html>`_,
+  Gilbert Saporta

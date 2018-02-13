@@ -32,6 +32,11 @@ set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2018,
 blog_root = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/"
 extensions.append('guzzle_sphinx_theme')
 
+html_sidebars['**'] = ['globaltoc.html', 'localtoc.html', 'relations.html',
+                       'sourcelink.html', 'searchbox.html']
+html_sidebars['*'] = html_sidebars['*']
+html_sidebars[''] = html_sidebars['*']
+
 html_theme_options = {
     'touch_icon': '_static/project_ico.ico',
 }
@@ -41,8 +46,6 @@ html_context = {
 }
 
 html_logo = "project_ico.png"
-
-html_sidebars = {}
 
 language = "fr"
 
@@ -110,10 +113,13 @@ epkg_dictionary['ENSAE'] = "http://www.ensae.fr/ensae/fr/"
 epkg_dictionary['fortran'] = "https://fr.wikipedia.org/wiki/Fortran"
 epkg_dictionary['machine learning'] = 'https://fr.wikipedia.org/wiki/Apprentissage_automatique'
 epkg_dictionary['Master 2 ISF'] = 'http://isf.u-paris2.fr/master-2/'
+epkg_dictionary['matrice de confusion'] = 'https://fr.wikipedia.org/wiki/Matrice_de_confusion'
 epkg_dictionary['mlstatpy'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx3/index.html"
 epkg_dictionary['Paris 2'] = 'https://www.u-paris2.fr/fr'
+epkg_dictionary['pickle'] = 'https://docs.python.org/3/library/pickle.html'
 epkg_dictionary['R'] = "https://www.r-project.org/"
 epkg_dictionary['REST API'] = "https://en.wikipedia.org/wiki/Representational_state_transfer"
+epkg_dictionary['ROC'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html"
 epkg_dictionary['seaborn'] = "https://seaborn.pydata.org/"
 epkg_dictionary['statsmodels'] = "http://www.statsmodels.org/stable/index.html"
 epkg_dictionary['teachpyx'] = "http://www.xavierdupre.fr/app/teachpyx/helpsphinx3/index.html"

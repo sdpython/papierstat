@@ -13,8 +13,6 @@ def create_tiny_graph():
     de passer du noeud *i* au noeud *j*.
     Notebooks associés à ce jeu de données :
 
-    @return     matrice
-
     .. runpython::
         :rst:
 
@@ -32,6 +30,9 @@ def create_tiny_graph():
         print(create_tiny_graph())
 
     .. plot::
+
+        from papierstat.datasets import create_tiny_graph
+        P = create_tiny_graph()
 
         import networkx as nx
         G = nx.Graph()

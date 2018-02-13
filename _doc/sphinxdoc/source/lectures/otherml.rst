@@ -102,7 +102,7 @@ n'est pas carrée ce qui est plus souvent le cas pour les systèmes de recommand
 Mais l'ACP est plus connue.
 
 .. toctree::
-    :maxdepth:
+    :maxdepth: 1
 
     ../notebooks/movielens_fm
 
@@ -169,7 +169,7 @@ Le principe consiste à explorer de façon aléatoire
 aléatoires passent par le même noeud. Cela permet de construire des
 suggestions à partir des liens existant dans le voisinage d'un même noeud.
 
-.. images:: images/rwr.png
+.. image:: images/rwr.png
     :width: 200
 
 .. toctree::

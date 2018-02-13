@@ -53,7 +53,7 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
         :target: https://travis-ci.org/sdpython/papierstat
         :alt: Build status
 
-    .. image:: https://ci.appveyor.com/api/projects/status/gqeh9w6hj7s27e88?svg=true
+    .. image:: https://ci.appveyor.com/api/projects/status/34isqaj7je3u1xil?svg=true
         :target: https://ci.appveyor.com/project/sdpython/papierstat
         :alt: Build Status Windows
 

@@ -318,7 +318,7 @@ et cela consiste à résoudre le problème suivant :
 La fonction :math:`f` peut être une fonction linéaire,
 un polynôme, un réseau de neurones...
 Lorsque le bruit blanc est normal, la théorie de l'estimateur
-de vraisemblance (voir [Saporta1990]_) permet d'affirmer
+de vraisemblance (voir [Saporta2006]_) permet d'affirmer
 que le meilleur paramètre :math:`\hat{\theta}`
 minimisant l'erreur de prédiction est :
 
@@ -538,3 +538,6 @@ nativement la mutli-classification.
     :maxdepth: 1
 
     ../notebooks/wines_multi_stacking
+
+.. [Saporta2006] Probabilités, analyse des données et statistique,
+    Gilbert Saporta, Editions Technip

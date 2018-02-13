@@ -15,11 +15,11 @@ class SkBaseTransform:
 
     def __init__(self, **kwargs):
         """
-        Stocke les paramètres.
+        Stocke les paramètres dans une classe
+        @see cl SkLearnParameters, elle garde une copie des
+        paramètres pour implémenter facilement *get_params*
+        et ainsi cloner un modèle.
         """
-        #: *P* est une instance de :class:`SkLearnParameters <ensae_teaching_cs.ml.sklearn_parameters.SkLearnParameters>`,
-        #: elle garde une copie des paramètres pour implémenter facilement *get_params*
-        #: et ainsi cloner un modèle
         self.P = SkLearnParameters(**kwargs)
 
     def fit(self, X, y=None, sample_weight=None):
