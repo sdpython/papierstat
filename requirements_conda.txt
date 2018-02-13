@@ -20,7 +20,7 @@ scikit-learn
 scipy
 seaborn
 setuptools
-Sphinx
+Sphinx>=1.7
 statsmodels
 tensorflow
 toolz
