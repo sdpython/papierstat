@@ -218,3 +218,8 @@ la requête *q*. On apprend un classifieur binaire qui détermine
 pour chaque paire de résultat :math:`(r_i, r_j)` lequel
 doit être affiché en premier. L'ordre final est déterminé
 par le nombre de *matchs* qu'un résultat gagne.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/search_rank

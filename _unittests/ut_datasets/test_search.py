@@ -50,12 +50,17 @@ class TestWines(ExtTestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
-        x1, y1 = load_search_engine_dataset(True)
-        x2, y2 = load_search_engine_dataset(False)
+        x1, y1, qid1 = load_search_engine_dataset(True)
+        x2, y2, qid2 = load_search_engine_dataset(False)
         self.assertEqual(x1.shape[1], x2.shape[1])
         self.assertEqual(x1.shape[0], y1.shape[0])
         self.assertEqual(x2.shape[0], y2.shape[0])
         self.assertEqual(x1.shape, (582, 136))
+        self.assertEqual(qid1.shape[0], 582)
+        self.assertEqual(y1.shape[0], 582)
+        self.assertEqual(qid2.shape[0], 403)
+        self.assertEqual(y2.shape[0], 403)
+        self.assertTrue(set(qid1), {1, 76, 46, 16, 91, 61, 31})
 
 
 if __name__ == "__main__":

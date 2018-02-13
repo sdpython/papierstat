@@ -37,5 +37,5 @@ def load_search_engine_dataset(train_or_test=True):
         data = os.path.join(fold, 'search_tiny_train.txt')
     else:
         data = os.path.join(fold, 'search_tiny_test.txt')
-    df = load_svmlight_file(data)
+    df = load_svmlight_file(data, query_id=True)
     return df
