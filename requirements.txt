@@ -6,7 +6,7 @@ openpyxl
 pandas_streaming
 pycodestyle>=2.0.0
 pydocstyle
-pyquickhelper>=1.6.2405
+pyquickhelper>=1.6.2413
 sphinx-bootstrap-theme
 sphinx-gallery
 sphinx-redactor-theme
