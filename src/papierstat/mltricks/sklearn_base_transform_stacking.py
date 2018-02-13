@@ -40,7 +40,7 @@ class SkBaseTransformStacking(SkBaseTransform):
             trans = SkBaseTransformStacking([LogisticRegression(),
                                              DecisionTreeClassifier()])
             trans.fit(X_train, y_train)
-            pred = trans.ptransform(X_test)
+            pred = trans.transform(X_test)
             print(pred[3:])
     """
 
