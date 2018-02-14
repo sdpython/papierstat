@@ -285,3 +285,5 @@ _doc/sphinxdoc/source/vinroc2.png
 _doc/notebooks/lectures/movielens.zip
 _doc/sphinxdoc/source/lectures/nuage.png
 _doc/sphinxdoc/source/vinsroc.png
+_unittests/ut_datasets/production-electrique-par-filiere-a-la-maille-commune.extrait.2015-2016.csv.zip
+_unittests/ut_datasets/production-electrique-par-filiere-a-la-maille-commune.extrait.2015-2016.csv

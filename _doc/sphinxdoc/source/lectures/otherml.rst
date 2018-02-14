@@ -189,6 +189,8 @@ issus d'une factorisation de matrice :
 
 .. index:: ranking
 
+.. _l-ranking-section:
+
 Ranking
 +++++++
 

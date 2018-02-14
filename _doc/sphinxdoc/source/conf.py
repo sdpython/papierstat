@@ -108,6 +108,7 @@ latex_elements['preamble'] = preamble + custom_preamble
 mathdef_link_only = True
 
 epkg_dictionary['C++'] = "https://fr.wikipedia.org/wiki/C%2B%2B"
+epkg_dictionary['Enedis'] = "https://data.enedis.fr/page/accueil/"
 epkg_dictionary['ensae_teaching_cs'] = "http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html"
 epkg_dictionary['ENSAE'] = "http://www.ensae.fr/ensae/fr/"
 epkg_dictionary['fortran'] = "https://fr.wikipedia.org/wiki/Fortran"
@@ -117,6 +118,7 @@ epkg_dictionary['matrice de confusion'] = 'https://fr.wikipedia.org/wiki/Matrice
 epkg_dictionary['mlstatpy'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx3/index.html"
 epkg_dictionary['Paris 2'] = 'https://www.u-paris2.fr/fr'
 epkg_dictionary['pickle'] = 'https://docs.python.org/3/library/pickle.html'
+epkg_dictionary['pyensae'] = 'http://www.xavierdupre.fr/app/pyensae/helpsphinx/'
 epkg_dictionary['R'] = "https://www.r-project.org/"
 epkg_dictionary['REST API'] = "https://en.wikipedia.org/wiki/Representational_state_transfer"
 epkg_dictionary['ROC'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html"
