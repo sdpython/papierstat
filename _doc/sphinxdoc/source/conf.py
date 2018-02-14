@@ -34,7 +34,7 @@ extensions.append('guzzle_sphinx_theme')
 
 html_sidebars['**'] = ['globaltoc.html', 'localtoc.html', 'relations.html',
                        'sourcelink.html', 'searchbox.html']
-html_sidebars['*'] = html_sidebars['*']
+html_sidebars['*'] = html_sidebars['**']
 html_sidebars[''] = html_sidebars['*']
 
 html_theme_options = {

@@ -38,7 +38,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version
+from pyquickhelper.pycode import add_missing_development_version, skipif_appveyor
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
@@ -48,6 +48,7 @@ class TestNotebookWinesReg(unittest.TestCase):
     def setUp(self):
         add_missing_development_version(["jyquickhelper"], __file__, hide=True)
 
+    @skipif_appveyor('timeout')
     def test_notebook_wines_reg(self):
         fLOG(
             __file__,
