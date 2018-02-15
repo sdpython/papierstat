@@ -1,4 +1,3 @@
-basemap
 bokeh
 Cython
 ipython

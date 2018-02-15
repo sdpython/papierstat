@@ -21,9 +21,9 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --set=pyquickhelper"
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper --no-deps"
-  - "%PYTHON%\\Scripts\\pip install pyensae basemap"
+  - "%PYTHON%\\Scripts\\pip install pyensae"
   - "%PYTHON%\\Scripts\\pip install wcwidth guzzle_sphinx_theme pyltr folium"
-  - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels"
+  - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels basemap"
   - "%PYTHON%\\Scripts\\pip install keras pandas_streaming seaborn networkx"
   - "set PATH=%PATH%;C:\\projects\\jyquickhelper\\build\\update_modules\\Graphviz\\bin"
 build: off
