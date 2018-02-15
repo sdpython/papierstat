@@ -531,7 +531,7 @@ Dessiner des cartes
 .. toctree::
     :maxdepth: 1
 
-    notebooks/cartes
+    notebooks/enedis_cartes
 
 Exercices
 =========
