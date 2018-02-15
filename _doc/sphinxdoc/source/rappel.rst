@@ -525,6 +525,14 @@ il est meilleur pour tout ce qui est linéaire avec
 une présentation des résultats très proche de ce qu'on trouve
 en :epkg:`R`.
 
+Dessiner des cartes
+===================
+
+.. toctree::
+    :maxdepth: 1
+
+    notebooks/cartes
+
 Exercices
 =========
 

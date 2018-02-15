@@ -195,11 +195,11 @@ if is_local():
     from pyquickhelper.pycode import process_standard_options_for_setup
     r = process_standard_options_for_setup(
         sys.argv, __file__, project_var_name,
-        unittest_modules=["pyquickhelper"],
-        additional_notebook_path=["pyquickhelper",
-                                  "jyquickhelper", "pandas_streaming"],
-        additional_local_path=["pyquickhelper",
-                               "jyquickhelper", "pandas_streaming"],
+        unittest_modules=["pyquickhelper", "pyensae"],
+        additional_notebook_path=["pyquickhelper", "jyquickhelper",
+                                  "pandas_streaming", "pyensae"],
+        additional_local_path=["pyquickhelper", "jyquickhelper",
+                               "pandas_streaming", "pyensae"],
         requirements=["pyquickhelper", "jyquickhelper", "pandas_streaming"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),

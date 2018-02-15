@@ -18,7 +18,7 @@ def load_enedis_dataset(dest='.', fLOG=None):
         :rst:
 
         from papierstat.datasets.documentation import list_notebooks_rst_links
-        links = list_notebooks_rst_links('lectures', 'enedis')
+        links = list_notebooks_rst_links('visualisation', 'enedis')
         links = ['    * %s' % s for s in links]
         print('\\n'.join(links))
 
@@ -34,4 +34,9 @@ def load_enedis_dataset(dest='.', fLOG=None):
         res = download_data(name, whereTo=dest)
     if len(res) != 1:
         raise ValueError("Unzipping '{0}' failed.".format(name))
-    return pandas.read_csv(res[0], sep=';', encoding='utf-8')
+    df = pandas.read_csv(res[0], sep=';', encoding='utf-8')
+    df['long'] = df['Geo Point 2D'].apply(
+        lambda x: float(x.split(',')[1].strip()))
+    df['lat'] = df['Geo Point 2D'].apply(
+        lambda x: float(x.split(',')[0].strip()))
+    return df

@@ -1,5 +1,6 @@
 chardet
 coverage
+folium
 guzzle_sphinx_theme
 jyquickhelper
 openpyxl

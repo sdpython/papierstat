@@ -68,7 +68,7 @@ class TestEnedis(ExtTestCase):
 
         temp = get_temp_folder(__file__, 'temp_enedis')
         df = load_enedis_dataset(fLOG=fLOG, dest=temp)
-        self.assertEqual(df.shape, (9719, 24))
+        self.assertEqual(df.shape, (9719, 26))
 
 
 if __name__ == "__main__":
