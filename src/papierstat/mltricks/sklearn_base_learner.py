@@ -10,7 +10,7 @@ from .sklearn_parameters import SkLearnParameters
 class SkBaseLearner:
 
     """
-    Base d'un *learner* which follows the same API que :epkg:`scikit-learn`.
+    Base d'un *learner* qui suit la même API que :epkg:`scikit-learn`.
     """
 
     def __init__(self, **kwargs):
@@ -73,12 +73,21 @@ class SkBaseLearner:
 
     def get_params(self, deep=True):
         """
-        returns the parameters mandatory to clone the class
+        Returns the parameters mandatory to clone the class.
 
         @param      deep        unused here
         @return                 dict
         """
         return self.P.to_dict()
+
+    def set_params(self, values):
+        """
+        Changes the parameters mandatory to clone the class.
+
+        @param      values      values
+        @return                 dict
+        """
+        self.P.set_params(values)
 
     #################
     # common methods
