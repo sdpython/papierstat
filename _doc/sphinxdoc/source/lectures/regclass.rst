@@ -532,12 +532,68 @@ nécessairement comparables mais surtout comme elles sont très proches,
 il est raisonnable de penser que, si chaque classifieur est pertinent,
 l'ensemble est plutôt hésitant. On peut améliorer les performances
 avec une méthode de :ref:`stacking` et des modèles qui supportent
-nativement la mutli-classification.
+nativement la multi-classification.
 
 .. toctree::
     :maxdepth: 1
 
     ../notebooks/wines_multi_stacking
+
+.. _l-sklearn-programmation:
+
+Machine learning et programmation
++++++++++++++++++++++++++++++++++
+
+L'`API de scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_
+se résume à peu de choses et permet déjà de faire des choses assez
+puissantes. On peut par exemple faire de l'optimisation d'hyperparamètres
+sur des assemblages de *transform*, *learner*. On appelle
+un tel assemblage un `pipeline <http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html>`_.
+Le résultat se comporte comme un modèle ou *learner*, il implémente
+les mêmes fonctions.
+
+.. runpython::
+    :showcode:
+
+    from sklearn import svm
+    from sklearn.datasets import samples_generator
+    from sklearn.feature_selection import SelectKBest
+    from sklearn.feature_selection import f_regression
+    from sklearn.pipeline import Pipeline
+    X, y = samples_generator.make_classification(n_informative=5, n_redundant=0, random_state=42)
+
+    anova_filter = SelectKBest(f_regression, k=5)
+    clf = svm.SVC(kernel='linear')
+
+    anova_svm = Pipeline([('anova', anova_filter), ('svc', clf)])
+    anova_svm.fit(X, y)
+    print(anova_svm)
+
+Lorsqu'on répète souvent le même traitement,
+on a tout intérêt à implémenter celui-ci sous la forme
+d'un `transformer <http://scikit-learn.org/stable/modules/generated/sklearn.base.TransformerMixin.html>`_
+ou d'un `estimator <http://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator>`_.
+Une fois ceci fait, il devient facile de répéter le même traitement
+dans beaucoup de pipeline. Il faut bien sûr implémenter les
+méthodes *fit*, *predict*, *predict_proba*, *transform*.
+Mais il faut vérifier voire implémenter
+aussi les méthodes *get_params* et *set_params qui permettent
+aux fonctions de :epkg:`scikit-learn` de
+`cloner <http://scikit-learn.org/stable/modules/generated/sklearn.base.clone.html#sklearn.base.clone>`_
+un modèle. La classe :class:`SkBaseLearnerCategory <papierstat.mltricks.sklearn_base_learner_category.SkBaseLearnerCategory>`
+implémente un modèle qui en contient plusieurs. Il n'hérite pas
+de la classe `BaseEstimator <http://scikit-learn.org/stable/modules/generated/sklearn.base.BaseEstimator.html#sklearn.base.BaseEstimator>`_
+de façon à laisser tous les traits de construction apparents.
+Le notebook suivant revient sur ce modèle et ce qu'il permet
+d'automatiser.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/wines_color_linear
+
+Bibliographie
++++++++++++++
 
 .. [Saporta2006] Probabilités, analyse des données et statistique,
     Gilbert Saporta, Editions Technip

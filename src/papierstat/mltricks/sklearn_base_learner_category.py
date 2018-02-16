@@ -6,15 +6,25 @@
 import numpy
 import pandas
 from sklearn.base import clone
-from pyquickhelper.loghelper import noLOG
+from .sklearn_base_learner import SkBaseLearner
 from .sklearn_parameters import SkLearnParameters
 
 
-class SkBaseLearnerCategory:
+class SkBaseLearnerCategory(SkBaseLearner):
 
     """
     Base d'un *learner* qui apprend un learner pour chaque
     modalité d'une classe.
+
+    Notebooks associés à ce *learner* :
+
+    .. runpython::
+        :rst:
+
+        from papierstat.datasets.documentation import list_notebooks_rst_links
+        links = list_notebooks_rst_links('lectures', 'wines_color_linear')
+        links = ['    * %s' % s for s in links]
+        print('\\n'.join(links))
     """
 
     def __init__(self, colnameind=None, model=None, **kwargs):
@@ -34,7 +44,7 @@ class SkBaseLearnerCategory:
         if model is None:
             raise ValueError("model must not be None")
         kwargs['colnameind'] = colnameind
-        self.P = SkLearnParameters(**kwargs)
+        SkBaseLearner.__init__(self, **kwargs)
         self.model = model
         self._estimator_type = self.model._estimator_type
 
@@ -102,13 +112,12 @@ class SkBaseLearnerCategory:
     # API scikit-learn
     ###################
 
-    def fit(self, X, y=None, sample_weight=None, fLOG=noLOG):
+    def fit(self, X, y=None, **kwargs):
         """
         Apprends un modèle pour chaque modalité d'une catégorie.
 
         @param      X               features
         @param      y               cibles
-        @param      sample_weight   poids
         @return                     self, lui-même
 
         La fonction n'est pas parallélisée mais elle le pourrait.
@@ -118,13 +127,14 @@ class SkBaseLearnerCategory:
             if not isinstance(c, str) and numpy.isnan(c):
                 raise ValueError("One of the row has a missing category.")
 
+        sample_weight = kwargs.get('sample_weight', None)
         res = {}
         for c in sorted(cats):
-            fLOG(
-                "[SkBaseLearnerCategory.fit] train a model for cat='{0}'".format(c))
             ind, xcat, ycat, scat = self._filter_cat(c, X, y, sample_weight)
             mod = clone(self.model)
-            mod.fit(xcat, ycat, sample_weight=scat)
+            if scat is not None:
+                kwargs['sample_weight'] = scat
+            mod.fit(xcat, ycat, **kwargs)
             res[c] = mod
         self.models = res
         return self

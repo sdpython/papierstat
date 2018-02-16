@@ -5,10 +5,11 @@
 """
 import os
 import pandas
+from numpy.random import permutation
 from .data_helper import get_data_folder
 
 
-def load_wines_dataset(download=False):
+def load_wines_dataset(download=False, shuffle=False):
     """
     Retourne le jeu de données
     `wines quality <https://archive.ics.uci.edu/ml/datasets/wine+quality>`_.
@@ -23,6 +24,7 @@ def load_wines_dataset(download=False):
         print('\\n'.join(links))
 
     @param  download    télécharge le jeu de données ou considères une copie en local.
+    @param  shuffle     permute aléatoire les données (elles ne le sont pas)
     @return             :epkg:`pandas:DataFrame`
     """
     if download:
@@ -33,8 +35,12 @@ def load_wines_dataset(download=False):
         white['color'] = 'white'
         df = pandas.concat([red, white])
         df.columns = [_.replace(' ', '_') for _ in df.columns]
-        return df
     else:
         fold = get_data_folder()
         data = os.path.join(fold, 'wines-quality.csv')
-        return pandas.read_csv(data)
+        df = pandas.read_csv(data)
+    if shuffle:
+        df = df.reset_index(drop=True)
+        ind = permutation(df.index)
+        df = df.iloc[ind, :].reset_index(drop=True)
+    return df

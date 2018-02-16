@@ -43,6 +43,10 @@ from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from src.papierstat.datasets import load_wines_dataset
 from src.papierstat.mltricks import SkBaseLearnerCategory
 
 
@@ -169,6 +173,38 @@ class TestSklearnCategory(ExtTestCase):
 
         pred = clf.predict(X)
         self.assertEqualArray(y, pred)
+
+    def test_wines(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        df = load_wines_dataset()
+
+        X = df.drop(['quality', 'color'], axis=1)
+        X = X[['alcohol', 'volatile_acidity', 'density']]
+        y = df['quality']
+        color = df['color']
+
+        X_train, X_test, y_train, y_test, color_train, color_test = train_test_split(
+            X, y, color)
+
+        model = SkBaseLearnerCategory("color", LogisticRegression())
+        new_x_train = pandas.concat([X_train, color_train], axis=1)
+        model.fit(new_x_train, y_train)
+        new_x_test = pandas.concat([X_test, color_test], axis=1)
+        acc1 = accuracy_score(y_test, model.predict(new_x_test))
+
+        self.assertNotEqual(model.models['red'].coef_,
+                            model.models['white'].coef_)
+
+        clr = LogisticRegression()
+        clr.fit(X_train, y_train)
+        acc2 = accuracy_score(y_test, clr.predict(X_test))
+        self.assertNotEqual(acc1, acc2)
+        self.assertGreater(acc1, 0.5)
+        self.assertGreater(acc2, 0.5)
 
 
 if __name__ == "__main__":

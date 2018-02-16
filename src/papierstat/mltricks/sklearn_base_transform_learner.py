@@ -104,17 +104,16 @@ class SkBaseTransformLearner(SkBaseTransform):
             raise TypeError(
                 "Unable to find the transform method, method={0}".format(method))
 
-    def fit(self, X, y=None, sample_weight=None, **kwargs):
+    def fit(self, X, y=None, **kwargs):
         """
         Apprends un modèle.
 
         @param      X               features
         @param      y               cibles
-        @param      sample_weight   poids
         @param      kwargs          paramètres additionnels
         @return                     self, lui-même
         """
-        self.model.fit(X, y=y, sample_weight=sample_weight, **kwargs)
+        self.model.fit(X, y=y, **kwargs)
         return self
 
     def transform(self, X):
@@ -142,6 +141,7 @@ class SkBaseTransformLearner(SkBaseTransform):
         """
         res = self.P.to_dict()
         res['model'] = self.model
+        res['method'] = self.method
         if deep:
             par = self.model.get_params(deep)
             for k, v in par.items():
@@ -170,6 +170,9 @@ class SkBaseTransformLearner(SkBaseTransform):
         d = len('model__')
         pars = {k[d:]: v for k, v in values.items()}
         self.model.set_params(**pars)
+        if 'method' in values:
+            self.method = values['method']
+            self._set_method(values['method'])
 
     #################
     # common methods

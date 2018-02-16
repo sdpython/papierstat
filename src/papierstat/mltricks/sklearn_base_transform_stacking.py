@@ -42,6 +42,16 @@ class SkBaseTransformStacking(SkBaseTransform):
             trans.fit(X_train, y_train)
             pred = trans.transform(X_test)
             print(pred[3:])
+
+    Notebooks associés à ce *learner* :
+
+    .. runpython::
+        :rst:
+
+        from papierstat.datasets.documentation import list_notebooks_rst_links
+        links = list_notebooks_rst_links('lectures', 'wines_multi_stacking')
+        links = ['    * %s' % s for s in links]
+        print('\\n'.join(links))
     """
 
     def __init__(self, models=None, method=None, **kwargs):
@@ -67,6 +77,12 @@ class SkBaseTransformStacking(SkBaseTransform):
         if not isinstance(models, list):
             raise TypeError(
                 "models must be a list not {0}".format(type(models)))
+        if method is None:
+            method = 'predict'
+        if not isinstance(method, str):
+            raise TypeError(
+                "method must be a string not {0}".format(type(method)))
+        self.method = method
         if isinstance(method, list):
             if len(method) != len(models):
                 raise ValueError("models and methods must have the same length: {0} != {1}".format(
@@ -88,18 +104,17 @@ class SkBaseTransformStacking(SkBaseTransform):
 
         self.models = list(map(convert2transform, zip(models, method)))
 
-    def fit(self, X, y=None, sample_weight=None, **kwargs):
+    def fit(self, X, y=None, **kwargs):
         """
         Apprends un modèle.
 
         @param      X               features
         @param      y               cibles
-        @param      sample_weight   poids
         @param      kwargs          paramètres additionnels
         @return                     self, lui-même
         """
         for m in self.models:
-            m.fit(X, y=y, sample_weight=sample_weight, **kwargs)
+            m.fit(X, y=y, **kwargs)
         return self
 
     def transform(self, X):
@@ -126,6 +141,7 @@ class SkBaseTransformStacking(SkBaseTransform):
         """
         res = self.P.to_dict()
         res['models'] = self.models
+        res['method'] = self.method
         if deep:
             for i, m in enumerate(self.models):
                 par = m.get_params(deep)
@@ -142,6 +158,9 @@ class SkBaseTransformStacking(SkBaseTransform):
         if 'models' in values:
             self.models = values['models']
             del values['models']
+        if 'method' in values:
+            self.method = values['method']
+            del values['method']
         for k, v in values.items():
             if not k.startswith('models_'):
                 raise ValueError(

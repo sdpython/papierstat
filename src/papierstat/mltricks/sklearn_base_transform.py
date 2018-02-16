@@ -25,13 +25,12 @@ class SkBaseTransform(SkBase):
     # API scikit-learn
     ###################
 
-    def fit(self, X, y=None, sample_weight=None):
+    def fit(self, X, y=None, **kwargs):
         """
         Apprends un modèle.
 
         @param      X               features
         @param      y               cibles
-        @param      sample_weight   poids
         @return                     self, lui-même
         """
         raise NotImplementedError()
@@ -45,14 +44,13 @@ class SkBaseTransform(SkBase):
         """
         raise NotImplementedError()
 
-    def fit_transform(self, X, y=None, sample_weight=None):
+    def fit_transform(self, X, y=None, **kwargs):
         """
         Apprends un modèle et transforme les données.
 
         @param      X               features
         @param      y               cibles
-        @param      sample_weight   poids
         @return                     self, lui-même
         """
-        self.fit(X, y=y, sample_weight=sample_weight)
+        self.fit(X, y=y, **kwargs)
         return self.transform(X)

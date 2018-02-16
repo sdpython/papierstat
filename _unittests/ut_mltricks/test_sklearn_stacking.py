@@ -1,5 +1,5 @@
 """
-@brief      test log(time=2s)
+@brief      test log(time=5s)
 """
 
 import sys
@@ -48,12 +48,17 @@ from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
 from sklearn.base import clone
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import make_scorer
+from src.papierstat.datasets import load_wines_dataset
 from src.papierstat.mltricks import SkBaseTransformStacking
 
 
 class TestSklearnStacking(ExtTestCase):
 
-    def test_pipeline_with_two_classifiers(self):
+    def _test_pipeline_with_two_classifiers(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -75,7 +80,7 @@ class TestSklearnStacking(ExtTestCase):
         self.assertStartsWith(
             'SkBaseTransformStacking([LogisticRegression(C=1.0, class_weight=None,', rp)
 
-    def test_pipeline_with_params(self):
+    def _test_pipeline_with_params(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -102,7 +107,7 @@ class TestSklearnStacking(ExtTestCase):
         self.assertEqual(
             pars['skbasetransformstacking__models_0__model__normalize'], True)
 
-    def test_pickle(self):
+    def _test_pickle(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -125,18 +130,19 @@ class TestSklearnStacking(ExtTestCase):
         pred2 = rec.predict(X)
         self.assertEqualArray(pred, pred2)
 
-    def test_clone(self):
+    def _test_clone(self):
         fLOG(
             __file__,
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
         conv = SkBaseTransformStacking([LinearRegression(normalize=True),
-                                        DecisionTreeClassifier(max_depth=3)])
+                                        DecisionTreeClassifier(max_depth=3)],
+                                       'predict')
         cloned = clone(conv)
         conv.test_equality(cloned, exc=True)
 
-    def test_grid(self):
+    def _test_grid(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -159,6 +165,47 @@ class TestSklearnStacking(ExtTestCase):
 
         pred = clf.predict(X)
         self.assertEqualArray(y, pred)
+
+    def test_pipeline_wines(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        df = load_wines_dataset(shuffle=True)
+        X = df.drop(['quality', 'color'], axis=1)
+        y = df['quality']
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        model = make_pipeline(
+            SkBaseTransformStacking(
+                [LogisticRegression()], 'decision_function'),
+            RandomForestClassifier())
+        model.fit(X_train, y_train)
+        auc_pipe = roc_auc_score(y_test == model.predict(X_test),
+                                 model.predict_proba(X_test).max(axis=1))
+        acc = model.score(X_test, y_test)
+        accu = accuracy_score(y_test, model.predict(X_test))
+        self.assertGreater(auc_pipe, 0.6)
+        self.assertGreater(acc, 0.5)
+        self.assertGreater(accu, 0.5)
+        grid = GridSearchCV(estimator=model, param_grid={},
+                            fit_params=None, cv=3, refit='acc',
+                            scoring=dict(acc=make_scorer(accuracy_score)))
+        grid.fit(X, y)
+        best = grid.best_estimator_
+        step = grid.best_estimator_.steps[0][1]
+        meth = step.method
+        self.assertEqual(meth, 'decision_function')
+
+        res = cross_val_score(model, X, y, cv=5)
+        acc1 = best.score(X_test, y_test)
+        accu1 = accuracy_score(y_test, best.predict(X_test))
+
+        best.fit(X_train, y_train)
+        acc2 = best.score(X_test, y_test)
+        accu2 = accuracy_score(y_test, best.predict(X_test))
+        self.assertGreater(res.min(), 0.5)
+        self.assertGreater(min([acc2, accu2, acc1, accu1]), 0.5)
 
 
 if __name__ == "__main__":
