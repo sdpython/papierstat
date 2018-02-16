@@ -26,7 +26,7 @@ def list_notebooks(subfolder, name):
             "Unable to find notebooks in\n{0}".format('\n'.join(nbs)))
     nb = nb_[0]
 
-    name_ = name + "_"
+    name_ = name
     names = [_ for _ in os.listdir(nb) if _.startswith(name_)]
     if len(names) == 0:
         raise FileNotFoundError(
