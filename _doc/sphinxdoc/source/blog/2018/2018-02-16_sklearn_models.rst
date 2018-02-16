@@ -1,21 +1,21 @@
 
 .. blogpost::
-    :title: Automatiser des expériences de machine learning
+    :title: Automatiser des expÃ©riences de machine learning
     :keywords: scikit-learn, automatisation
     :date: 2018-02-16
     :categories: scikit-learn
 
     Prenons un exemple car le titre est assez flou.
-    On souhaite apprendre deux modèles différents
-    sur deux parties disjointes d'un jeu de données :
-    la prédiction de la qualité d'un vin selon qu'il est
+    On souhaite apprendre deux modÃ¨les diffÃ©rents
+    sur deux parties disjointes d'un jeu de donnÃ©es :
+    la prÃ©diction de la qualitÃ© d'un vin selon qu'il est
     blanc ou rouge. Selon que le vin est blanc ou rouge,
-    on n'appliquera pas le même modèle. L'ensemble
+    on n'appliquera pas le mÃªme modÃ¨le. L'ensemble
     tient en quelques lignes dans un notebook mais comme
-    cette idée revient souvent, on peut être tenté de l'implémenter
-    une bonne fois pour toutes sous la forme d'un modèle
-    qui s'intègre facilement avec :epkg:`scikit-learn`.
+    cette idÃ©e revient souvent, on peut Ãªtre tentÃ© de l'implÃ©menter
+    une bonne fois pour toutes sous la forme d'un modÃ¨le
+    qui s'intÃ¨gre facilement avec :epkg:`scikit-learn`.
     C'est ce que propose la classe
     :class:`SkBaseLearnerCategory <papierstat.mltricks.sklearn_base_learner_category.SkBaseLearnerCategory>`.
-    Ce point est abordé de façon plus détaillée :
+    Ce point est abordÃ© de faÃ§on plus dÃ©taillÃ©e :
     :ref:`l-sklearn-programmation`.

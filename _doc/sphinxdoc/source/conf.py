@@ -107,6 +107,7 @@ imgmath_latex_preamble = preamble + custom_preamble
 latex_elements['preamble'] = preamble + custom_preamble
 mathdef_link_only = True
 
+epkg_dictionary['C'] = "https://fr.wikipedia.org/wiki/C_(langage)"
 epkg_dictionary['C++'] = "https://fr.wikipedia.org/wiki/C%2B%2B"
 epkg_dictionary['Enedis'] = "https://data.enedis.fr/page/accueil/"
 epkg_dictionary['ensae_teaching_cs'] = "http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html"
