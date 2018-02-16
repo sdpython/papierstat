@@ -5,6 +5,7 @@
 """
 import textwrap
 import numpy
+from sklearn.base import clone
 from .sklearn_base_transform import SkBaseTransform
 from .sklearn_base_transform_learner import SkBaseTransformLearner
 
@@ -44,7 +45,7 @@ class SkBaseTransformStacking(SkBaseTransform):
             print(pred[3:])
     """
 
-    def __init__(self, models, method=None, **kwargs):
+    def __init__(self, models=None, method=None, **kwargs):
         """
         @param  models  liste de learners
         @param  method  méthode ou list de méthodes à appeler pour
@@ -62,6 +63,8 @@ class SkBaseTransformStacking(SkBaseTransform):
         ``predict_proba`` puis ``predict``.
         """
         super().__init__(**kwargs)
+        if models is None:
+            raise ValueError("models cannot be None")
         if not isinstance(models, list):
             raise TypeError(
                 "models must be a list not {0}".format(type(models)))
@@ -110,26 +113,30 @@ class SkBaseTransformStacking(SkBaseTransform):
         @return                 dict
         """
         res = self.P.to_dict()
+        res['models'] = self.models
         if deep:
             for i, m in enumerate(self.models):
                 par = m.get_params(deep)
                 for k, v in par.items():
-                    res["estimator_{0}__".format(i) + k] = v
+                    res["models_{0}__".format(i) + k] = v
         return res
 
-    def set_params(self, **params):
+    def set_params(self, **values):
         """
         Set parameters.
 
         @param      params      parameters
         """
-        for k, v in params.items():
-            if not k.startswith('estimator_'):
+        if 'models' in values:
+            self.models = clone(values['models'])
+            del values['models']
+        for k, v in values.items():
+            if not k.startswith('models_'):
                 raise ValueError(
-                    "Parameter '{0}' must start with 'estimator_'.".format(k))
-        d = len('estimator_')
+                    "Parameter '{0}' must start with 'models_'.".format(k))
+        d = len('models_')
         pars = [{} for m in self.models]
-        for k, v in params.items():
+        for k, v in values.items():
             si = k[d:].split('__', 1)
             i = int(si[0])
             pars[i][k[d + 1 + len(si):]] = v

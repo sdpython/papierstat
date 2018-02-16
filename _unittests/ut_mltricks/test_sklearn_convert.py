@@ -5,6 +5,9 @@
 import sys
 import os
 import unittest
+import pandas
+import pickle
+from io import BytesIO
 
 
 try:
@@ -44,6 +47,7 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.metrics import accuracy_score, r2_score
 from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import GridSearchCV
 from src.papierstat.mltricks import SkBaseTransformLearner
 
 
@@ -125,16 +129,64 @@ class TestSklearnConvert(ExtTestCase):
         conv = SkBaseTransformLearner(LinearRegression(normalize=True))
         pipe = make_pipeline(conv, DecisionTreeRegressor())
         pars = pipe.get_params()
-        self.assertIn('skbasetransformlearner__estimator__fit_intercept', pars)
+        self.assertIn('skbasetransformlearner__model__fit_intercept', pars)
         self.assertEqual(
-            pars['skbasetransformlearner__estimator__normalize'], True)
+            pars['skbasetransformlearner__model__normalize'], True)
         conv = SkBaseTransformLearner(LinearRegression(normalize=True))
         pipe = make_pipeline(conv, DecisionTreeRegressor())
         pipe.set_params(**pars)
         pars = pipe.get_params()
-        self.assertIn('skbasetransformlearner__estimator__fit_intercept', pars)
+        self.assertIn('skbasetransformlearner__model__fit_intercept', pars)
         self.assertEqual(
-            pars['skbasetransformlearner__estimator__normalize'], True)
+            pars['skbasetransformlearner__model__normalize'], True)
+
+    def test_pickle(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                                   X1=[0.5, 0.6, 0.52, 0.62,
+                                       0.5, 0.6, 0.51, 0.61],
+                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8]))
+        X = df.drop('y', axis=1)
+        y = df['y']
+        model = SkBaseTransformLearner(LinearRegression(normalize=True))
+        model.fit(X, y)
+
+        pred = model.transform(X)
+
+        st = BytesIO()
+        pickle.dump(model, st)
+        st = BytesIO(st.getvalue())
+        rec = pickle.load(st)
+        pred2 = rec.transform(X)
+        self.assertEqualArray(pred, pred2)
+
+    def test_grid(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                                   X1=[0.5, 0.6, 0.52, 0.62,
+                                       0.5, 0.6, 0.51, 0.61],
+                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8]))
+        X = df.drop('y', axis=1)
+        y = df['y']
+        model = make_pipeline(SkBaseTransformLearner(LinearRegression(normalize=True)),
+                              LogisticRegression())
+        res = model.get_params(True)
+
+        parameters = {
+            'skbasetransformlearner__model__fit_intercept': [False, True]}
+        clf = GridSearchCV(model, parameters)
+        clf.fit(X, y)
+
+        pred = clf.predict(X)
+        self.assertEqualArray(y, pred)
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ class SkBaseLearnerCategory:
     modalité d'une classe.
     """
 
-    def __init__(self, colnameind, model, **kwargs):
+    def __init__(self, colnameind=None, model=None, **kwargs):
         """
         Stocke les paramètres dans une classe
         @see cl SkLearnParameters, elle garde une copie des
@@ -31,9 +31,12 @@ class SkBaseLearnerCategory:
         if not isinstance(colnameind, (int, str)):
             raise TypeError(
                 "colnameind must be str or int not {0}".format(type(colnameind)))
+        if model is None:
+            raise ValueError("model must not be None")
         kwargs['colnameind'] = colnameind
         self.P = SkLearnParameters(**kwargs)
         self.model = model
+        self._estimator_type = self.model._estimator_type
 
     @property
     def colnameind(self):
@@ -216,7 +219,15 @@ class SkBaseLearnerCategory:
         @param      sample_weight   Weight values, numpy array of shape [n_samples, n_targets] (optional)
         @return                     score : float, Mean accuracy of self.predict(X) wrt. y.
         """
-        raise NotImplementedError('No default score is implemented.')
+        if self._estimator_type == 'classifier':
+            from sklearn.metrics import accuracy_score
+            return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
+        elif self._estimator_type == 'regressor':
+            from sklearn.metrics import r2_score
+            return r2_score(y, self.predict(X), sample_weight=sample_weight)
+        else:
+            raise RuntimeError("Unexpected estimator type '{0}', cannot guess default scoring metric.".format(
+                self._estimator_type))
 
     ##############
     # cloning API
@@ -230,28 +241,37 @@ class SkBaseLearnerCategory:
         @return                 dict
         """
         res = self.P.to_dict()
+        res['model'] = self.model
         if deep:
             p = self.model.get_params(deep)
-            ps = {'estimator__{0}'.format(
+            ps = {'model__{0}'.format(
                 name): value for name, value in p.items()}
             res.update(ps)
         return res
 
-    def set_params(self, values):
+    def set_params(self, **values):
         """
         Changes the parameters mandatory to clone the class.
 
         @param      values      values
         @return                 dict
         """
-        if not hasattr(self, 'models'):
-            raise RuntimeError("No model was trained.")
-        prefix = 'estimator__'
+        if 'model' in values:
+            self.model = clone(values['model'])
+            del values['model']
+        elif not hasattr(self, 'model') or self.model is None:
+            raise KeyError("Missing key '{0}' in [{1}]".format(
+                'model', ', '.join(sorted(values))))
+        prefix = 'model__'
         ext = {k[len(prefix):]: v for k, v in values.items()
                if k.startswith(prefix)}
-        self.model.set_params(ext)
+        self.model.set_params(**ext)
+        existing = self.P.to_dict()
         ext = {k: v for k, v in values.items() if not k.startswith(prefix)}
-        self.P.set_params(values)
+        if ext:
+            existing.update(ext)
+        self.P = SkLearnParameters(**existing)
+        return self
 
     #################
     # common methods

@@ -106,7 +106,8 @@ class TestSklearnCategory(ExtTestCase):
         self.assertGreater(len(pred), 0)
         self.assertEqualArray(y, pred)
 
-        self.assertRaise(lambda: model.score(X, y))
+        pred = model.score(X, y)
+        self.assertGreater(pred, 0)
 
         pred = model.predict_proba(X)
         self.assertGreater(len(pred), 0)
@@ -154,14 +155,15 @@ class TestSklearnCategory(ExtTestCase):
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
         res = model.get_params(True)
-        self.assertEqual(res, {'colnameind': 'cat', 'estimator__class_weight': None,
-                               'estimator__criterion': 'gini', 'estimator__max_depth': None,
-                               'estimator__max_features': None, 'estimator__max_leaf_nodes': None,
-                               'estimator__min_impurity_decrease': 0.0, 'estimator__min_impurity_split': None, 'estimator__min_samples_leaf': 1,
-                               'estimator__min_samples_split': 2, 'estimator__min_weight_fraction_leaf': 0.0,
-                               'estimator__presort': False, 'estimator__random_state': None, 'estimator__splitter': 'best'})
+        del res['model']
+        self.assertEqual(res, {'colnameind': 'cat', 'model__class_weight': None,
+                               'model__criterion': 'gini', 'model__max_depth': None,
+                               'model__max_features': None, 'model__max_leaf_nodes': None,
+                               'model__min_impurity_decrease': 0.0, 'model__min_impurity_split': None, 'model__min_samples_leaf': 1,
+                               'model__min_samples_split': 2, 'model__min_weight_fraction_leaf': 0.0,
+                               'model__presort': False, 'model__random_state': None, 'model__splitter': 'best'})
 
-        parameters = {'estimator__max_depth': [2, 3]}
+        parameters = {'model__max_depth': [2, 3]}
         clf = GridSearchCV(model, parameters)
         clf.fit(X, y)
 

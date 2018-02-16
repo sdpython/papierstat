@@ -5,6 +5,7 @@
 """
 import textwrap
 import numpy
+from sklearn.base import clone
 from .sklearn_base_transform import SkBaseTransform
 
 
@@ -52,7 +53,7 @@ class SkBaseTransformLearner(SkBaseTransform):
             print("pipeline avec deux learners :", score)
     """
 
-    def __init__(self, model, method=None, **kwargs):
+    def __init__(self, model=None, method=None, **kwargs):
         """
         @param  model   instance d'un learner
         @param  method  méthode à appeler pour transformer les features (voir-ci-dessous)
@@ -70,24 +71,36 @@ class SkBaseTransformLearner(SkBaseTransform):
         """
         super().__init__(**kwargs)
         self.model = model
+        if model is None:
+            raise ValueError("value cannot be None")
         if method is None:
-            for name in {'predict_proba', 'predict'}:
+            for name in {'predict_proba', 'predict', 'transform'}:
                 if hasattr(model.__class__, name):
                     method = name
             if method is None:
                 raise ValueError(
                     "Unable to guess a default method for '{0}'".format(repr(model)))
+        self.method = method
+        self._set_method(method)
+
+    def _set_method(self, method):
+        """
+        Définit la méthode à utiliser pour transmettre
+        les variables à la suite du pipeline.
+        """
         if isinstance(method, str):
             if method == 'predict':
-                self.method = self.model.predict
+                self.method_ = self.model.predict
             elif method == 'predict_proba':
-                self.method = self.model.predict_proba
+                self.method_ = self.model.predict_proba
             elif method == 'decision_function':
-                self.method = self.model.decision_function
+                self.method_ = self.model.decision_function
+            elif method == 'transform':
+                self.method_ = self.model.transform
             else:
                 raise ValueError("Unexpected method '{0}'".format(method))
         elif callable(method):
-            self.method = method
+            self.method_ = method
         else:
             raise TypeError(
                 "Unable to find the transform method, method={0}".format(method))
@@ -112,7 +125,7 @@ class SkBaseTransformLearner(SkBaseTransform):
         @param      X   features
         @return         prédictions
         """
-        res = self.method(X)
+        res = self.method_(X)
         if len(res.shape) == 1:
             res = res[:, numpy.newaxis]
         return res
@@ -129,24 +142,34 @@ class SkBaseTransformLearner(SkBaseTransform):
         @return                 dict
         """
         res = self.P.to_dict()
+        res['model'] = self.model
         if deep:
             par = self.model.get_params(deep)
             for k, v in par.items():
-                res["estimator__" + k] = v
+                res["model__" + k] = v
         return res
 
-    def set_params(self, **params):
+    def set_params(self, **values):
         """
         Set parameters.
 
-        @param      params      parameters
+        @param      values      parameters
         """
-        for k, v in params.items():
-            if not k.startswith('estimator__'):
+        if 'model' in values:
+            self.model = clone(values['model'])
+            del values['model']
+        elif not hasattr(self, 'model') or self.model is None:
+            raise KeyError("Missing key '{0}' in [{1}]".format(
+                'model', ', '.join(sorted(values))))
+        if 'method' in values:
+            self._set_method(values['method'])
+            del values['method']
+        for k, v in values.items():
+            if not k.startswith('model__'):
                 raise ValueError(
-                    "Parameter '{0}' must start with 'estimator__'.".format(k))
-        d = len('estimator__')
-        pars = {k[d:]: v for k, v in params.items()}
+                    "Parameter '{0}' must start with 'model__'.".format(k))
+        d = len('model__')
+        pars = {k[d:]: v for k, v in values.items()}
         self.model.set_params(**pars)
 
     #################

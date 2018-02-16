@@ -5,6 +5,8 @@
 import sys
 import os
 import unittest
+from io import BytesIO
+import pickle
 
 
 try:
@@ -44,6 +46,7 @@ from sklearn.linear_model import LogisticRegression, LinearRegression
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import GridSearchCV
 from src.papierstat.mltricks import SkBaseTransformStacking
 
 
@@ -85,18 +88,64 @@ class TestSklearnStacking(ExtTestCase):
         pipe = make_pipeline(conv, DecisionTreeRegressor())
         pars = pipe.get_params(deep=True)
         self.assertIn(
-            'skbasetransformstacking__estimator_0__estimator__fit_intercept', pars)
+            'skbasetransformstacking__models_0__model__fit_intercept', pars)
         self.assertEqual(
-            pars['skbasetransformstacking__estimator_0__estimator__normalize'], True)
+            pars['skbasetransformstacking__models_0__model__normalize'], True)
         conv = SkBaseTransformStacking([LinearRegression(normalize=False),
                                         DecisionTreeClassifier(max_depth=2)])
         pipe = make_pipeline(conv, DecisionTreeRegressor())
         pipe.set_params(**pars)
         pars = pipe.get_params()
         self.assertIn(
-            'skbasetransformstacking__estimator_0__estimator__fit_intercept', pars)
+            'skbasetransformstacking__models_0__model__fit_intercept', pars)
         self.assertEqual(
-            pars['skbasetransformstacking__estimator_0__estimator__normalize'], True)
+            pars['skbasetransformstacking__models_0__model__normalize'], True)
+
+    def test_pickle(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        data = load_iris()
+        X, y = data.data, data.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        conv = SkBaseTransformStacking([LinearRegression(normalize=True),
+                                        DecisionTreeClassifier(max_depth=3)])
+        model = make_pipeline(conv, DecisionTreeRegressor())
+        model.fit(X, y)
+
+        pred = model.predict(X)
+
+        st = BytesIO()
+        pickle.dump(model, st)
+        st = BytesIO(st.getvalue())
+        rec = pickle.load(st)
+        pred2 = rec.predict(X)
+        self.assertEqualArray(pred, pred2)
+
+    def test_grid(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        data = load_iris()
+        X, y = data.data, data.target
+        X_train, X_test, y_train, y_test = train_test_split(X, y)
+        conv = SkBaseTransformStacking([LinearRegression(normalize=True),
+                                        DecisionTreeClassifier(max_depth=3)])
+        model = make_pipeline(conv, DecisionTreeRegressor())
+
+        res = model.get_params(True)
+
+        parameters = {
+            'skbasetransformstacking__models_1__model__max_depth': [2, 3]}
+        clf = GridSearchCV(model, parameters)
+        clf.fit(X, y)
+
+        pred = clf.predict(X)
+        self.assertEqualArray(y, pred)
 
 
 if __name__ == "__main__":
