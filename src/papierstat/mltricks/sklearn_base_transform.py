@@ -3,11 +3,10 @@
 @file
 @brief Implémente un *transform* qui suit la même API que tout :epkg:`scikit-learn` transform.
 """
-import textwrap
-from .sklearn_parameters import SkLearnParameters
+from .sklearn_base import SkBase
 
 
-class SkBaseTransform:
+class SkBaseTransform(SkBase):
 
     """
     Base d'un *learner* which follows the same API que :epkg:`scikit-learn`.
@@ -20,7 +19,11 @@ class SkBaseTransform:
         paramètres pour implémenter facilement *get_params*
         et ainsi cloner un modèle.
         """
-        self.P = SkLearnParameters(**kwargs)
+        SkBase.__init__(self, **kwargs)
+
+    ###################
+    # API scikit-learn
+    ###################
 
     def fit(self, X, y=None, sample_weight=None):
         """
@@ -42,18 +45,14 @@ class SkBaseTransform:
         """
         raise NotImplementedError()
 
-    def get_params(self, deep=True):
+    def fit_transform(self, X, y=None, sample_weight=None):
         """
-        returns the parameters mandatory to clone the class
+        Apprends un modèle et transforme les données.
 
-        @param      deep        unused here
-        @return                 dict
+        @param      X               features
+        @param      y               cibles
+        @param      sample_weight   poids
+        @return                     self, lui-même
         """
-        return self.P.to_dict()
-
-    def __repr__(self):
-        """
-        usual
-        """
-        res = "{0}({1})".format(self.__class__.__name__, str(self.P))
-        return "\n".join(textwrap.wrap(res), subsequent_indent="    ")
+        self.fit(X, y=y, sample_weight=sample_weight)
+        return self.transform(X)

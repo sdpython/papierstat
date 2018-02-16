@@ -5,8 +5,8 @@
 """
 import numpy
 import pandas
-from pyquickhelper.loghelper import noLOG
 from sklearn.base import clone
+from pyquickhelper.loghelper import noLOG
 from .sklearn_parameters import SkLearnParameters
 
 
@@ -235,7 +235,8 @@ class SkBaseLearnerCategory:
 
     def get_params(self, deep=True):
         """
-        Retourne les paramètres du modèle.
+        Retourne les paramètres qui définissent l'objet
+        (tous ceux nécessaires pour le cloner).
 
         @param      deep        unused here
         @return                 dict
@@ -251,13 +252,14 @@ class SkBaseLearnerCategory:
 
     def set_params(self, **values):
         """
-        Changes the parameters mandatory to clone the class.
+        Change les paramètres qui définissent l'objet
+        (tous ceux nécessaires pour le cloner).
 
         @param      values      values
         @return                 dict
         """
         if 'model' in values:
-            self.model = clone(values['model'])
+            self.model = values['model']
             del values['model']
         elif not hasattr(self, 'model') or self.model is None:
             raise KeyError("Missing key '{0}' in [{1}]".format(

@@ -3,11 +3,10 @@
 @file
 @brief Implémente un *learner* qui suit la même API que tout :epkg:`scikit-learn` learner.
 """
+from .sklearn_base import SkBase
 
-from .sklearn_parameters import SkLearnParameters
 
-
-class SkBaseLearner:
+class SkBaseLearner(SkBase):
 
     """
     Base d'un *learner* qui suit la même API que :epkg:`scikit-learn`.
@@ -20,7 +19,7 @@ class SkBaseLearner:
         paramètres pour implémenter facilement *get_params*
         et ainsi cloner un modèle.
         """
-        self.P = SkLearnParameters(**kwargs)
+        SkBase.__init__(self, **kwargs)
 
     ###################
     # API scikit-learn
@@ -66,35 +65,3 @@ class SkBaseLearner:
         @return                     score : float, Mean accuracy of self.predict(X) wrt. y.
         """
         raise NotImplementedError()
-
-    ##############
-    # cloning API
-    ##############
-
-    def get_params(self, deep=True):
-        """
-        Returns the parameters mandatory to clone the class.
-
-        @param      deep        unused here
-        @return                 dict
-        """
-        return self.P.to_dict()
-
-    def set_params(self, values):
-        """
-        Changes the parameters mandatory to clone the class.
-
-        @param      values      values
-        @return                 dict
-        """
-        self.P.set_params(values)
-
-    #################
-    # common methods
-    #################
-
-    def __repr__(self):
-        """
-        usual
-        """
-        return "{0}({1})".format(self.__class__.__name__, repr(self.P))

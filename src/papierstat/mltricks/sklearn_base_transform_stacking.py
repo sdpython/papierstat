@@ -5,7 +5,6 @@
 """
 import textwrap
 import numpy
-from sklearn.base import clone
 from .sklearn_base_transform import SkBaseTransform
 from .sklearn_base_transform_learner import SkBaseTransformLearner
 
@@ -74,8 +73,20 @@ class SkBaseTransformStacking(SkBaseTransform):
                     len(models), len(method)))
         else:
             method = [method for m in models]
-        self.models = [SkBaseTransformLearner(
-            m, me) for m, me in zip(models, method)]
+
+        def convert2transform(c):
+            m, me = c
+            if isinstance(m, SkBaseTransformLearner):
+                if me == m.method:
+                    return m
+                else:
+                    return SkBaseTransformLearner(m.model, me)
+            elif hasattr(m, 'transform'):
+                return m
+            else:
+                return SkBaseTransformLearner(m, me)
+
+        self.models = list(map(convert2transform, zip(models, method)))
 
     def fit(self, X, y=None, sample_weight=None, **kwargs):
         """
@@ -107,7 +118,8 @@ class SkBaseTransformStacking(SkBaseTransform):
 
     def get_params(self, deep=True):
         """
-        returns the parameters mandatory to clone the class
+        Retourne les paramètres qui définissent l'objet
+        (tous ceux nécessaires pour le cloner).
 
         @param      deep        unused here
         @return                 dict
@@ -128,7 +140,7 @@ class SkBaseTransformStacking(SkBaseTransform):
         @param      params      parameters
         """
         if 'models' in values:
-            self.models = clone(values['models'])
+            self.models = values['models']
             del values['models']
         for k, v in values.items():
             if not k.startswith('models_'):

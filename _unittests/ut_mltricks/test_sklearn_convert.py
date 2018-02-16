@@ -179,6 +179,7 @@ class TestSklearnConvert(ExtTestCase):
         model = make_pipeline(SkBaseTransformLearner(LinearRegression(normalize=True)),
                               LogisticRegression())
         res = model.get_params(True)
+        self.assertGreater(len(res), 0)
 
         parameters = {
             'skbasetransformlearner__model__fit_intercept': [False, True]}

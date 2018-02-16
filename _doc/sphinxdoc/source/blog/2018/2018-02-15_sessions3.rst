@@ -22,7 +22,7 @@
       les `vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_challenge.html>`_
       et l'utilisation du clustering pour trouver les
       `profils de cyclistes à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>`_
-    * `ranking <l-ranking-section>`
+    * :ref:`ranking <l-ranking-section>`
     * :ref:`recommandations <l-recsys-section>`
     * :ref:`l-cheatsheet-ml`
     * résumé de l'`interface scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_

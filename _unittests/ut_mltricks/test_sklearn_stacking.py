@@ -47,6 +47,7 @@ from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
+from sklearn.base import clone
 from src.papierstat.mltricks import SkBaseTransformStacking
 
 
@@ -124,6 +125,17 @@ class TestSklearnStacking(ExtTestCase):
         pred2 = rec.predict(X)
         self.assertEqualArray(pred, pred2)
 
+    def test_clone(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        conv = SkBaseTransformStacking([LinearRegression(normalize=True),
+                                        DecisionTreeClassifier(max_depth=3)])
+        cloned = clone(conv)
+        conv.test_equality(cloned, exc=True)
+
     def test_grid(self):
         fLOG(
             __file__,
@@ -138,6 +150,7 @@ class TestSklearnStacking(ExtTestCase):
         model = make_pipeline(conv, DecisionTreeRegressor())
 
         res = model.get_params(True)
+        self.assertGreater(len(res), 0)
 
         parameters = {
             'skbasetransformstacking__models_1__model__max_depth': [2, 3]}

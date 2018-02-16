@@ -5,7 +5,6 @@
 """
 import textwrap
 import numpy
-from sklearn.base import clone
 from .sklearn_base_transform import SkBaseTransform
 
 
@@ -156,7 +155,7 @@ class SkBaseTransformLearner(SkBaseTransform):
         @param      values      parameters
         """
         if 'model' in values:
-            self.model = clone(values['model'])
+            self.model = values['model']
             del values['model']
         elif not hasattr(self, 'model') or self.model is None:
             raise KeyError("Missing key '{0}' in [{1}]".format(
