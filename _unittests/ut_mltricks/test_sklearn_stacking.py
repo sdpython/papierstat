@@ -58,7 +58,7 @@ from src.papierstat.mltricks import SkBaseTransformStacking
 
 class TestSklearnStacking(ExtTestCase):
 
-    def _test_pipeline_with_two_classifiers(self):
+    def test_pipeline_with_two_classifiers(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -80,7 +80,7 @@ class TestSklearnStacking(ExtTestCase):
         self.assertStartsWith(
             'SkBaseTransformStacking([LogisticRegression(C=1.0, class_weight=None,', rp)
 
-    def _test_pipeline_with_params(self):
+    def test_pipeline_with_params(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -107,7 +107,7 @@ class TestSklearnStacking(ExtTestCase):
         self.assertEqual(
             pars['skbasetransformstacking__models_0__model__normalize'], True)
 
-    def _test_pickle(self):
+    def test_pickle(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -130,7 +130,7 @@ class TestSklearnStacking(ExtTestCase):
         pred2 = rec.predict(X)
         self.assertEqualArray(pred, pred2)
 
-    def _test_clone(self):
+    def test_clone(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -142,7 +142,7 @@ class TestSklearnStacking(ExtTestCase):
         cloned = clone(conv)
         conv.test_equality(cloned, exc=True)
 
-    def _test_grid(self):
+    def test_grid(self):
         fLOG(
             __file__,
             self._testMethodName,
