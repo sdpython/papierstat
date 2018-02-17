@@ -33,6 +33,11 @@ polynômiales, :epkg:`scikit-learn` donne une idée des prétraitements
 numériques les plus courants :
 `sklearn.preprocessing <http://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing>`_.
 
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_normalisation
+
 Texte - catégorie
 +++++++++++++++++
 
