@@ -15,9 +15,9 @@ pour explorer quelques points récurrents ou techniques.
     :maxdepth: 1
 
     regclass
+    preprocessing
     nonsupervise
     otherml
-    preprocessing
     gradienttree
     textembed
     seriestemp
