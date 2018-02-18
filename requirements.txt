@@ -18,3 +18,4 @@ sphinxcontrib-imagesvg
 sphinxjp.themes.basicstrap
 sphinxjp.themes.sphinxjp
 wheel
+xgboost
