@@ -54,6 +54,11 @@ du nombre de catégories : il y en a trop parfois.
 * variations
 * hash
 
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_category
+
 Texte - séquence
 ++++++++++++++++
 

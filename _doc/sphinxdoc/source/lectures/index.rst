@@ -19,7 +19,6 @@ pour explorer quelques points récurrents ou techniques.
     nonsupervise
     otherml
     gradienttree
-    textembed
     seriestemp
     imagedeep
 
