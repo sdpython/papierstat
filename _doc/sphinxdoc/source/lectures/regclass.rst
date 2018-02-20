@@ -516,12 +516,13 @@ qui a remporté le plus de *match* en un contre un.
 
 Paradoxalement, cette stratégie est préférable lorsque le
 nombre de classes est grand car les jeux de données ne sont pas
-déséquilibrés lors de l'apprentissage.
+déséquilibrés lors de l'apprentissage (voir [Furnkranz2002]_).
 
 .. toctree::
     :maxdepth: 1
 
     ../notebooks/wines_multi
+    ../notebooks/artificiel_multiclass
 
 Ces approches ont néanmoins un léger inconvénient qui est d'avoir
 plusieurs classifieurs dont les scores ne sont pas nécessairement
@@ -597,3 +598,6 @@ Bibliographie
 
 .. [Saporta2006] Probabilités, analyse des données et statistique,
     Gilbert Saporta, Editions Technip
+
+.. [Furnkranz2002] `Round Robin Classification <http://www.jmlr.org/papers/volume2/fuernkranz02a/fuernkranz02a.pdf>`_,
+    Johannes Fürnkranz
