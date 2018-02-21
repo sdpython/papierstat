@@ -49,26 +49,110 @@ Les variations apparaissent car il faut tenir de la façon dont le modèle
 de machine learning est appris (gradient ou méthode ensembliste), et
 du nombre de catégories : il y en a trop parfois.
 
-* conversion en entier
-* une dimension par catégories
-* variations
-* hash
-
 .. toctree::
     :maxdepth: 1
 
     ../notebooks/artificiel_category
+    ../notebooks/artificiel_category_2
+
+Une fonction de `hash <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html?highlight=hash>`_
+possède des propriétés statistiques intéressantes car elle permet
+de lisser une distribution. On s'en sert lorsque le nombre
+de modalités est trop important. Plutôt que de choisir quelles
+modalités regrouper ensemble, on fait appelle à une fonction de
+*hash* pour compresser de façon aléatoire l'information.
+La probabilité de faire un mauvais choix est assez faible.
+On l'utilise principalement quand on a une minorité de
+modalités sur-représentées et beaucoup de modalités sous-représentées.
+
+.. image:: images/hash.png
+    :width: 200
+
+La fonction *hash* va regrouper certaines modalités de façon aléatoire
+pour espérer réduire la complexité du modèle et obtenir la distribution du bas
+où la couleur verte symbolise des modalités non significatives
+qui s'ajoutent à d'autres significatives ou non.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_category_hash
 
 Texte - séquence
 ++++++++++++++++
 
-L'information peut aussi un texte libre qu'on peut découper
-soit en mots ou en caractères.
+.. index:: bag of words, sac de mots, analyse de sentiment
 
+L'information peut aussi un texte libre qu'on peut découper
+soit en mots ou en caractères, voire en syllabes. Il s'agit toujours
+de convertir le texte en une information numérique. L'approche
+`sac de mots <https://fr.wikipedia.org/wiki/Sac_de_mots>`_ est
+très utilisée et une application courante est
+l'`analyse de sentiment <https://fr.wikipedia.org/wiki/Opinion_mining>`_.
+
+.. list-table::
+    :header-rows: 1
+    :widths: 2 10 5
+
+    * - ligne
+      - texte
+      - sentiment
+    * - 997
+      - Ce film était super.
+      - positif
+    * - 1013
+      - Je me suis ennuyé.
+      - négatif
+    * - ...
+      - ...
+      - ...
+
+Comment estimer le caractère positif ou négatif d'une critique
+de film en partant d'une liste de critique et de l'évaluation
+d'un expert ? On retrouve ce type de problématique
+(texte + décision binaire) dans un nombre assez varié de problèmes :
+ce mail est-il un spam, cette requête est-elle adulte,
+ce commentaire est-il négatif...
+Mais avant de commencer, on nettoie le texte et
+on le découpe en mots.
+
+.. index:: tokenization
+
+Nettoyage - Tokenization
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Le texte brut contient beaucoup d'aléatoire
+qui nuit à l'estimation des modèles : les accents, les
+minuscules, les majuscules, les signes de ponctuation...
+On peut les garder mais plus de variabilité implique plus
+de données pour les apprendre. On préfère alors le nettoyer
+avant de le découper en mot (ou caractères ou syllabe).
+C'est la seule partie qui est spéficique au langage.
+Même si langue latine partage les mêmes caractères,
+elles n'ont pas les mêmes accents, la même façon de composer
+les mots, les mêmes `stopwords <https://en.wikipedia.org/wiki/Stop_words>`_
+ou *mots sans importance*.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_tokenize
+
+Bags of words
+^^^^^^^^^^^^^
+
+La première approche
+pour convertir le texte en features s'appelle
+`bag of words <https://en.wikipedia.org/wiki/Bag-of-words_model>`_.
+`sac de mots <https://fr.wikipedia.org/wiki/Sac_de_mots>`_.
+
+* bag of words
 * n-grams
 * tf-idf
-* bag of words
 * embedding avec deep learning
+
+Tagging
++++++++
 
 Traitement des valeurs manquantes
 +++++++++++++++++++++++++++++++++

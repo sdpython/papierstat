@@ -1,6 +1,8 @@
+category_encoders
 chardet
 coverage
 folium
+fr_core_news_sm
 guzzle_sphinx_theme
 jyquickhelper
 openpyxl
@@ -9,6 +11,7 @@ pycodestyle>=2.0.0
 pydocstyle
 pyensae
 pyltr
+pyproj
 pyquickhelper>=1.6.2413
 sphinx-bootstrap-theme
 sphinx-gallery

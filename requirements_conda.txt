@@ -1,5 +1,6 @@
 bokeh
 Cython
+gensim
 ipython
 jupyter
 jupyter_client
@@ -10,6 +11,7 @@ nbformat
 nbpresent
 notebook>=5.0.0
 networkx
+nltk
 numba
 numpy>=1.11.0
 pandas>=0.20.0
@@ -20,6 +22,7 @@ scikit-learn
 scipy
 seaborn
 setuptools
+spacy
 Sphinx>=1.7
 statsmodels
 tensorflow

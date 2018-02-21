@@ -22,9 +22,11 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
   - "%PYTHON%\\Scripts\\pip install pyquickhelper --no-deps"
   - "%PYTHON%\\Scripts\\pip install pyensae"
-  - "%PYTHON%\\Scripts\\pip install wcwidth guzzle_sphinx_theme pyltr folium"
-  - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels basemap xgboost"
+  - "%PYTHON%\\Scripts\\pip install wcwidth guzzle_sphinx_theme pyltr folium category_encoders"
+  - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels basemap xgboost pyproj"
   - "%PYTHON%\\Scripts\\pip install keras pandas_streaming seaborn networkx"
+  - "%PYTHON%\\Scripts\\pip install nltk"
+  - "%PYTHON%\\Scripts\\pymy_install3 gensim spacy fr_core_news_sm"
   - "set PATH=%PATH%;C:\\projects\\jyquickhelper\\build\\update_modules\\Graphviz\\bin"
 build: off
 
