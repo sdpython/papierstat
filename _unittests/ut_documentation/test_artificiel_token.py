@@ -56,6 +56,7 @@ class TestNotebookArtificielToken(unittest.TestCase):
 
         import nltk
         nltk.download('punkt')
+        nltk.download('stopwords')
 
         self.assertTrue(src.papierstat is not None)
         folder = os.path.join(os.path.dirname(__file__),
