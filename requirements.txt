@@ -2,7 +2,6 @@ category_encoders
 chardet
 coverage
 folium
-fr_core_news_sm
 guzzle_sphinx_theme
 jyquickhelper
 openpyxl
