@@ -146,9 +146,11 @@ pour convertir le texte en features s'appelle
 `bag of words <https://en.wikipedia.org/wiki/Bag-of-words_model>`_.
 `sac de mots <https://fr.wikipedia.org/wiki/Sac_de_mots>`_.
 
-* bag of words
-* n-grams
-* tf-idf
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_tokenize_features
+
 * embedding avec deep learning
 
 Tagging
