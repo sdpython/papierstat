@@ -34,8 +34,3 @@
       en utilisant la base de données sur les vins
     * Transformer un problème de régression en un problème de recommandation
       en utilisant la base de données sur les vins.
-    * La transformation `t-SNE <http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
-      est une façon de réduire les dimensions. La méthode est décrite par son inventeur
-      sur son site `t-SNE <https://lvdmaaten.github.io/tsne/>`_.
-      Quel problème pose la première version de l'algorithme
-      dans le cas d'une prédiction ?

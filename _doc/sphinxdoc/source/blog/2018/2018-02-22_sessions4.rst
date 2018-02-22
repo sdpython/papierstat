@@ -1,0 +1,29 @@
+
+.. blogpost::
+    :title: Session 4
+    :keywords: session 4
+    :date: 2018-02-22
+    :categories: session
+
+    Suite et fin :
+
+    * :ref:`l-cheatsheet-ml`
+    * `clustering <http://scikit-learn.org/stable/modules/clustering.html#clustering>`_,
+      `k-means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_clus/kmeans.html>`_
+      un exemple avec
+      les `vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_challenge.html>`_
+      et l'utilisation du clustering pour trouver les
+      `profils de cyclistes à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>`_
+
+    Preprocessing et séries temporelles :
+
+    * :ref:`l-preprocessing`
+    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a_mlplus.html#timeseries-series-temporelles>`_
+
+    Exercices :
+
+    * La transformation `t-SNE <http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
+      est une façon de réduire les dimensions. La méthode est décrite par son inventeur
+      sur son site `t-SNE <https://lvdmaaten.github.io/tsne/>`_.
+      Quel problème pose la première version de l'algorithme
+      dans le cas d'une prédiction ?
