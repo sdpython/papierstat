@@ -54,6 +54,7 @@ du nombre de catégories : il y en a trop parfois.
 
     ../notebooks/artificiel_category
     ../notebooks/artificiel_category_2
+    ../notebooks/adult_cat
 
 Une fonction de `hash <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html?highlight=hash>`_
 possède des propriétés statistiques intéressantes car elle permet
@@ -102,6 +103,9 @@ l'`analyse de sentiment <https://fr.wikipedia.org/wiki/Opinion_mining>`_.
       - positif
     * - 1013
       - Je me suis ennuyé.
+      - négatif
+    * - 2147
+      - Pas super.
       - négatif
     * - ...
       - ...

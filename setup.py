@@ -18,7 +18,7 @@ history = "HISTORY.rst"
 requirements = None
 
 KEYWORDS = project_var_name + ', Xavier Dupré'
-DESCRIPTION = """Look for insights about machine learned models"""
+DESCRIPTION = """Helpers for teaching materials about machine learning."""
 
 
 CLASSIFIERS = [
@@ -39,7 +39,7 @@ CLASSIFIERS = [
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
 package_data = {project_var_name +
-                ".datasets.data": ["*.csv", "*.txt", "*.zip"]}
+                ".datasets.data": ["*.csv", "*.txt", "*.zip", "*.gz"]}
 
 ############
 # functions
