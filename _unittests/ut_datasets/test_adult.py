@@ -52,7 +52,7 @@ class TestAdult(ExtTestCase):
 
         train, test = load_adult_dataset(download=True)
         self.assertEqual(train.shape, (32561, 15))
-        self.assertEqual(test.shape, (32561, 15))
+        self.assertEqual(test.shape, (16281, 15))
 
     def test_adult_download_xd(self):
         fLOG(
@@ -62,7 +62,7 @@ class TestAdult(ExtTestCase):
 
         train, test = load_adult_dataset(download=True, url='xd')
         self.assertEqual(train.shape, (32561, 15))
-        self.assertEqual(test.shape, (32561, 15))
+        self.assertEqual(test.shape, (16281, 15))
 
     def test_adult_local(self):
         fLOG(

@@ -19,8 +19,6 @@ requirements = None
 
 KEYWORDS = project_var_name + ', Xavier Dupré'
 DESCRIPTION = """Helpers for teaching materials about machine learning."""
-
-
 CLASSIFIERS = [
     'Programming Language :: Python :: 3',
     'Intended Audience :: Developers',
@@ -30,11 +28,9 @@ CLASSIFIERS = [
     'Development Status :: 5 - Production/Stable'
 ]
 
-
 #######
 # data
 #######
-
 
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
@@ -114,8 +110,7 @@ if is_local() and not ask_help():
         from pyquickhelper.pycode import write_version_for_setup
         return write_version_for_setup(__file__)
 
-    if sys.version_info[0] != 2:
-        write_version()
+    write_version()
 
     versiontxt = os.path.join(os.path.dirname(__file__), "version.txt")
     if os.path.exists(versiontxt):
@@ -125,7 +120,8 @@ if is_local() and not ask_help():
         if subversion == ".0":
             raise Exception("Subversion is wrong: '{0}'.".format(subversion))
     else:
-        raise FileNotFoundError(versiontxt)
+        raise FileNotFoundError(
+            "Unable to find '{0}' argv={1}".format(versiontxt, sys.argv))
 else:
     # when the module is installed, no commit number is displayed
     subversion = ""
@@ -205,7 +201,10 @@ if not r:
         pyquickhelper = import_pyquickhelper()
         from pyquickhelper.pycode import process_standard_options_for_setup_help
         process_standard_options_for_setup_help(sys.argv)
-    root = os.path.abspath(os.path.dirname(__file__))
+    else:
+        pyquickhelper = import_pyquickhelper()
+    from pyquickhelper.pycode import clean_readme
+    long_description = clean_readme(long_description)
     setup(
         name=project_var_name,
         version='%s%s' % (sversion, subversion),

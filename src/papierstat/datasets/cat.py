@@ -45,7 +45,7 @@ def load_adult_dataset(download=True, small=False, url='uci'):
         if url == 'uci':
             url = "https://archive.ics.uci.edu/ml/machine-learning-databases/adult/"
             train = pandas.read_csv(url + "adult.data", header=None)
-            test = pandas.read_csv(url + "adult.test", header=None)
+            test = pandas.read_csv(url + "adult.test", header=None, skiprows=1)
         else:
             url = "http://www.xavierdupre.fr/enseignement/complements/"
             tr = read_content_ufs(url + "adult.data.gz",
@@ -59,7 +59,7 @@ def load_adult_dataset(download=True, small=False, url='uci'):
             by = BytesIO(te)
             tx = ungzip_files(by, unzip=False)
             st = StringIO(tx.decode('ascii'))
-            test = pandas.read_csv(st, header=None)
+            test = pandas.read_csv(st, header=None, skiprows=1)
         train.columns = columns
         test.columns = columns
     else:

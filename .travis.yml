@@ -15,6 +15,5 @@ install:
   - pip install http://www.xavierdupre.fr/enseignement/setup/fr_core_news_sm-2.0.0-py3-none-any.whl
 before_script:
   - python setup.py build_ext --inplace
-
 script:
     - python setup.py unittests

@@ -1,14 +1,9 @@
 bokeh
 Cython
 gensim
-ipython
 jupyter
-jupyter_client
-jupyter_core
 keras
 matplotlib
-nbformat
-nbpresent
 notebook>=5.0.0
 networkx
 nltk
@@ -21,7 +16,6 @@ pyzmq
 scikit-learn
 scipy
 seaborn
-setuptools
 spacy
 Sphinx>=1.7
 statsmodels
