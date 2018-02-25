@@ -33,3 +33,8 @@ Selon la nature des données, on peut penser aussi à des méthodes comme
 
 La suite est un exemple d'utilisation de ce type d'algorithme :
 `City bike in Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
+
+Exercice
+++++++++
+
+* `Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_clustering.html>`_

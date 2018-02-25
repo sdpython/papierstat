@@ -593,6 +593,14 @@ d'automatiser.
 
     ../notebooks/wines_color_linear
 
+Exercices
++++++++++
+
+* `Arbres de décision / Random Forest <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_3B.html>`_
+* `Machine Learning et Marketting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_4A.html>`_
+* `Tree, overfitting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_a_tree_overfitting.html>`_
+* `Comparaison de deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+
 Bibliographie
 +++++++++++++
 

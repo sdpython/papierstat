@@ -540,4 +540,9 @@ Si tous ces rappels vous sont connus, vous devriez être prêt
 à résoudre quelques exercices et énigmes :
 
 * `Tracer une pyramide bigarrée <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/pyramide_bigarree.html>`_
+* `2048 - stratégie gagnante <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/j2048.html>`_
+* `Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7.html>`_
+* `Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session8.html>`_
+* `Spectral Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/graph_spectral_clustering.html>`_
+* `Décorrélation de variables aléatoires <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/decorrelation.html>`_
 * `Challenges algorithmiques <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/index.html#challenges>`_
