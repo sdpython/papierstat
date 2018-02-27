@@ -1,0 +1,26 @@
+
+.. blogpost::
+    :title: Session 4
+    :keywords: session 4
+    :date: 2018-02-22
+    :categories: session
+
+    Séries temporelles :
+
+    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a_mlplus.html#timeseries-series-temporelles>`_
+
+    Deep Learning
+
+    * `Deep Learning, Transfer Learning <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/2017/experience_2017.html>`_
+
+    Un jeu complet :
+
+    * :ref:`adultcatrst`
+
+    Exercices :
+
+    * La transformation `t-SNE <http://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
+      est une façon de réduire les dimensions. La méthode est décrite par son inventeur
+      sur son site `t-SNE <https://lvdmaaten.github.io/tsne/>`_.
+      Quel problème pose la première version de l'algorithme
+      dans le cas d'une prédiction ?

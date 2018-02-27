@@ -1,9 +1,11 @@
+catboost
 category_encoders
 chardet
 coverage
 folium
 guzzle_sphinx_theme
 jyquickhelper
+msgpack
 pandas_streaming
 pyensae
 pyltr
