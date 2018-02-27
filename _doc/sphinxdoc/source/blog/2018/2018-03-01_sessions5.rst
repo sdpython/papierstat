@@ -1,8 +1,8 @@
 
 .. blogpost::
-    :title: Session 4
-    :keywords: session 4
-    :date: 2018-02-22
+    :title: Session 5
+    :keywords: session 5
+    :date: 2018-03-01
     :categories: session
 
     Séries temporelles :
