@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 """
-@brief      test log(time=15s)
+@brief      test log(time=233s)
 """
 
 import sys
