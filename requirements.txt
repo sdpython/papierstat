@@ -14,5 +14,6 @@ pyquickhelper>=1.7.2438
 sphinx-bootstrap-theme
 sphinx-gallery
 sphinx-redactor-theme
+ujson
 wheel
 xgboost
