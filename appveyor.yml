@@ -26,8 +26,8 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels basemap xgboost pyproj"
   - "%PYTHON%\\Scripts\\pip install keras pandas_streaming seaborn networkx"
   - "%PYTHON%\\Scripts\\pip install nltk ftfy"
-  - "%PYTHON%\\Scripts\\pymy_install3 gensim spacy fr_core_news_sm ujson thinc msgpack msgpack_numpy"
-  - "%PYTHON%\\Scripts\\pip install catboost bokeh"
+  - "%PYTHON%\\Scripts\\pymy_install3 gensim spacy fr_core_news_sm ujson thinc msgpack"
+  - "%PYTHON%\\Scripts\\pip install catboost bokeh msgpack_numpy"
   - "set PATH=%PATH%;C:\\projects\\jyquickhelper\\build\\update_modules\\Graphviz\\bin"
 build: off
 
