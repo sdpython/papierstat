@@ -27,7 +27,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install keras pandas_streaming seaborn networkx"
   - "%PYTHON%\\Scripts\\pip install nltk ftfy"
   - "%PYTHON%\\Scripts\\pip install preshed"
-  - "%PYTHON%\\Scripts\\pymy_install3 gensim spacy fr_core_news_sm ujson thinc msgpack"
+  - "%PYTHON%\\Scripts\\pymy_install3 gensim spacy fr_core_news_sm ujson thinc msgpack murmurhash"
   - "%PYTHON%\\Scripts\\pip install catboost bokeh msgpack_numpy"
   - "set PATH=%PATH%;C:\\projects\\jyquickhelper\\build\\update_modules\\Graphviz\\bin"
 build: off
