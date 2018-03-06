@@ -22,6 +22,7 @@ install:
   # - make all
   #- conda build build_tools/conda-recipe --quiet
   - conda install -q --file=requirements_conda.txt
+  - conda install -y basemap
   - pip install -r requirements.txt
   - pip install http://www.xavierdupre.fr/enseignement/setup/fr_core_news_sm-2.0.0-py3-none-any.whl
 script:
