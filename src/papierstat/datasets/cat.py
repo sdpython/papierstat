@@ -67,4 +67,9 @@ def load_adult_dataset(download=True, small=False, url='uci'):
     label = '<=50K'
     train[label] = train[label].str.strip(' .')
     test[label] = test[label].str.strip(' .')
+    cols = train.select_dtypes(object).columns
+    for c in cols:
+        train[c] = train[c].str.strip()
+    for c in cols:
+        test[c] = test[c].str.strip()
     return train, test
