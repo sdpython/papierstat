@@ -3,6 +3,7 @@ category_encoders
 chardet
 coverage
 folium
+geopandas
 guzzle_sphinx_theme
 jyquickhelper
 msgpack
