@@ -202,9 +202,9 @@ class TestSklearnCategory(ExtTestCase):
         clr = LogisticRegression()
         clr.fit(X_train, y_train)
         acc2 = accuracy_score(y_test, clr.predict(X_test))
-        self.assertNotEqual(acc1, acc2)
         self.assertGreater(acc1, 0.45)
         self.assertGreater(acc2, 0.45)
+        self.assertGreater(acc1, acc2 * 0.999)
 
 
 if __name__ == "__main__":
