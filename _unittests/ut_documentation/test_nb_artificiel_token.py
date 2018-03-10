@@ -38,7 +38,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version
+from pyquickhelper.pycode import add_missing_development_version, skipif_travis
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
@@ -48,6 +48,7 @@ class TestNotebookArtificielToken(unittest.TestCase):
     def setUp(self):
         add_missing_development_version(["jyquickhelper"], __file__, hide=True)
 
+    @skipif_travis("ModuleNotFoundError: No module named 'google_compute_engine'")
     def test_notebook_artificiel_token(self):
         fLOG(
             __file__,
