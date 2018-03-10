@@ -1,5 +1,5 @@
 dist: trusty
-sudo: false
+sudo: true
 language: python
 python:
   - "3.6"
@@ -7,6 +7,7 @@ addons:
 -  apt:
 -    packages:
       - ffmpeg
+      - libgeos-dev
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
@@ -22,7 +23,7 @@ install:
   # - make all
   #- conda build build_tools/conda-recipe --quiet
   - conda install -q --file=requirements_conda.txt
-  - conda install -y -c conda-forge basemap
+  - pip install git+https://github.com/matplotlib/basemap.git
   - pip install -r requirements.txt
   - pip install http://www.xavierdupre.fr/enseignement/setup/fr_core_news_sm-2.0.0-py3-none-any.whl
 script:
