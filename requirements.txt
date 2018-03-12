@@ -5,7 +5,7 @@ coverage
 folium
 geopandas
 guzzle_sphinx_theme
-jyquickhelper
+jyquickhelper>=0.3
 msgpack
 pandas_streaming
 pyensae
