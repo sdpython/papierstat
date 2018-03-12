@@ -417,7 +417,7 @@ Le plus court chemin dans un graphe
 
 Il existe plusieurs versions de cet algorithme sans pour autant
 changer l'idée principale. Le plus connu est sans doute
-la version de `Dikstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
+la version de `Dikjstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
 On retrouve la même idée lorsqu'il s'agit de déterminer la séquence
 d'états la plus probable dans une
 `chaîne de Markov <https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov>`_ avec
