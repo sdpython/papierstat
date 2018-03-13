@@ -410,14 +410,14 @@ du commerce, temps logarithmique pour la recherche  dichotomique.
 Pour vous exercer :
 `Algorithmes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_1a.html#td-algorithmes>`_.
 
-.. index:: plus court chemin dans un graphe, Dikjstra
+.. index:: plus court chemin dans un graphe, Dijkstra
 
 Le plus court chemin dans un graphe
 +++++++++++++++++++++++++++++++++++
 
 Il existe plusieurs versions de cet algorithme sans pour autant
 changer l'idée principale. Le plus connu est sans doute
-la version de `Dikjstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
+la version de `Dijkstra <https://fr.wikipedia.org/wiki/Algorithme_de_Dijkstra>`_.
 On retrouve la même idée lorsqu'il s'agit de déterminer la séquence
 d'états la plus probable dans une
 `chaîne de Markov <https://fr.wikipedia.org/wiki/Cha%C3%AEne_de_Markov>`_ avec
