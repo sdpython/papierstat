@@ -3,7 +3,8 @@ import sys
 import os
 import datetime
 import re
-import guzzle_sphinx_theme
+# import guzzle_sphinx_theme
+import sphinx_bootstrap_theme
 
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
@@ -24,7 +25,8 @@ local_template = os.path.join(os.path.abspath(
 
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2018,
-                     "guzzle_sphinx_theme", guzzle_sphinx_theme.html_theme_path(),
+                     # "guzzle_sphinx_theme", guzzle_sphinx_theme.html_theme_path(),
+                     "bootstrap", sphinx_bootstrap_theme.get_html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/papierstat/issues/%s', 'issue')),
                      title="papierstat", book=True, nblayout='table')
@@ -44,6 +46,7 @@ html_theme_options = {
 html_context = {
     'css_files': get_default_stylesheet() + ['_static/my-styles.css', '_static/gallery.css'],
 }
+
 
 html_logo = "project_ico.png"
 
