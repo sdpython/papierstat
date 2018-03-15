@@ -38,7 +38,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version
+from pyquickhelper.pycode import add_missing_development_version, skipif_appveyor
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
@@ -48,6 +48,7 @@ class TestNotebookVisualisationEnedis(unittest.TestCase):
     def setUp(self):
         add_missing_development_version(["jyquickhelper"], __file__, hide=True)
 
+    @skipif_appveyor('fiona: DLL load failed: The specified module could not be found.')
     def test_notebook_visualisation_enedis(self):
         fLOG(
             __file__,
