@@ -34,10 +34,11 @@ set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2018,
 blog_root = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/"
 extensions.append('guzzle_sphinx_theme')
 
-html_sidebars['**'] = ['globaltoc.html', 'localtoc.html', 'relations.html',
-                       'sourcelink.html', 'searchbox.html']
-html_sidebars['*'] = html_sidebars['**']
-html_sidebars[''] = html_sidebars['*']
+if False:
+    html_sidebars['**'] = ['globaltoc.html', 'localtoc.html', 'relations.html',
+                           'sourcelink.html', 'searchbox.html']
+    html_sidebars['*'] = html_sidebars['**']
+    html_sidebars[''] = html_sidebars['*']
 
 html_theme_options = {
     'touch_icon': '_static/project_ico.ico',
