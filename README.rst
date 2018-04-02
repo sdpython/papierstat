@@ -16,7 +16,7 @@ README
     :target: https://circleci.com/gh/sdpython/papierstat/tree/master
 
 .. image:: https://badge.fury.io/py/papierstat.svg
-    :target: http://badge.fury.io/py/papierstat
+    :target: https://pypi.org/project/papierstat/
 
 .. image:: https://img.shields.io/badge/license-MIT-blue.svg
     :alt: MIT License
