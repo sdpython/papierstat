@@ -33,7 +33,7 @@ README
     :alt: GitHub Issues
     :target: https://github.com/sdpython/papierstat/issues
 
-.. image:: https://badge.waffle.io/sdpython/papierstat.png?label=ready&title=Ready
+.. image:: https://badge.waffle.io/sdpython/papierstat.png?label=To%20Do&title=To%20Do
     :alt: Waffle
     :target: https://waffle.io/sdpython/papierstat
 

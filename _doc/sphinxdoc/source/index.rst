@@ -71,7 +71,7 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
          :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
          :alt: Requirements Status
 
-    .. image:: https://codecov.io/github/sdpython/papierstat/coverage.svg?branch=master
+    .. image:: https://badge.waffle.io/sdpython/papierstat.png?label=To%20Do&title=To%20Do
         :target: https://codecov.io/github/sdpython/papierstat?branch=master
 
     .. image:: http://img.shields.io/github/issues/sdpython/papierstat.png
