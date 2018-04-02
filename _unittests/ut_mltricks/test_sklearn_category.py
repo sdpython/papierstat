@@ -196,8 +196,8 @@ class TestSklearnCategory(ExtTestCase):
         new_x_test = pandas.concat([X_test, color_test], axis=1)
         acc1 = accuracy_score(y_test, model.predict(new_x_test))
 
-        self.assertNotEqual(model.models['red'].coef_,
-                            model.models['white'].coef_)
+        self.assertNotEqualDataFrame(model.models['red'].coef_,
+                                     model.models['white'].coef_)
 
         clr = LogisticRegression()
         clr.fit(X_train, y_train)
