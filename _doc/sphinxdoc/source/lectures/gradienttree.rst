@@ -40,14 +40,14 @@ alors *Y* croît de tant.
       - *X* discret
       - *X* continu
     * - *Y* discret
-      - .. image:: xy_discret.png
+      - .. image:: images/xy_discret.png
             :width: 200
-      - .. image:: xy_contdisc.png
+      - .. image:: images/xy_contdisc.png
             :width: 200
     * - *Y* continu
-      - .. image:: xy_disccont.png
+      - .. image:: images/xy_disccont.png
             :width: 200
-      - .. image:: xy_continu.png
+      - .. image:: images/xy_continu.png
             :width: 200
 
 Les deux cas sur la première diagonale sont les cas simples.
@@ -65,7 +65,7 @@ Il existe également des cas indécidables où la relation est
 dérivable par morceaux. Le meilleur modèle est alors un assemblage
 des deux.
 
-.. image:: xy_cd.png
+.. image:: images/xy_cd.png
     :width: 200
 
 La méthode ensembliste la plus connu est
