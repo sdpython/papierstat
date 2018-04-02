@@ -11,7 +11,7 @@ pandas_streaming
 pyensae
 pyltr
 pyproj
-pyquickhelper>=1.7.2438
+pyquickhelper>=1.7.2508
 sphinx-bootstrap-theme
 sphinx-gallery
 sphinx-redactor-theme
