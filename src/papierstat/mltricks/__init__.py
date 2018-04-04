@@ -3,6 +3,7 @@
 @file
 @brief Raccourcis pour *mltricks*.
 """
+from .kmeans_constraint import ConstraintKMeans
 from .sklearn_base_classifier import SkBaseClassifier
 from .sklearn_base_learner_category import SkBaseLearnerCategory
 from .sklearn_base_regressor import SkBaseRegressor

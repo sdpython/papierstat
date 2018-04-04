@@ -113,12 +113,14 @@ mathdef_link_only = True
 
 epkg_dictionary['arbre de décision'] = 'https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision'
 epkg_dictionary['C'] = "https://fr.wikipedia.org/wiki/C_(langage)"
+epkg_dictionary['csr_matrix'] = "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html"
 epkg_dictionary['C++'] = "https://fr.wikipedia.org/wiki/C%2B%2B"
 epkg_dictionary['Enedis'] = "https://data.enedis.fr/page/accueil/"
 epkg_dictionary['ensae_teaching_cs'] = "http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html"
 epkg_dictionary['ENSAE'] = "http://www.ensae.fr/ensae/fr/"
 epkg_dictionary['forêt aléatoire'] = 'https://fr.wikipedia.org/wiki/For%C3%AAt_d%27arbres_d%C3%A9cisionnels'
 epkg_dictionary['fortran'] = "https://fr.wikipedia.org/wiki/Fortran"
+epkg_dictionary['k-means'] = "http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"
 epkg_dictionary['machine learning'] = 'https://fr.wikipedia.org/wiki/Apprentissage_automatique'
 epkg_dictionary['Master 2 ISF'] = 'http://isf.u-paris2.fr/master-2/'
 epkg_dictionary['matrice de confusion'] = 'https://fr.wikipedia.org/wiki/Matrice_de_confusion'

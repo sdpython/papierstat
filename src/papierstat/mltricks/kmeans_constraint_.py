@@ -1,0 +1,143 @@
+# -*- coding: utf-8 -*-
+"""
+@file
+@brief Implémente la classe @see cl ConstraintKMeans.
+"""
+from pandas import DataFrame
+import numpy
+import scipy.sparse
+from sklearn.cluster.k_means_ import _labels_inertia
+from sklearn.cluster._k_means import _centers_sparse, _centers_dense
+from sklearn.metrics.pairwise import euclidean_distances
+from sklearn.utils.extmath import row_norms
+
+
+def linearize_matrix(mat):
+    """
+    Linearizes a matrix into a new one
+    with 3 columns value, row, column.
+    The output format is similar to
+    :epkg:`csr_matrix` but null values are kept.
+
+    @param      mat     matrix
+    @return             new matrix
+    """
+    if scipy.sparse.issparse(mat):
+        if isinstance(mat, scipy.sparse.csr_matrix):
+            max_row = mat.shape[0]
+            res = numpy.empty((len(mat.data), 3), dtype=mat.dtype)
+            row = 0
+            for i, v in enumerate(mat.data):
+                while row < max_row and i >= mat.indptr[row]:
+                    row += 1
+                res[i, 0] = v
+                res[i, 1] = row - 1
+                res[i, 2] = mat.indices[i]
+            return res
+        else:
+            raise NotImplementedError(
+                "This kind of sparse matrix is not handled: {0}".format(type(mat)))
+    else:
+        n = mat.shape[0]
+        c = mat.shape[1]
+        ic = numpy.arange(mat.shape[1])
+        res = numpy.empty((n * c, 3), dtype=mat.dtype)
+        for i in range(0, n):
+            a = i * c
+            b = (i + 1) * c
+            res[a:b, 1] = i
+            res[a:b, 2] = ic
+        res[:, 0] = mat.ravel()
+        return res
+
+
+def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, max_iter, verbose, fLOG):
+    """
+    Completes the constraint k-means.
+
+    @param      X                       features
+    @param      labels                  initialized labels (unsued)
+    @param      centers                 initialized centers
+    @param      inertia                 initialized inertia (unsued)
+    @param      precompute_distances    precompute distances (used in
+                                        `_label_inertia <>`_)
+    @param      iter                    number of iteration already done
+    @param      max_iter                maximum of number of iteration
+    @param      verbose                 verbose
+    @param      fLOG                    logging function (needs to be specified otherwise
+                                        verbose has no effects)
+    @return                             tuple (best_labels, best_centers, best_inertia, iter)
+    """
+    if isinstance(X, DataFrame):
+        X = X.as_matrix()
+    x_squared_norms = row_norms(X, squared=True)
+    counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
+    limit = X.shape[0] // centers.shape[0]
+    leftover = X.shape[0] - limit * centers.shape[0]
+    leftclose = numpy.empty((X.shape[0],), dtype=numpy.int32)
+    n_clusters = centers.shape[0]
+    distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
+    best_inertia = None
+    prev_labels = None
+
+    while iter < max_iter:
+        # distances
+        distances = euclidean_distances(
+            centers, X, Y_norm_squared=x_squared_norms, squared=True)
+        distance_linear = linearize_matrix(distances.T)
+        sorted_distances = distance_linear[distance_linear[:, 0].argsort()]
+
+        # initialisation
+        counters[:] = 0
+        labels[:] = -1
+        leftclose[:] = -1
+        distances_close[:] = numpy.nan
+
+        # affectation
+        nover = leftover
+        for i in range(0, sorted_distances.shape[0]):
+            ind = int(sorted_distances[i, 1])
+            if labels[ind] >= 0:
+                continue
+            c = int(sorted_distances[i, 2])
+            if counters[c] < limit:
+                # The cluster still accepts new points.
+                counters[c] += 1
+                labels[ind] = c
+                distances_close[ind] = sorted_distances[i, 0]
+            elif nover > 0 and leftclose[ind] == -1:
+                # The cluster may accept one point if the number
+                # of clusters does not divide the number of points in X.
+                counters[c] += 1
+                labels[ind] = c
+                nover -= 1
+                leftclose[ind] = 0
+                distances_close[ind] = sorted_distances[i, 0]
+
+        # compute new clusters
+        if scipy.sparse.issparse(X):
+            centers = _centers_sparse(X, labels, n_clusters, distances_close)
+        else:
+            centers = _centers_dense(X, labels, n_clusters, distances_close)
+
+        # inertia
+        _, inertia = _labels_inertia(X, x_squared_norms, centers,
+                                     precompute_distances=precompute_distances,
+                                     distances=distances_close)
+
+        iter += 1
+        if verbose and fLOG:
+            fLOG("CKMeans %d/%d inertia=%f" % (iter, max_iter, inertia))
+
+        # best option so far?
+        if best_inertia is None or inertia < best_inertia:
+            best_inertia = inertia
+            best_centers = centers.copy()
+            best_labels = labels.copy()
+
+        # early stop
+        if prev_labels is not None and numpy.array_equal(prev_labels, labels):
+            break
+        prev_labels = labels.copy()
+
+    return best_labels, best_centers, best_inertia, iter

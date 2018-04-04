@@ -39,7 +39,6 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
-from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
@@ -54,11 +53,6 @@ from src.papierstat.mltricks import SkBaseTransformLearner
 class TestSklearnConvert(ExtTestCase):
 
     def test_pipeline_with_two_classifiers(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -75,11 +69,6 @@ class TestSklearnConvert(ExtTestCase):
             'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
 
     def test_pipeline_with_callable(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -97,11 +86,6 @@ class TestSklearnConvert(ExtTestCase):
             'SkBaseTransformLearner(model=LogisticRegression(C=1.0,', rp)
 
     def test_pipeline_with_two_regressors(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -118,11 +102,6 @@ class TestSklearnConvert(ExtTestCase):
             'SkBaseTransformLearner(model=LinearRegression(copy_X=True,', rp)
 
     def test_pipeline_with_params(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -141,11 +120,6 @@ class TestSklearnConvert(ExtTestCase):
             pars['skbasetransformlearner__model__normalize'], True)
 
     def test_pickle(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -165,11 +139,6 @@ class TestSklearnConvert(ExtTestCase):
         self.assertEqualArray(pred, pred2)
 
     def test_grid(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],

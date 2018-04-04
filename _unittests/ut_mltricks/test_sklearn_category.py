@@ -39,7 +39,6 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
-from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import GridSearchCV
@@ -53,11 +52,6 @@ from src.papierstat.mltricks import SkBaseLearnerCategory
 class TestSklearnCategory(ExtTestCase):
 
     def test_fit_cat(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -72,11 +66,6 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_fit_cat_array(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -91,11 +80,6 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_fit_predict(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -120,11 +104,6 @@ class TestSklearnCategory(ExtTestCase):
                          NotImplementedError)
 
     def test_pickle(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -145,11 +124,6 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(pred, pred2)
 
     def test_grid(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
@@ -175,11 +149,6 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_wines(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = load_wines_dataset()
 
         X = df.drop(['quality', 'color'], axis=1)

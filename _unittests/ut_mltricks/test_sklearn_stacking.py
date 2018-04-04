@@ -38,7 +38,6 @@ except ImportError:
         sys.path.append(path)
     import pyquickhelper as skip_
 
-from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import ExtTestCase
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
@@ -59,11 +58,6 @@ from src.papierstat.mltricks import SkBaseTransformStacking
 class TestSklearnStacking(ExtTestCase):
 
     def test_pipeline_with_two_classifiers(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -81,11 +75,6 @@ class TestSklearnStacking(ExtTestCase):
             'SkBaseTransformStacking([LogisticRegression(C=1.0, class_weight=None,', rp)
 
     def test_pipeline_with_params(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -108,11 +97,6 @@ class TestSklearnStacking(ExtTestCase):
             pars['skbasetransformstacking__models_0__model__normalize'], True)
 
     def test_pickle(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -131,11 +115,6 @@ class TestSklearnStacking(ExtTestCase):
         self.assertEqualArray(pred, pred2)
 
     def test_clone(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         conv = SkBaseTransformStacking([LinearRegression(normalize=True),
                                         DecisionTreeClassifier(max_depth=3)],
                                        'predict')
@@ -143,11 +122,6 @@ class TestSklearnStacking(ExtTestCase):
         conv.test_equality(cloned, exc=True)
 
     def test_grid(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         data = load_iris()
         X, y = data.data, data.target
         X_train, X_test, y_train, y_test = train_test_split(X, y)
@@ -167,11 +141,6 @@ class TestSklearnStacking(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_pipeline_wines(self):
-        fLOG(
-            __file__,
-            self._testMethodName,
-            OutputPrint=__name__ == "__main__")
-
         df = load_wines_dataset(shuffle=True)
         X = df.drop(['quality', 'color'], axis=1)
         y = df['quality']

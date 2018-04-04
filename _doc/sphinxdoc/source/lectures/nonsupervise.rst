@@ -2,7 +2,7 @@
 Machine Learning non supervisé
 ==============================
 
-Hors texte.
+
 
 .. contents::
     :local:
@@ -10,7 +10,25 @@ Hors texte.
 Réduction de dimension
 ++++++++++++++++++++++
 
-* `Analyse en Composantes Principales <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_
+L'`Analyse en Composantes Principales <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_
+est le procédé le plus connu pour réduire les dimensions.
+Supposons qu'on doive résoudre un problème de régression
+:math:`y=f(X)+\epsilon` où :math:`X=(x_1,...,x_n)`
+contient *n* variables. Réduire les dimensions consiste
+à construire :math:`m < n` variables fonctions
+des premières dont on se sert ensuite pour construire 
+la régression : :math:`y = f(p(X)) + \epsilon`.
+On s'en sert pour deux raisons :
+
+* Avoir une fonction *f* plus simple puisque moins de variables,
+* Construire d'autres variables :math:`p(X)` moins bruitées,
+  donc plus performantes.
+
+Une façon de construire *p* consiste à minimiser la
+perte d'information : :math:`\norme{p^{-1}(p(X)) - X}`.
+La fonction *p* linéaire correspond à l'analyse
+en composantes principales.
+
 
 Clustering
 ++++++++++
