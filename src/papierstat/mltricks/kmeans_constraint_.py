@@ -60,7 +60,7 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     @param      centers                 initialized centers
     @param      inertia                 initialized inertia (unsued)
     @param      precompute_distances    precompute distances (used in
-                                        `_label_inertia <>`_)
+                                        `_label_inertia <https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/cluster/k_means_.py#L547>`_)
     @param      iter                    number of iteration already done
     @param      max_iter                maximum of number of iteration
     @param      verbose                 verbose
@@ -81,39 +81,11 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     prev_labels = None
 
     while iter < max_iter:
-        # distances
-        distances = euclidean_distances(
-            centers, X, Y_norm_squared=x_squared_norms, squared=True)
-        distance_linear = linearize_matrix(distances.T)
-        sorted_distances = distance_linear[distance_linear[:, 0].argsort()]
-
-        # initialisation
-        counters[:] = 0
-        labels[:] = -1
-        leftclose[:] = -1
-        distances_close[:] = numpy.nan
-
-        # affectation
-        nover = leftover
-        for i in range(0, sorted_distances.shape[0]):
-            ind = int(sorted_distances[i, 1])
-            if labels[ind] >= 0:
-                continue
-            c = int(sorted_distances[i, 2])
-            if counters[c] < limit:
-                # The cluster still accepts new points.
-                counters[c] += 1
-                labels[ind] = c
-                distances_close[ind] = sorted_distances[i, 0]
-            elif nover > 0 and leftclose[ind] == -1:
-                # The cluster may accept one point if the number
-                # of clusters does not divide the number of points in X.
-                counters[c] += 1
-                labels[ind] = c
-                nover -= 1
-                leftclose[ind] = 0
-                distances_close[ind] = sorted_distances[i, 0]
-
+        
+        # association
+        _constraint_association(leftover, counters, labels, leftclose, distances_close,
+                            centers, X, x_squared_norms, limit)
+        
         # compute new clusters
         if scipy.sparse.issparse(X):
             centers = _centers_sparse(X, labels, n_clusters, distances_close)
@@ -141,3 +113,82 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
         prev_labels = labels.copy()
 
     return best_labels, best_centers, best_inertia, iter
+
+
+def _constraint_association(leftover, counters, labels, leftclose, distances_close,
+                            centers, X, x_squared_norms, limit):
+    """
+    Completes the constraint k-means.
+
+    @param      X               features
+    @param      labels          initialized labels (unsued)
+    @param      centers         initialized centers
+    @param      x_squared_norms norm of *X*
+    @param      limit           number of point to associate per cluster
+    @param      leftover        number of points to associate at the end
+    @param      counters        allocated array
+    @param      leftclose       allocated array
+    @param      labels          allocated array
+    @param      distances_close allocated array
+    """
+    # initialisation
+    counters[:] = 0
+    labels[:] = -1
+    leftclose[:] = -1
+    distances_close[:] = numpy.nan
+
+    # distances
+    distances = euclidean_distances(
+        centers, X, Y_norm_squared=x_squared_norms, squared=True)
+    distance_linear = linearize_matrix(distances.T)
+    sorted_distances = distance_linear[distance_linear[:, 0].argsort()]
+
+    nover = leftover
+    for i in range(0, sorted_distances.shape[0]):
+        ind = int(sorted_distances[i, 1])
+        if labels[ind] >= 0:
+            continue
+        c = int(sorted_distances[i, 2])
+        if counters[c] < limit:
+            # The cluster still accepts new points.
+            counters[c] += 1
+            labels[ind] = c
+            distances_close[ind] = sorted_distances[i, 0]
+        elif nover > 0 and leftclose[ind] == -1:
+            # The cluster may accept one point if the number
+            # of clusters does not divide the number of points in X.
+            counters[c] += 1
+            labels[ind] = c
+            nover -= 1
+            leftclose[ind] = 0
+            distances_close[ind] = sorted_distances[i, 0]
+    return distances
+
+
+def constraint_predictions(X, centers):
+    """
+    Computes the predictions but tries
+    to associates the same numbers of points
+    in each cluster.
+    
+    @param      X           features
+    @param      centers     centers of each clusters
+    @return                 labels, distances, distances_close
+    """
+    if isinstance(X, DataFrame):
+        X = X.as_matrix()
+    x_squared_norms = row_norms(X, squared=True)
+    counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
+    limit = X.shape[0] // centers.shape[0]
+    leftover = X.shape[0] - limit * centers.shape[0]
+    leftclose = numpy.empty((X.shape[0],), dtype=numpy.int32)
+    n_clusters = centers.shape[0]
+    distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
+    labels = numpy.empty((X.shape[0],), dtype=int)
+    best_inertia = None
+    prev_labels = None
+
+    distances = _constraint_association(leftover, counters, labels, leftclose,
+                                        distances_close, centers, X, x_squared_norms, limit)
+    
+    return labels, distances.T, distances_close

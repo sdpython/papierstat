@@ -144,6 +144,26 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         else:
             self.assertEqual(pred, numpy.array([1, 1, 1, 0]))
 
+    def test_kmeans_constraint_constraint(self):
+        mat = numpy.array([[0, 0], [0.2, 0.2], [-0.1, -0.1], [1, 1]])
+        km = ConstraintKMeans(n_clusters=2, verbose=0, balanced_predictions=True)
+        km.fit(mat)
+        self.assertEqual(km.cluster_centers_.shape, (2, 2))
+        self.assertEqualFloat(km.inertia_, 0.455)
+        if km.labels_[0] == 0:
+            self.assertEqual(km.labels_, numpy.array([0, 1, 0, 1]))
+            self.assertEqual(km.cluster_centers_, numpy.array(
+                [[-0.05, -0.05], [0.6, 0.6]]))
+        else:
+            self.assertEqual(km.labels_, numpy.array([1, 0, 1, 0]))
+            self.assertEqual(km.cluster_centers_, numpy.array(
+                [[0.6, 0.6], [-0.05, -0.05]]))
+        pred = km.predict(mat)
+        if km.labels_[0] == 0:
+            self.assertEqual(pred, numpy.array([0, 1, 0, 1]))
+        else:
+            self.assertEqual(pred, numpy.array([1, 0, 1, 0]))
+
     def test_kmeans_constraint_sparse(self):
         mat = numpy.array([[0, 0], [0.2, 0.2], [-0.1, -0.1], [1, 1]])
         mat = scipy.sparse.csr_matrix(mat)
@@ -178,8 +198,7 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         score2 = pipe.score(X_test, y_test)
         self.assertEqual(score, score2)
         rp = repr(km)
-        self.assertStartsWith(
-            "ConstraintKMeans(algorithm='auto', copy_x=True, init='k-means++'", rp)
+        self.assertStartsWith("ConstraintKMeans(algorithm='auto', balanced_predictions=False, copy_x=True", rp)
 
     def test_kmeans_constraint_grid(self):
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
@@ -193,7 +212,9 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         self.assertNotEmpty(res)
 
         parameters = {
-            'constraintkmeans__n_clusters': [2, 3, 4]}
+            'constraintkmeans__n_clusters': [2, 3, 4],
+            'constraintkmeans__balanced_predictions': [False, True],
+            }
         clf = GridSearchCV(model, parameters)
         clf.fit(X, y)
         pred = clf.predict(X)
