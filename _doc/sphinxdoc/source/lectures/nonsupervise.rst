@@ -55,4 +55,13 @@ La suite est un exemple d'utilisation de ce type d'algorithme :
 Exercice
 ++++++++
 
-* `Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_clustering.html>`_
+Le notebook suivant se propose de d'étudier le comportement
+des cyclistes dans la ville de Chicago et d'en déduire leurs
+habitudes à l'aide d'une méthode de clustering :
+`Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_clustering.html>`_.
+
+.. toctree::
+    :maxdepth: 1
+    
+    ../notebooks/constraint_kmeans
+
