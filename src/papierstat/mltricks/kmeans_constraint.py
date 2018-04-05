@@ -23,14 +23,14 @@ class ConstraintKMeans(KMeans):
     over the test set. That implies that the predictions
     for the same observations might change depending
     on the set it belongs to.
-    
+
     .. runpython::
         :rst:
 
         from papierstat.datasets.documentation import list_notebooks_rst_links
         links = list_notebooks_rst_links('digressions', 'constraint_kmeans')
         links = ['    * %s' % s for s in links]
-        print('\\n'.join(links))    
+        print('\\n'.join(links))
     """
 
     def __init__(self, n_clusters=8, init='k-means++', n_init=10, max_iter=300,
@@ -93,11 +93,11 @@ class ConstraintKMeans(KMeans):
         self.inertia_ = inertia
         self.n_iter_ = iter
         return self
-    
+
     def predict(self, X):
         """
         Computes the predictions.
-        
+
         @param      X       features.
         @return             prediction
         """
@@ -105,17 +105,18 @@ class ConstraintKMeans(KMeans):
             labels, _, __ = constraint_predictions(X, self.cluster_centers_)
             return labels
         else:
-            return KMeans.predict(self, X)            
-        
+            return KMeans.predict(self, X)
+
     def transform(self, X):
         """
         Computes the predictions.
-        
+
         @param      X       features.
         @return             prediction
         """
         if self.balanced_predictions:
-            labels, distances, __ = constraint_predictions(X, self.cluster_centers_)
+            labels, distances, __ = constraint_predictions(
+                X, self.cluster_centers_)
             # We remove small distances than the chosen clusters
             # due to the constraint, we choose max*2 instead.
             mx = distances.max() * 2
@@ -124,22 +125,22 @@ class ConstraintKMeans(KMeans):
                 mmi = distances[i, :].min()
                 if mi > mmi:
                     # numpy.nan would be best
-                    distances[i, distances[i,:] < mi] = mx
+                    distances[i, distances[i, :] < mi] = mx
             return distances
         else:
-            return KMeans.transform(self, X)            
-        
+            return KMeans.transform(self, X)
+
     def score(self, X, y=None):
         """
         Returns the distances to all clusters.
-        
+
         @param      X       features
         @param      y       unused
         @return             distances
         """
         if self.balanced_predictions:
-            _, __, dist_close = constraint_predictions(X, self.cluster_centers_)
+            _, __, dist_close = constraint_predictions(
+                X, self.cluster_centers_)
             return dist_close
         else:
             return euclidean_distances(self.cluster_centers_, X, squared=True)
-        

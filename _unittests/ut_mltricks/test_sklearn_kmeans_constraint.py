@@ -146,7 +146,8 @@ class TestSklearnConstraintKMeans(ExtTestCase):
 
     def test_kmeans_constraint_constraint(self):
         mat = numpy.array([[0, 0], [0.2, 0.2], [-0.1, -0.1], [1, 1]])
-        km = ConstraintKMeans(n_clusters=2, verbose=0, balanced_predictions=True)
+        km = ConstraintKMeans(n_clusters=2, verbose=0,
+                              balanced_predictions=True)
         km.fit(mat)
         self.assertEqual(km.cluster_centers_.shape, (2, 2))
         self.assertEqualFloat(km.inertia_, 0.455)
@@ -198,7 +199,8 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         score2 = pipe.score(X_test, y_test)
         self.assertEqual(score, score2)
         rp = repr(km)
-        self.assertStartsWith("ConstraintKMeans(algorithm='auto', balanced_predictions=False, copy_x=True", rp)
+        self.assertStartsWith(
+            "ConstraintKMeans(algorithm='auto', balanced_predictions=False, copy_x=True", rp)
 
     def test_kmeans_constraint_grid(self):
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
@@ -214,7 +216,7 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         parameters = {
             'constraintkmeans__n_clusters': [2, 3, 4],
             'constraintkmeans__balanced_predictions': [False, True],
-            }
+        }
         clf = GridSearchCV(model, parameters)
         clf.fit(X, y)
         pred = clf.predict(X)

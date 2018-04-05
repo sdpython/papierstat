@@ -2,8 +2,6 @@
 Machine Learning non supervisé
 ==============================
 
-
-
 .. contents::
     :local:
 
@@ -16,7 +14,7 @@ Supposons qu'on doive résoudre un problème de régression
 :math:`y=f(X)+\epsilon` où :math:`X=(x_1,...,x_n)`
 contient *n* variables. Réduire les dimensions consiste
 à construire :math:`m < n` variables fonctions
-des premières dont on se sert ensuite pour construire 
+des premières dont on se sert ensuite pour construire
 la régression : :math:`y = f(p(X)) + \epsilon`.
 On s'en sert pour deux raisons :
 
@@ -28,7 +26,6 @@ Une façon de construire *p* consiste à minimiser la
 perte d'information : :math:`\norme{p^{-1}(p(X)) - X}`.
 La fonction *p* linéaire correspond à l'analyse
 en composantes principales.
-
 
 Clustering
 ++++++++++
@@ -62,6 +59,5 @@ habitudes à l'aide d'une méthode de clustering :
 
 .. toctree::
     :maxdepth: 1
-    
-    ../notebooks/constraint_kmeans
 
+    ../notebooks/constraint_kmeans

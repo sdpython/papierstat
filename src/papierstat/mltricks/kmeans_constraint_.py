@@ -81,11 +81,11 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     prev_labels = None
 
     while iter < max_iter:
-        
+
         # association
         _constraint_association(leftover, counters, labels, leftclose, distances_close,
-                            centers, X, x_squared_norms, limit)
-        
+                                centers, X, x_squared_norms, limit)
+
         # compute new clusters
         if scipy.sparse.issparse(X):
             centers = _centers_sparse(X, labels, n_clusters, distances_close)
@@ -170,7 +170,7 @@ def constraint_predictions(X, centers):
     Computes the predictions but tries
     to associates the same numbers of points
     in each cluster.
-    
+
     @param      X           features
     @param      centers     centers of each clusters
     @return                 labels, distances, distances_close
@@ -182,13 +182,10 @@ def constraint_predictions(X, centers):
     limit = X.shape[0] // centers.shape[0]
     leftover = X.shape[0] - limit * centers.shape[0]
     leftclose = numpy.empty((X.shape[0],), dtype=numpy.int32)
-    n_clusters = centers.shape[0]
     distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
     labels = numpy.empty((X.shape[0],), dtype=int)
-    best_inertia = None
-    prev_labels = None
 
     distances = _constraint_association(leftover, counters, labels, leftclose,
                                         distances_close, centers, X, x_squared_norms, limit)
-    
+
     return labels, distances.T, distances_close
