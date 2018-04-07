@@ -50,7 +50,7 @@ from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
 
-from src.papierstat.mltricks.kmeans_constraint_ import linearize_matrix
+from src.papierstat.mltricks.kmeans_constraint_ import linearize_matrix, _compute_sortby_coefficient
 from src.papierstat.mltricks import ConstraintKMeans
 
 
@@ -70,6 +70,21 @@ class TestSklearnConstraintKMeans(ExtTestCase):
                            [1., 2., 2.]])
         self.assertEqual(exp, lin)
 
+    def test_mat_lin_add(self):
+        mat = numpy.identity(3)
+        mat2 = numpy.identity(3) * 3
+        lin = linearize_matrix(mat, mat2)
+        exp = numpy.array([[1., 0., 0., 3.],
+                           [0., 0., 1., 0.],
+                           [0., 0., 2., 0.],
+                           [0., 1., 0., 0.],
+                           [1., 1., 1., 3.],
+                           [0., 1., 2., 0.],
+                           [0., 2., 0., 0.],
+                           [0., 2., 1., 0.],
+                           [1., 2., 2., 3.]])
+        self.assertEqual(exp, lin)
+
     def test_mat_lin_sparse(self):
         mat = numpy.identity(3)
         mat[0, 2] = 8
@@ -83,6 +98,23 @@ class TestSklearnConstraintKMeans(ExtTestCase):
                            [5., 1., 2.],
                            [7., 2., 1.],
                            [1., 2., 2.]])
+        self.assertEqual(exp, lin)
+
+    def test_mat_lin_sparse_add(self):
+        mat = numpy.identity(3)
+        mat[0, 2] = 8
+        mat[1, 2] = 5
+        mat[2, 1] = 7
+        mat2 = numpy.identity(3) * 3
+        mat = scipy.sparse.csr_matrix(mat)
+        mat2 = scipy.sparse.csr_matrix(mat2)
+        lin = linearize_matrix(mat, mat2)
+        exp = numpy.array([[1., 0., 0., 3.],
+                           [8., 0., 2., 0.],
+                           [1., 1., 1., 3.],
+                           [5., 1., 2., 0.],
+                           [7., 2., 1., 0.],
+                           [1., 2., 2., 3.]])
         self.assertEqual(exp, lin)
 
     def test_mat_lin_sparse2(self):
@@ -206,10 +238,12 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
                                    X1=[0.5, 0.6, 0.52, 0.62,
                                        0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8]))
+                                   X2=[0.5, 0.6, 0.7, 0.5,
+                                       1.5, 1.6, 1.7, 1.8]))
         X = df.drop('y', axis=1)
         y = df['y']
-        model = make_pipeline(ConstraintKMeans(), DecisionTreeClassifier())
+        model = make_pipeline(ConstraintKMeans(balanced_predictions=True, random_state=0),
+                              DecisionTreeClassifier())
         res = model.get_params(True)
         self.assertNotEmpty(res)
 
@@ -238,6 +272,16 @@ class TestSklearnConstraintKMeans(ExtTestCase):
         rec = pickle.load(st)
         pred2 = rec.transform(X)
         self.assertEqualArray(pred, pred2)
+
+    def test__compute_sortby_coefficient(self):
+        m1 = numpy.array([[1., 2.], [4., 5.]])
+        res = _compute_sortby_coefficient(m1, 'ratio')
+        exp = numpy.array([[1., 0.5], [1., 0.8]])
+        self.assertEqualArray(res, exp)
+
+    def test_kmeans_constraint_exc(self):
+        self.assertRaise(lambda: ConstraintKMeans(
+            n_clusters=2, sortby='r'), ValueError)
 
 
 if __name__ == "__main__":
