@@ -5,6 +5,7 @@
 """
 from pandas import DataFrame
 import numpy
+import bisect
 import scipy.sparse
 from sklearn.cluster.k_means_ import _labels_inertia
 from sklearn.cluster._k_means import _centers_sparse, _centers_dense
@@ -63,7 +64,7 @@ def linearize_matrix(mat, *adds):
 
 
 def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, max_iter,
-                      sortby='distance', verbose=0, fLOG=None):
+                      strategy='gain', verbose=0, state=None, fLOG=None):
     """
     Completes the constraint *k-means*.
 
@@ -75,9 +76,10 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
                                         `_label_inertia <https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/cluster/k_means_.py#L547>`_)
     @param      iter                    number of iteration already done
     @param      max_iter                maximum of number of iteration
-    @param      sortby                  strategy used to sort observations before
+    @param      strategy                strategy used to sort observations before
                                         mapping them to clusters
     @param      verbose                 verbose
+    @param      state                   random state
     @param      fLOG                    logging function (needs to be specified otherwise
                                         verbose has no effects)
     @return                             tuple (best_labels, best_centers, best_inertia, iter)
@@ -88,23 +90,28 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
     limit = X.shape[0] // centers.shape[0]
     leftover = X.shape[0] - limit * centers.shape[0]
-    leftclose = numpy.empty((X.shape[0],), dtype=numpy.int32)
+    leftclose = numpy.empty((centers.shape[0],), dtype=numpy.int32)
     n_clusters = centers.shape[0]
     distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
     best_inertia = None
     prev_labels = None
+    best_iter = None
+
+    # association
+    _constraint_association(leftover, counters, labels, leftclose, distances_close,
+                            centers, X, x_squared_norms, limit, strategy, state=state)
 
     while iter < max_iter:
-
-        # association
-        _constraint_association(leftover, counters, labels, leftclose, distances_close,
-                                centers, X, x_squared_norms, limit, sortby)
 
         # compute new clusters
         if scipy.sparse.issparse(X):
             centers = _centers_sparse(X, labels, n_clusters, distances_close)
         else:
             centers = _centers_dense(X, labels, n_clusters, distances_close)
+
+        # association
+        _constraint_association(leftover, counters, labels, leftclose, distances_close,
+                                centers, X, x_squared_norms, limit, strategy, state=state)
 
         # inertia
         _, inertia = _labels_inertia(X, x_squared_norms, centers,
@@ -120,8 +127,11 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
             best_inertia = inertia
             best_centers = centers.copy()
             best_labels = labels.copy()
+            best_iter = iter
 
         # early stop
+        if best_inertia is not None and inertia >= best_inertia and iter > best_iter + 5:
+            break
         if prev_labels is not None and numpy.array_equal(prev_labels, labels):
             break
         prev_labels = labels.copy()
@@ -129,8 +139,38 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     return best_labels, best_centers, best_inertia, iter
 
 
+def constraint_predictions(X, centers, strategy, state=None):
+    """
+    Computes the predictions but tries
+    to associates the same numbers of points
+    in each cluster.
+
+    @param      X           features
+    @param      centers     centers of each clusters
+    @param      strategy    strategy used to sort point before
+                            mapping them to a cluster
+    @param      state       random state
+    @return                 labels, distances, distances_close
+    """
+    if isinstance(X, DataFrame):
+        X = X.as_matrix()
+    x_squared_norms = row_norms(X, squared=True)
+    counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
+    limit = X.shape[0] // centers.shape[0]
+    leftover = X.shape[0] - limit * centers.shape[0]
+    leftclose = numpy.empty((centers.shape[0],), dtype=numpy.int32)
+    distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
+    labels = numpy.empty((X.shape[0],), dtype=int)
+
+    distances = _constraint_association(leftover, counters, labels, leftclose,
+                                        distances_close, centers, X, x_squared_norms,
+                                        limit, strategy, state=state)
+
+    return labels, distances, distances_close
+
+
 def _constraint_association(leftover, counters, labels, leftclose, distances_close,
-                            centers, X, x_squared_norms, limit, sortby):
+                            centers, X, x_squared_norms, limit, strategy, state=None):
     """
     Completes the constraint *k-means*.
 
@@ -144,21 +184,53 @@ def _constraint_association(leftover, counters, labels, leftclose, distances_clo
     @param      leftclose       allocated array
     @param      labels          allocated array
     @param      distances_close allocated array
-    @param      sortby          strategy used to sort point before
+    @param      strategy        strategy used to sort point before
                                 mapping them to a cluster
+    @param      state           random state
     """
+    if strategy in ('distance', 'distance_p'):
+        return _constraint_association_distance(leftover, counters, labels, leftclose, distances_close,
+                                                centers, X, x_squared_norms, limit, strategy, state=state)
+    elif strategy in ('gain', 'gain_p'):
+        return _constraint_association_gain(leftover, counters, labels, leftclose, distances_close,
+                                            centers, X, x_squared_norms, limit, strategy, state=state)
+    else:
+        raise ValueError("Unknwon strategy '{0}'.".format(strategy))
+
+
+def _constraint_association_distance(leftover, counters, labels, leftclose, distances_close,
+                                     centers, X, x_squared_norms, limit, strategy, state=None):
+    """
+    Completes the constraint *k-means*.
+
+    @param      X               features
+    @param      labels          initialized labels (unsued)
+    @param      centers         initialized centers
+    @param      x_squared_norms norm of *X*
+    @param      limit           number of point to associate per cluster
+    @param      leftover        number of points to associate at the end
+    @param      counters        allocated array
+    @param      leftclose       allocated array
+    @param      labels          allocated array
+    @param      distances_close allocated array
+    @param      strategy        strategy used to sort point before
+                                mapping them to a cluster
+    @param      state           random state (unused)
+    """
+
     # initialisation
     counters[:] = 0
-    labels[:] = -1
     leftclose[:] = -1
     distances_close[:] = numpy.nan
+    labels[:] = -1
 
     # distances
     distances = euclidean_distances(
         centers, X, Y_norm_squared=x_squared_norms, squared=True)
     distances = distances.T
-    sortby_coef = _compute_sortby_coefficient(distances, sortby)
-    distance_linear = linearize_matrix(distances, sortby_coef)
+
+    strategy_coef = _compute_strategy_coefficient(distances, strategy, labels)
+    distance_linear = linearize_matrix(distances, strategy_coef)
     sorted_distances = distance_linear[distance_linear[:, 3].argsort()]
 
     nover = leftover
@@ -172,60 +244,151 @@ def _constraint_association(leftover, counters, labels, leftclose, distances_clo
             counters[c] += 1
             labels[ind] = c
             distances_close[ind] = sorted_distances[i, 0]
-        elif nover > 0 and leftclose[ind] == -1:
+        elif nover > 0 and leftclose[c] == -1:
             # The cluster may accept one point if the number
             # of clusters does not divide the number of points in X.
             counters[c] += 1
             labels[ind] = c
             nover -= 1
-            leftclose[ind] = 0
+            leftclose[c] = 0
             distances_close[ind] = sorted_distances[i, 0]
     return distances
 
 
-def constraint_predictions(X, centers, sortby):
-    """
-    Computes the predictions but tries
-    to associates the same numbers of points
-    in each cluster.
-
-    @param      X           features
-    @param      centers     centers of each clusters
-    @param      sortby      strategy used to sort point before
-                            mapping them to a cluster
-    @return                 labels, distances, distances_close
-    """
-    if isinstance(X, DataFrame):
-        X = X.as_matrix()
-    x_squared_norms = row_norms(X, squared=True)
-    counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
-    limit = X.shape[0] // centers.shape[0]
-    leftover = X.shape[0] - limit * centers.shape[0]
-    leftclose = numpy.empty((X.shape[0],), dtype=numpy.int32)
-    distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
-    labels = numpy.empty((X.shape[0],), dtype=int)
-
-    distances = _constraint_association(leftover, counters, labels, leftclose,
-                                        distances_close, centers, X, x_squared_norms,
-                                        limit, sortby)
-
-    return labels, distances, distances_close
-
-
-def _compute_sortby_coefficient(distances, sortby):
+def _compute_strategy_coefficient(distances, strategy, labels):
     """
     Creates a matrix
     """
-    if sortby == 'distance':
+    if strategy in ('distance', 'distance_p'):
         return distances
-    elif sortby == '-distance':
-        return distances
-    elif sortby == 'ratio':
-        inv = numpy.reciprocal(distances)
-        mini = numpy.amin(distances, axis=1)
-        return mini[:, numpy.newaxis] * inv
-    elif sortby == '-ratio':
-        mini = numpy.reciprocal(numpy.amin(distances, axis=1))
-        return mini[:, numpy.newaxis] * distances
+    elif strategy in ('gain', 'gain_p'):
+        ar = numpy.arange(distances.shape[0])
+        dist = distances[ar, labels]
+        return distances - dist[:, numpy.newaxis]
     else:
-        raise ValueError("Strategy '{0}' does not exist.".format(sortby))
+        raise ValueError("Unknwon strategy '{0}'.".format(strategy))
+
+
+def _constraint_association_gain(leftover, counters, labels, leftclose, distances_close,
+                                 centers, X, x_squared_norms, limit, strategy, state=None):
+    """
+    Completes the constraint *k-means*.
+
+    @param      X               features
+    @param      labels          initialized labels (unsued)
+    @param      centers         initialized centers
+    @param      x_squared_norms norm of *X*
+    @param      limit           number of points to associate per cluster
+    @param      leftover        number of points to associate at the end
+    @param      counters        allocated array
+    @param      leftclose       allocated array
+    @param      labels          allocated array
+    @param      distances_close allocated array
+    @param      strategy        strategy used to sort point before
+                                mapping them to a cluster
+    @param      state           random state
+
+    See `Same-size k-Means Variation <https://elki-project.github.io/tutorial/same-size_k_means>`_.
+    """
+    # distances
+    distances = euclidean_distances(
+        centers, X, Y_norm_squared=x_squared_norms, squared=True)
+    distances = distances.T
+
+    if strategy == 'gain_p':
+        labels[:] = numpy.argmin(distances, axis=1)
+    else:
+        # We assume labels comes from a previous iteration.
+        pass
+
+    strategy_coef = _compute_strategy_coefficient(distances, strategy, labels)
+    distance_linear = linearize_matrix(distances, strategy_coef)
+    sorted_distances = distance_linear[distance_linear[:, 3].argsort()]
+    distances_close[:] = 0
+
+    # counters
+    ave = limit
+    counters[:] = 0
+    for i in labels:
+        counters[i] += 1
+    leftclose[:] = counters[:] - ave
+    leftclose[leftclose < 0] = 0
+    nover = X.shape[0] - ave * counters.shape[0]
+    sumi = nover - leftclose.sum()
+    if sumi != 0:
+        if state is None:
+            state = numpy.random.RandomState()
+
+        def loopf(h, sumi):
+            if sumi < 0 and leftclose[h] > 0:
+                sumi -= leftclose[h]
+                leftclose[h] = 0
+            elif sumi > 0 and leftclose[h] == 0:
+                leftclose[h] = 1
+                sumi += 1
+            return sumi
+
+        it = 0
+        while sumi != 0:
+            h = state.randint(0, counters.shape[0])
+            sumi = loopf(h, sumi)
+            it += 1
+            if it > counters.shape[0] * 2:
+                break
+        for h in range(counters.shape[0]):
+            if sumi == 0:
+                break
+            sumi = loopf(h, sumi)
+
+    transfer = {}
+
+    for i in range(0, sorted_distances.shape[0]):
+        gain = sorted_distances[i, 3]
+        ind = int(sorted_distances[i, 1])
+        dest = int(sorted_distances[i, 2])
+        cur = labels[ind]
+        if distances_close[ind]:
+            continue
+        if cur == dest:
+            continue
+        if (counters[dest] < ave + leftclose[dest]) and (counters[cur] > ave + leftclose[cur]):
+            labels[ind] = dest
+            counters[cur] -= 1
+            counters[dest] += 1
+            distances_close[ind] = 1  # moved
+        else:
+            cp = transfer.get((dest, cur), [])
+            while len(cp) > 0:
+                g, destind = cp[0]
+                if distances_close[destind]:
+                    del cp[0]
+                else:
+                    break
+            if len(cp) > 0:
+                g, destind = cp[0]
+                if g + gain < 0:
+                    del cp[0]
+                    labels[ind] = dest
+                    labels[destind] = cur
+                    add = False
+                    distances_close[ind] = 1  # moved
+                    distances_close[destind] = 1  # moved
+                else:
+                    add = True
+            else:
+                add = True
+            if add:
+                # We add the point to the list of points will to transfer.
+                if (cur, dest) not in transfer:
+                    transfer[cur, dest] = []
+                gain = sorted_distances[i, 3]
+                bisect.insort(transfer[cur, dest], (gain, ind))
+
+    distances_close[:] = distances[numpy.arange(X.shape[0]), labels]
+
+    neg = (counters < ave).sum()
+    if neg > 0:
+        raise RuntimeError(
+            "The algorithm failed, counters={0}".format(counters))
+
+    return distances

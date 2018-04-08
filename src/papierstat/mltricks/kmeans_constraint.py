@@ -3,6 +3,7 @@
 @file
 @brief Implémente la classe @see cl ConstraintKMeans.
 """
+import numpy
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import euclidean_distances
 from .kmeans_constraint_ import constraint_kmeans, constraint_predictions
@@ -33,14 +34,15 @@ class ConstraintKMeans(KMeans):
         print('\\n'.join(links))
     """
 
-    _sortby_value = {'distance', 'ratio', '-distance', '-ratio'}
+    _strategy_value = {'distance', 'gain'}
 
     def __init__(self, n_clusters=8, init='k-means++', n_init=10, max_iter=300,
                  tol=0.0001, precompute_distances='auto', verbose=0,
                  random_state=None, copy_x=True, n_jobs=1, algorithm='auto',
-                 balanced_predictions=False, sortby='distance'):
+                 balanced_predictions=False, strategy='gain', kmeans0=True):
         """
         @param      n_clusters              number of clusters
+        @param      init                    used by :epkg:`k-means`
         @param      n_init                  used by :epkg:`k-means`
         @param      max_iter                used by :epkg:`k-means`
         @param      tol                     used by :epkg:`k-means`
@@ -52,29 +54,30 @@ class ConstraintKMeans(KMeans):
         @param      algorithm               used by :epkg:`k-means`
         @param      balanced_predictions    produced balanced prediction
                                             or the regular ones
-        @param      sortby                  sort observations by a criterium before
-                                            assigning them to a cluster
+        @param      strategy                strategy or algorithm used to abide
+                                            by the constraint
+        @param      kmeans0                 if True, applies *k-means* algorithm first
 
-        The parameter *sortby* determines in which order
-        obseervations should be assigned to a cluster
-        knowning the first one gets a larger choice of clusters.
+        The parameter *strategy* determines how
+        obseervations should be assigned to a cluster.
         The value can be:
 
-        * ``'distance'``: observations are ranked by distance
-        * ``-distance``: opposite of the previous value
-        * ``'ratio'``: observations are ranked by a ratio between the distance
-          to a cluster divided by the distance to the closest
-        * ``'-ratio'``: opposite of the previous value
+        * ``'distance'``: observations are ranked by distance to a cluster,
+          the algorithm assigns first point to the closest center unless it reached
+          the maximulmsize
+        * ``'gain'``: follows the algorithm described at
+           see `Same-size k-Means Variation <https://elki-project.github.io/tutorial/same-size_k_means>`_
         """
         KMeans.__init__(self, n_clusters=n_clusters, init=init, n_init=n_init,
                         max_iter=max_iter, tol=tol, precompute_distances=precompute_distances,
                         verbose=verbose, random_state=random_state, copy_x=copy_x,
                         n_jobs=n_jobs, algorithm=algorithm)
         self.balanced_predictions = balanced_predictions
-        self.sortby = sortby
-        if sortby not in ConstraintKMeans._sortby_value:
-            raise ValueError('sortby must be in {0}'.format(
-                ConstraintKMeans._sortby_value))
+        self.strategy = strategy
+        self.kmeans0 = kmeans0
+        if strategy not in ConstraintKMeans._strategy_value:
+            raise ValueError('strategy must be in {0}'.format(
+                ConstraintKMeans._strategy_value))
 
     def fit(self, X, y=None, fLOG=None):
         """
@@ -93,11 +96,25 @@ class ConstraintKMeans(KMeans):
         """
         max_iter = self.max_iter
         self.max_iter //= 2
-        KMeans.fit(self, X, y)
-        self.max_iter = max_iter
-        return self.constraint_kmeans(X, fLOG=fLOG)
+        if self.kmeans0:
+            KMeans.fit(self, X, y)
+            state = None
+        else:
+            state = numpy.random.RandomState(self.random_state)
+            labels = state.randint(0, self.n_clusters, X.shape[0])
+            centers = numpy.empty((self.n_clusters, X.shape[1]), dtype=X.dtype)
+            choice = state.randint(0, self.n_clusters, self.n_clusters)
+            for i, c in enumerate(choice):
+                centers[i, :] = X[c, :]
+            self.labels_ = labels
+            self.cluster_centers_ = centers
+            self.inertia_ = float(X.shape[0])
+            self.n_iter_ = 0
 
-    def constraint_kmeans(self, X, fLOG=None):
+        self.max_iter = max_iter
+        return self.constraint_kmeans(X, state=state, fLOG=fLOG)
+
+    def constraint_kmeans(self, X, state=None, fLOG=None):
         """
         Completes the constraint k-means.
 
@@ -106,7 +123,8 @@ class ConstraintKMeans(KMeans):
         """
         labels, centers, inertia, iter = constraint_kmeans(X, self.labels_, self.cluster_centers_, self.inertia_,
                                                            self.precompute_distances, self.n_iter_, self.max_iter,
-                                                           verbose=self.verbose, sortby=self.sortby, fLOG=fLOG)
+                                                           verbose=self.verbose, strategy=self.strategy,
+                                                           state=state, fLOG=fLOG)
         self.labels_ = labels
         self.cluster_centers_ = centers
         self.inertia_ = inertia
@@ -122,7 +140,7 @@ class ConstraintKMeans(KMeans):
         """
         if self.balanced_predictions:
             labels, _, __ = constraint_predictions(
-                X, self.cluster_centers_, sortby=self.sortby)
+                X, self.cluster_centers_, strategy=self.strategy + '_p')
             return labels
         else:
             return KMeans.predict(self, X)
@@ -136,7 +154,7 @@ class ConstraintKMeans(KMeans):
         """
         if self.balanced_predictions:
             labels, distances, __ = constraint_predictions(
-                X, self.cluster_centers_, sortby=self.sortby)
+                X, self.cluster_centers_, strategy=self.strategy)
             # We remove small distances than the chosen clusters
             # due to the constraint, we choose max*2 instead.
             mx = distances.max() * 2
@@ -160,7 +178,7 @@ class ConstraintKMeans(KMeans):
         """
         if self.balanced_predictions:
             _, __, dist_close = constraint_predictions(
-                X, self.cluster_centers_, sortby=self.sortby)
+                X, self.cluster_centers_, strategy=self.strategy)
             return dist_close
         else:
             return euclidean_distances(self.cluster_centers_, X, squared=True)

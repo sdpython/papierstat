@@ -29,7 +29,7 @@ def duration_selling(date_begin=None, date_end=None,
     @param      mean_per_day    nombre de paquets moyen par jour (suit une loi gaussienne)
     @param      sigma_per_day   écart type pour la loi gaussienne
     @param      gamma_k         paramètre *k* d'une loi gamma
-    @param      gamma_theta     paramètre :math:`\theta` d'une loi gamma
+    @param      gamma_theta     paramètre :math:`\\theta` d'une loi gamma
     @return                     jeu de données
 
     .. runpython::
@@ -39,7 +39,7 @@ def duration_selling(date_begin=None, date_end=None,
         print(duration_selling().head())
 
     Les commandes sont réparties de façon uniformes sur la journée
-    même si c'est peu probable. La durée suit une loi :math:`\Gamma`.
+    même si c'est peu probable. La durée suit une loi :math:`\\Gamma`.
     Cette durée est ajoutée à l'heure où est passée la commande,
     les heures nocturnes et le week-end ne sont pas comptées.
     La durée ne peut excéder 10h.

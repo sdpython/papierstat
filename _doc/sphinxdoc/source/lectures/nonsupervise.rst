@@ -47,7 +47,7 @@ Selon la nature des données, on peut penser aussi à des méthodes comme
 `Latent Dirichlet Allocation <http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.LatentDirichletAllocation.html#sklearn.decomposition.LatentDirichletAllocation.transform>`_.
 
 La suite est un exemple d'utilisation de ce type d'algorithme :
-`City bike in Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
+`City bike in Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_.
 
 Exercice
 ++++++++
