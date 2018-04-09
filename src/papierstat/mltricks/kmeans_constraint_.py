@@ -160,7 +160,7 @@ def constraint_predictions(X, centers, strategy, state=None):
     leftover = X.shape[0] - limit * centers.shape[0]
     leftclose = numpy.empty((centers.shape[0],), dtype=numpy.int32)
     distances_close = numpy.empty((X.shape[0],), dtype=X.dtype)
-    labels = numpy.empty((X.shape[0],), dtype=int)
+    labels = numpy.empty((X.shape[0],), dtype=numpy.int32)
 
     distances = _constraint_association(leftover, counters, labels, leftclose,
                                         distances_close, centers, X, x_squared_norms,
