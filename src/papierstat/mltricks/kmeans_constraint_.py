@@ -97,11 +97,15 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     prev_labels = None
     best_iter = None
 
+    assert labels.dtype == numpy.int32
+
     # association
     _constraint_association(leftover, counters, labels, leftclose, distances_close,
                             centers, X, x_squared_norms, limit, strategy, state=state)
 
     while iter < max_iter:
+
+        assert labels.dtype == numpy.int32
 
         # compute new clusters
         if scipy.sparse.issparse(X):
@@ -121,6 +125,8 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
         iter += 1
         if verbose and fLOG:
             fLOG("CKMeans %d/%d inertia=%f" % (iter, max_iter, inertia))
+
+        assert labels.dtype == numpy.int32
 
         # best option so far?
         if best_inertia is None or inertia < best_inertia:

@@ -101,7 +101,7 @@ class ConstraintKMeans(KMeans):
             state = None
         else:
             state = numpy.random.RandomState(self.random_state)
-            labels = state.randint(0, self.n_clusters, X.shape[0])
+            labels = state.randint(0, self.n_clusters, X.shape[0], dtype=numpy.int32)
             centers = numpy.empty((self.n_clusters, X.shape[1]), dtype=X.dtype)
             choice = state.randint(0, self.n_clusters, self.n_clusters)
             for i, c in enumerate(choice):
