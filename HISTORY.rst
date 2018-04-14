@@ -3,7 +3,7 @@
 History
 =======
 
-current - 2018-04-05 - 0.00Mb
+current - 2018-04-14 - 0.00Mb
 =============================
 
 * `6`: add a constraint kmeans (2018-04-04)
