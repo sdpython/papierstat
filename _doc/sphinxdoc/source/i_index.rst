@@ -13,6 +13,7 @@ En diagonal
         filechanges
         all_report
         README
+        HISTORY
         license
         blog/blogindex
         index_module

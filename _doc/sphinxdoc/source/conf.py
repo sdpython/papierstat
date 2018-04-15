@@ -32,7 +32,7 @@ set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2018,
                      title="papierstat", book=True, nblayout='table')
 
 blog_root = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/"
-extensions.append('guzzle_sphinx_theme')
+# extensions.append('guzzle_sphinx_theme')
 
 if False:
     html_sidebars['**'] = ['globaltoc.html', 'localtoc.html', 'relations.html',
