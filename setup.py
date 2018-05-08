@@ -35,7 +35,7 @@ CLASSIFIERS = [
 packages = find_packages('src', exclude='src')
 package_dir = {k: "src/" + k.replace(".", "/") for k in packages}
 package_data = {project_var_name +
-                ".datasets.data": ["*.csv", "*.txt", "*.zip", "*.gz"]}
+                ".datasets.data": ["*.csv", "*.txt", "*.zip", "*.gz", "*.json"]}
 
 ############
 # functions
@@ -164,10 +164,11 @@ if is_local():
         sys.argv, __file__, project_var_name,
         unittest_modules=["pyquickhelper", "pyensae"],
         additional_notebook_path=["pyquickhelper", "jyquickhelper",
-                                  "pandas_streaming", "pyensae"],
+                                  "pandas_streaming", "pyensae", "mlinsights"],
         additional_local_path=["pyquickhelper", "jyquickhelper",
-                               "pandas_streaming", "pyensae"],
-        requirements=["pyquickhelper", "jyquickhelper", "pandas_streaming"],
+                               "pandas_streaming", "pyensae", "mlinsights"],
+        requirements=["pyquickhelper", "jyquickhelper",
+                      "pandas_streaming", "mlinsights"],
         add_htmlhelp=sys.platform.startswith("win"),
         coverage_options=dict(omit=["*exclude*.py"]),
         github_owner="sdpython",
@@ -209,7 +210,7 @@ if not r:
         package_dir=package_dir,
         package_data=package_data,
         # data_files=data_files,
-        install_requires=['scikit-learn', 'pandas',
+        install_requires=['scikit-learn', 'pandas', 'mlinsights',
                           'matplotlib', 'pandas_streaming'],
         # include_package_data=True,
     )

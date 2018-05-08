@@ -6,6 +6,7 @@ folium
 geopandas
 guzzle_sphinx_theme
 jyquickhelper>=0.3
+mlinsights
 msgpack
 pandas_streaming
 pyensae

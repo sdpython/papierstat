@@ -120,6 +120,7 @@ epkg_dictionary['ensae_teaching_cs'] = "http://www.xavierdupre.fr/app/ensae_teac
 epkg_dictionary['ENSAE'] = "http://www.ensae.fr/ensae/fr/"
 epkg_dictionary['forêt aléatoire'] = 'https://fr.wikipedia.org/wiki/For%C3%AAt_d%27arbres_d%C3%A9cisionnels'
 epkg_dictionary['fortran'] = "https://fr.wikipedia.org/wiki/Fortran"
+epkg_dictionary['GeoJSON'] = 'https://fr.wikipedia.org/wiki/GeoJSON'
 epkg_dictionary['k-means'] = "http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"
 epkg_dictionary['machine learning'] = 'https://fr.wikipedia.org/wiki/Apprentissage_automatique'
 epkg_dictionary['Master 2 ISF'] = 'http://isf.u-paris2.fr/master-2/'
