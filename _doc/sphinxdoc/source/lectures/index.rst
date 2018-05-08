@@ -21,6 +21,7 @@ pour explorer quelques points récurrents ou techniques.
     gradienttree
     seriestemp
     imagedeep
+    cartes
 
 Le machine learning cache bien des choses mais
 au final il s'agit de calculer une prédiction

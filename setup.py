@@ -212,5 +212,8 @@ if not r:
         # data_files=data_files,
         install_requires=['scikit-learn', 'pandas', 'mlinsights',
                           'matplotlib', 'pandas_streaming'],
+        extras_require={
+            'datasets.carreau': ["dbfread", "geopandas", "fiona"],
+        },
         # include_package_data=True,
     )

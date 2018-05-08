@@ -61,7 +61,7 @@ jobs:
           command: |
             python3 -m venv venv
             . venv/bin/activate
-            conda install -c scitools/label/archive cartopy
+            pip install -y cartopy
 
       - run:
           name: install dependencies (2)
