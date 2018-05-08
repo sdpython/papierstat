@@ -44,6 +44,11 @@ jobs:
                     sudo apt-get install -y graphviz
           
       - run:
+          name: Install geos
+          command: |
+                    sudo apt-get install -y libgeos-dev
+
+      - run:
           name: install dependencies (1)
           command: |
             python3 -m venv venv

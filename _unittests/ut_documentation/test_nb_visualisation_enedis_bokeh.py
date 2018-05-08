@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@brief      test log(time=24s)
+@brief      test log(time=10s)
 """
 
 import sys
@@ -43,13 +43,13 @@ from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
 
-class TestNotebookVisualisationEnedis(unittest.TestCase):
+class TestNotebookVisualisationEnedisBokeh(unittest.TestCase):
 
     def setUp(self):
         add_missing_development_version(
             ["jyquickhelper", "pyensae"], __file__, hide=True)
 
-    def test_notebook_visualisation_enedis(self):
+    def test_notebook_visualisation_enedis_bokeh(self):
         fLOG(
             __file__,
             self._testMethodName,
@@ -61,7 +61,7 @@ class TestNotebookVisualisationEnedis(unittest.TestCase):
                               "..", "..", "_doc", "notebooks", "visualisation")
         test_notebook_execution_coverage(
             __file__, "enedis", folder, 'papierstat', copy_files=[], fLOG=fLOG,
-            modules=[pyensae], filter_name=lambda n: 'bokeh' not in n)
+            modules=[pyensae], filter_name=lambda n: 'bokeh' in n)
 
 
 if __name__ == "__main__":
