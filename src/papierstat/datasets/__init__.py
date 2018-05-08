@@ -4,6 +4,7 @@
 @brief Fonctions retournant des jeux de données.
 """
 from .cat import load_adult_dataset
+from .carreau import load_carreau_from_zip
 from .duration import duration_selling
 from .enedis import load_enedis_dataset
 from .geojson import get_geojson_countries
