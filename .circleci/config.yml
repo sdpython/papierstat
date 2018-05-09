@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Install geos
           command: |
-                    sudo apt-get install -y libproj-dev libgeos-dev libgeo-proj4-perl
+                    sudo apt-get install -y libproj-dev libgeos-dev PROJ.4
 
       - run:
           name: install dependencies (1)
