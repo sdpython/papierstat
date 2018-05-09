@@ -60,7 +60,7 @@ class TestNotebookVisualisationEnedisBokeh(unittest.TestCase):
         folder = os.path.join(os.path.dirname(__file__),
                               "..", "..", "_doc", "notebooks", "visualisation")
         test_notebook_execution_coverage(
-            __file__, "enedis_bokeh", folder, 'papierstat', copy_files=[], fLOG=fLOG,
+            __file__, "enedis_cartes_bokeh", folder, 'papierstat', copy_files=[], fLOG=fLOG,
             modules=[pyensae])
 
 
