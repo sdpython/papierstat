@@ -38,7 +38,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version, skipif_appveyor
+from pyquickhelper.pycode import add_missing_development_version, skipif_travis
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
@@ -49,6 +49,7 @@ class TestNotebookVisualisationEnedisBokeh(unittest.TestCase):
         add_missing_development_version(
             ["jyquickhelper", "pyensae"], __file__, hide=True)
 
+    @skipif_travis('bokeh waiting for too long.')
     def test_notebook_visualisation_enedis_bokeh(self):
         fLOG(
             __file__,

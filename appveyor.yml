@@ -29,15 +29,13 @@ install:
   - "%PYTHON%\\Scripts\\pip install nltk ftfy"
   - "%PYTHON%\\Scripts\\pip install preshed toolz termcolor dill munch dbfread"
   - "%PYTHON%\\Scripts\\pymy_install3 gensim ujson thinc msgpack murmurhash cytoolz xgboost wrapt regex"
-  - "%PYTHON%\\Scripts\\pymy_install3 cartopy ujson shapely fiona pyproj"
+  - "%PYTHON%\\Scripts\\pymy_install3 fiona"
+  - "%PYTHON%\\Scripts\\pymy_install3 cartopy ujson shapely pyproj"
   - "%PYTHON%\\Scripts\\pip install geopandas"
   - "%PYTHON%\\Scripts\\pip install catboost bokeh msgpack_numpy"
   - "%PYTHON%\\Scripts\\pymy_install3 spacy fr_core_news_sm"
   - "set PATH=%PATH%;C:\\projects\\jyquickhelper\\build\\update_modules\\Graphviz\\bin"
 build: off
-
-before_test:
-  - "%PYTHON%\\python -u setup.py build_ext --inplace"
 
 test_script:
   - "%PYTHON%\\python -u setup.py unittests"

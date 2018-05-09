@@ -38,7 +38,7 @@ except ImportError:
     import src
 
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version, skipif_appveyor
+from pyquickhelper.pycode import add_missing_development_version
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import src.papierstat
 
