@@ -44,9 +44,16 @@ jobs:
                     sudo apt-get install -y graphviz
           
       - run:
-          name: Install geos
+          name: Install geos, proj for cartopy
           command: |
-                    sudo apt-get install -y libproj-dev libgeos-dev python3-pyproj python3-cartopy
+            sudo apt-get -qq update
+            sudo apt-get install -y libproj-dev proj-bin proj-data
+            sudo apt-get install -y python-pyproj
+            sudo apt-get install -y libc6
+            wget http://es.archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj9_4.9.2-2_amd64.deb 
+            sudo dpkg -i libproj9_4.9.2-2_amd64.deb 
+            wget http://es.archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj-dev_4.9.2-2_amd64.deb
+            sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
 
       - run:
           name: install dependencies (1)
