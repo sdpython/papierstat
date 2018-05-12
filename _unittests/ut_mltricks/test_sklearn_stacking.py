@@ -7,6 +7,19 @@ import os
 import unittest
 from io import BytesIO
 import pickle
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
+from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
+from sklearn.metrics import accuracy_score
+from sklearn.pipeline import make_pipeline
+from sklearn.model_selection import GridSearchCV
+from sklearn.base import clone
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import cross_val_score
+from sklearn.metrics import make_scorer
+from pyquickhelper.pycode import ExtTestCase
 
 
 try:
@@ -22,35 +35,6 @@ except ImportError:
         sys.path.append(path)
     import src
 
-try:
-    import pyquickhelper as skip_
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..",
-                "..",
-                "pyquickhelper",
-                "src")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import pyquickhelper as skip_
-
-from pyquickhelper.pycode import ExtTestCase
-from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_iris
-from sklearn.linear_model import LogisticRegression, LinearRegression
-from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
-from sklearn.metrics import accuracy_score
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GridSearchCV
-from sklearn.base import clone
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import roc_auc_score
-from sklearn.model_selection import cross_val_score
-from sklearn.metrics import make_scorer
 from src.papierstat.datasets import load_wines_dataset
 from src.papierstat.mltricks import SkBaseTransformStacking
 

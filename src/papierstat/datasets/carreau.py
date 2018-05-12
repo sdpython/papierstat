@@ -4,7 +4,6 @@
 @brief Jeux de données reliés aux vins.
 """
 import os
-import pandas
 import zipfile
 import collections
 import datetime
@@ -13,9 +12,8 @@ from io import BytesIO
 from dbfread.field_parser import FieldParser
 from dbfread import DBF
 from dbfread.dbf import expand_year
-from geopandas import GeoDataFrame, GeoSeries
-from fiona import BytesCollection
-from pyquickhelper.filehelper import unzip_files
+import pandas
+from geopandas import GeoDataFrame
 from .data_helper import get_data_folder
 
 

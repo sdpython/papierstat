@@ -130,7 +130,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         sample_weight = kwargs.get('sample_weight', None)
         res = {}
         for c in sorted(cats):
-            ind, xcat, ycat, scat = self._filter_cat(c, X, y, sample_weight)
+            _, xcat, ycat, scat = self._filter_cat(c, X, y, sample_weight)
             mod = clone(self.model)
             if scat is not None:
                 kwargs['sample_weight'] = scat
@@ -156,7 +156,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
 
         res = []
         for c in sorted(cats):
-            ind, xcat, ycat, scat = self._filter_cat(c, X, *args)
+            ind, xcat, ycat, _ = self._filter_cat(c, X, *args)
             mod = self.models[c]
             meth = getattr(mod, fct)
             if ycat is None:

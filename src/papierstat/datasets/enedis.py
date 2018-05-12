@@ -9,7 +9,8 @@ import pandas
 def load_enedis_dataset(dest='.', fLOG=None):
     """
     Retourne des données extraites du site :epkg:`Enedis` :
-    `Production électrique annuelle par filière à la maille commune <https://data.enedis.fr/explore/dataset/production-electrique-par-filiere-a-la-maille-commune/export/>`_.
+    `Production électrique annuelle par filière à la maille commune
+    <https://data.enedis.fr/explore/dataset/production-electrique-par-filiere-a-la-maille-commune/export/>`_.
     Le jeu proposé est un extrait pour les années 2015-2016.
     Le téléchargement utilise le module :epkg:`pyensae`.
     Notebooks associés à ce jeu de données :

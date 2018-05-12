@@ -14,7 +14,6 @@ def list_notebooks(subfolder, name):
     @param      name        nom à chercher
     @return                 liste des notebooks (sans répertoire)
     """
-    import os
     this = os.path.dirname(__file__)
     nbs = [os.path.abspath(os.path.normpath(os.path.join(this, '..', '..', '..', '..',
                                                          'notebooks', subfolder))),

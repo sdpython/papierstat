@@ -163,7 +163,7 @@ class SkBaseTransformLearner(SkBaseTransform):
         if 'method' in values:
             self._set_method(values['method'])
             del values['method']
-        for k, v in values.items():
+        for k in values:
             if not k.startswith('model__'):
                 raise ValueError(
                     "Parameter '{0}' must start with 'model__'.".format(k))

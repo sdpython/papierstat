@@ -93,7 +93,7 @@ def duration_selling(date_begin=None, date_end=None,
         if nb == 0:
             date_begin += timedelta(days=1)
             continue
-        for n in range(0, int(nb)):
+        for _ in range(0, int(nb)):
             db = uni[pos_uni] * day_duration
             pos_uni += 1
             if pos_uni >= len(uni):

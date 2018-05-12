@@ -4,9 +4,9 @@
 @brief Jeux de données reliés aux catégories.
 """
 import os
+from io import StringIO, BytesIO
 import pandas
 from pyquickhelper.filehelper import read_content_ufs, ungzip_files
-from io import StringIO, BytesIO
 from .data_helper import get_data_folder
 
 

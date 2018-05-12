@@ -11,7 +11,8 @@ from .data_helper import get_data_folder
 def load_search_engine_dataset(train_or_test=True):
     """
     Retourne un très petit échantillon tiré de
-    `Microsoft Learning to Rank Datasets <https://www.microsoft.com/en-us/research/project/mslr/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fprojects%2Fmslr%2F>`_.
+    `Microsoft Learning to Rank Datasets
+    <https://www.microsoft.com/en-us/research/project/mslr/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fprojects%2Fmslr%2F>`_.
     Vu le nombre de features, le petit nombre de requêtes, il est impossible
     d'apprendre un bon modèle, cela permet néanmoins de tester son code.
     La fonction retourne les features d'abord puis les labels.

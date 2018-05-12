@@ -3,8 +3,8 @@
 @file
 @brief Implémente la classe @see cl SkBaseClassifier.
 """
-from .sklearn_base_learner import SkBaseLearner
 from sklearn.metrics import accuracy_score
+from .sklearn_base_learner import SkBaseLearner
 
 
 class SkBaseClassifier(SkBaseLearner):

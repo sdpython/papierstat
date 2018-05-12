@@ -3,13 +3,11 @@
 @file
 @brief Implémente @see cl SkBaseRegressor.
 """
-
-from .sklearn_base_learner import SkBaseLearner
 from sklearn.metrics import r2_score
+from .sklearn_base_learner import SkBaseLearner
 
 
 class SkBaseRegressor(SkBaseLearner):
-
     """
     Defines a custom classifier
     """

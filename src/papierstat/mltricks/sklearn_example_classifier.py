@@ -2,17 +2,16 @@
 @file
 @brief   Defines @see cl SkCustomKnn
 """
-
-from .sklearn_base_classifier import SkBaseClassifier
-from .sklearn_parameters import SkException
 import numpy
 import pandas
+from .sklearn_base_classifier import SkBaseClassifier
+from .sklearn_parameters import SkException
 
 
 class SkCustomKnn (SkBaseClassifier):
 
     """
-    implements the `k-Nearest Neighbors <http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`_ as an example
+    Implements the `k-Nearest Neighbors <http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`_ as an example.
     """
 
     def __init__(self, k=1):

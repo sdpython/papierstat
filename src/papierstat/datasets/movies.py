@@ -48,10 +48,10 @@ def load_movielens_dataset(name='small', cache=None, fLOG=None):
     if fLOG:
         fLOG("[load_movielens_dataset] found {0} files".format(len(found)))
     dfiles = {}
-    for name, text in found:
-        if name.endswith('.csv'):
+    for name_, text in found:
+        if name_.endswith('.csv'):
             df = pandas.read_csv(StringIO(text.decode('utf-8')), sep=',')
-            key = os.path.splitext(os.path.split(name)[-1])[0]
+            key = os.path.splitext(os.path.split(name_)[-1])[0]
             dfiles[key] = df
     if cache is not None:
         with open(cache, 'wb') as f:

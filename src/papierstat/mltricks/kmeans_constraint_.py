@@ -3,9 +3,9 @@
 @file
 @brief Implémente la classe @see cl ConstraintKMeans.
 """
+import bisect
 from pandas import DataFrame
 import numpy
-import bisect
 import scipy.sparse
 from sklearn.cluster.k_means_ import _labels_inertia
 from sklearn.cluster._k_means import _centers_sparse, _centers_dense
@@ -73,7 +73,8 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     @param      centers                 initialized centers
     @param      inertia                 initialized inertia (unsued)
     @param      precompute_distances    precompute distances (used in
-                                        `_label_inertia <https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/cluster/k_means_.py#L547>`_)
+                                        `_label_inertia <https://github.com/scikit-learn/
+                                        scikit-learn/blob/master/sklearn/cluster/k_means_.py#L547>`_)
     @param      iter                    number of iteration already done
     @param      max_iter                maximum of number of iteration
     @param      strategy                strategy used to sort observations before

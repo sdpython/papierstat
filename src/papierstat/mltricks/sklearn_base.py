@@ -140,4 +140,4 @@ class SkBase:
         usual
         """
         res = "{0}({1})".format(self.__class__.__name__, str(self.P))
-        return "\n".join(textwrap.wrap(res), subsequent_indent="    ")
+        return "\n".join(textwrap.wrap(res, subsequent_indent="    "))
