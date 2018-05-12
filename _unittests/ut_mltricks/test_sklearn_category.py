@@ -13,8 +13,6 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
-from src.papierstat.datasets import load_wines_dataset
-from src.papierstat.mltricks import SkBaseLearnerCategory
 from pyquickhelper.pycode import ExtTestCase
 
 try:
@@ -29,6 +27,9 @@ except ImportError:
     if path not in sys.path:
         sys.path.append(path)
     import src
+
+from src.papierstat.datasets import load_wines_dataset
+from src.papierstat.mltricks import SkBaseLearnerCategory
 
 
 class TestSklearnCategory(ExtTestCase):
