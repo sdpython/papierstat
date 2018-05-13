@@ -192,7 +192,7 @@ def load_carreau_from_zip(file_car=None, file_rect=None):
         :rst:
 
         from papierstat.datasets.documentation import list_notebooks_rst_links
-        links = list_notebooks_rst_links('visualisation', 'carreau')
+        links = list_notebooks_rst_links('visualisation', 'carte_carreau')
         links = ['    * %s' % s for s in links]
         print('\\n'.join(links))
 
