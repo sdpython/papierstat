@@ -15,6 +15,7 @@ pour explorer quelques points récurrents ou techniques.
     :maxdepth: 1
 
     regclass
+    digmodel
     preprocessing
     nonsupervise
     otherml

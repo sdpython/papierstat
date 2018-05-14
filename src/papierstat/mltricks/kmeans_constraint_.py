@@ -98,15 +98,15 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     prev_labels = None
     best_iter = None
 
-    assert labels.dtype == numpy.int32
+    if labels.dtype != numpy.int32:
+        raise TypeError(
+            "Labels must be an array of int not '{0}'".format(labels.dtype))
 
     # association
     _constraint_association(leftover, counters, labels, leftclose, distances_close,
                             centers, X, x_squared_norms, limit, strategy, state=state)
 
     while iter < max_iter:
-
-        assert labels.dtype == numpy.int32
 
         # compute new clusters
         if scipy.sparse.issparse(X):
@@ -126,8 +126,6 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
         iter += 1
         if verbose and fLOG:
             fLOG("CKMeans %d/%d inertia=%f" % (iter, max_iter, inertia))
-
-        assert labels.dtype == numpy.int32
 
         # best option so far?
         if best_inertia is None or inertia < best_inertia:
@@ -385,7 +383,7 @@ def _constraint_association_gain(leftover, counters, labels, leftclose, distance
             else:
                 add = True
             if add:
-                # We add the point to the list of points will to transfer.
+                # We add the point to the list of points willing to transfer.
                 if (cur, dest) not in transfer:
                     transfer[cur, dest] = []
                 gain = sorted_distances[i, 3]

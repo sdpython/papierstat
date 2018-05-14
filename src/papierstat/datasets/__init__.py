@@ -5,6 +5,7 @@
 """
 from .cat import load_adult_dataset
 from .carreau import load_carreau_from_zip
+from .dummies import line2d
 from .duration import duration_selling
 from .enedis import load_enedis_dataset
 from .geojson import get_geojson_countries

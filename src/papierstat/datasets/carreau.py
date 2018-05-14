@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @file
-@brief Jeux de données reliés aux vins.
+@brief Jeux de données reliés aux données carroyées.
 """
 import os
 import zipfile

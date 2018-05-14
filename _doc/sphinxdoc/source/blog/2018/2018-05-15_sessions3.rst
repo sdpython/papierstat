@@ -1,0 +1,24 @@
+
+.. blogpost::
+    :title: Session 3 - actuariat
+    :keywords: session 3
+    :date: 2018-03-15
+    :categories: session
+
+    Quelques liens :
+
+    * `Régression logistique, diagramme de Voronoï, k-Means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/lr_voronoi.html>`_
+    * :ref:`artificielshaperst`
+    * :ref:`logregkmeansrst`
+    * `Vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
+    * :ref:`constraintkmeansrst`
+
+    Cartes
+
+    * :ref:`enediscartesrst`
+    * :ref:`enediscartesbokehrst`
+    * :ref:`cartecarreaurst`
+
+    *pipeline*
+
+    * live
