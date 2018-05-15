@@ -9,6 +9,9 @@ from numpy.random import permutation
 from .data_helper import get_data_folder
 
 
+__all__ = ['load_wines_dataset']
+
+
 def load_wines_dataset(download=False, shuffle=False):
     """
     Retourne le jeu de données

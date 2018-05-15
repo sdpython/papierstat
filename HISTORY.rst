@@ -1,11 +1,12 @@
 
+
 .. _l-HISTORY:
 
 =======
 History
 =======
 
-current - 2018-05-08 - 0.00Mb
+current - 2018-05-15 - 0.00Mb
 =============================
 
 * `11`: ajouter la définition des fichiers au format GeoJSON (2018-05-08)
@@ -17,3 +18,4 @@ current - 2018-05-08 - 0.00Mb
 
 0.1.93 - 2018-02-22 - 0.71Mb
 ============================
+

@@ -17,10 +17,13 @@ from geopandas import GeoDataFrame
 from .data_helper import get_data_folder
 
 
-class MyDBF(DBF):
+class DBFInMemory(DBF):
     """
     Overwrites `DBF <https://github.com/olemb/dbfread/blob/master/dbfread/dbf.py#L77>`_
-    to read data from memory and not from a file.
+    to read data from memory and not from a file. The object
+    `DBF <http://dbfread.readthedocs.io/en/latest/dbf_objects.html>`_
+    needs a file by default. This class avoids creating an intermediate
+    file when the data is compressed in a :epkg:`zip` file.
     """
 
     def __init__(self, filename, encoding=None, ignorecase=True,
@@ -130,7 +133,7 @@ def load_dbf_from_zip(filename):
             raise FileNotFoundError("No dbf file in '{0}'".format(filename))
         with myzip.open(names[0], "r") as f:
             content = f.read()
-    data = list(MyDBF(content))
+    data = list(DBFInMemory(content))
     return pandas.DataFrame(data)
 
 

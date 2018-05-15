@@ -14,6 +14,7 @@ def load_adult_dataset(download=True, small=False, url='uci'):
     """
     Retourne le jeu de données
     `Adult Data Set  <https://archive.ics.uci.edu/ml/datasets/adult>`_.
+    Les variables sont principalement catégorielles.
     Notebooks associés à ce jeu de données :
 
     .. runpython::
