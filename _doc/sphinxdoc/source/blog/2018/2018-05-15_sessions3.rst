@@ -2,7 +2,7 @@
 .. blogpost::
     :title: Session 3 - actuariat
     :keywords: session 3
-    :date: 2018-03-15
+    :date: 2018-05-15
     :categories: session
 
     Quelques liens :

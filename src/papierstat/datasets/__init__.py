@@ -12,5 +12,6 @@ from .geojson import get_geojson_countries
 from .graph import create_tiny_graph
 from .movies import load_movielens_dataset
 from .search import load_search_engine_dataset
+from .sentiment import load_sentiment_dataset
 from .tweets import load_tweet_dataset
 from .wines import load_wines_dataset

@@ -5,7 +5,13 @@
 History
 =======
 
-current - 2018-05-15 - 0.00Mb
+current - 2018-06-11 - 0.00Mb
+=============================
+
+* `8`: ajouter un notebook sur les données carroyées (2018-06-11)
+* `15`: ajouter un notebook sur word2vec (2018-06-11)
+
+0.1.175 - 2018-05-15 - 1.75Mb
 =============================
 
 * `11`: ajouter la définition des fichiers au format GeoJSON (2018-05-08)

@@ -154,8 +154,7 @@ pour convertir le texte en features s'appelle
     :maxdepth: 1
 
     ../notebooks/artificiel_tokenize_features
-
-* embedding avec deep learning
+    ../notebooks/text_sentiment_wordvec
 
 Tagging
 +++++++

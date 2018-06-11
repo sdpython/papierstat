@@ -1,0 +1,15 @@
+
+.. blogpost::
+    :title: Session 4 - actuariat
+    :keywords: session 3
+    :date: 2018-06-12
+    :categories: session
+
+    Quelques liens :
+
+    * :ref:`textsentimentwordvecrst`
+    * `LogisticRegression and Clustering <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/logistic_regression_clustering.html#logisticregressionclusteringrst>`_
+    * `ClassifierAfterKMeans <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/mlinsights/mlmodel/classification_kmeans.html#mlinsights.mlmodel.classification_kmeans.ClassifierAfterKMeans>`_
+    * `Tracer une pyramide bigarrée <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/pyramide_bigarree.html#pyramidebigarreerst>`_
+    * `Reconstruction de synonymes - énoncé <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html#reconstructionsynonymesenoncerst>`_
+    * `Reconstruction de synonymes - correction <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_correction.html#reconstructionsynonymescorrectionrst>`_
