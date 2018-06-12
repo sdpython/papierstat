@@ -38,6 +38,10 @@ class TestNotebookSentiment(unittest.TestCase):
             self._testMethodName,
             OutputPrint=__name__ == "__main__")
 
+        import nltk
+        nltk.download('punkt')
+        nltk.download('stopwords')
+
         self.assertTrue(src.papierstat is not None)
         folder = os.path.join(os.path.dirname(__file__),
                               "..", "..", "_doc", "notebooks", "lectures")

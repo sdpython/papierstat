@@ -27,7 +27,7 @@ def load_sentiment_dataset(cache="."):
     @return                     text content (str)
     """
     from pyensae.datasource import download_data
-    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00331/"
+    # url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00331/"
     name = "sentiment_labelled_sentences.zip"
     res = download_data(name, whereTo=cache)
     if len(res) != 9:
