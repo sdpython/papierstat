@@ -5,6 +5,7 @@ chardet
 coverage
 folium
 geopandas
+google_compute_engine
 guzzle_sphinx_theme
 jyquickhelper>=0.3
 mlinsights
