@@ -5,11 +5,16 @@
 History
 =======
 
-current - 2018-06-11 - 0.00Mb
+current - 2018-06-12 - 0.00Mb
 =============================
 
-* `8`: ajouter un notebook sur les données carroyées (2018-06-11)
+* `17`: calculer ACP notebook word2vec (2018-06-12)
+
+0.1.178 - 2018-06-12 - 1.75Mb
+=============================
+
 * `15`: ajouter un notebook sur word2vec (2018-06-11)
+* `8`: ajouter un notebook sur les données carroyées (2018-06-11)
 
 0.1.175 - 2018-05-15 - 1.75Mb
 =============================

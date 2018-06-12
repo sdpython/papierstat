@@ -15,3 +15,17 @@
     * `Reconstruction de synonymes - correction <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_correction.html#reconstructionsynonymescorrectionrst>`_
     * `Tests unitaires, setup et ingéniérie logicielle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_unit_test_ci.html>`_
     * `Tests unitaires, setup et ingéniérie logiciel (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_unit_test_ci_correction.html>`_
+
+    Les outils open source évoqués pour la mise en production
+    de modèles de machine learning :
+
+    * `onnxmltools <https://github.com/onnx/onnxmltools>`_
+    * `ML.net <https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet>`_,
+      `ML.net on github <https://github.com/dotnet/machinelearning>`_,
+      `ML.net documentation <https://docs.microsoft.com/fr-fr/dotnet/api/?view=ml-dotnet>`_
+    * `tensorflow serving <https://www.tensorflow.org/serving/>`_
+    * `tensorflow mobile <https://www.tensorflow.org/mobile/>`_
+
+    La version C# et ML.net de l'analyse de sentiment :
+
+    * `Tutorial: Use ML.NET in a sentiment analysis binary classification scenario <https://docs.microsoft.com/en-us/dotnet/machine-learning/tutorials/sentiment-analysis>`_
