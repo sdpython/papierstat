@@ -41,14 +41,14 @@ alors *Y* croît de tant.
       - *X* continu
     * - *Y* discret
       - .. image:: images/xy_discret.png
-            :width: 200
+            :width: 150
       - .. image:: images/xy_contdisc.png
-            :width: 200
+            :width: 150
     * - *Y* continu
       - .. image:: images/xy_disccont.png
-            :width: 200
+            :width: 150
       - .. image:: images/xy_continu.png
-            :width: 200
+            :width: 150
 
 Les deux cas sur la première diagonale sont les cas simples.
 Dans le premier, tout est discret et les méthodes ensemblistes
