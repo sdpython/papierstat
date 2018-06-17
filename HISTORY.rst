@@ -5,14 +5,15 @@
 History
 =======
 
-current - 2018-06-12 - 0.00Mb
+current - 2018-06-17 - 0.00Mb
 =============================
 
-* `17`: calculer ACP notebook word2vec (2018-06-12)
+* `19`: ajouter un code pour télécharger les données spacy du notebook sur word2vec (2018-06-17)
 
 0.1.178 - 2018-06-12 - 1.75Mb
 =============================
 
+* `17`: calculer ACP notebook word2vec (2018-06-12)
 * `15`: ajouter un notebook sur word2vec (2018-06-11)
 * `8`: ajouter un notebook sur les données carroyées (2018-06-11)
 
