@@ -304,3 +304,7 @@ _doc/notebooks/lectures/trained*.bin
 _unittests/ut_datasets/sentiment*/*.txt
 _unittests/ut_datasets/sentiment*.zip
 _doc/notebooks/lectures/en_core_web_md*
+_doc/notebooks/lectures/catboost_info/catboost_training.json
+_doc/notebooks/lectures/catboost_info/learn_error.tsv
+_doc/notebooks/lectures/catboost_info/meta.tsv
+_doc/notebooks/lectures/catboost_info/time_left.tsv
