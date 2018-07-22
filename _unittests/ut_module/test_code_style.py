@@ -42,6 +42,7 @@ class TestCodeStyle(ExtTestCase):
                          " in module 'sklearn.cluster._k_means'",
                          "kmeans_constraint_.py:16: R1710",
                          "Instance of 'Struct' has no '",
+                         "kmeans_constraint_.py:328: R1716",
                          ])
 
     def test_style_test(self):
