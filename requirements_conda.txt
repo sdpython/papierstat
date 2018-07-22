@@ -19,5 +19,4 @@ seaborn
 spacy
 Sphinx>=1.7
 statsmodels
-tensorflow
 toolz
