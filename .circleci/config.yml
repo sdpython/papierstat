@@ -57,6 +57,14 @@ jobs:
             wget http://es.archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj-dev_4.9.2-2_amd64.deb
             sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
 
+      # statsmodels setup.py requires it
+      - run:
+          name: install numpy
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install numpy
+
       - run:
           name: install dependencies (1)
           command: |
