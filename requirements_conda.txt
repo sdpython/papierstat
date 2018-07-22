@@ -1,5 +1,6 @@
 bokeh
 Cython
+descartes
 gensim
 jupyter
 keras
