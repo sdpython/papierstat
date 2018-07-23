@@ -1,6 +1,5 @@
 dbfread
 catboost
-category_encoders
 chardet
 coverage
 folium
