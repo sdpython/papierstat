@@ -5,9 +5,11 @@
 History
 =======
 
-current - 2018-06-17 - 0.00Mb
+current - 2018-07-29 - 0.00Mb
 =============================
 
+* `22`: replaces as_matrix by values (pandas deprecated warning) (2018-07-29)
+* `21`: take a dependency on mlinsights where some code was moved (sklapi) (2018-07-29)
 * `19`: ajouter un code pour télécharger les données spacy du notebook sur word2vec (2018-06-17)
 
 0.1.178 - 2018-06-12 - 1.75Mb

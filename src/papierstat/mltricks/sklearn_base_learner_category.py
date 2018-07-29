@@ -6,8 +6,7 @@
 import numpy
 import pandas
 from sklearn.base import clone
-from .sklearn_base_learner import SkBaseLearner
-from .sklearn_parameters import SkLearnParameters
+from mlinsights.sklapi import SkBaseLearner, SkLearnParameters
 
 
 class SkBaseLearnerCategory(SkBaseLearner):
@@ -176,7 +175,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
             final = numpy.hstack(res)
         df = pandas.DataFrame(final)
         df = df.sort_values(df.columns[-1]).reset_index(drop=True)
-        df = df.iloc[:, :-1].as_matrix()
+        df = df.iloc[:, :-1].values
         if len(df.shape) == 2 and df.shape[1] == 1:
             df = df.ravel()
         return df

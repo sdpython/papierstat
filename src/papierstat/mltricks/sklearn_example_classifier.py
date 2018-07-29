@@ -4,8 +4,7 @@
 """
 import numpy
 import pandas
-from .sklearn_base_classifier import SkBaseClassifier
-from .sklearn_parameters import SkException
+from mlinsights.sklapi import SkBaseClassifier, SkException
 
 
 class SkCustomKnn (SkBaseClassifier):

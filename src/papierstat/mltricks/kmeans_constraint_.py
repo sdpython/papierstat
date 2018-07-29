@@ -86,7 +86,7 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
     @return                             tuple (best_labels, best_centers, best_inertia, iter)
     """
     if isinstance(X, DataFrame):
-        X = X.as_matrix()
+        X = X.values
     x_squared_norms = row_norms(X, squared=True)
     counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
     limit = X.shape[0] // centers.shape[0]
@@ -158,7 +158,7 @@ def constraint_predictions(X, centers, strategy, state=None):
     @return                 labels, distances, distances_close
     """
     if isinstance(X, DataFrame):
-        X = X.as_matrix()
+        X = X.values
     x_squared_norms = row_norms(X, squared=True)
     counters = numpy.empty((centers.shape[0],), dtype=numpy.int32)
     limit = X.shape[0] // centers.shape[0]
