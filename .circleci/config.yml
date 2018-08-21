@@ -2,8 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      # pyproj does not work on Python 3.7 on linux
-      - image: circleci/python:3.6.5
+      - image: circleci/python:3.7.0
     
     working_directory: ~/repo
     
@@ -50,7 +49,7 @@ jobs:
           command: |
             sudo apt-get -qq update
             sudo apt-get install -y libproj-dev proj-bin proj-data
-            sudo apt-get install -y python-pyproj
+            pip install git+https://github.com/jswhit/pyproj.git
             sudo apt-get install -y libc6
             sudo apt-get install libgeos-dev
             sudo apt-get install python-gdal gdal-bin
