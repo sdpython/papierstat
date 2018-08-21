@@ -45,9 +45,9 @@ jobs:
                     sudo apt-get install -y graphviz
 
       - run:
-          name: Install geos, proj for cartopy
+          name: Install cython
           command: |
-            pip install cython
+            sudo pip install cython
 
       - run:
           name: Install geos, proj for cartopy
