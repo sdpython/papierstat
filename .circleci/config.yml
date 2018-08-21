@@ -49,6 +49,7 @@ jobs:
           command: |
             sudo apt-get -qq update
             sudo apt-get install -y libproj-dev proj-bin proj-data
+            pip install cython
             pip install git+https://github.com/jswhit/pyproj.git
             sudo apt-get install -y libc6
             sudo apt-get install libgeos-dev
