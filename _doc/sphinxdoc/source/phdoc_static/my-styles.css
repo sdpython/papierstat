@@ -11,3 +11,7 @@ div.blogpost p {
 	font-weight: normal;
 	width: 50%;
 }
+
+td, th {
+	padding: 4px;
+}

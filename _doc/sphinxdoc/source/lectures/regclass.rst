@@ -32,6 +32,9 @@ composants.
 * `Problèmes classiques de machine learning illustrés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html>`_
 * `Machine Learning par Gaël Varoquaux <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/all_notebooks.html#a-sklearn-ensae-course>`_
 
+Ce jeu de données peut également être téléchargé avec la fonction
+:func:`load_wines_dataset <papierstat.datasets.wines.load_wines_dataset>`.
+
 Découverte du machine learning
 ==============================
 
@@ -225,7 +228,9 @@ Validation croisée
 ++++++++++++++++++
 
 Il est acquis qu'un modèle doit être évalué sur une base de test différente
-de celle utilisée pour l'apprentissage. Mais la performance est peut-être
+de celle utilisée pour l'apprentissage. Il suffit de penser aux plus proches
+voisins dont le nombre d'erreurs sur la base d'apprentissage est toujours nul.
+Mais la performance sur la base de test est peut-être
 juste l'effet d'une aubaine et d'un découpage particulièrement avantageux.
 Pour être sûr que le modèle est robuste, on recommence plusieurs fois. On appelle
 cela la *validation croisée* ou
@@ -329,7 +334,7 @@ minimisant l'erreur de prédiction est :
                    \cro{ \sum_{i=1}^{N} \cro{Y_{i}-f \pa{\theta,X_{i}}}^{2}}
 
 Le lien entre les variables :math:`X` et :math:`Y` dépend des hypothèses faites
-sur :math:`f`. Généralement, cethttp://scikit-learn.org/stable/supervised_learning.html#supervised-learningte fonction n'est supposée non linéaire
+sur :math:`f`. Généralement, cette fonction n'est supposée non linéaire
 que lorsqu'une `régression linéaire <https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire>`_
 donne de mauvais résultats.
 :epkg:`scikit-learn` implémente de nombreux modèles de
@@ -359,11 +364,12 @@ déterminer cette frontière ?
 .. image:: images/acpcolor.png
     :width: 220
 
-La modélisation de ce problème commence par définir deux probabilités
-pour un vin défini par :math:`X_i`
+La modélisation de ce problème commence par construire deux probabilités
+pour un vin définies par :math:`X_i`
 :math:`\pr{rouge | X_i}` et :math:`\pr{blanc | X_i}` qu'on prononce
 comme étant la probabilité que la couleur du vin soit rouge ou blanche
-connaissant :math:`X_i`. Comme il n'y a que deux possibilités :
+connaissant :math:`X_i`. Comme il n'y a que deux possibilités et qu'un vin
+ne peut être des deux couleurs à la fois :
 :math:`\pr{rouge | X_i} + \pr{blanc | X_i} = 1`. La frontière est l'ensemble
 des points pour lesquelles ces probabilités sont égales,
 :math:`\acc{X | \pr{rouge | X} =\pr{blanc | X}}`, ou encore :
@@ -373,8 +379,10 @@ des points pour lesquelles ces probabilités sont égales,
     \frac{\pr{rouge | X}}{\pr{blanc | X}} = 1 \Leftrightarrow
     \ln \frac{\pr{rouge | X}}{\pr{blanc | X}} = f(X) = 0
 
-Il reste à expliciter la fonction *f* mais il faut au préalable
-définir la probabilité d'appartenance à une classe.
+Il reste à expliciter la fonction *f*. On remarque que si *f*
+est linéaire, la séparation entre les deux classes sera une droite.
+On va voir comment relier cela à
+la probabilité d'appartenance à une classe.
 
 .. image:: images/logreg.png
     :width: 200
@@ -382,9 +390,10 @@ définir la probabilité d'appartenance à une classe.
 .. index:: loi logistique, régression logistique
 
 La `régression logisitique <https://fr.wikipedia.org/wiki/R%C3%A9gression_logistique>`_
-relie cette probabilité à la distance :math:`\bar{d}(X)` via une
+relie cette probabilité à la distance :math:`\bar{d}(X)` à la frontière
+entre les deux classes via une
 `loi logistique <https://fr.wikipedia.org/wiki/Loi_logistique>`_,
-enfin presqu'une distance dans la mesure où la fonction :math:`\bar{d}` est positive
+presqu'une distance dans la mesure où la fonction :math:`\bar{d}` est positive
 d'un côté et négative de l'autre.
 
 .. math::
@@ -427,7 +436,10 @@ et la prédiction du modèle :math:`P_i`.
 
 .. math::
 
-    `y_i \ln \pr{rouge | X_i} + (1-y_i) \ln(1 - \pr{rouge | X_i}) = y_i \ln p(X_i) + (1-y_i) \ln(1 - p(X_i)))`
+    \begin{array}{rcl}
+    Kullback-Leiber(Y,P) &=& y_i \ln \pr{rouge | X_i} + (1-y_i) \ln(1 - \pr{rouge | X_i}) \\
+    &=& y_i \ln p(X_i) + (1-y_i) \ln(1 - p(X_i)))
+    \end{array}
 
 Les deux problèmes, classification et régression, sont sont similaires.
 Seule la fonction de coût change : cette fonction évalue quantitativement
