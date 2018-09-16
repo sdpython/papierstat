@@ -7,8 +7,7 @@ import pandas
 from mlinsights.sklapi import SkBaseClassifier, SkException
 
 
-class SkCustomKnn (SkBaseClassifier):
-
+class SkCustomKnn(SkBaseClassifier)
     """
     Implements the `k-Nearest Neighbors <http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`_ as an example.
     """
@@ -55,7 +54,9 @@ class SkCustomKnn (SkBaseClassifier):
 
     def predict(self, X):
         """
-        Predict, usually, it calls the decision_function method
+        Predicts, usually, it calls the
+        :meth:`decision_function <papierstat.mltricks.sklearn_example_classifier.SkCustomKnn.decision_function>` 
+        method.
 
         @param      X   Samples, {array-like, sparse matrix}, shape = (n_samples, n_features)
         @return         self : returns an instance of self.
@@ -69,8 +70,9 @@ class SkCustomKnn (SkBaseClassifier):
 
     def decision_function(self, X):
         """
-        Output of the model in case of a regressor, matrix with a score for each class and each sample
-        for a classifier
+        Computes the output of the model in case of a regressor,
+        matrix with a score for each class and each sample
+        for a classifier.
 
         @param      X   Samples, {array-like, sparse matrix}, shape = (n_samples, n_features)
         @return         array, shape = (n_samples,.), Returns predicted values.
@@ -92,7 +94,7 @@ class SkCustomKnn (SkBaseClassifier):
 
     def distance2weight(self, d):
         """
-        converts a distance to weight
+        Converts a distance to weight.
 
         @param      d       distance
         @return             weight (1/(d+1))
@@ -101,7 +103,7 @@ class SkCustomKnn (SkBaseClassifier):
 
     def knn_search(self, x):
         """
-        find the K nearest neighbors for x
+        Finds the  *k* nearest neighbors for x.
 
         @param      x       vector
         @return             k-nearest neighbors list( (distance**2, index) )
