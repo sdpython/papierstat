@@ -7,7 +7,7 @@ import pandas
 from mlinsights.sklapi import SkBaseClassifier, SkException
 
 
-class SkCustomKnn(SkBaseClassifier)
+class SkCustomKnn(SkBaseClassifier):
     """
     Implements the `k-Nearest Neighbors <http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`_ as an example.
     """
