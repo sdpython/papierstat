@@ -55,7 +55,7 @@ class SkCustomKnn(SkBaseClassifier):
     def predict(self, X):
         """
         Predicts, usually, it calls the
-        :meth:`decision_function <papierstat.mltricks.sklearn_example_classifier.SkCustomKnn.decision_function>` 
+        :meth:`decision_function <papierstat.mltricks.sklearn_example_classifier.SkCustomKnn.decision_function>`
         method.
 
         @param      X   Samples, {array-like, sparse matrix}, shape = (n_samples, n_features)
