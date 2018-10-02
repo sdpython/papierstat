@@ -79,7 +79,7 @@ class ConstraintKMeans(KMeans):
             raise ValueError('strategy must be in {0}'.format(
                 ConstraintKMeans._strategy_value))
 
-    def fit(self, X, y=None, fLOG=None):
+    def fit(self, X, y=None, sample_weight=None, fLOG=None):
         """
         Compute k-means clustering.
 
@@ -90,6 +90,8 @@ class ConstraintKMeans(KMeans):
             will be converted to C ordering, which will cause a memory
             copy if the given data is not C-contiguous.
 
+        sample_weight : sample weight
+
         y : Ignored
 
         fLOG: logging function
@@ -97,7 +99,7 @@ class ConstraintKMeans(KMeans):
         max_iter = self.max_iter
         self.max_iter //= 2
         if self.kmeans0:
-            KMeans.fit(self, X, y)
+            KMeans.fit(self, X, y, sample_weight=sample_weight)
             state = None
         else:
             state = numpy.random.RandomState(self.random_state)
@@ -113,18 +115,21 @@ class ConstraintKMeans(KMeans):
             self.n_iter_ = 0
 
         self.max_iter = max_iter
-        return self.constraint_kmeans(X, state=state, fLOG=fLOG)
+        return self.constraint_kmeans(X, sample_weight=sample_weight,
+                                      state=state, fLOG=fLOG)
 
-    def constraint_kmeans(self, X, state=None, fLOG=None):
+    def constraint_kmeans(self, X, sample_weight=None, state=None, fLOG=None):
         """
         Completes the constraint k-means.
 
-        @param      X       features
-        @param      fLOG    logging function
+        @param      X               features
+        @param      sample_weight   sample weight
+        @param      state            state
+        @param      fLOG            logging function
         """
-        labels, centers, inertia, iter_ = constraint_kmeans(X, self.labels_, self.cluster_centers_, self.inertia_,
-                                                            self.precompute_distances, self.n_iter_, self.max_iter,
-                                                            verbose=self.verbose, strategy=self.strategy,
+        labels, centers, inertia, iter_ = constraint_kmeans(X, self.labels_, sample_weight, self.cluster_centers_,
+                                                            self.inertia_, self.precompute_distances, self.n_iter_,
+                                                            self.max_iter, verbose=self.verbose, strategy=self.strategy,
                                                             state=state, fLOG=fLOG)
         self.labels_ = labels
         self.cluster_centers_ = centers
@@ -132,7 +137,7 @@ class ConstraintKMeans(KMeans):
         self.n_iter_ = iter_
         return self
 
-    def predict(self, X):
+    def predict(self, X, sample_weight=None):
         """
         Computes the predictions.
 
@@ -144,7 +149,7 @@ class ConstraintKMeans(KMeans):
                 X, self.cluster_centers_, strategy=self.strategy + '_p')
             return labels
         else:
-            return KMeans.predict(self, X)
+            return KMeans.predict(self, X, sample_weight=sample_weight)
 
     def transform(self, X):
         """
@@ -169,13 +174,14 @@ class ConstraintKMeans(KMeans):
         else:
             return KMeans.transform(self, X)
 
-    def score(self, X, y=None):
+    def score(self, X, y=None, sample_weight=None):
         """
         Returns the distances to all clusters.
 
-        @param      X       features
-        @param      y       unused
-        @return             distances
+        @param      X               features
+        @param      y               unused
+        @param      sample_weight   sample weight
+        @return                     distances
         """
         if self.balanced_predictions:
             _, __, dist_close = constraint_predictions(

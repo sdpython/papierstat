@@ -63,13 +63,14 @@ def linearize_matrix(mat, *adds):
         return res
 
 
-def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, max_iter,
+def constraint_kmeans(X, labels, sample_weight, centers, inertia, precompute_distances, iter, max_iter,
                       strategy='gain', verbose=0, state=None, fLOG=None):
     """
     Completes the constraint *k-means*.
 
     @param      X                       features
     @param      labels                  initialized labels (unsued)
+    @param      sample_weight           sample weight
     @param      centers                 initialized centers
     @param      inertia                 initialized inertia (unsued)
     @param      precompute_distances    precompute distances (used in
@@ -119,7 +120,7 @@ def constraint_kmeans(X, labels, centers, inertia, precompute_distances, iter, m
                                 centers, X, x_squared_norms, limit, strategy, state=state)
 
         # inertia
-        _, inertia = _labels_inertia(X, x_squared_norms, centers,
+        _, inertia = _labels_inertia(X, sample_weight, x_squared_norms, centers,
                                      precompute_distances=precompute_distances,
                                      distances=distances_close)
 
@@ -325,7 +326,7 @@ def _constraint_association_gain(leftover, counters, labels, leftclose, distance
             state = numpy.random.RandomState()
 
         def loopf(h, sumi):
-            if sumi < 0 and leftclose[h] > 0:
+            if sumi < 0 and leftclose[h] > 0:  # pylint: disable=R1716
                 sumi -= leftclose[h]
                 leftclose[h] = 0
             elif sumi > 0 and leftclose[h] == 0:
