@@ -107,20 +107,39 @@ def constraint_kmeans(X, labels, sample_weight, centers, inertia, precompute_dis
     _constraint_association(leftover, counters, labels, leftclose, distances_close,
                             centers, X, x_squared_norms, limit, strategy, state=state)
 
+    if sample_weight is None:
+        sw = numpy.ones((X.shape[0],))
+    else:
+        sw = sample_weight
+
     while iter < max_iter:
 
         # compute new clusters
         if scipy.sparse.issparse(X):
-            centers = _centers_sparse(X, labels, n_clusters, distances_close)
+            try:
+                # scikit-learn >= 0.20
+                centers = _centers_sparse(
+                    X, sw, labels, n_clusters, distances_close)
+            except TypeError:
+                # scikit-learn < 0.20
+                centers = _centers_sparse(
+                    X, sw, labels, n_clusters, distances_close)
         else:
-            centers = _centers_dense(X, labels, n_clusters, distances_close)
+            try:
+                # scikit-learn >= 0.20
+                centers = _centers_dense(
+                    X, sw, labels, n_clusters, distances_close)
+            except TypeError:
+                # scikit-learn < 0.20
+                centers = _centers_dense(
+                    X, sw, labels, n_clusters, distances_close)
 
         # association
         _constraint_association(leftover, counters, labels, leftclose, distances_close,
                                 centers, X, x_squared_norms, limit, strategy, state=state)
 
         # inertia
-        _, inertia = _labels_inertia(X, sample_weight, x_squared_norms, centers,
+        _, inertia = _labels_inertia(X, sw, x_squared_norms, centers,
                                      precompute_distances=precompute_distances,
                                      distances=distances_close)
 

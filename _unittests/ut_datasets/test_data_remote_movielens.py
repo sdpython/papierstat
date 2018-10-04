@@ -44,7 +44,8 @@ class TestMovieLens(ExtTestCase):
             self.assertIsInstance(v, pandas.DataFrame)
             self.assertGreater(len(v), 0)
             if k == 'ratings':
-                self.assertEqual(v.shape, (100004, 4))
+                self.assertEqual(v.shape[1], 4)
+                self.assertGreater(v.shape[0], 100004)
                 nb += 1
         self.assertEqual(nb, 1)
         self.assertGreater(len(dfs), 0)
