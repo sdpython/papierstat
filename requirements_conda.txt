@@ -14,7 +14,7 @@ pandas>=0.20.0
 pillow
 pyproj
 pyzmq
-scikit-learn
+scikit-learn>=0.20.0
 scipy
 seaborn
 spacy
