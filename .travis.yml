@@ -30,6 +30,7 @@ install:
   - conda install conda-build
   - conda install -q --file=requirements_conda.txt
   - conda install -q cartopy
+  - conda install -q -c conda-forge descartes
   # - conda install -c scitools/label/archive cartopy
   - pip install -r requirements.txt
   - pip install category_encoders --no-deps
