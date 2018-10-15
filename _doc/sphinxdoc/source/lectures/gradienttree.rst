@@ -73,7 +73,7 @@ l':epkg:`arbre de décision`. Les autres modèles
 comme la :epkg:`forêt aléatoire`
 sont des déclinaisons. Le modèle à base
 de gradient le plus simple est la
-:epkg:`régression`. Les autres se caractérise par la
+:epkg:`régression linéaire`. Les autres se caractérise par la
 forme de la relation qu'ils sont capables de modéliser.
 Le notebook suivant montre un cas où un arbre de décision,
 une méthode ensembliste.
