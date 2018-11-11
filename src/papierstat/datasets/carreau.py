@@ -139,7 +139,7 @@ def load_dbf_from_zip(filename):
 
 def _read_geopandas_from_bytes(mif, mid, **kwargs):
     """
-    Returns a GeoDataFrame from two sequences of bytes,
+    Returns a :epkg:`GeoDataFrame` from two sequences of bytes,
     one for file *.mif*, one from file *.mid*.
     Unfortunately, :epkg:`geopandas` does not read from
     a buffer, and :epkg:`fiona` does it after writing

@@ -98,29 +98,32 @@ imgmath_latex_preamble = preamble + custom_preamble
 latex_elements['preamble'] = preamble + custom_preamble
 mathdef_link_only = True
 
-epkg_dictionary['arbre de décision'] = 'https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision'
-epkg_dictionary['C'] = "https://fr.wikipedia.org/wiki/C_(langage)"
-epkg_dictionary['csr_matrix'] = "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html"
-epkg_dictionary['C++'] = "https://fr.wikipedia.org/wiki/C%2B%2B"
-epkg_dictionary['Enedis'] = "https://data.enedis.fr/page/accueil/"
-epkg_dictionary['ensae_teaching_cs'] = "http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html"
-epkg_dictionary['ENSAE'] = "http://www.ensae.fr/ensae/fr/"
-epkg_dictionary['forêt aléatoire'] = 'https://fr.wikipedia.org/wiki/For%C3%AAt_d%27arbres_d%C3%A9cisionnels'
-epkg_dictionary['fortran'] = "https://fr.wikipedia.org/wiki/Fortran"
-epkg_dictionary['GeoJSON'] = 'https://fr.wikipedia.org/wiki/GeoJSON'
-epkg_dictionary['k-means'] = "http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html"
-epkg_dictionary['machine learning'] = 'https://fr.wikipedia.org/wiki/Apprentissage_automatique'
-epkg_dictionary['Master 2 ISF'] = 'http://isf.u-paris2.fr/master-2/'
-epkg_dictionary['matrice de confusion'] = 'https://fr.wikipedia.org/wiki/Matrice_de_confusion'
-epkg_dictionary['mlstatpy'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx3/index.html"
-epkg_dictionary['Paris 2'] = 'https://www.u-paris2.fr/fr'
-epkg_dictionary['pickle'] = 'https://docs.python.org/3/library/pickle.html'
-epkg_dictionary['pyensae'] = 'http://www.xavierdupre.fr/app/pyensae/helpsphinx/'
-epkg_dictionary['R'] = "https://www.r-project.org/"
-epkg_dictionary['régression linéaire'] = 'https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire'
-epkg_dictionary['REST API'] = "https://en.wikipedia.org/wiki/Representational_state_transfer"
-epkg_dictionary['ROC'] = "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html"
-epkg_dictionary['seaborn'] = "https://seaborn.pydata.org/"
-epkg_dictionary['statsmodels'] = "http://www.statsmodels.org/stable/index.html"
-epkg_dictionary['teachpyx'] = "http://www.xavierdupre.fr/app/teachpyx/helpsphinx3/index.html"
-epkg_dictionary['UCI'] = "http://archive.ics.uci.edu/ml/index.php"
+epkg_dictionary.update({
+    'arbre de décision': 'https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision',
+    'C': "https://fr.wikipedia.org/wiki/C_(langage)",
+    'csr_matrix': "https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_matrix.html",
+    'C++': "https://fr.wikipedia.org/wiki/C%2B%2B",
+    'Enedis': "https://data.enedis.fr/page/accueil/",
+    'ensae_teaching_cs': "http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/index.html",
+    'ENSAE': "http://www.ensae.fr/ensae/fr/",
+    'forêt aléatoire': 'https://fr.wikipedia.org/wiki/For%C3%AAt_d%27arbres_d%C3%A9cisionnels',
+    'fortran': "https://fr.wikipedia.org/wiki/Fortran",
+    'GeoJSON': 'https://fr.wikipedia.org/wiki/GeoJSON',
+    'GeoDataFrame': 'http://geopandas.org/reference/geopandas.GeoDataFrame.html',
+    'k-means': "http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html",
+    'machine learning': 'https://fr.wikipedia.org/wiki/Apprentissage_automatique',
+    'Master 2 ISF': 'http://isf.u-paris2.fr/master-2/',
+    'matrice de confusion': 'https://fr.wikipedia.org/wiki/Matrice_de_confusion',
+    'mlstatpy': "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx3/index.html",
+    'Paris 2': 'https://www.u-paris2.fr/fr',
+    'pickle': 'https://docs.python.org/3/library/pickle.html',
+    'pyensae': 'http://www.xavierdupre.fr/app/pyensae/helpsphinx/',
+    'R': "https://www.r-project.org/",
+    'régression linéaire': 'https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire',
+    'REST API': "https://en.wikipedia.org/wiki/Representational_state_transfer",
+    'ROC': "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html",
+    'seaborn': "https://seaborn.pydata.org/",
+    'statsmodels': "http://www.statsmodels.org/stable/index.html",
+    'teachpyx': "http://www.xavierdupre.fr/app/teachpyx/helpsphinx3/index.html",
+    'UCI': "http://archive.ics.uci.edu/ml/index.php",
+})

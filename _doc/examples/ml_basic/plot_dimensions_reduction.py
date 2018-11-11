@@ -280,18 +280,18 @@ graph_acp2(X_iris_LDA, y_iris)
 # ni être généralisé trivialement.
 
 df = pd.DataFrame.from_dict({'loves_everything': [9, 9, 9, 9, 9, 9, 0],
-                             'big_guns':         [1, 2, 1, 8, 9, 8, 9],
+                             'big_guns': [1, 2, 1, 8, 9, 8, 9],
                              'testosterone guy': [0, 0, 1, 9, 9, 9, 7],
-                             'girlygirl':        [9, 0, 8, 1, 0, 0, 7],
-                             'romance_addict':   [9, 8, 0, 0, 0, 1, 0],
-                             'machoman':         [0, 1, 0, 8, 7, 9, 8],
-                             'loves_flowers':    [7, 8, 0, 0, 0, 0, 8],
-                             'easily_pleased':   [0, 8, 8, 0, 7, 9, 7],
+                             'girlygirl': [9, 0, 8, 1, 0, 0, 7],
+                             'romance_addict': [9, 8, 0, 0, 0, 1, 0],
+                             'machoman': [0, 1, 0, 8, 7, 9, 8],
+                             'loves_flowers': [7, 8, 0, 0, 0, 0, 8],
+                             'easily_pleased': [0, 8, 8, 0, 7, 9, 7],
                              'chuck_norris_fan': [0, 2, 0, 9, 0, 9, 8],
-                             'mylittleponey98':  [7, 0, 7, 0, 1, 0, 8],
-                             'allmoviesrock':    [7, 8, 0, 0, 7, 8, 7],
+                             'mylittleponey98': [7, 0, 7, 0, 1, 0, 8],
+                             'allmoviesrock': [7, 8, 0, 0, 7, 8, 7],
                              'more_guns_please': [0, 2, 0, 9, 8, 0, 7],
-                             'yeah_guns666':     [1, 0, 3, 0, 9, 9, 0]},
+                             'yeah_guns666': [1, 0, 3, 0, 9, 9, 0]},
                             ).transpose()
 df.index.name = "Users"
 df.columns = ['Charming prince', 'First date', 'Lovely love',

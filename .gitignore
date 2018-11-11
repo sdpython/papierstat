@@ -308,3 +308,6 @@ _doc/notebooks/lectures/catboost_info/catboost_training.json
 _doc/notebooks/lectures/catboost_info/learn_error.tsv
 _doc/notebooks/lectures/catboost_info/meta.tsv
 _doc/notebooks/lectures/catboost_info/time_left.tsv
+_doc/notebooks/visualisation/iris-2013*.*
+_doc/notebooks/visualisation/beneficiaires*.xls
+_doc/notebooks/visualisation/demandeur*.xls
