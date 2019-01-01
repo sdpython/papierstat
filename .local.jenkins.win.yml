@@ -17,6 +17,7 @@ before_script:
   - python -u setup.py build_ext --inplace
 script:
   - { CMD: "python -u setup.py unittests", NAME: "UT" }
+  - { CMD: "python -u setup.py unittests_LONG", NAME: "UT_LONG" }
 after_script:
   - python -u setup.py bdist_wheel
   - if [ ${DIST} != "conda" and ${NAME} == "UT" ] then copy dist\*.whl {{root_path}}\..\..\local_pypi\local_pypi_server fi

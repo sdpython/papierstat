@@ -16,6 +16,7 @@ install:
 
 script:
   - { CMD: "$PYINT -u setup.py unittests", NAME: "UT" }
+  - { CMD: "$PYINT -u setup.py unittests_LONG", NAME: "UT_LONG" }
 
 after_script:
   - $PYINT -u setup.py bdist_wheel
