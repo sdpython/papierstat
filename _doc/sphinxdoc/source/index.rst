@@ -2,14 +2,6 @@
 .. |gitlogo| image:: _static/git_logo.png
              :height: 20
 
-**Links:** `github <https://github.com/sdpython/papierstat/>`_,
-`documentation <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_,
-:ref:`l-README`,
-:ref:`blog <ap-main-0>`,
-:ref:`genindex`
-
-.. image:: phdoc_static/project_ico.png
-
 Petit voyage au pays du machine learning
 ========================================
 
@@ -46,6 +38,13 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
 
     import papierstat
     ...
+
+
+`github <https://github.com/sdpython/papierstat/>`_,
+`documentation <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_,
+:ref:`l-README`,
+:ref:`blog <ap-main-0>`,
+:ref:`genindex`
 
 .. only:: html
 
