@@ -2,6 +2,7 @@ dbfread
 catboost
 chardet
 coverage
+descartes
 folium
 geopandas
 google_compute_engine
