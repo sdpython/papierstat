@@ -27,7 +27,7 @@ def load_adult_dataset(download=True, small=False, url='uci'):
 
     @param  download    télécharge le jeu de données ou considères une copie en local.
     @param  small       récupère une version allégée en local
-    @param  uci         source
+    @param  url         source
     @return             :epkg:`pandas:DataFrame` (train, test)
     """
     columns = ['age', 'workclass', 'fnlwgt', 'education', 'education_num', 'marital_status',
