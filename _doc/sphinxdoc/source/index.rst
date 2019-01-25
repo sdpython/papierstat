@@ -39,7 +39,6 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
     import papierstat
     ...
 
-
 `github <https://github.com/sdpython/papierstat/>`_,
 `documentation <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_,
 :ref:`l-README`,
