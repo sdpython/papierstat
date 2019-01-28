@@ -6,7 +6,7 @@
     :categories: session
 
     Quelques liens sur cette première session
-    et les notebooks associées :
+    et les notebooks associés :
 
     * :ref:`l-rappel`
     * :ref:`l-regclass`

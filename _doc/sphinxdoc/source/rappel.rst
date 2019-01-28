@@ -97,7 +97,7 @@ Espace vectoriel
 Jusqu'à présent, :math:`x` avait plutôt la tête d'un nombre
 et c'était pratique à dessiner mais notre poisson rouge était
 décrit par sa position, soit un couple :math:`(x,y)`.
-Beaucoup de fonctions en machine learning s'écrive
+Beaucoup de fonctions en machine learning s'écrivent
 :math:`f(X)` où :math:`X=(x_1, ..., x_n)` est un vecteur
 de :math:`n` coordonnées. Ca ne change pas grand-chose sauf
 que c'est plus compliqué à dessiner voire impossible.
@@ -115,7 +115,7 @@ l'angle qui les sépare.
 
 .. math::
 
-    <X,Y> = \sum_{i=1}^n x_i y_i
+    <X,Y> = \sum_{i=1}^n x_i y_i = \norm{X}\norm{Y} \cos(X,Y)
 
 .. index:: norme, distance
 
@@ -157,7 +157,7 @@ dans tous les modèles linéaires.
 Les notations mathématiques utilisent le plus souvent
 les minuscules pour représenter un nombre, les majuscules
 pour représenter un vecteur ou une matrice, les lettres grecques
-pour des nombres très petits utilisés comme intermédiaire de
+pour des nombres très petits utilisés comme intermédiaires de
 calcul.
 
 .. index:: problème d'optimisation
@@ -261,7 +261,7 @@ et son poids, leur deux vont ensemble. La corrélation mesure le fait que
 alors :math:`Y_i` est grand, si :math:`Y_i` est petit alors :math:`Y_i` est petit.
 On dit alors que les variables aléatoires :math:`X` et :math:`Y`
 qui résument les deux ensembles de points sont corrélées.
-Il y a plusieurs façon de mesurer la corrélation mais le plus connu
+Il y a plusieurs façons de mesurer la corrélation mais le plus connu
 est la `corrélation de Pearson <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_ :
 
 .. math::
@@ -269,6 +269,22 @@ est la `corrélation de Pearson <https://en.wikipedia.org/wiki/Pearson_correlati
     \begin{array}{rcl} \bar{X} &=& \frac{1}{n} \sum_{i=1}^n X_i \\ \bar{Y} &=& \frac{1}{n} \sum_{i=1}^n Y_i \\
     cor(X,Y) &=& \frac{ \sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{  \sqrt{\pa{\sum_{i=1}^n X_i - \bar{X}} \pa{\sum_{i=1}^n Y_i - \bar{Y}} }}
     \end{array}
+
+Une autre très connue est la corrélation de
+`Spearman <https://fr.wikipedia.org/wiki/Corr%C3%A9lation_de_Spearman>`_
+est est définie comme la corrélation des rangs des variables *X*, *Y*.
+On convertit la séquence :math:`(X_i, Y_i)` en :math:`rg_X(i), rg_Y(i)`
+qui vérifie :math:`X_{rg_X(1)} \leqslant X_{rg_X(2)} \leqslant ...` et
+:math:`Y_{rg_Y(1)} \leqslant Y_{rg_Y(2)} \leqslant ...` Les deux suites
+:math:`(X_{rg_X(i)})` et :math:`(Y_{rg_Y(i)})` sont triées. La corrélation
+de *Spearman* est définie comme :
+
+.. math::
+
+    \rho(X,Y) = cor(rg_X, rg_Y)
+
+Cette corrélation est moins sensibles aux valeurs extrêmes puisqu'elle
+s'intéresse à l'ordre des valeurs et non aux valeurs elles-mêmes.
 
 .. index:: nuage de points
 
@@ -334,7 +350,7 @@ le plus souvent ``,``, un autre indique qu'on passe à la ligne suivante
 DataFrame
 +++++++++
 
-La traduction est littéralement tableau de données,
+La traduction est littéralement *tableau de données*,
 il a un nombre fixé de colonnes et de lignes.
 On suppose en plus que chaque colonne contient le même
 type d'information, nombre ou texte le plus souvent.
@@ -546,3 +562,8 @@ Si tous ces rappels vous sont connus, vous devriez être prêt
 * `Spectral Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/graph_spectral_clustering.html>`_
 * `Décorrélation de variables aléatoires <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/decorrelation.html>`_
 * `Challenges algorithmiques <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/index.html#challenges>`_
+
+Un dernier lien vers des exercices dont les questions sont plus détaillées et
+corrigées :
+
+* `exercices corrigés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/questions/exams_1A.html#seances-notees>`_
