@@ -13,7 +13,7 @@ facile à interpréter.
 On distingue deux grandes familles de modèles, ceux qui sont
 appris grâce à des méthodes dites ensemblistes et ceux appris
 grâce à des méthodes à base de gradient. La première famille
-suppose peu de chose sur les données elle-même, la seconde suppose
+suppose peu de choses sur les données elles-mêmes, la seconde suppose
 que la relation est une fonction dérivable.
 
 .. contents::
@@ -24,9 +24,9 @@ Forces et différences
 
 Les méthodes ensemblistes sont douées pour trouver relations
 entre des valeurs précises de *X* et *Y*. *X* et *Y* sont en
-quelque sorte discret mais cela fonctionne bien si ce nombre de
-valeurs discrets n'est pas trop grande sinon la liste des
-correspondances et très longue.
+quelque sorte discrets mais cela fonctionne bien si ce nombre de
+valeurs discrets n'est pas trop grand sinon la liste des
+correspondances est très longue.
 
 Les méthodes à base de gradient sont douées pour résumer une
 relation dérivable (et donc continue) : si *X* croît de tant,
@@ -68,7 +68,7 @@ des deux.
 .. image:: images/xy_cd.png
     :width: 200
 
-La méthode ensembliste la plus connu est
+La méthode ensembliste la plus connue est
 l':epkg:`arbre de décision`. Les autres modèles
 comme la :epkg:`forêt aléatoire`
 sont des déclinaisons. Le modèle à base
@@ -83,13 +83,10 @@ une méthode ensembliste.
 
     ../notebooks/artificiel_duration_prediction
 
-Distance, dérivée
-+++++++++++++++++
+Normalisation des variables et gradient
++++++++++++++++++++++++++++++++++++++++
 
-La tentation est toujours d'utiliser un modèle avec plus
-de degré de liberté et donc qui converge plus difficilement.
-Il est parfois plus utile d'ajouter de nouvelles features :
-`Features ou modèle <https://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx2/_downloads/ml_features_model.html>`_.
+Voir :ref:`l-norm-grad`.
 
 Méthodes ensemblistes
 +++++++++++++++++++++

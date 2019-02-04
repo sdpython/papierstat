@@ -1,8 +1,8 @@
 
 .. _l-preprocessing:
 
-Prétraitement
-=============
+Prétraitement des données, données textuelles
+=============================================
 
 :epkg:`pandas` est souvent le point d'entrée d'un problème
 de machine learning à savoir un fichier plat qu'on lit
@@ -24,8 +24,30 @@ c'est ce que manipulent tous les algorithmes de machine learning.
 .. contents::
     :local:
 
-Prétraitement numériques
-++++++++++++++++++++++++
+.. _l-norm-grad:
+
+Prétraitements numériques
++++++++++++++++++++++++++
+
+Le prétraitement des variables numériques dépend beaucoup
+de la qualité des données reçues. Si le processus de récolte est manuel,
+il faut s'attendre à quelques erreurs de saisie. Si le processus
+de récolte est automatique comme pour un site web, il faut s'attendre
+à quelques artefacts liés à son implémentation. Certains bugs
+viennent également du fait que les données proviennent de la fusion
+de plusieurs bases et que les données ont déjà été prétraitées
+mais de façon différentes. Il n'existe pas de règles génériques.
+Il faut toutefois garder à l'esprit que certains des prétraitement
+ne sont pas nécessaires selon le modèle de machine learning
+utilisé par la suite. La normalisation est en règle général
+très utile si le modèle de machine learning s'apprend à l'aide
+de méthode à gradient. Il n'est théoriquement pas nécessaire,
+il est numérique préférable.
+
+.. toctree::
+    :maxdepth: 1
+
+    ../notebooks/artificiel_normalisation
 
 Normalisation, changement d'échelle, passage au logarithme,
 suppression des valeurs extrêmes, construction de features
@@ -33,10 +55,20 @@ polynômiales, :epkg:`scikit-learn` donne une idée des prétraitements
 numériques les plus courants :
 `sklearn.preprocessing <http://scikit-learn.org/stable/modules/classes.html#module-sklearn.preprocessing>`_.
 
-.. toctree::
-    :maxdepth: 1
+.. _l-new-features:
 
-    ../notebooks/artificiel_normalisation
+Ajout de variables et interprétabilité
+++++++++++++++++++++++++++++++++++++++
+
+La tentation est toujours d'utiliser un modèle avec plus
+de degrés de liberté et donc qui converge plus difficilement.
+Il est parfois plus utile d'ajouter de nouvelles features :
+`Features ou modèle <https://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx2/_downloads/ml_features_model.html>`_.
+Pour résumer, lorsque la relation entre deux variables *X* et *Y*
+n'est pas linéaire, on peut essayer de modéliser cette relation par
+une fonction non linéaire et nécessairement plus coûteuse à construire
+ou instroduire des variables supplémentaires telles que
+:math:`X^2, \log X,` ... et garder un modèle linéaire.
 
 Texte - catégorie
 +++++++++++++++++
@@ -158,19 +190,3 @@ pour convertir le texte en features s'appelle
 
 Tagging
 +++++++
-
-Traitement des valeurs manquantes
-+++++++++++++++++++++++++++++++++
-
-Overfitting et distribution des observations
-++++++++++++++++++++++++++++++++++++++++++++
-
-smote
-
-.. index:: transformer
-
-Pipeline
-++++++++
-
-Les bons vins sont rares
-++++++++++++++++++++++++

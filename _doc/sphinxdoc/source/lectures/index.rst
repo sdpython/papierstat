@@ -17,6 +17,8 @@ pour explorer quelques points récurrents ou techniques.
     regclass
     digmodel
     preprocessing
+    pipeline
+    overfitting_unbalanced_missing
     nonsupervise
     otherml
     gradienttree
