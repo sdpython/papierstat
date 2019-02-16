@@ -1,9 +1,4 @@
 
-.. _l-README:
-
-README
-======
-
 .. image:: https://travis-ci.org/sdpython/papierstat.svg?branch=master
     :target: https://travis-ci.org/sdpython/papierstat
     :alt: Build status
@@ -41,10 +36,19 @@ README
     :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
 
-*papierstat* contains materials about machine learning
-teachings (French).
+.. _l-README:
 
-**Links:**
+papierstat
+==========
+
+The module contains teaching contents in French.
+It was started to get a less chaotic content compare to
+`ensae_teaching_cs <https://github.com/sdpython/eansae_teching_cs/>`_
+mostly meant to provide exercises.
+
+Le contenu est en français car il existe déjà tellement de choses en anglais,
+et est émaillé de notebooks qui illustrent plus spécifiquement telle ou telle
+notion, parfois jusqu'à l'inutile mais séduisant intellectuellement.
 
 * `GitHub/papierstat <https://github.com/sdpython/papierstat/>`_
 * `documentation <http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html>`_
