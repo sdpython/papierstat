@@ -1,0 +1,109 @@
+
+.. blogpost::
+    :title: Session 3
+    :keywords: session 3
+    :date: 2019-02-22
+    :categories: session
+
+    **Scraping**
+
+    * `Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3///notebooks/2018-10-02_scraping_recuperer_images.html>`_
+    * `Un peu plus sur le scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_
+      (`éléments de réponses <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html?highlight=scraping>`_)
+    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html?highlight=scraping>`_
+
+    **Devinettes**
+
+    * :ref:`l-devinette-naive-normalisation`
+
+    **Texte**
+
+    * :ref:`l-preprocessing`
+    * :ref:`artificieltokenizerst`
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
+      (`éléments de réponse <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis_correction.html>`_)
+
+    **Regarder les données**
+
+    * `Les vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
+
+    **Un peu d'algorithme**
+
+    Je reproduis ici un code qui construit les permutations d'un ensemble
+    avec la focntion `combinaison
+    <https://docs.python.org/3.7/library/itertools.html#itertools.combinations>`_ :
+
+    ::
+
+        def combinations(iterable, r):
+            # combinations('ABCD', 2) --> AB AC AD BC BD CD
+            # combinations(range(4), 3) --> 012 013 023 123
+            pool = tuple(iterable)
+            n = len(pool)
+            if r > n:
+                return
+            indices = list(range(r))
+            yield tuple(pool[i] for i in indices)
+            while True:
+                for i in reversed(range(r)):
+                    if indices[i] != i + n - r:
+                        break
+                else:
+                    return
+                indices[i] += 1
+                for j in range(i+1, r):
+                    indices[j] = indices[j-1] + 1
+                yield tuple(pool[i] for i in indices)
+
+    Ensuite le code de la fonction *transform* de la classe
+    `PolynomialFeatures <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.PolynomialFeatures.html>`_ :
+
+    ::
+
+        XP = np.empty((n_samples, self.n_output_features_), dtype=X.dtype)
+        for i, comb in enumerate(combinations):
+            XP[:, i] = X[:, comb].prod(1)
+
+    Par un pur hasard, je me suis dit qu'on pouvait faire mieux...
+    Et donc j'ai écrit cela :
+
+    ::
+
+        def multiply(A, B):
+            return numpy.multiply(A, B)
+
+        XP[:, 0] = 1
+        pos = 1
+        n = X.shape[1]
+        for d in range(0, self.poly_degree):
+            if d == 0:
+                XP[:, pos:pos + n] = X
+                index = list(range(pos, pos + n))
+                pos += n
+                index.append(pos)
+            else:
+                new_index = []
+                end = index[-1]
+                for i in range(0, n):
+                    a = index[i]
+                    new_index.append(pos)
+                    new_pos = pos + end - a
+                    XP[:, pos:new_pos] = multiply(XP[:, a:end], X[:, i:i + 1])
+                    pos = new_pos
+
+                new_index.append(pos)
+                index = new_index
+
+    Et maintenant, je vous laisse trouver pour c'est plus rapide.
+    Et pour un fois, j'ai fait l'effort de confirmer cette intuition...
+    `Faster Polynomial Features
+    <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/faster_polynomial_features.html>`_.
+
+    Et en fait, cette intuition était bien meilleure que
+    celle que j'ai en me réveillant un matin, bordel...
+    Une régression logistique est un diagramme de Voronoï...
+    Et ce n'était pas tout-à-fait vrai
+    `Voronoï et régression logistique
+    <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/notebooks/logreg_voronoi.html>`_.
+    Mais j'avoue que j'ai pris du plaisir à explorer
+    tout ça même si tout le monde s'en fout.

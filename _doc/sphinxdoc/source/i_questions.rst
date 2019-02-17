@@ -87,8 +87,10 @@ vin rouge.
 
 Pourquoi ces deux courbes ne sont-elles pas identiques ?
 
-Normalisation
-+++++++++++++
+.. _l-devinette-naive-normalisation:
+
+Naïve normalisation
++++++++++++++++++++
 
 Le code suivant présente une erreur de méthodologie
 qui a souvent peu d'incidence mais qui n'en reste pas moins
