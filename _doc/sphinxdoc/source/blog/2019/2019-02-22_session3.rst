@@ -30,7 +30,7 @@
     **Un peu d'algorithme**
 
     Je reproduis ici un code qui construit les permutations d'un ensemble
-    avec la focntion `combinaison
+    avec la fonction `combinaison
     <https://docs.python.org/3.7/library/itertools.html#itertools.combinations>`_ :
 
     ::
