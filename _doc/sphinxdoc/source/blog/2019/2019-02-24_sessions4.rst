@@ -1,0 +1,20 @@
+
+.. blogpost::
+    :title: Session 4
+    :keywords: session 4
+    :date: 2018-02-24
+    :categories: session
+
+    * :ref:`l-cheatsheet-ml`
+    * `clustering <http://scikit-learn.org/stable/modules/clustering.html#clustering>`_,
+      `k-means <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_clus/kmeans.html>`_
+      un exemple avec
+      les `vélos à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_challenge.html>`_
+      et l'utilisation du clustering pour trouver les
+      `profils de cyclistes à Chicago <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/city_bike_solution_cluster_start.html>`_
+
+    *deep learning*
+
+    * `Réseaux de neurones avec pytorch <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/all_notebooks.html#id8>`_
+    * `Transfer Learning avec pytorch <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/search_images_torch.html>`_ ou
+      `Transfer Learning avec keras <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/search_images_keras.html>`_
