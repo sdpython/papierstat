@@ -1,0 +1,220 @@
+
+.. blogpost::
+    :title: Installer Python à l'université
+    :keywords: miniconda
+    :date: 2019-02-24
+    :categories: installation
+
+    L'université bloque parfois quelques usages pour des raisons
+    de sécurité. Il n'est pas toujours possible d'utiliser
+    ``pip install pandas`` ou ``conda install pandas``. Il
+    faut télécharger les packages à la main et la liste des
+    dépendances peut être longues. Les liens qui suivent sont
+    valides pour le système Windows.
+    On commence par installer *Python* avec la distribution
+    `Python <https://www.python.org/downloads/windows/>`_ ou
+    `miniconda <https://docs.conda.io/en/latest/miniconda.html>`_.
+    J'ai pris *Miniconda* qui est plus léger qu'*Anaconda*
+    mais nécessite de télécharger des paquets à la main.
+    Il faut l'installer *Just for me* et ne pas ajouter *Python*
+    à la variable d'environnement ``PATH``. Je commence toujours par
+    installer *numpy* `numpy <https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy>`_
+    (*numpy-1.16.1+mkl-cp37-cp37m-win_amd64.whl* dans mon cas).
+    Et on l'installe avec ``pip install <fichier_local>`` depuis
+    la ligne de commande. Dans mon cas, cela donne ::
+
+        cd c:\temp\Miniconda3\Scripts
+        pip install "..\..\numpy-1.16.1+mkl-cp37-cp37m-win_amd64.whl"
+
+    Si vous utilisez *Python*, je vous suggère le fichier
+    ``Windows x86-64 embeddable zip file`` qui ne nécessite pas de
+    droit d'amnistration. Mais il faut installer ``pip`` en téléchargeant
+    `get-pip.py <https://bootstrap.pypa.io/get-pip.py>`_ mais je n'ai
+    pas vraiment réussi à le faire marcher, ``import pip`` échoue,
+    peut-être parce que j'ai déjà une autre version d'installée.
+    Une fois que cette partie est passée, il faut installer les paquets
+    un par un en les téléchargeant depuis
+    `pypi <https://pypi.org/>`_ :
+
+    ::
+
+        pip install --no-deps <nom_du_fichier_téléchargé>
+
+    Ou si cela ne marche pas :
+
+    ::
+
+        python -m pip install --no-deps <nom_du_fichier_téléchargé>
+
+    Il faut le faire pour les paquets suivants :
+
+    ::
+
+        alabaster==0.7.12
+        appdirs==1.4.3
+        asn1crypto==0.24.0
+        astroid==2.1.0
+        attrs==18.2.0
+        autopep8==1.4.3
+        Babel==2.6.0
+        backcall==0.1.0
+        backports-abc==0.5
+        backports.shutil-get-terminal-size==1.0.0
+        bleach==3.1.0
+        blockdiag==1.5.4
+        brewer2mpl==1.4.1
+        bz2file==0.98
+        cairocffi==0.8.1
+        CairoSVG==2.3.0
+        cchardet==2.1.4
+        certifi==2018.11.29
+        cffi==1.11.5
+        chardet==3.0.4
+        codecov==2.0.15
+        colorama==0.4.1
+        coverage==4.5.2
+        cryptography==2.5
+        cssselect2==0.2.1
+        cycler==0.10.0
+        Cython==0.29.5
+        cytoolz==0.9.0.1
+        dask==1.1.1
+        DataProperty==0.42.0
+        decorator==4.3.2
+        defusedxml==0.5.0
+        docformatter==1.0
+        docutils==0.14
+        entrypoints==0.3
+        et-xmlfile==1.0.1
+        filelock==3.0.10
+        funcparserlib==0.3.6
+        gensim==3.7.1
+        html5lib==1.0.1
+        idna==2.8
+        imagesize==1.1.0
+        importlib-metadata==0.8
+        ipykernel==5.1.0
+        ipympl==0.2.1
+        ipython==7.3.0
+        ipython-genutils==0.2.0
+        ipywidgets==7.4.2
+        isort==4.3.4
+        jdcal==1.4
+        jedi==0.13.2
+        jeepney==0.4
+        Jinja2==2.10
+        jmespath==0.9.3
+        jsonschema==3.0.0
+        jupyter==1.0.0
+        jupyter-client==5.2.4
+        jupyter-console==6.0.0
+        jupyter-core==4.4.0
+        jupyter-pip==0.3.1
+        jupyter-sphinx==0.1.4
+        jupyterlab==0.35.4
+        jupyterlab-launcher==0.13.1
+        jupyterlab-server==0.3.0
+        jyquickhelper==0.3.128
+        keyring==18.0.0
+        kiwisolver==1.0.1
+        lazy-object-proxy==1.3.1
+        Logbook==1.4.3
+        lxml==4.3.1
+        MarkupSafe==1.1.1
+        matplotlib==3.0.2
+        mbstrdecoder==0.7.0
+        mccabe==0.6.1
+        metakernel==0.20.14
+        mistune==0.8.4
+        multi-key-dict==2.0.3
+        nbconvert==5.4.1
+        nbformat==4.4.0
+        nbpresent==3.0.0
+        nose==1.3.7
+        notebook==5.7.4
+        notedown==1.5.1
+        numpy==1.16.1+mkl
+        olefile==0.46
+        openpyxl==2.6.0
+        packaging==19.0
+        pandas==0.24.1
+        pandoc-attributes==0.1.7
+        pandocfilters==1.4.2
+        parso==0.3.4
+        path.py==11.5.0
+        pathvalidate==0.24.1
+        patsy==0.5.1
+        pbr==5.1.2
+        pep8==1.7.1
+        pexpect==4.6.0
+        pickleshare==0.7.5
+        Pillow==5.4.1
+        pipdeptree==0.13.2
+        prometheus-client==0.6.0
+        prompt-toolkit==2.0.9
+        psutil==5.5.0
+        ptyprocess==0.6.0
+        pycodestyle==2.5.0
+        pycparser==2.19
+        Pygments==2.3.1
+        pylint==2.2.2
+        pymyinstall==1.2
+        pyparsing==2.3.1
+        pypiserver==1.2.7
+        pyrsistent==0.14.11
+        python-dateutil==2.8.0
+        python-jenkins==1.4.0
+        pythonnet==2.4.0.dev0
+        pytz==2018.9
+        pywin32==223.1
+        pywin32-ctypes==0.2.0
+        pywinpty==0.5.5
+        pyzmq==17.1.2
+        qtconsole==4.4.3
+        requests==2.21.0
+        s3transfer==0.2.0
+        scikit-learn==0.20.2
+        scipy==1.2.1
+        SecretStorage==3.1.1
+        semantic-version==2.6.0
+        Send2Trash==1.5.0
+        simplegeneric==0.8.1
+        six==1.12.0
+        smart-open==1.8.0
+        smmap2==2.0.5
+        snowballstemmer==1.2.1
+        Sphinx==1.8.4
+        sphinx-gallery==0.2.0
+        sphinx-rtd-theme==0.4.3
+        sphinxcontrib-blockdiag==1.5.5
+        sphinxcontrib-imagesvg==0.1
+        sphinxcontrib-jsdemo==0.1.4
+        sphinxcontrib-websupport==1.1.0
+        statsmodels==0.9.0
+        tabledata==0.8.0
+        tabulate==0.8.3
+        terminado==0.8.1
+        testpath==0.4.2
+        tinycss2==0.6.1
+        toolz==0.9.0
+        tornado==5.1.1
+        tqdm==4.31.1
+        traitlets==4.3.2
+        typepy==0.4.0
+        unify==0.4
+        untokenize==0.1.1
+        urllib3==1.24.1
+        virtualenv==16.4.1
+        wcwidth==0.1.7
+        webcolors==1.8.1
+        webencodings==0.5.1
+        widgetsnbextension==3.4.2
+        wild-sphinx-theme==1.0.0
+        win-unicode-console==0.5
+        winrandom==1.2.1
+        winshell==0.6
+        wrapt==1.11.1
+        xlrd==1.2.0
+        XlsxWriter==1.1.5
+        xlwt==1.3.0
+        zipp==0.3.3
