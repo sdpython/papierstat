@@ -18,3 +18,12 @@
     * `Réseaux de neurones avec pytorch <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/all_notebooks.html#id8>`_
     * `Transfer Learning avec pytorch <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/search_images_torch.html>`_ ou
       `Transfer Learning avec keras <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/notebooks/search_images_keras.html>`_
+    * :ref:`l-gan`
+
+    *Liens*
+
+    * `Découverte du deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/index.html>`_
+    * `Deep Learning course: lecture slides and lab notebooks <https://github.com/m2dsupsdlclass/lectures-labs>`_
+      (`Master DataScience <https://www.universite-paris-saclay.fr/en/education/master/m2-data-sciences#presentation-m2>`_ -
+      `Paris Saclay <https://fr.wikipedia.org/wiki/Universit%C3%A9_Paris-Saclay>`_)
+
