@@ -84,7 +84,7 @@ def duration_selling(date_begin=None, date_end=None,
         if nb == 0:
             date_begin += timedelta(days=1)
             continue
-        nb += gauss[pos_gauss] * sigma_per_day  #pylint: disable=E1136
+        nb += gauss[pos_gauss] * sigma_per_day  # pylint: disable=E1136
         nb = int(max(nb, 0))
         pos_gauss += 1
         if pos_gauss >= len(gauss):
@@ -94,13 +94,13 @@ def duration_selling(date_begin=None, date_end=None,
             date_begin += timedelta(days=1)
             continue
         for _ in range(0, int(nb)):
-            db = uni[pos_uni] * day_duration  #pylint: disable=E1136
+            db = uni[pos_uni] * day_duration  # pylint: disable=E1136
             pos_uni += 1
             if pos_uni >= len(uni):
                 uni = rand(1000)
                 pos_uni = 0
 
-            g = min(gam[pos_gam] * 3600, 36000)  #pylint: disable=E1136
+            g = min(gam[pos_gam] * 3600, 36000)  # pylint: disable=E1136
             pos_gam += 1
             if pos_gam >= len(gam):
                 gam = gamma(gamma_k, gamma_theta, 1000)
