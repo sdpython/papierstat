@@ -174,7 +174,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
             # Only one dimension.
             final = numpy.hstack(res)
         df = pandas.DataFrame(final)
-        df = df.sort_values(df.columns[-1]).reset_index(drop=True)
+        df = df.sort_values(df.columns[-1]).reset_index(drop=True)  #pylint: disable=E1136
         df = df.iloc[:, :-1].values
         if len(df.shape) == 2 and df.shape[1] == 1:
             df = df.ravel()

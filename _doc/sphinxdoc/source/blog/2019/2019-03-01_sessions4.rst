@@ -26,4 +26,3 @@
     * `Deep Learning course: lecture slides and lab notebooks <https://github.com/m2dsupsdlclass/lectures-labs>`_
       (`Master DataScience <https://www.universite-paris-saclay.fr/en/education/master/m2-data-sciences#presentation-m2>`_ -
       `Paris Saclay <https://fr.wikipedia.org/wiki/Universit%C3%A9_Paris-Saclay>`_)
-
