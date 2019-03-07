@@ -1,0 +1,66 @@
+
+.. blogpost::
+    :title: Session 5
+    :keywords: session 5
+    :date: 2019-03-08
+    :categories: session
+
+    L'objectif de la séance est de passer du temps
+    sur des jeux de données. Le premier jeu,
+    `Titanic <http://web.stanford.edu/class/archive/cs/cs109/cs109.1166/problem12.html>`_
+    (**jeu 1**), contient des informations sur près de 900 passagers
+    du Titanic. On souhaite prédire la probabilité qu'une personne
+    n'ait pas survécu au naufrage. Le fait d'obtenir un modèle performant
+    n'est pas nécessairement ce qui est recherché ici psuique l'information
+    est déjà connue mais plutôt ce que le modèle peut nous apprendre en
+    terme d'équité sociale face à la mort. Ce jeu est intéressant
+    dans la mesure où les variables sont de types variés.
+
+    Je suis tombé sur ce jeu d'images
+    `Lego Brick <https://www.kaggle.com/joosthazelzet/lego-brick-images>`_
+    qui permet de construire un classifieur reconnaissant des briques
+    `Lego <https://www.lego.com/fr-fr/>`_. Le jeu de données
+    est intéressant dans la mesure où il montre des pièces sous
+    tous les angles mais qui sont clairement des images
+    de synthèses et non des images réelles. Cela suggère qu'il faut
+    des pièces sous tous les angles pour apprendre mais cela réduit
+    la portée du modèle qu'on peut apprendre qui sera sans doute
+    incapable de reconnaître la même pièce posée sous n'importe
+    quel fond.
+
+    On va s'intéresser à un jeu de données utilisé lors du
+    `hackathon ENSAE 2018 <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/projects/hackathon_2018.html>`_ :
+    `sample_labelled_train.zip <http://www.xavierdupre.fr/hackathon/sample_labelled_train.zip>`_ (**jeu 2**).
+    Il contient peu d'images dont le nombre ne suffit pas à
+    les classer correctement. L'objectif est ici de comparer deux
+    clustering : un sur les images brutes, un autre sur des images
+    transformées avec un modèle de deep learning
+    (`transfer learning <https://en.wikipedia.org/wiki/Transfer_learning>`_).
+
+    Le dernier sera une série temporelle financière, le
+    `CAC40 <http://www.xavierdupre.fr/enseignement/complements/cac40.csv>`_
+    (**jeu 3**), pour lequel il faut prédire s'il montera ou descendera
+    le lendemain. Voyons si cela est possible.
+    Ce n'est pas très original mais c'est un grand classique.
+    Les données ont été récupérées avec
+    `pyensae <http://www.xavierdupre.fr/app/pyensae/helpsphinx/>`_ et cet exemple
+    `Manipulation de séries financières avec la classe StockPrices <http://www.xavierdupre.fr/app/pyensae/helpsphinx/notebooks/pyensae_StockPrices.html>`_.
+    Je suis parfois étonné, ça marche encore alors que j'ai essayé
+    de télécharger les mêmes données depuis le site de Yahoo sans succès.
+    A vrai dire, je sais à la semaine près si ça pète
+    car je fais tourner un test unitaire qui vérifie que
+    ça marche toutes les semaines.
+
+    Pour l'originalité, voici des sujets qui ont intéressés
+    des étudiants qui ont suivis mes cours par le passés :
+
+    * Analyse de la malignité des cellules
+    * A home-made Siri : répondre à des questions ouvertes en utilisant Wikipédia
+    * Prediction de surplus de velos dans une station
+    * Optimisation d'un problème d'allocation de créneaux d'atterissage
+    * Reconnaissance de genre musical
+    * Prédiction des centres d'intérêts des députés à partir de leurs interventions
+    * Prédiction de la natue d'une tumeur
+    * Pertinence et incitations de la taxation sur le carburant automobile
+    * Reconnaissance dessins logos applications
+    * Déterminants des inégalités de parloirs entre détenus
