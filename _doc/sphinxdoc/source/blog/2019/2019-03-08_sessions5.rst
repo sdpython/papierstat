@@ -51,8 +51,8 @@
     car je fais tourner un test unitaire qui vérifie que
     ça marche toutes les semaines.
 
-    Pour l'originalité, voici des sujets qui ont intéressés
-    des étudiants qui ont suivis mes cours par le passés :
+    Pour l'originalité, voici des sujets qui ont intéressé
+    des étudiants qui ont suivis mes cours par le passé :
 
     * Analyse de la malignité des cellules
     * A home-made Siri : répondre à des questions ouvertes en utilisant Wikipédia
