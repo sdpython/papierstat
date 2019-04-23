@@ -36,5 +36,6 @@ install:
   - pip install category_encoders --no-deps
   - pip install http://www.xavierdupre.fr/enseignement/setup/fr_core_news_sm-2.0.0-py3-none-any.whl
   - pip install cairocffi cairosvg
+  - export PYTHONPATH=src
 script:
   - python setup.py unittests

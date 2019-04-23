@@ -1,9 +1,6 @@
 """
 @brief      test log(time=2s)
 """
-
-import sys
-import os
 from io import BytesIO
 import pickle
 import unittest
@@ -14,22 +11,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from pyquickhelper.pycode import ExtTestCase
-
-try:
-    import src
-except ImportError:
-    path = os.path.normpath(
-        os.path.abspath(
-            os.path.join(
-                os.path.split(__file__)[0],
-                "..",
-                "..")))
-    if path not in sys.path:
-        sys.path.append(path)
-    import src
-
-from src.papierstat.datasets import load_wines_dataset
-from src.papierstat.mltricks import SkBaseLearnerCategory
+from papierstat.datasets import load_wines_dataset
+from papierstat.mltricks import SkBaseLearnerCategory
 
 
 class TestSklearnCategory(ExtTestCase):
