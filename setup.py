@@ -173,7 +173,7 @@ if not r:
         package_data=package_data,
         # data_files=data_files,
         setup_requires=["pyquickhelper"],
-        install_requires=['scikit-learn>=0.20.0', 'pandas', 'mlinsights',
+        install_requires=['scikit-learn>=0.21.0', 'pandas', 'mlinsights',
                           'matplotlib', 'pandas_streaming'],
         extras_require={
             'datasets.carreau': ["dbfread", "geopandas", "fiona"],
