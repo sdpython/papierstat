@@ -108,7 +108,7 @@ class TestSklearnCategory(ExtTestCase):
                                'model__presort': False, 'model__random_state': None, 'model__splitter': 'best'})
 
         parameters = {'model__max_depth': [2, 3]}
-        clf = GridSearchCV(model, parameters)
+        clf = GridSearchCV(model, parameters, cv=3)
         clf.fit(X, y)
 
         pred = clf.predict(X)
@@ -125,7 +125,7 @@ class TestSklearnCategory(ExtTestCase):
         X_train, X_test, y_train, y_test, color_train, color_test = train_test_split(
             X, y, color)
 
-        model = SkBaseLearnerCategory("color", LogisticRegression())
+        model = SkBaseLearnerCategory("color", LogisticRegression(solver="liblinear"))
         new_x_train = pandas.concat([X_train, color_train], axis=1)
         model.fit(new_x_train, y_train)
         new_x_test = pandas.concat([X_test, color_test], axis=1)
@@ -139,7 +139,7 @@ class TestSklearnCategory(ExtTestCase):
             ok = True
         self.assertTrue(ok)
 
-        clr = LogisticRegression()
+        clr = LogisticRegression(solver="liblinear")
         clr.fit(X_train, y_train)
         acc2 = accuracy_score(y_test, clr.predict(X_test))
         self.assertGreater(acc1, 0.45)

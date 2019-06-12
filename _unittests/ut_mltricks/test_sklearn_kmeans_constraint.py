@@ -217,7 +217,7 @@ class TestSklearnConstraintKMeans(ExtTestCase):
             'constraintkmeans__n_clusters': [2, 3, 4],
             'constraintkmeans__balanced_predictions': [False, True],
         }
-        clf = GridSearchCV(model, parameters)
+        clf = GridSearchCV(model, parameters, cv=3)
         clf.fit(X, y)
         pred = clf.predict(X)
         self.assertEqual(pred.shape, (8,))
