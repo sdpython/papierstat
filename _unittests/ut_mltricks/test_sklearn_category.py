@@ -125,7 +125,8 @@ class TestSklearnCategory(ExtTestCase):
         X_train, X_test, y_train, y_test, color_train, color_test = train_test_split(
             X, y, color)
 
-        model = SkBaseLearnerCategory("color", LogisticRegression(solver="liblinear"))
+        model = SkBaseLearnerCategory(
+            "color", LogisticRegression(solver="liblinear"))
         new_x_train = pandas.concat([X_train, color_train], axis=1)
         model.fit(new_x_train, y_train)
         new_x_test = pandas.concat([X_test, color_test], axis=1)
