@@ -69,16 +69,9 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
          :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
          :alt: Requirements Status
 
-    .. image:: https://badge.waffle.io/sdpython/papierstat.png?label=To%20Do&title=To%20Do
-        :target: https://codecov.io/github/sdpython/papierstat?branch=master
-
     .. image:: http://img.shields.io/github/issues/sdpython/papierstat.png
         :alt: GitHub Issues
         :target: https://github.com/sdpython/papierstat/issues
-
-    .. image:: https://badge.waffle.io/sdpython/papierstat.png?label=ready&title=Ready
-        :alt: Waffle
-        :target: https://waffle.io/sdpython/papierstat
 
     .. image:: nbcov.png
         :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html

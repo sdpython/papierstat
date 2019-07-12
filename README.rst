@@ -28,10 +28,6 @@
     :alt: GitHub Issues
     :target: https://github.com/sdpython/papierstat/issues
 
-.. image:: https://badge.waffle.io/sdpython/papierstat.png?label=To%20Do&title=To%20Do
-    :alt: Waffle
-    :target: https://waffle.io/sdpython/papierstat
-
 .. image:: http://www.xavierdupre.fr/app/papierstat/helpsphinx/_images/nbcov.png
     :target: http://www.xavierdupre.fr/app/papierstat/helpsphinx/all_notebooks_coverage.html
     :alt: Notebook Coverage
