@@ -13,7 +13,7 @@ class TestDuration(ExtTestCase):
     def test_duration(self):
 
         df = duration_selling()
-        self.assertEqual(list(df.columns), [
+        self.assertEqual(list(sorted(df.columns)), [
                          'commande', 'reception', 'true_duration'])
         df["wk"] = df.commande.dt.weekday
         df["hour"] = df.commande.dt.hour
