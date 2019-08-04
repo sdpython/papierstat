@@ -5,7 +5,9 @@
 import os
 import unittest
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version, skipif_circleci
+from pyquickhelper.pycode import (
+    add_missing_development_version, skipif_circleci, skipif_travis
+)
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import papierstat
 
@@ -16,6 +18,7 @@ class TestNotebookVisualisationEnedis(unittest.TestCase):
         add_missing_development_version(
             ["jyquickhelper", "pyensae"], __file__, hide=True)
 
+    @skipif_travis('Too long with no output (exceeded 10m0s)')
     @skipif_circleci('Too long with no output (exceeded 10m0s)')
     def test_notebook_visualisation_enedis(self):
         fLOG(
