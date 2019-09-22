@@ -96,13 +96,6 @@ jobs:
             pip install -r requirements.txt
             pip install category_encoders --no-deps
 
-      - run:
-          name: install custom build
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install http://www.xavierdupre.fr/enseignement/setup/fr_core_news_sm-2.0.0-py3-none-any.whl
-
       - save_cache:
           paths:
             - ./venv
