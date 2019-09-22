@@ -13,7 +13,6 @@ from dbfread.field_parser import FieldParser
 from dbfread import DBF
 from dbfread.dbf import expand_year
 import pandas
-from geopandas import GeoDataFrame
 from .data_helper import get_data_folder
 
 
@@ -145,6 +144,10 @@ def _read_geopandas_from_bytes(mif, mid, **kwargs):
     a buffer, and :epkg:`fiona` does it after writing
     in a virtual file (not clear if it is a temporary file or not).
     """
+    # Delayed import because the import fails sometimes
+    # on Windows.
+    from geopandas import GeoDataFrame
+
     with tempfile.NamedTemporaryFile(mode='w+b', delete=False, suffix='.mif') as temp:
         temp.write(mif)
         name_mif = temp.name
