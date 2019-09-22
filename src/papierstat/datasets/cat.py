@@ -50,13 +50,15 @@ def load_adult_dataset(download=True, small=False, url='uci'):
         else:
             url = "http://www.xavierdupre.fr/enseignement/complements/"
             tr = read_content_ufs(url + "adult.data.gz",
-                                  asbytes=True, encoding=None)
+                                  asbytes=True, encoding=None,
+                                  min_size=400000)
             by = BytesIO(tr)
             tx = ungzip_files(by, unzip=False)
             st = StringIO(tx.decode('ascii'))
             train = pandas.read_csv(st, header=None)
             te = read_content_ufs(url + "adult.test.gz",
-                                  asbytes=True, encoding=None)
+                                  asbytes=True, encoding=None,
+                                  min_size=200000)
             by = BytesIO(te)
             tx = ungzip_files(by, unzip=False)
             st = StringIO(tx.decode('ascii'))
