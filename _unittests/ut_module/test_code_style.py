@@ -31,7 +31,7 @@ class TestCodeStyle(ExtTestCase):
         test = os.path.normpath(os.path.join(thi, "..", ))
         check_pep8(test, fLOG=fLOG, neg_pattern="temp_.*",
                    pylint_ignore=('C0103', 'C1801', 'R0201', 'R1705', 'W0108', 'W0613',
-                                  'C0111', 'W0612', 'E0632'),
+                                  'C0111', 'W0612', 'E0632', 'C0415'),
                    skip=["Instance of 'tuple' has no ",
                          ])
 
