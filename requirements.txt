@@ -1,5 +1,7 @@
 dbfread
+cartopy
 catboost
+category_encoders
 chardet
 coverage
 descartes
@@ -14,9 +16,10 @@ pandas_streaming
 pyensae
 pyltr
 pyproj
-pyquickhelper>=1.9.3227
+pyquickhelper>=1.9.3240
 sphinx-bootstrap-theme
 sphinx-gallery
+thinc>=7.1.1
 ujson
 wheel
 xgboost
