@@ -105,7 +105,7 @@ problématique.
     X_train_norm = normalize(X_train)
     X_test_norm = normalize(X_test)
 
-Quelle est elle ?
+Quelle est-elle ?
 
 Programmation
 =============
@@ -127,3 +127,9 @@ Le *stacking* consiste à aggréger les sorties de plusieurs
 modèles de machine learning via un dernier modèle qui prend
 la décision en fonction des sorties de tous les autres.
 Il faut implémenter quelque chose de la sorte.
+La version 0.22 de :epkg:`scikit-learn` implémente
+ce type de modèle `StackingRegressor
+<https://scikit-learn.org/dev/modules/generated/sklearn.ensemble.StackingRegressor.html>`_
+mais d'autres modules n'ont pas attendu comme
+`mlxtend.regressor.StackingRegressor
+<http://rasbt.github.io/mlxtend/user_guide/regressor/StackingRegressor/>`_.

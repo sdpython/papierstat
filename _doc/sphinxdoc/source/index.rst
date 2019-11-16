@@ -15,6 +15,7 @@ qui permet d'y creuser un accès.
     introduction
     rappel
     lectures/index
+    histoires/index
     i_questions
     biblio
     api/index
