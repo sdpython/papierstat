@@ -113,6 +113,7 @@ latex_elements['preamble'] = preamble + custom_preamble
 mathdef_link_only = True
 
 epkg_dictionary.update({
+    'ACP': 'https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales',
     'arbre de décision': 'https://fr.wikipedia.org/wiki/Arbre_de_d%C3%A9cision',
     'AUC': 'https://fr.wikipedia.org/wiki/Courbe_ROC',
     'C': "https://fr.wikipedia.org/wiki/C_(langage)",
@@ -132,6 +133,7 @@ epkg_dictionary.update({
     'Master 2 ISF': 'http://isf.u-paris2.fr/master-2/',
     'matrice de confusion': 'https://fr.wikipedia.org/wiki/Matrice_de_confusion',
     'mlstatpy': "http://www.xavierdupre.fr/app/mlstatpy/helpsphinx3/index.html",
+    'OneHotEncoder': 'https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html',
     'Paris 2': 'https://www.u-paris2.fr/fr',
     'pickle': 'https://docs.python.org/3/library/pickle.html',
     'pyensae': 'http://www.xavierdupre.fr/app/pyensae/helpsphinx/',
