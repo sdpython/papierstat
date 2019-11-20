@@ -147,7 +147,7 @@ paraît intuitif que certaines régions d'un pays
 sont plus propices aux accidents. D'un autre côté,
 il est improbable de trouver une corrélation entre
 la latitude et le risque. Pourquoi serait-il plus risqué
-de conduire au Nord plutôt qu'au Sud de la France.
+de conduire au Nord plutôt qu'au Sud de la France ?
 
 Pour utiliser cette variable, il faut regrouper les
 habitants en zones. Faire un clustering en quelque sorte.
@@ -178,6 +178,15 @@ les autres variables agrégées sur cette zone. De cette façon,
 le nombre de variables reste petit. Là encore, il faut faire
 attention à ne pas mélanger passé et futur.
 
+Modélisation un peu plus anonyme
+++++++++++++++++++++++++++++++++
 
-
-
+La prédiction est personnalisée mais elle requiert de
+connaître une personne beaucoup d'informations souvent
+considéré comme sensible. C'est pourquoi, on peut construire
+un modèle qui estime le risque annuel d'un côté pour des groupes
+d'individus et qui le multiplie par la fréquence des accidents
+d'une personne en particulier :
+*risque(personne) = risque(groupe) * fréquence(accident / personne)*.
+Cela permet de réduire la part des informations personnelles
+à un simple facteur.
