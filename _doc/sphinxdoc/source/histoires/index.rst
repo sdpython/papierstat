@@ -8,7 +8,6 @@ le code pour se concentrer sur une ce à quoi sert
 le machine learning et voir où cela nous mène
 sans perdre de vue l'objectif.
 
-
 .. toctree::
     :maxdepth: 1
 

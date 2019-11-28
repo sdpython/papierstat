@@ -90,12 +90,12 @@ Premier réflexe : apprentissage et test
 
 Le machine learning sert à prédire, il a tendance
 à faire du surapprentissage dès qu'il en a la possibilité.
-C'est pourquoi on divise la base dont on dispose en 
+C'est pourquoi on divise la base dont on dispose en
 base d'apprentissage et base de test. La base en cours
 n'est pas une série temporelle mais il a une
 composante temporelle. Cela veut dire qu'il faudra
-faire attention à ne pas utiliser les informations 
-du futur pour prédire. Une **division selon une année** paraît 
+faire attention à ne pas utiliser les informations
+du futur pour prédire. Une **division selon une année** paraît
 le plus simple pour découper la base.
 
 Il existe une autre possibilité, celle de répartir chaque
@@ -165,7 +165,7 @@ Pour que la clusterisation ait un impact, il faudra
 sans doute beaucoup de clusters et le numéro de cluster
 d'une personne est une variable catégorielle qu'on a l'habitude
 de traiter avec un :epkg:`OneHotEncoder` qui crée une variable
-pour chaque cluster. Il est alors probable que le nombre de 
+pour chaque cluster. Il est alors probable que le nombre de
 variables dépasse le nombre d'observations.
 Il faut réduire la dimension !
 
