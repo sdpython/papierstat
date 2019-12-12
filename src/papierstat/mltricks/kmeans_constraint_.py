@@ -7,7 +7,7 @@ import bisect
 from pandas import DataFrame
 import numpy
 import scipy.sparse
-from sklearn.cluster.k_means_ import _labels_inertia
+from sklearn.cluster.k_means_ import _labels_inertia  # pylint: disable=E0611
 try:
     from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
 except ImportError:
@@ -66,7 +66,8 @@ def linearize_matrix(mat, *adds):
         return res
 
 
-def constraint_kmeans(X, labels, sample_weight, centers, inertia, precompute_distances, iter, max_iter,
+def constraint_kmeans(X, labels, sample_weight, centers, inertia,
+                      precompute_distances, iter, max_iter,  # pylint: disable=W0622
                       strategy='gain', verbose=0, state=None, fLOG=None):
     """
     Completes the constraint *k-means*.
