@@ -8,7 +8,10 @@ from pandas import DataFrame
 import numpy
 import scipy.sparse
 from sklearn.cluster.k_means_ import _labels_inertia
-from sklearn.cluster._k_means import _centers_sparse, _centers_dense
+try:
+    from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
+except ImportError:
+    from sklearn.cluster._k_means import _centers_sparse, _centers_dense
 from sklearn.metrics.pairwise import euclidean_distances
 from sklearn.utils.extmath import row_norms
 
