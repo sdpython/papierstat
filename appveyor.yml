@@ -22,6 +22,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 --task=tool --source=zip graphviz"
   - "%PYTHON%\\Scripts\\pymy_install3 protobuf pyshp"
   - "%PYTHON%\\Scripts\\pymy_install3 protobuf gdal"
+  - "%PYTHON%\\python -m pip install joblib"
   - "%PYTHON%\\Scripts\\pymy_install3 scikit-learn scipy tensorflow statsmodels xgboost"
   - "%PYTHON%\\python -c \"import locale;print('locale.getpreferredencoding=', locale.getpreferredencoding())\""
   # - "%PYTHON%\\Scripts\\pip install ftfy!=5.4.0"
