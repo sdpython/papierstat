@@ -1,0 +1,12 @@
+
+.. blogpost::
+    :title: Petite introduction au machine learning
+    :keywords: vins, wines
+    :date: 2020-01-20
+    :categories: session
+
+    Le notebook :ref:`2020-01-20introrst`
+    fut construit lors d'une session. Le voici
+    un peu retravaillé. Il essaye de prédire la note
+    d'un vin et montre que des données homogènes,
+    ça n'existe pas vraiment.
