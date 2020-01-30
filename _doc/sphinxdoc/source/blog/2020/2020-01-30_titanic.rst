@@ -1,11 +1,11 @@
 
 .. blogpost::
-    :title: Jeux de données
+    :title: Jeux de donnÃ©es
     :keywords: titanic
     :date: 2020-01-30
     :categories: datasets
 
-    De nombreux jeux de données peuvent être trouvés
-    à cette adresse :
+    De nombreux jeux de donnÃ©es peuvent Ãªtre trouvÃ©s
+    Ã  cette adresse :
     `VanderBilt University DataSets
     <http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets>`_.

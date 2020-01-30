@@ -1,14 +1,14 @@
 
 .. blogpost::
-    :title: Awesome, une mot clé utile
+    :title: Awesome, une mot clÃ© utile
     :keywords: awesome
     :date: 2020-01-30
     :categories: recherche
 
-    Le mot-clé **awesome**, tout comme le mot-clé
-    **cheat sheet** est très utilisé pour désigner
+    Le mot-clÃ© **awesome**, tout comme le mot-clÃ©
+    **cheat sheet** est trÃ¨s utilisÃ© pour dÃ©signer
     une revue des meilleures librairies dans un domaine
-    précis comme *python awesome ml* qui peut mener à
+    prÃ©cis comme *python awesome ml* qui peut mener Ã 
     ce type de page :
     `awesome-python-data-science
     <https://github.com/krzjoa/awesome-python-data-science>`_
@@ -17,6 +17,6 @@
     `POT <https://github.com/rflamary/POT>`_ ou encore
     `rpforest <https://github.com/lyst/rpforest>`_
     qui propose des algorithmes de recherche des plus proches
-    voisins approchée. Tous ne sont pas maintenus mais le suivant
+    voisins approchÃ©e. Tous ne sont pas maintenus mais le suivant
     l'est `pandas-profiling
     <https://github.com/pandas-profiling/pandas-profiling>`_.
