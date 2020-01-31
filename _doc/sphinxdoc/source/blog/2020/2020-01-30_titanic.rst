@@ -1,7 +1,7 @@
 
 .. blogpost::
     :title: Jeux de données
-    :keywords: titanic
+    :keywords: titanic, classification
     :date: 2020-01-30
     :categories: datasets
 
@@ -9,3 +9,7 @@
     à cette adresse :
     `VanderBilt University DataSets
     <http://biostat.mc.vanderbilt.edu/wiki/Main/DataSets>`_.
+    Le tout est utilisé dans le notebook
+    :ref:`2020-01-31titanicrst`. Un autre notebook revient
+    sur la classification binaire :
+    :ref:`2020-01-31classificationrst`.

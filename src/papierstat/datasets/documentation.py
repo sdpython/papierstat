@@ -6,12 +6,13 @@
 import os
 
 
-def list_notebooks(subfolder, name):
+def list_notebooks(subfolder, name=None, contains=None):
     """
     Retourne les notebooks qui contiennent *name* dans leur nom.
 
     @param      subfolder   sous-répertoire où chercher
-    @param      name        nom à chercher
+    @param      name        préfixe à chercher
+    @param      contains    extrait à chercher
     @return                 liste des notebooks (sans répertoire)
     """
     this = os.path.dirname(__file__)
@@ -26,20 +27,24 @@ def list_notebooks(subfolder, name):
     nb = nb_[0]
 
     name_ = name
-    names = [_ for _ in os.listdir(nb) if _.startswith(name_)]
+    if name is not None:
+        names = [_ for _ in os.listdir(nb) if _.startswith(name_)]
+    if contains is not None:
+        names = [_ for _ in os.listdir(nb) if contains in _]
     if len(names) == 0:
         raise FileNotFoundError(
             "Unable to find any notebook in '{0}'.".format(nb))
     return names
 
 
-def list_notebooks_rst_links(subfolder, name):
+def list_notebooks_rst_links(subfolder, name=None, contains=None):
     """
     Retourne une liste de notebooks au format :epkg:`rst`.
 
     @param      subfolder   sous-répertoire où chercher
-    @param      name        nom à chercher
+    @param      name        préfixe à chercher
+    @param      contains    extrait à chercher
     @return                 liste des liens
     """
-    names = list_notebooks(subfolder, name)
+    names = list_notebooks(subfolder, name, contains)
     return [':ref:`{0}rst`'.format(os.path.splitext(os.path.split(name)[1])[0].replace('_', '')) for name in names]
