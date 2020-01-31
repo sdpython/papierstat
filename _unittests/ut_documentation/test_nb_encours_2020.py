@@ -15,7 +15,7 @@ class TestNotebookEnCoursWines2020(unittest.TestCase):
     def setUp(self):
         add_missing_development_version(["jyquickhelper"], __file__, hide=True)
 
-    def test_notebook_encours_wines_2020(self):
+    def test_notebook_encours_2020(self):
         fLOG(
             __file__,
             self._testMethodName,
