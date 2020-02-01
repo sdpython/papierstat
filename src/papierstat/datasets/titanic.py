@@ -22,7 +22,7 @@ def load_titanic_dataset(download=False, subset="A"):
         :rst:
 
         from papierstat.datasets.documentation import list_notebooks_rst_links
-        links = list_notebooks_rst_links('encours', 'titanic')
+        links = list_notebooks_rst_links('encours', contains='titanic')
         links = ['    * %s' % s for s in links]
         print('\\n'.join(links))
 
