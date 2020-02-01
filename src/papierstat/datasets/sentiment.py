@@ -37,7 +37,7 @@ def load_sentiment_dataset(cache="."):
         if ".txt" not in fi or "readme" in fi or "__MACOSX" in fi:
             continue
         df = pandas.read_csv(fi, sep='\t', quoting=3,
-                             names=['sentance', 'sentiment'])
+                             names=['sentence', 'sentiment'])
         df["source"] = os.path.splitext(os.path.split(fi)[-1])[0]
         dfs.append(df)
     return pandas.concat(dfs)

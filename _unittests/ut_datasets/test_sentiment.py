@@ -11,7 +11,7 @@ class TestSentiment(ExtTestCase):
 
     def test_sentiment_download(self):
         df = load_sentiment_dataset()
-        self.assertEqual(list(df.columns), ['sentance', 'sentiment', 'source'])
+        self.assertEqual(list(df.columns), ['sentence', 'sentiment', 'source'])
         self.assertEqual(df.shape, (3000, 3))
 
 
