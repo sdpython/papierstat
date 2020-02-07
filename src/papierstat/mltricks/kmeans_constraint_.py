@@ -7,7 +7,10 @@ import bisect
 from pandas import DataFrame
 import numpy
 import scipy.sparse
-from sklearn.cluster.k_means_ import _labels_inertia  # pylint: disable=E0611
+try:
+    from sklearn.cluster._kmeans import _labels_inertia  # pylint: disable=E0611
+except ImportError:
+    from sklearn.cluster.k_means_ import _labels_inertia  # pylint: disable=E0611
 try:
     from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
 except ImportError:

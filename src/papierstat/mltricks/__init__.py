@@ -5,3 +5,4 @@
 """
 from .kmeans_constraint import ConstraintKMeans
 from .sklearn_base_learner_category import SkBaseLearnerCategory
+from .text_vectorizer_transformer import TextVectorizerTransformer
