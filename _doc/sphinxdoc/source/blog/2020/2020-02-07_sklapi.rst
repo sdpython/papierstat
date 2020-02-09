@@ -1,0 +1,13 @@
+
+.. blogpost::
+    :title: Régression Lasso, Ridge
+    :keywords: ridge, lasso, API
+    :date: 2020-02-07
+    :categories: session
+
+    Le notebook :ref:`2020-02-07sklapirst`
+    reprend ce qui a été développé durant la dernière
+    session, à savoir la régression Ridge, Lasso qui
+    permet de sélectionner les variables,
+    puis l'API de *scikit-learn* et une façon
+    de créer ses propres modèles.
