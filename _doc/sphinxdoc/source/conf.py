@@ -136,6 +136,7 @@ epkg_dictionary.update({
     'OneHotEncoder': 'https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html',
     'Paris 2': 'https://www.u-paris2.fr/fr',
     'pickle': 'https://docs.python.org/3/library/pickle.html',
+    'prophet': 'https://facebook.github.io/prophet/',
     'pyensae': 'http://www.xavierdupre.fr/app/pyensae/helpsphinx/',
     'R': "https://www.r-project.org/",
     'régression linéaire': 'https://fr.wikipedia.org/wiki/R%C3%A9gression_lin%C3%A9aire',
