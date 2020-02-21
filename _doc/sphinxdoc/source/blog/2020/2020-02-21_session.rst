@@ -1,0 +1,43 @@
+
+.. blogpost::
+    :title: Plan pour la session du 21
+    :keywords: interprétabilité, biais éthniques
+    :date: 2020-02-21
+    :categories: session
+
+    Importance des variables
+
+    * feature importance
+        * When training a tree we can compute how much each feature contributes to decreasing the weighted impurity.
+        * que dire des variables corrélées ?
+    * permutation importance
+		* On permute les valeurs dans une colonne de features, on mesure la perte en performance par rapport au score sans permutation.
+		* `Random Forest <https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf>`_
+    * Dépendances partielles
+        * Partial dependence of a feature (or a set of features) corresponds to the average response of an estimator for each possible value of the feature.
+        * `Partial dependance plots <https://scikit-learn.org/stable/modules/partial_dependence.html>`_
+
+    Interprétation locales
+
+    * `LIME (Local Interpretable Model-Agnostic Explanations) <https://arxiv.org/pdf/1602.04938v1.pdf>`_
+        * Approximer localement la prédiction d'un modèle par un modèle interprétable (comme une régression Lasso),
+          cela revient en quelque sorte à calculer le gradient du modèle en chaque feature pour un point donnée.
+        * .. image:: lime.png
+    	* Simplifier l'analyse en groupant les variables (pixels) si trop de variables
+    * `SHAP (SHapley Additive exPlanations) <https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf>`_
+		* Value d'une variable : on calcule l'espérance de la prédiction en tirant aléatoirement des valeurs pour cette variable (loi marginal),
+          on fait la différence avec la prédiction moyenne.
+        * Lire `Interpretable Machine Learning <https://christophm.github.io/interpretable-ml-book/>`_
+		* .. image:: shap.png
+    * `CounterFactual <https://christophm.github.io/interpretable-ml-book/counterfactual.html>`_
+		* Dérivées partielles
+        * La prédiction est Y, on souhaite Z, quelle est le plus petit changement dans X pour avoir Z ?
+
+    Ethique
+    
+    * `Machine Learning éthique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_machine_learning_ethique.html>`_
+    * `aequitas <https://github.com/dssg/aequitas>`_
+
+    Transfer Learning
+
+    * `Transfer Learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_transfer_learning.html>`_
