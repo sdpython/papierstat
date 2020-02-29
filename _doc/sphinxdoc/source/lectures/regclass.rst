@@ -515,7 +515,7 @@ le score de classification :
 
 .. math::
 
-    k^* = \underset{\arg \max}{k \in \acc{1,...,K}} C_k(X_i)
+    k^* = \underset{k \in \acc{1,...,K}}{\arg \max} C_k(X_i)
 
 L'autre approche convertit le problème initiale en
 :math:`\frac{k(k-1)}{2}` classifications binaires. Une classifieur
