@@ -1,0 +1,41 @@
+
+.. blogpost::
+    :title: Plan pour la session du 23
+    :keywords: interprétabilité, biais éthniques
+    :date: 2020-03-23
+    :categories: session
+
+    *Scrapping*
+    
+    * `Scraping, récupérer une image depuis LeMonde
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2018-10-02_scraping_recuperer_images.html>`_
+    * `Web-Scraping
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_,
+      `Web-Scraping - correction
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_
+    * `API, API REST
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html>`_
+
+    *Séries temporelles*
+    
+    * séries temporelles (:epkg:`statsmodels`),
+      prédictions, tendance, lissage, saisonnalité
+      (:epkg:`prophet`), voir `lissage exponentiel
+      <https://en.wikipedia.org/wiki/Exponential_smoothing>`_,
+      changement de tendances, le module peut tenir compte
+      des jours fériés, `SSA
+      <https://www.kaggle.com/jdarcy/introducing-ssa-for-time-series-decomposition>`_,
+      `Application of the singular-spectrum analysis to change-point detection in time
+      <http://ssa.cf.ac.uk/zhigljavsky/changepoint/CH_P_T_S.pdf>`_,
+      `Singular Spectrum Analysis
+      <https://en.wikipedia.org/wiki/Singular_spectrum_analysis>`_
+    * `quelques jeux de données
+      <https://archive.ics.uci.edu/ml/datasets.php?format=&task=&att=&area=&numAtt=10to100&numIns=&type=ts&sort=nameUp&view=table>`_
+    * `clustering à Chicago
+      <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
+    * :ref:`enediscartesrst`
+
+    *API scikit-learn*
+
+    * `API de sciki-learn et modèles customisés
+      <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/sklearn_api.html>`_
