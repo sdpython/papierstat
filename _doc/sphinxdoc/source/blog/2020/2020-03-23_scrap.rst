@@ -1,7 +1,7 @@
 
 .. blogpost::
     :title: Plan pour la session du 23
-    :keywords: interprétabilité, biais éthniques
+    :keywords: scrapping, text mining, séries temporelles
     :date: 2020-03-23
     :categories: session
 
@@ -18,24 +18,31 @@
 
     *Séries temporelles*
     
-    * séries temporelles (:epkg:`statsmodels`),
-      prédictions, tendance, lissage, saisonnalité
-      (:epkg:`prophet`), voir `lissage exponentiel
-      <https://en.wikipedia.org/wiki/Exponential_smoothing>`_,
-      changement de tendances, le module peut tenir compte
-      des jours fériés, `SSA
-      <https://www.kaggle.com/jdarcy/introducing-ssa-for-time-series-decomposition>`_,
-      `Application of the singular-spectrum analysis to change-point detection in time
-      <http://ssa.cf.ac.uk/zhigljavsky/changepoint/CH_P_T_S.pdf>`_,
-      `Singular Spectrum Analysis
-      <https://en.wikipedia.org/wiki/Singular_spectrum_analysis>`_
-    * `quelques jeux de données
-      <https://archive.ics.uci.edu/ml/datasets.php?format=&task=&att=&area=&numAtt=10to100&numIns=&type=ts&sort=nameUp&view=table>`_
-    * `clustering à Chicago
-      <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/challenges/city_bike.html>`_
-    * :ref:`enediscartesrst`
+    Le module standard est :epkg:`statsmodels` qui implémente
+    tous les modèles linéaires associés aux séries temporelles.
+    Récemment, le module :epkg:`prophet` l'a supplanté avec plus
+    d'options pour prédire, extraire la tendance, lissé,
+    extraire la saisonnalité. Une approche assez nouvelle consiste
+    à décomposer la série pour extraire les changements de tendance :
+    changement de tendances, le module peut tenir compte
+    des jours fériés.    
+    Trois notebooks extraits de la page
+    `Timeseries - Séries temporelles
+    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_timeseries_series_temporelles.html>`_.
+    
+    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_timeseries.html>`_
+    * `Séries temporelles - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_timeseries_correction.html>`_
+    * `Timeseries et machine learning <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_timeseries_base.html>`_
+    * `Single Spectrum Analysis (SSA) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/timeseries_ssa.html?highlight=statsmodels>`_
+    
+    *Texte*
 
-    *API scikit-learn*
+    * `Introduction au text mining
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
+    * `Analyse de sentiments correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
 
-    * `API de sciki-learn et modèles customisés
-      <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/sklearn_api.html>`_
+    Quelques liens :
+    `Cours de deep learning appliqués au NLP
+    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/blog/2017/2017-11-13_nlp.html>`_.
+    
