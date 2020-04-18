@@ -4,7 +4,7 @@
 @brief Module *papierstat*.
 Look for insights for machine learned models.
 """
-__version__ = "0.2"
+__version__ = "0.2.332"
 __author__ = "Xavier Dupré"
 __github__ = "https://github.com/sdpython/papierstat"
 __url__ = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html"
