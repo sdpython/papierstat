@@ -197,6 +197,7 @@ pca.fit(X)
 X_PC2 = pca.transform(X)
 graph_acp2(X_PC2, y)
 
+#######################################################################
 # Ici une ACP est inutile car la variance des données est homogène selon
 # les dimensions initiales (cf. orientation diagonale entre les 2
 # classes).

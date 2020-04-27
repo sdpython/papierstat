@@ -90,7 +90,7 @@ ax.plot(x, y)
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, Y)
 
-#################
+#############################
 # On apprend un modèle.
 
 from sklearn.linear_model import LinearRegression
