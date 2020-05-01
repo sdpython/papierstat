@@ -29,7 +29,7 @@ print(X.head())
 # -------------------
 from sklearn.preprocessing import normalize
 X_norm = normalize(X)
-print(X_norm.head())
+print(X_norm[:5])
 
 #########################################
 # Normalisation supervisée
