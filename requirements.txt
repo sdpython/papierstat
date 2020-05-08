@@ -5,6 +5,7 @@ category_encoders
 chardet
 coverage
 descartes
+dtreeviz
 folium
 geopandas
 google_compute_engine
