@@ -19,7 +19,7 @@ pyltr
 pyproj
 pyquickhelper>=1.9.3240
 spacy
-shapely==1.6.4
+shapely
 sphinx-bootstrap-theme
 sphinx-gallery
 thinc>=7.1.1
