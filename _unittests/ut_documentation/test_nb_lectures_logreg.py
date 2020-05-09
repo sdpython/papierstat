@@ -8,7 +8,6 @@ import unittest
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import add_missing_development_version
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
-from pyquickhelper.ipythonhelper.notebook_runner import NotebookError
 import papierstat
 
 
