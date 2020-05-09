@@ -3,10 +3,12 @@
 @brief      test log(time=9s)
 """
 import os
+import sys
 import unittest
 from pyquickhelper.loghelper import fLOG
 from pyquickhelper.pycode import add_missing_development_version
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
+from pyquickhelper.ipythonhelper.notebook_runner import NotebookError
 import papierstat
 
 
@@ -26,7 +28,8 @@ class TestNotebookLecturesLogReg(unittest.TestCase):
                               "..", "..", "_doc", "notebooks", "lectures")
         test_notebook_execution_coverage(
             __file__, "logreg", folder, 'papierstat', copy_files=[], fLOG=fLOG,
-            filter_name=lambda n: "" in n)
+            filter_name=lambda n: "" in n,
+            valid=lambda cell: sys.platform != "win32" or "dtreeviz" not in cell)
 
 
 if __name__ == "__main__":
