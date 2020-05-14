@@ -11,15 +11,9 @@ try:
     from sklearn.cluster._kmeans import _labels_inertia  # pylint: disable=E0611
 except ImportError:
     from sklearn.cluster.k_means_ import _labels_inertia  # pylint: disable=E0611
-try:
-    from sklearn.cluster._kmeans import _kmeans_single_lloyd, _kmeans_single_elkan
-except ImportError:
-    try:
-        from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
-    except ImportError:
-        from sklearn.cluster._k_means import _centers_sparse, _centers_dense
 from sklearn.metrics.pairwise import euclidean_distances
 from sklearn.utils.extmath import row_norms
+from ._kmeans_constraint_ import _centers_dense, _centers_sparse
 
 
 def linearize_matrix(mat, *adds):
@@ -118,19 +112,26 @@ def constraint_kmeans(X, labels, sample_weight, centers, inertia,
         sw = numpy.ones((X.shape[0],))
     else:
         sw = sample_weight
-        
-    if algorithm == "full":
-        kmeans_single = _kmeans_single_lloyd
-    elif algorithm == "elkan":
-        kmeans_single = _kmeans_single_elkan
+
+    if scipy.sparse.issparse(X):
+        try:
+            # scikit-learn >= 0.20
+            _centers_fct = _centers_sparse
+        except TypeError:
+            # scikit-learn < 0.20
+            _centers_fct = _centers_sparse
     else:
-        raise ValueError("Algorithm must be 'auto', 'full' or 'elkan', got"
-                         " {}".format(str(algorithm)))
+        try:
+            # scikit-learn >= 0.20
+            _centers_fct = _centers_dense
+        except TypeError:
+            # scikit-learn < 0.20
+            _centers_fct = _centers_dense
 
     while iter < max_iter:
 
         # compute new clusters
-        centers = kmeans_single(
+        centers = _centers_fct(
             X, sw, labels, n_clusters, distances_close)
 
         # association

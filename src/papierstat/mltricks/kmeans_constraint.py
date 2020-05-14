@@ -127,10 +127,11 @@ class ConstraintKMeans(KMeans):
         @param      state            state
         @param      fLOG            logging function
         """
-        labels, centers, inertia, iter_ = constraint_kmeans(X, self.labels_, sample_weight, self.cluster_centers_,
-                                                            self.inertia_, self.precompute_distances, self.n_iter_,
-                                                            self.max_iter, verbose=self.verbose, strategy=self.strategy,
-                                                            state=state, fLOG=fLOG)
+        labels, centers, inertia, iter_ = constraint_kmeans(
+            X, self.labels_, sample_weight, self.cluster_centers_,
+            inertia=self.inertia_, iter=self.n_iter_,
+            max_iter=self.max_iter, verbose=self.verbose,
+            strategy=self.strategy, state=state, fLOG=fLOG)
         self.labels_ = labels
         self.cluster_centers_ = centers
         self.inertia_ = inertia

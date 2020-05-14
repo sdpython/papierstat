@@ -16,7 +16,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.pipeline import make_pipeline
 from sklearn.model_selection import GridSearchCV
 from pyquickhelper.pycode import ExtTestCase
-from papierstat.mltricks.kmeans_constraint_ import linearize_matrix, _compute_strategy_coefficient, _constraint_association_gain
+from papierstat.mltricks.kmeans_constraint_ import (
+    linearize_matrix, _compute_strategy_coefficient, _constraint_association_gain
+)
 from papierstat.mltricks import ConstraintKMeans
 
 
