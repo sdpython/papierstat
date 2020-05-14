@@ -12,9 +12,12 @@ try:
 except ImportError:
     from sklearn.cluster.k_means_ import _labels_inertia  # pylint: disable=E0611
 try:
-    from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
+    from sklearn.cluster._kmeans import _kmeans_single_lloyd, _kmeans_single_elkan
 except ImportError:
-    from sklearn.cluster._k_means import _centers_sparse, _centers_dense
+    try:
+        from sklearn.cluster._k_means_fast import _centers_sparse, _centers_dense
+    except ImportError:
+        from sklearn.cluster._k_means import _centers_sparse, _centers_dense
 from sklearn.metrics.pairwise import euclidean_distances
 from sklearn.utils.extmath import row_norms
 
@@ -70,7 +73,7 @@ def linearize_matrix(mat, *adds):
 
 
 def constraint_kmeans(X, labels, sample_weight, centers, inertia,
-                      precompute_distances, iter, max_iter,  # pylint: disable=W0622
+                      iter, max_iter,  # pylint: disable=W0622
                       strategy='gain', verbose=0, state=None, fLOG=None):
     """
     Completes the constraint *k-means*.
@@ -80,9 +83,6 @@ def constraint_kmeans(X, labels, sample_weight, centers, inertia,
     @param      sample_weight           sample weight
     @param      centers                 initialized centers
     @param      inertia                 initialized inertia (unsued)
-    @param      precompute_distances    precompute distances (used in
-                                        `_label_inertia <https://github.com/scikit-learn/
-                                        scikit-learn/blob/master/sklearn/cluster/k_means_.py#L547>`_)
     @param      iter                    number of iteration already done
     @param      max_iter                maximum of number of iteration
     @param      strategy                strategy used to sort observations before
@@ -118,28 +118,20 @@ def constraint_kmeans(X, labels, sample_weight, centers, inertia,
         sw = numpy.ones((X.shape[0],))
     else:
         sw = sample_weight
+        
+    if algorithm == "full":
+        kmeans_single = _kmeans_single_lloyd
+    elif algorithm == "elkan":
+        kmeans_single = _kmeans_single_elkan
+    else:
+        raise ValueError("Algorithm must be 'auto', 'full' or 'elkan', got"
+                         " {}".format(str(algorithm)))
 
     while iter < max_iter:
 
         # compute new clusters
-        if scipy.sparse.issparse(X):
-            try:
-                # scikit-learn >= 0.20
-                centers = _centers_sparse(
-                    X, sw, labels, n_clusters, distances_close)
-            except TypeError:
-                # scikit-learn < 0.20
-                centers = _centers_sparse(
-                    X, sw, labels, n_clusters, distances_close)
-        else:
-            try:
-                # scikit-learn >= 0.20
-                centers = _centers_dense(
-                    X, sw, labels, n_clusters, distances_close)
-            except TypeError:
-                # scikit-learn < 0.20
-                centers = _centers_dense(
-                    X, sw, labels, n_clusters, distances_close)
+        centers = kmeans_single(
+            X, sw, labels, n_clusters, distances_close)
 
         # association
         _constraint_association(leftover, counters, labels, leftclose, distances_close,
@@ -147,7 +139,6 @@ def constraint_kmeans(X, labels, sample_weight, centers, inertia,
 
         # inertia
         _, inertia = _labels_inertia(X, sw, x_squared_norms, centers,
-                                     precompute_distances=precompute_distances,
                                      distances=distances_close)
 
         iter += 1
