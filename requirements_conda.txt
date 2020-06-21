@@ -1,7 +1,12 @@
 bokeh
+cairocffi
+cairosvg
+cartopy
 cffi
 Cython
+descartes
 gensim
+geopandas
 jupyter
 keras
 matplotlib
