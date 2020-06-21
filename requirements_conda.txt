@@ -1,6 +1,4 @@
 bokeh
-cairocffi
-cairosvg
 cartopy
 cffi
 Cython

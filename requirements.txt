@@ -1,4 +1,6 @@
 dbfread
+cairocffi
+cairosvg
 catboost
 category_encoders
 chardet
