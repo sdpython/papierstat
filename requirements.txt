@@ -15,12 +15,14 @@ msgpack
 pandas_streaming
 pycodestyle
 pyensae
+pylint
 pyltr
 pyquickhelper>=1.9.3240
 spacy
 shapely
 sphinx-bootstrap-theme
 sphinx-gallery
+sphinxcontrib-imagesvg
 ujson
 wheel
 xgboost
