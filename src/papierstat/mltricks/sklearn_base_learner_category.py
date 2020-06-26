@@ -38,10 +38,10 @@ class SkBaseLearnerCategory(SkBaseLearner):
         @param      model       model à appliquer sur chaque catégorie
         """
         if not isinstance(colnameind, (int, str)):
-            raise TypeError(
+            raise TypeError(  # pragma: no cover
                 "colnameind must be str or int not {0}".format(type(colnameind)))
         if model is None:
-            raise ValueError("model must not be None")
+            raise ValueError("model must not be None")  # pragma: no cover
         kwargs['colnameind'] = colnameind
         SkBaseLearner.__init__(self, **kwargs)
         self.model = model
@@ -61,8 +61,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         if hasattr(self, 'models'):
             return self.models
-        else:
-            raise RuntimeError('No trained models')
+        raise RuntimeError('No trained models')  # pragma: no cover
 
     def _get_cat(self, X):
         """
@@ -70,11 +69,11 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         if isinstance(self.colnameind, str):
             if not hasattr(X, 'columns'):
-                raise TypeError("colnameind='{0}' and X is not a DataFrame but {1}".format(
-                    self.colnameind, type(X)))
+                raise TypeError(  # pragma: no cover
+                    "colnameind='{0}' and X is not a DataFrame but {1}".format(
+                        self.colnameind, type(X)))
             return X[self.colnameind]
-        else:
-            return X[:, self.colnameind]
+        return X[:, self.colnameind]
 
     def _filter_cat(self, c, X, y=None, sample_weight=None):
         """
@@ -83,8 +82,9 @@ class SkBaseLearnerCategory(SkBaseLearner):
         indices = numpy.arange(0, X.shape[0])
         if isinstance(self.colnameind, str):
             if not hasattr(X, 'columns'):
-                raise TypeError("colnameind='{0}' and X is not a DataFrame but {1}".format(
-                    self.colnameind, type(X)))
+                raise TypeError(  # pragma: no cover
+                    "colnameind='{0}' and X is not a DataFrame but {1}".format(
+                        self.colnameind, type(X)))
             ind = X[self.colnameind] == c
             sa = None if sample_weight is None else sample_weight[ind]
             y = None if y is None else y[ind]
@@ -100,11 +100,15 @@ class SkBaseLearnerCategory(SkBaseLearner):
             y = None if y is None else y[ind]
             ind, x = indices[ind], X[ind, -self.colnameind]
         if y is not None and x.shape[0] != y.shape[0]:
-            raise RuntimeError("Input arrays have different shapes for value='{0}': {1} != {2} (expected: {3}) type(X)={4}".format(
-                c, X.shape[0], y.shape[0], ind.shape, type(X)))
+            raise RuntimeError(  # pragma: no cover
+                "Input arrays have different shapes for value='{0}': {1} != {2} "
+                "(expected: {3}) type(X)={4}".format(
+                    c, X.shape[0], y.shape[0], ind.shape, type(X)))
         if sa is not None and x.shape[0] != sa.shape[0]:
-            raise RuntimeError("Input arrays have different shapes for value='{0}': {1} != {2} (expected: {3}) type(X)={4}".format(
-                c, X.shape[0], sa.shape[0], ind.shape, type(X)))
+            raise RuntimeError(
+                "Input arrays have different shapes for value='{0}': {1} != {2} "
+                "(expected: {3}) type(X)={4}".format(
+                    c, X.shape[0], sa.shape[0], ind.shape, type(X)))
         return ind, x, y, sa
 
     ###################
@@ -124,7 +128,8 @@ class SkBaseLearnerCategory(SkBaseLearner):
         cats = set(self._get_cat(X))
         for c in cats:
             if not isinstance(c, str) and numpy.isnan(c):
-                raise ValueError("One of the row has a missing category.")
+                raise ValueError(  # pragma: no cover
+                    "One of the row has a missing category.")
 
         sample_weight = kwargs.get('sample_weight', None)
         res = {}
@@ -150,7 +155,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         cats = set(self._get_cat(X))
         for c in cats:
             if not isinstance(c, str) and numpy.isnan(c):
-                raise NotImplementedError(
+                raise NotImplementedError(  # pragma: no cover
                     "No default value is implemented in case of missing value.")
 
         res = []
@@ -170,7 +175,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
             res.append(pred)
         try:
             final = numpy.vstack(res)
-        except ValueError:
+        except ValueError:  # pragma: no cover
             # Only one dimension.
             final = numpy.hstack(res)
         df = pandas.DataFrame(final)
@@ -202,9 +207,8 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         if hasattr(self.model, 'decision_function'):
             return self._any_predict(X, 'decision_function')
-        else:
-            raise NotImplementedError(
-                "No decision_function for {0}".format(self.model))
+        raise NotImplementedError(
+            "No decision_function for {0}".format(self.model))
 
     def predict_proba(self, X):
         """
@@ -216,9 +220,8 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         if hasattr(self.model, 'predict_proba'):
             return self._any_predict(X, 'predict_proba')
-        else:
-            raise NotImplementedError(
-                "No method predict_proba for {0}".format(self.model))
+        raise NotImplementedError(  # pragma: no cover
+            "No method predict_proba for {0}".format(self.model))
 
     def score(self, X, y=None, sample_weight=None):
         """
@@ -232,11 +235,11 @@ class SkBaseLearnerCategory(SkBaseLearner):
         if self._estimator_type == 'classifier':
             from sklearn.metrics import accuracy_score
             return accuracy_score(y, self.predict(X), sample_weight=sample_weight)
-        elif self._estimator_type == 'regressor':
+        if self._estimator_type == 'regressor':
             from sklearn.metrics import r2_score
             return r2_score(y, self.predict(X), sample_weight=sample_weight)
-        else:
-            raise RuntimeError("Unexpected estimator type '{0}', cannot guess default scoring metric.".format(
+        raise RuntimeError(  # pragma: no cover
+            "Unexpected estimator type '{0}', cannot guess default scoring metric.".format(
                 self._estimator_type))
 
     ##############
@@ -272,8 +275,9 @@ class SkBaseLearnerCategory(SkBaseLearner):
             self.model = values['model']
             del values['model']
         elif not hasattr(self, 'model') or self.model is None:
-            raise KeyError("Missing key '{0}' in [{1}]".format(
-                'model', ', '.join(sorted(values))))
+            raise KeyError(  # pragma: no cover
+                "Missing key '{0}' in [{1}]".format(
+                    'model', ', '.join(sorted(values))))
         prefix = 'model__'
         ext = {k[len(prefix):]: v for k, v in values.items()
                if k.startswith(prefix)}
