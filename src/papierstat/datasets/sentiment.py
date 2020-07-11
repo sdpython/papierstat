@@ -12,7 +12,8 @@ def load_sentiment_dataset(cache="."):
     Retourne un ensemble de phrases en anglais avec
     assorties d'un sentiment positif ou négatif.
     Source :
-    `Sentiment Labelled Sentences Data Set <https://archive.ics.uci.edu/ml/datasets/Sentiment+Labelled+Sentences>`_.
+    `Sentiment Labelled Sentences Data Set <https://archive.ics.uci.edu/
+    ml/datasets/Sentiment+Labelled+Sentences>`_.
     Notebooks associés à ce jeu de données :
 
     .. runpython::
@@ -23,7 +24,8 @@ def load_sentiment_dataset(cache="."):
         links = ['    * %s' % s for s in links]
         print('\\n'.join(links))
 
-    @param          cache       where to cache or unzip the data if downloaded a second time
+    @param          cache       where to cache or unzip the data if
+                                downloaded a second time
     @return                     text content (str)
     """
     from pyensae.datasource import download_data
@@ -31,7 +33,8 @@ def load_sentiment_dataset(cache="."):
     name = "sentiment_labelled_sentences.zip"
     res = download_data(name, whereTo=cache)
     if len(res) != 9:
-        raise ValueError("Unzipping '{0}' failed.".format(name))
+        raise ValueError(  # pragma: no cover
+            "Unzipping '{0}' failed.".format(name))
     dfs = []
     for fi in res:
         if ".txt" not in fi or "readme" in fi or "__MACOSX" in fi:

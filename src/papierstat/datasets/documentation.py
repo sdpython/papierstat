@@ -16,13 +16,17 @@ def list_notebooks(subfolder, name=None, contains=None):
     @return                 liste des notebooks (sans répertoire)
     """
     this = os.path.dirname(__file__)
-    nbs = [os.path.abspath(os.path.normpath(os.path.join(this, '..', '..', '..', '..',
-                                                         'notebooks', subfolder))),
-           os.path.abspath(os.path.normpath(os.path.join(this, '..', '..', '..',
-                                                         '_doc', 'notebooks', subfolder)))]
+    nbs = [os.path.abspath(
+        os.path.normpath(
+            os.path.join(
+                this, '..', '..', '..', '..', 'notebooks', subfolder))),
+           os.path.abspath(
+        os.path.normpath(
+            os.path.join(
+                this, '..', '..', '..', '_doc', 'notebooks', subfolder)))]
     nb_ = list(filter(os.path.exists, nbs))
     if len(nb_) == 0:
-        raise FileNotFoundError(
+        raise FileNotFoundError(  # pragma: no cover
             "Unable to find notebooks in\n{0}".format('\n'.join(nbs)))
     nb = nb_[0]
 
@@ -32,7 +36,7 @@ def list_notebooks(subfolder, name=None, contains=None):
     if contains is not None:
         names = [_ for _ in os.listdir(nb) if contains in _]
     if len(names) == 0:
-        raise FileNotFoundError(
+        raise FileNotFoundError(  # pragma: no cover
             "Unable to find any notebook in '{0}'.".format(nb))
     return names
 
@@ -47,4 +51,6 @@ def list_notebooks_rst_links(subfolder, name=None, contains=None):
     @return                 liste des liens
     """
     names = list_notebooks(subfolder, name, contains)
-    return [':ref:`{0}rst`'.format(os.path.splitext(os.path.split(name)[1])[0].replace('_', '')) for name in names]
+    return [':ref:`{0}rst`'.format(
+        os.path.splitext(os.path.split(name)[1])[0].replace('_', ''))
+        for name in names]

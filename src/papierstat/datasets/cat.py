@@ -66,7 +66,8 @@ def load_adult_dataset(download=True, small=False, url='uci'):
         train.columns = columns
         test.columns = columns
     else:
-        raise NotImplementedError("No local copy")
+        raise NotImplementedError(  # pragma: no cover
+            "No local copy")
     label = '<=50K'
     train[label] = train[label].str.strip(' .')
     test[label] = test[label].str.strip(' .')

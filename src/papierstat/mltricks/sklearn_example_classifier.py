@@ -9,7 +9,8 @@ from mlinsights.sklapi import SkBaseClassifier, SkException
 
 class SkCustomKnn(SkBaseClassifier):
     """
-    Implements the `k-Nearest Neighbors <http://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`_ as an example.
+    Implements the `k-Nearest Neighbors <http://en.wikipedia.org/
+    wiki/K-nearest_neighbors_algorithm>`_ as an example.
     """
 
     def __init__(self, k=1):
@@ -25,15 +26,19 @@ class SkCustomKnn(SkBaseClassifier):
         Train a k-NN model. There is not much to do except storing the training
         examples.
 
-        @param      X               Training data, numpy array or sparse matrix of shape [n_samples,n_features]
-        @param      y               Target values, numpy array of shape [n_samples, n_targets] (optional)
-        @param      sample_weight   Weight values, numpy array of shape [n_samples, n_targets] (optional)
+        @param      X               Training data, numpy array or sparse matrix of
+                                    shape [n_samples,n_features]
+        @param      y               Target values, numpy array of shape
+                                    [n_samples, n_targets] (optional)
+        @param      sample_weight   Weight values, numpy array of shape
+                                    [n_samples, n_targets] (optional)
         @return                     self : returns an instance of self.
         """
         if sample_weight is not None:
-            raise NotImplementedError("sample_weight must be None")
+            raise NotImplementedError(  # pragma: no cover
+                "sample_weight must be None")
         if len(X) < self.P.k:
-            raise SkException(
+            raise SkException(  # pragma: no cover
                 "number of samples cannot be smaller than k={0}".format(
                     self.P.k))
         if isinstance(X, pandas.DataFrame):
@@ -41,12 +46,13 @@ class SkCustomKnn(SkBaseClassifier):
         if isinstance(y, pandas.DataFrame):
             y = y.asmatrix()
         if len(X) != len(y):
-            raise SkException(
+            raise SkException(  # pragma: no cover
                 "X and y should have the same dimension not: {0} != {1}".format(
                     len(X),
                     len(y)))
         if min(y) < 0:
-            raise SkException("class should be positive or null integer")
+            raise SkException(  # pragma: no cover
+                "class should be positive or null integer")
         self._TrainingX = X
         self._Trainingy = y
         self._nbclass = max(y) + 1
@@ -55,10 +61,11 @@ class SkCustomKnn(SkBaseClassifier):
     def predict(self, X):
         """
         Predicts, usually, it calls the
-        :meth:`decision_function <papierstat.mltricks.sklearn_example_classifier.SkCustomKnn.decision_function>`
-        method.
+        :meth:`decision_function <papierstat.mltricks.sklearn_example_classifier.
+        SkCustomKnn.decision_function>` method.
 
-        @param      X   Samples, {array-like, sparse matrix}, shape = (n_samples, n_features)
+        @param      X   Samples, {array-like, sparse matrix},
+                        shape = (n_samples, n_features)
         @return         self : returns an instance of self.
         """
         scores = self.decision_function(X)
@@ -74,7 +81,8 @@ class SkCustomKnn(SkBaseClassifier):
         matrix with a score for each class and each sample
         for a classifier.
 
-        @param      X   Samples, {array-like, sparse matrix}, shape = (n_samples, n_features)
+        @param      X   Samples, {array-like, sparse matrix},
+                        *shape = (n_samples, n_features)*
         @return         array, shape = (n_samples,.), Returns predicted values.
         """
         nb = len(X)

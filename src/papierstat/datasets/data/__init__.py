@@ -11,4 +11,4 @@ Source:
 * `reunion_rect.zip <https://www.insee.fr/fr/statistiques/2520034>`_
 * Titanic: Data obtained from `biostat.mc.vanderbilt.edu/DataSets
   <http://biostat.mc.vanderbilt.edu/DataSets>`_
-"""
+"""  # pragma: no cover

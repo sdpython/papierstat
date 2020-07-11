@@ -38,7 +38,8 @@ def load_movielens_dataset(name='small', cache=None, fLOG=None):
     if name == 'small':
         url = 'http://files.grouplens.org/datasets/movielens/ml-latest-small.zip'
     else:
-        raise ValueError("Value '{0}' is not implemented.".format(name))
+        raise ValueError(  # pragma: no cover
+            "Value '{0}' is not implemented.".format(name))
     if fLOG:
         fLOG("[load_movielens_dataset] download '{0}'".format(url))
     res = get_url_content_timeout(url, encoding=None, fLOG=fLOG)

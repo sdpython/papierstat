@@ -72,7 +72,7 @@ class DBFInMemory(DBF):
             try:
                 self.date = datetime.date(expand_year(self.header.year),
                                           self.header.month, self.header.day)
-            except ValueError:
+            except ValueError:  # pragma: no cover
                 # Invalid date or '\x00\x00\x00'.
                 self.date = None
 
@@ -129,7 +129,8 @@ def load_dbf_from_zip(filename):
         names0 = myzip.infolist()
         names = [_.filename for _ in names0 if _.filename.endswith(".dbf")]
         if len(names) == 0:
-            raise FileNotFoundError("No dbf file in '{0}'".format(filename))
+            raise FileNotFoundError(  # pragma: no cover
+                "No dbf file in '{0}'".format(filename))
         with myzip.open(names[0], "r") as f:
             content = f.read()
     data = list(DBFInMemory(content))
@@ -174,12 +175,14 @@ def load_shapes_from_zip(filename):
         names0 = myzip.infolist()
         names = [_.filename for _ in names0 if _.filename.endswith(".mif")]
         if len(names) == 0:
-            raise FileNotFoundError("No mif file in '{0}'".format(filename))
+            raise FileNotFoundError(  # pragma: no cover
+                "No mif file in '{0}'".format(filename))
         with myzip.open(names[0], "r") as f:
             mif = f.read()
         names = [_.filename for _ in names0 if _.filename.endswith(".mid")]
         if len(names) == 0:
-            raise FileNotFoundError("No mid file in '{0}'".format(filename))
+            raise FileNotFoundError(  # pragma: no cover
+                "No mid file in '{0}'".format(filename))
         with myzip.open(names[0], "r") as f:
             mid = f.read()
 

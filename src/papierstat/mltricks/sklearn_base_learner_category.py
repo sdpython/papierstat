@@ -105,7 +105,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
                 "(expected: {3}) type(X)={4}".format(
                     c, X.shape[0], y.shape[0], ind.shape, type(X)))
         if sa is not None and x.shape[0] != sa.shape[0]:
-            raise RuntimeError(
+            raise RuntimeError(  # pragma: no cover
                 "Input arrays have different shapes for value='{0}': {1} != {2} "
                 "(expected: {3}) type(X)={4}".format(
                     c, X.shape[0], sa.shape[0], ind.shape, type(X)))

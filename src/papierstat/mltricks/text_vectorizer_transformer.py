@@ -39,7 +39,8 @@ class TextVectorizerTransformer(BaseEstimator, TransformerMixin):
             elif isinstance(X, numpy.ndarray):
                 col = X[:, i]
             else:
-                raise TypeError("X must be an array or a dataframe.")
+                raise TypeError(  # pragma: no cover
+                    "X must be an array or a dataframe.")
             est.fit(col)
             self.estimators_.append(est)
         return self
@@ -49,8 +50,9 @@ class TextVectorizerTransformer(BaseEstimator, TransformerMixin):
         Applies the vectorizer on X.
         """
         if len(self.estimators_) != X.shape[1]:
-            raise ValueError("Unexpected number of columns {}, expecting {}".format(
-                X.shape[1], len(self.estimators_)))
+            raise ValueError(  # pragma: no cover
+                "Unexpected number of columns {}, expecting {}".format(
+                    X.shape[1], len(self.estimators_)))
         res = []
         for i in range(X.shape[1]):
             if isinstance(X, pandas.DataFrame):
@@ -58,7 +60,8 @@ class TextVectorizerTransformer(BaseEstimator, TransformerMixin):
             elif isinstance(X, numpy.ndarray):
                 col = X[:, i]
             else:
-                raise TypeError("X must be an array or a dataframe.")
+                raise TypeError(  # pragma: no cover
+                    "X must be an array or a dataframe.")
             r = self.estimators_[i].transform(col)
             res.append(r)
         if len(res) == 1:

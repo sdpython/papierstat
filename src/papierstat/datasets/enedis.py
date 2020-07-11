@@ -34,7 +34,8 @@ def load_enedis_dataset(dest='.', fLOG=None):
     else:
         res = download_data(name, whereTo=dest)
     if len(res) != 1:
-        raise ValueError("Unzipping '{0}' failed.".format(name))
+        raise ValueError(  # pragma: no cover
+            "Unzipping '{0}' failed.".format(name))
     df = pandas.read_csv(res[0], sep=';', encoding='utf-8')
     df['long'] = df['Geo Point 2D'].apply(
         lambda x: float(x.split(',')[1].strip()))

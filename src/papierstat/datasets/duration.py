@@ -60,7 +60,7 @@ def duration_selling(date_begin=None, date_end=None,
         date_end = datetime.now()
         date_end = datetime(date_end.year, date_end.month, date_end.day)
     if date_begin >= date_end:
-        raise ValueError(
+        raise ValueError(  # pragma: no cover
             "begin >= end {0} >= {1}".format(date_begin, date_end))
     if week_pattern is None:
         week_pattern = [1.] * 5 + [0., 0.]

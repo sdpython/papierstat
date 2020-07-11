@@ -4,7 +4,7 @@
 @brief Module *papierstat*.
 Look for insights for machine learned models.
 """
-__version__ = "0.2.354"
+__version__ = "0.2.358"
 __author__ = "Xavier Dupré"
 __github__ = "https://github.com/sdpython/papierstat"
 __url__ = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/index.html"
@@ -61,4 +61,4 @@ def _setup_hook(use_print=False):
     # we can check many things, needed module
     # any others things before unit tests are started
     if use_print:
-        print("Success: _setup_hook")
+        print("Success: _setup_hook")  # pragma: no cover
