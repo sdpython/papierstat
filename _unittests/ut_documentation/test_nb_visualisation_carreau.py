@@ -5,7 +5,8 @@
 import os
 import unittest
 from pyquickhelper.loghelper import fLOG
-from pyquickhelper.pycode import add_missing_development_version
+from pyquickhelper.pycode import (
+    add_missing_development_version, skipif_travis)
 from pyquickhelper.ipythonhelper import test_notebook_execution_coverage
 import papierstat
 
@@ -16,6 +17,7 @@ class TestNotebookVisualisationCarreau(unittest.TestCase):
         add_missing_development_version(
             ["jyquickhelper", "pyensae"], __file__, hide=True)
 
+    @skipif_travis("fails due connectivity issue")
     def test_notebook_visualisation_carreau(self):
         fLOG(
             __file__,
