@@ -18,7 +18,7 @@ init:
 install:
   - "%PYTHON%\\python -m pip install --upgrade pip"
   - "%PYTHON%\\Scripts\\pip install pymyinstall"
-  - "%PYTHON%\\Scripts\\pip install numpy pandas scikit-learn scipy matplotlib jupyter statsmodels tensorflow spacy"
+  - "%PYTHON%\\Scripts\\pip install numpy pandas scikit-learn scipy matplotlib jupyter statsmodels tensorflow spacy cython"
   # - "%PYTHON%\\python -c \"import locale;print('locale.getpreferredencoding=', locale.getpreferredencoding())\""
   - "%PYTHON%\\python -m pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html"
   - "%PYTHON%\\Scripts\\pymy_install3 gensim ujson cytoolz wrapt regex"
