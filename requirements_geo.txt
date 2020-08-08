@@ -1,0 +1,4 @@
+cartopy
+geopandas
+pyproj
+shapely
