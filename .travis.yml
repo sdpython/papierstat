@@ -25,7 +25,7 @@ before_install:
 install:
   - pip install -r requirements_conda.txt
   - pip install -r requirements.txt
-  - pip install --no-deps geopandas
+  - pip install --no-deps geopandas fiona pyproj shapely
   - export PYTHONPATH=src
 script:
   - python setup.py unittests

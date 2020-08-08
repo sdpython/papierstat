@@ -194,7 +194,8 @@ def load_carreau_from_zip(file_car=None, file_rect=None):
     """
     Retourne un exemple de données carroyées.
     Les données sont disponibles dans le répertoire
-    `data <https://github.com/sdpython/papierstat/tree/master/src/papierstat/datasets/data>`_.
+    `data <https://github.com/sdpython/papierstat/tree/master/
+    src/papierstat/datasets/data>`_.
     Notebooks associés à ce jeu de données :
 
     .. runpython::
