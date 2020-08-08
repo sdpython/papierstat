@@ -6,14 +6,13 @@ descartes
 gensim
 geopandas
 jupyter
-keras
 matplotlib
-notebook>=5.0.0
+notebook
 networkx
 nltk
 numba
-numpy>=1.16.0
-pandas>=0.20
+numpy>=1.19.0
+pandas>=1.1
 pillow
 pyproj
 pyzmq

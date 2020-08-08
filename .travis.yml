@@ -22,7 +22,6 @@ env:
     - SDL_VIDEODRIVER=dummy SDL_AUDIODRIVER=disk
 before_install:
  - sudo apt-get install graphviz
- - pip install --upgrade pip
 install:
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
   - bash miniconda.sh -b -p $HOME/miniconda
