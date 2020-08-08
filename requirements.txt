@@ -16,7 +16,6 @@ pandas_streaming
 pycodestyle
 pyensae
 pylint
-pyltr
 pyquickhelper>=1.9.3240
 spacy
 shapely
