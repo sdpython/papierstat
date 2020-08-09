@@ -9,7 +9,7 @@ from numpy import vstack
 
 def line2d(n, x0=0, x1=10, a=0.5, b=1, sigma=0.5):
     """
-    Simule un jeu de données :math:`y = ax + b + \\epsilon`.
+    Simule un jeu de données pour une régression linéaire.
     Notebooks associés à ce jeu de données :
 
     .. runpython::
@@ -23,10 +23,13 @@ def line2d(n, x0=0, x1=10, a=0.5, b=1, sigma=0.5):
     @param          n       nombre de points à simuler
     @param          x0      dans l'intervalle *[x0, x1]*
     @param          x1      dans l'intervalle *[x0, x1]*
-    @param          a       *a*
-    @param          b       *b*
+    @param          a       *a*, voir ci-dessous
+    @param          b       *b*, voir ci-dessous
     @param          sigma   écart type du bruit blanc
     @return                 une matrice
+
+    La régression linéaire suit le modèle
+    :math:`y = ax + b + \\epsilon`.
     """
     x = rand(n) * (x1 - x0) + x0
     e = randn(n) * sigma
