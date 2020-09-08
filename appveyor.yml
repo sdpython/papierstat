@@ -22,7 +22,7 @@ install:
   # - "%PYTHON%\\python -c \"import locale;print('locale.getpreferredencoding=', locale.getpreferredencoding())\""
   - "%PYTHON%\\python -m pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html"
   - "%PYTHON%\\Scripts\\pymy_install3 gensim ujson cytoolz wrapt regex"
-  - "%PYTHON%\\Scripts\\pymy_install3 fiona cartopy ujson pyproj gdal shapely pyshp"
+  - "%PYTHON%\\Scripts\\pymy_install3 fiona cartopy ujson pyproj gdal shapely pyshp geopandas"
   - "%PYTHON%\\Scripts\\pip install -r requirements_conda.txt"
   - "%PYTHON%\\Scripts\\pip install category_encoders --no-deps"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
