@@ -17,6 +17,9 @@ recense tous les prétraitements que la librairie
 #########################################
 # Un jeu de données
 
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import Normalizer
+from sklearn.preprocessing import normalize
 from papierstat.datasets import load_wines_dataset
 df = load_wines_dataset()
 X = df.drop(['quality', 'color'], axis=1)
@@ -27,7 +30,6 @@ print(X.head())
 #########################################
 # Normalisation naïve
 # -------------------
-from sklearn.preprocessing import normalize
 X_norm = normalize(X)
 print(X_norm[:5])
 
@@ -41,7 +43,6 @@ print(X_norm[:5])
 # pour estimer des coefficients du modèle global
 # qui inclue les prétraitements.
 
-from sklearn.preprocessing import Normalizer
 norm = Normalizer()
 X_norm = norm.fit_transform(X)
 
@@ -51,12 +52,10 @@ X_norm = norm.fit_transform(X)
 # et la variance utilisée pour normaliser ne peuvent être estimées
 # mais seulement sur la base d'apprentissage.s
 # On découpage la base d'abord.
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y)
 
 #########################################
 # On normalise ensuite.
-from sklearn.preprocessing import Normalizer
 norm = Normalizer()
 X_train_norm = norm.fit_transform(X_train)
 X_test_norm = norm.transform(X_test)

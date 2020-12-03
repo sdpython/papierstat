@@ -23,13 +23,16 @@ celle qui minimise l'erreur sur la base de test.
 # On commence par générer un jeu de données artificiel
 # pour une régression.
 
+import pandas
+from sklearn.model_selection import GridSearchCV
+from sklearn.linear_model import Lasso
+import matplotlib.pyplot as plt
 from sklearn.datasets import make_friedman1
 X, Y = make_friedman1(n_samples=500, n_features=5)
 
 ###########################
 # On représente ces données.
 
-import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(5, 5))
 ax = plt.subplot()
 ax.plot(X[:, 0], Y, '.')
@@ -37,9 +40,9 @@ ax.plot(X[:, 0], Y, '.')
 ##########################
 # On choisira un modèle de régression linéaire
 # avec une contrainte sur les coefficients
-# `Lasso <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.Lasso.html>`_.
+# `Lasso <http://scikit-learn.org/stable/modules/
+# generated/sklearn.linear_model.Lasso.html>`_.
 
-from sklearn.linear_model import Lasso
 reglin = Lasso()
 reglin.fit(X, Y)
 
@@ -56,7 +59,6 @@ print(reglin.coef_, reglin.intercept_)
 reglin = Lasso()
 reglin.fit(X[:, :1], Y)
 
-import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(5, 5))
 ax = plt.subplot()
 x = list(sorted(X[:, :1]))
@@ -73,7 +75,6 @@ ax.plot(x, y)
 # en choisissant différent valeur entre 0.5 et 2.
 
 
-from sklearn.model_selection import GridSearchCV
 grid = GridSearchCV(
     Lasso(), {'alpha': [1e-5, 0.01, 0.1, 0.5, 0.8, 1]}, verbose=3)
 grid.fit(X[:, :1], Y)
@@ -81,7 +82,6 @@ grid.fit(X[:, :1], Y)
 ###########################
 # On affiche les résultats.
 
-import pandas
 df = pandas.DataFrame(grid.cv_results_)
 df["alpha"] = df.params.apply(lambda x: x["alpha"])
 print(df)

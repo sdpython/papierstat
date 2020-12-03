@@ -5,7 +5,8 @@ Classification Binaire
 
 Un problème de classification binaire consiste à trouver
 un moyen de séparer deux nuages de points
-(voir `classification <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_3_clas.html>`_).
+(voir `classification <http://www.xavierdupre.fr/app/mlstatpy/
+helpsphinx/c_ml/rn/rn_3_clas.html>`_).
 
 .. contents::
     :local:
@@ -18,6 +19,14 @@ un moyen de séparer deux nuages de points
 #
 # On commence par générer un nuage de points artificiel.
 
+from sklearn.metrics import log_loss
+from sklearn.metrics import auc
+from sklearn.metrics import roc_curve
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import train_test_split
+import numpy
+from sklearn.linear_model import LogisticRegression
+import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 X, Y = make_classification(n_samples=500, n_features=2, n_classes=2,
                            n_repeated=0, n_redundant=0)
@@ -25,7 +34,6 @@ X, Y = make_classification(n_samples=500, n_features=2, n_classes=2,
 ###########################
 # On représente ces données.
 
-import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(5, 5))
 ax = plt.subplot()
 ax.plot(X[Y == 0, 0], X[Y == 0, 1], "ob")
@@ -37,9 +45,9 @@ ax.plot(X[Y == 1, 0], X[Y == 1, 1], "or")
 # de points. Le plus simple est de supposer que c'est une
 # droite. Dans ce cas, on choisira un modèle de
 # régression logistique :
-# `LogisticRegression <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html>`_.
+# `LogisticRegression <http://scikit-learn.org/stable/
+# modules/generated/sklearn.linear_model.LogisticRegression.html>`_.
 
-from sklearn.linear_model import LogisticRegression
 logreg = LogisticRegression()
 logreg.fit(X, Y)
 
@@ -53,8 +61,6 @@ print(logreg.coef_, logreg.intercept_)
 # ne serait valable que pour un modèle linéaire.
 # Il est aussi facile de colorier le fond du graphe avec
 # la couleur de la classe prédite par le modèle.
-
-import numpy
 
 
 def colorie(X, model, ax, fig):
@@ -96,11 +102,11 @@ ax.set(aspect="equal", xlabel="$X_1$", ylabel="$X_2$")
 # C'est nécessaire car certains modèles peuvent simplement
 # apprendre par coeur et l'erreur est sur les données
 # ayant servi à apprendre. C'est le cas des
-# `plus proches voisins <https://fr.wikipedia.org/wiki/Recherche_des_plus_proches_voisins>`_.
+# `plus proches voisins <https://fr.wikipedia.org/wiki/
+# Recherche_des_plus_proches_voisins>`_.
 # La division doit être aléatoire. On peut d'ailleurs
 # recommencer plusieurs pour s'assurer de la robustesse des résultats.
 
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, Y)
 
 #####################
@@ -115,7 +121,6 @@ y_pred = logreg.predict(X_test)
 
 ##########################
 # Puis on calcule la :epkg:`matrice de confusion`.
-from sklearn.metrics import confusion_matrix
 conf = confusion_matrix(y_test, y_pred)
 print(conf)
 
@@ -146,9 +151,10 @@ ax.set_title("Résultats sur la base de test")
 # La :epkg:`matrice de confusion` n'utilise pas cette information,
 # la courbe :epkg:`ROC` si. Voyons comment.
 # On s'inspire de l'exemple
-# `Receiver Operating Characteristic (ROC) <http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html>`_.
-# La courbe :epkg:`ROC` ne change pas qu'on choisisse un score ou une probabilité.
-# On calcule les probabilités. Le modèle retourne la probabilité
+# `Receiver Operating Characteristic (ROC)
+# <http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html>`_.
+# La courbe :epkg:`ROC` ne change pas qu'on choisisse un score ou une
+# probabilité. On calcule les probabilités. Le modèle retourne la probabilité
 # que chaque exemple appartienne dans chacune des classes.
 y_proba = logreg.predict_proba(X_test)
 print(y_proba[:3])
@@ -161,7 +167,6 @@ print(y_proba[:3])
 # Le score est celui de la classe prédite :
 # ``y_score[y_pred]``.
 
-from sklearn.metrics import roc_curve
 prob_pred = [y_proba[i, c] for i, c in enumerate(y_pred)]
 fpr, tpr, th = roc_curve((y_pred == y_test).ravel(), prob_pred)
 
@@ -204,7 +209,6 @@ plt.legend(loc="lower right")
 # n'a rien appris. Plus la courbe est haute, meilleur le modèle est.
 # C'est pourquoi on calcule l'aire sous la courbe.
 
-from sklearn.metrics import auc
 print(auc(fpr, tpr))
 
 #####################################
@@ -213,11 +217,14 @@ print(auc(fpr, tpr))
 #
 # * Le modèle a bien classé un exemple dans la classe 0.
 # * Le modèle a bien classé un exemple dans la classe 1.
-# * Le modèle a bien classé un exemple, que ce soit dans la classe 0 ou la classe 1.
-#   Ce problème suppose implicitement que le même seuil est utilisé sur chacun des classes.
-#   C'est-à-dire qu'on prédit la classe 1 si le score pour la classe 1 est supérieur à
+# * Le modèle a bien classé un exemple, que ce soit dans
+#   la classe 0 ou la classe 1. Ce problème suppose implicitement
+# que le même seuil est utilisé sur chacun des classes.
+#   C'est-à-dire qu'on prédit la classe 1 si le score pour
+#   la classe 1 est supérieur à
 #   à celui obtenu pour la classe 0 mais aussi qu'on valide la réponse
-#   si le score de la classe 1 ou celui de la classe 0 est supérieur au même seuil *s*,
+#   si le score de la classe 1 ou celui de la classe 0 est
+#   supérieur au même seuil *s*,
 #   ce qui n'est pas nécessairement le meilleur choix.
 #
 # Si les réponses sont liées, le modèle peut répondre de manière
@@ -256,7 +263,8 @@ plt.legend(loc="lower right")
 # des cas, le modèle n'est pas optimisée pour cette métrique.
 # La métrique AUC est coûteuse à calculer, c'est pourquoi on lui
 # préfère souvent d'autres métriques comme :
-# la `logloss <http://scikit-learn.org/stable/modules/generated/sklearn.metrics.log_loss.html>`_.
+# la `logloss <http://scikit-learn.org/stable/modules/generated/
+# sklearn.metrics.log_loss.html>`_.
 # Si on note :math:`y_i` la classe attendue et :math:`p_i` la probabilité
 # que l'observation *i* appartiennent à cette classe selon le modèle, alors :
 #
@@ -266,6 +274,5 @@ plt.legend(loc="lower right")
 #
 # On utilise la fonction :epkg:`scikit-learn:metrics:log_loss`.
 
-from sklearn.metrics import log_loss
 err = log_loss(y_test, y_proba)
 print(err)

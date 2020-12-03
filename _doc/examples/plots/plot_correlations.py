@@ -6,14 +6,7 @@ Corrélations
 Dessine les corrélations pour un jeu de données.
 """
 
-###############
-# A remplacer.
-try:
-    import papierstat
-except ImportError:
-    import sys
-    sys.path.append("../../../src")
-    import papierstat
+from seaborn import clustermap
 
 #########################
 # Récupération des données
@@ -25,9 +18,6 @@ print(df.head(n=2).T)
 ####################
 # Les corrélations avec :epkg:`seaborn`.
 
-from seaborn import clustermap
-
 clustermap(df.corr(), center=0, cmap="vlag", linewidths=.75, figsize=(4, 4))
 
-import matplotlib.pyplot as plt
 # plt.show()

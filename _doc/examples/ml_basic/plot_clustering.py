@@ -20,21 +20,24 @@ est le nombre de clusters.
 #
 # On commence par générer un nuage de points artificiel.
 
+import numpy
+from sklearn.metrics import silhouette_samples, silhouette_score
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 from sklearn.datasets import make_blobs
 X, Y = make_blobs(n_samples=500, n_features=2, centers=4)
 
 ###########################
 # On représente ces données.
 
-import matplotlib.pyplot as plt
 fig, ax = plt.subplots(1, 1, figsize=(5, 5))
 ax.plot(X[:, 0], X[:, 1], '.')
 
 ##########################
 # On utilise un algorithme très utilisé :
-# `KMeans <http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html>`_.
+# `KMeans <http://scikit-learn.org/stable/modules/generated/
+# sklearn.cluster.KMeans.html>`_.
 
-from sklearn.cluster import KMeans
 km = KMeans()
 km.fit(X)
 
@@ -57,7 +60,9 @@ ax.scatter(X[:, 0], X[:, 1], c=colors)
 # Autre graphe et métrique silhouette
 # -----------------------------------
 #
-# Inspiré de `Selecting the number of clusters with silhouette analysis on KMeans clustering <http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html>`_.
+# Inspiré de `Selecting the number of clusters with silhouette
+# analysis on KMeans clustering <http://scikit-learn.org/stable/
+# auto_examples/cluster/plot_kmeans_silhouette_analysis.html>`_.
 # Il s'agit de représenter la dispersion au sein de chaque cluster.
 # Sont-ils concentrés autour d'un point ou plutôt regroupés
 # parce que loin de tout ?
@@ -65,7 +70,6 @@ ax.scatter(X[:, 0], X[:, 1], c=colors)
 # puis à prendre un échantillon aléatoire sous
 # peine d'avoir un graphique surchargé.
 
-from sklearn.metrics import silhouette_samples, silhouette_score
 cluster_labels = km.fit_predict(X)
 silhouette_avg = silhouette_score(X, cluster_labels)
 sample_silhouette_values = silhouette_samples(X, cluster_labels)
@@ -79,7 +83,6 @@ try:
     from matplotlib.cm import spectral as color_map
 except ImportError:
     from matplotlib.cm import summer as color_map
-import numpy
 
 fig, (ax1, ax2) = plt.subplots(1, 2)
 fig.set_size_inches(9, 5)

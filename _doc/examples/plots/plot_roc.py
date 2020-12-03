@@ -5,9 +5,11 @@ Receiver Operating Characteristic (ROC)
 
 Un problème de classification binaire consiste à trouver
 un moyen de séparer deux nuages de points
-(voir `classification <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_3_clas.html>`_)
+(voir `classification <http://www.xavierdupre.fr/app/mlstatpy/
+helpsphinx/c_ml/rn/rn_3_clas.html>`_)
 et on évalue le plus souvent sa pertinence à l'aide d'une courbe
-:epkg:`ROC`. Cet exemple montre différente représentation de la même information.
+:epkg:`ROC`. Cet exemple montre différente représentation de la même
+information.
 
 .. contents::
     :local:
@@ -20,6 +22,14 @@ et on évalue le plus souvent sa pertinence à l'aide d'une courbe
 #
 # On commence par générer un nuage de points artificiel.
 
+from sklearn.metrics import f1_score
+from sklearn.metrics import precision_recall_curve
+import numpy
+from sklearn.metrics import roc_curve
+from sklearn.metrics import confusion_matrix
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt
 from sklearn.datasets import make_classification
 X, Y = make_classification(n_samples=10000, n_features=2, n_classes=2,
                            n_repeated=0, n_redundant=0)
@@ -27,7 +37,6 @@ X, Y = make_classification(n_samples=10000, n_features=2, n_classes=2,
 ###########################
 # On représente ces données.
 
-import matplotlib.pyplot as plt
 fig = plt.figure(figsize=(5, 5))
 ax = plt.subplot()
 ax.plot(X[Y == 0, 0], X[Y == 0, 1], ".b")
@@ -35,13 +44,11 @@ ax.plot(X[Y == 1, 0], X[Y == 1, 1], ".r")
 
 ###########################
 # On découpe en train / test.
-from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, Y)
 
 #####################
 # On apprend sur la base d'apprentissage.
 
-from sklearn.linear_model import LogisticRegression
 logreg = LogisticRegression()
 logreg.fit(X_train, y_train)
 
@@ -51,7 +58,6 @@ y_pred = logreg.predict(X_test)
 
 ##########################
 # On calcule la :epkg:`matrice de confusion`.
-from sklearn.metrics import confusion_matrix
 conf = confusion_matrix(y_test, y_pred)
 print(conf)
 
@@ -65,19 +71,21 @@ print(conf)
 #
 # * Le modèle a bien classé un exemple dans la classe 0.
 # * Le modèle a bien classé un exemple dans la classe 1.
-# * Le modèle a bien classé un exemple, que ce soit dans la classe 0 ou la classe 1.
-#   Ce problème suppose implicitement que le même seuil est utilisé sur chacun des classes.
-#   C'est-à-dire qu'on prédit la classe 1 si le score pour la classe 1 est supérieur à
+# * Le modèle a bien classé un exemple, que ce soit dans la
+#   classe 0 ou la classe 1.
+#   Ce problème suppose implicitement que le même seuil est
+#   utilisé sur chacun des classes.
+#   C'est-à-dire qu'on prédit la classe 1 si le score pour la
+#   classe 1 est supérieur à
 #   à celui obtenu pour la classe 0 mais aussi qu'on valide la réponse
-#   si le score de la classe 1 ou celui de la classe 0 est supérieur au même seuil *s*,
+#   si le score de la classe 1 ou celui de la classe 0
+#   est supérieur au même seuil *s*,
 #   ce qui n'est pas nécessairement le meilleur choix.
 #
 # Si les réponses sont liées, le modèle peut répondre de manière
 # plus ou moins efficace à ces trois questions.
 # On calcule les courbes :epkg:`ROC` à ces trois questions.
 
-
-from sklearn.metrics import roc_curve
 
 fpr_cl = dict()
 tpr_cl = dict()
@@ -90,7 +98,6 @@ fpr_cl["classe 0"], tpr_cl["classe 0"], _ = roc_curve(
 fpr_cl["classe 1"], tpr_cl["classe 1"], _ = roc_curve(
     y_test, y_proba[:, 1].ravel())  # y_test == 1
 
-import numpy
 prob_pred = numpy.array([y_proba[i, 1 if c else 0]
                          for i, c in enumerate(y_pred)])
 fpr_cl["tout"], tpr_cl["tout"], _ = roc_curve(
@@ -119,8 +126,12 @@ plt.legend(loc="lower right")
 # les deux classes à la fois, suggère que les seuils optimaux seront
 # différents pour les deux premières questions.
 # La courbe :epkg:`ROC` ne change pas qu'on prenne la fonction
-# `predict_proba <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.predict_proba>`_
-# ou `decision_function <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression.decision_function>`_
+# `predict_proba <http://scikit-learn.org/stable/modules/
+# generated/sklearn.linear_model.LogisticRegression.html#
+# sklearn.linear_model.LogisticRegression.predict_proba>`_
+# ou `decision_function <http://scikit-learn.org/stable/
+# modules/generated/sklearn.linear_model.LogisticRegression.html#
+# sklearn.linear_model.LogisticRegression.decision_function>`_
 # car ces deux scores
 # sont liés par une fonction monotone.
 # On recommence avec la seconde fonction.
@@ -162,12 +173,13 @@ plt.legend(loc="lower right")
 # est l'ensemble de ces documents dont le score est supérieur à un seuil *s*,
 # la précision est l'ensemble des documents bien classé parmi ceux-ci.
 # On utilise la fonction
-# `precision_recall_curve <http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_curve.html#sklearn.metrics.precision_recall_curve>`_.
+# `precision_recall_curve <http://scikit-learn.org/stable/
+# modules/generated/sklearn.metrics.precision_recall_curve.html#
+# sklearn.metrics.precision_recall_curve>`_.
 
 y_pred = logreg.predict(X_test)
 y_proba = logreg.predict_proba(X_test)
 
-from sklearn.metrics import precision_recall_curve
 
 prec = dict()
 rapp = dict()
@@ -196,14 +208,15 @@ plt.legend(loc="lower right")
 # Métrique F1
 # -----------
 #
-# La courbe *Précision / Rappel* ne montre pas les scores même s'il intervient dans
+# La courbe *Précision / Rappel* ne montre pas les
+# scores même s'il intervient dans
 # chaque point de la courbe. Pour le faire apparaître, on utilise un graphe
 # où il est en abscisse.
-# La métrique `F1 <http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html>`_
+# La métrique `F1 <http://scikit-learn.org/stable/
+# modules/generated/sklearn.metrics.f1_score.html>`_
 # propose une pondération entre les deux :
 # :math:`F1 = 2 \frac{precision * rappel}{precision + rappel}`.
 
-from sklearn.metrics import f1_score
 
 y_pred = logreg.predict(X_test)
 y_proba = logreg.predict_proba(X_test)
@@ -236,14 +249,16 @@ ax[1].legend()
 # On peut se demander pourquoi on utilise la courbe :epkg:`ROC`
 # si d'autres graphiques sont plus compréhensibles.
 # C'est parce que l'aire sous la courbe
-# (`AUC <https://en.wikipedia.org/wiki/Receiver_operating_characteristic#Area_under_the_curve>`_)
+# (`AUC <https://en.wikipedia.org/wiki/
+# Receiver_operating_characteristic#Area_under_the_curve>`_)
 # est relié à un résultat important :
 # :math:`\mathbb{P}(S_F < S_T)` où
 # :math:`S_F` représente la variable aléatoire
 # *score pour une observation mal classée*
 # et :math:`S_T` la variable aléatoire
 # *score pour une observation bien classée*
-# (voir `ROC <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html>`_).
+# (voir `ROC <http://www.xavierdupre.fr/app/
+# mlstatpy/helpsphinx/c_metric/roc.html>`_).
 
 y_pred = logreg.predict(X_test)
 y_proba = logreg.predict_proba(X_test)

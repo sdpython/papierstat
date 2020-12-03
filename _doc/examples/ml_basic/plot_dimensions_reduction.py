@@ -8,7 +8,8 @@ On peut souhaiter réduire de nombre de dimensions d'un jeu de données :
 - pour le compresser : diminution le volume d'informations utiles à stocker
   et par la même occasion la durée d'exécution d'un algorithme d'apprentisssage
   (car l'espace à explorer est plus petit).
-- pour réduire le bruit et éviter ainsi le surapprentissage (apprentissage du bruit dans les données).
+- pour réduire le bruit et éviter ainsi le surapprentissage
+  (apprentissage du bruit dans les données).
 
 .. contents::
     :local:
@@ -64,8 +65,10 @@ np.random.seed = 2017  # pour des résultats reproductibles
 # Tout cela peut bien sur être implémenté from scratch avec Numpy mais
 # nous utiliserons ici scikit-learn pour raccourcir l'implémentation et
 # nous concentrer sur la visualisation des résultats. Cf.
-# `Analyse en composantes principales (ACP) <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_ et
-# `PCA <http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html>`_.
+# `Analyse en composantes principales (ACP)
+# <https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales>`_ et
+# `PCA <http://scikit-learn.org/stable/modules/generated/
+# sklearn.decomposition.PCA.html>`_.
 #
 # Implémentation avec scikit-learn
 # ++++++++++++++++++++++++++++++++
@@ -104,7 +107,8 @@ plt.plot([1, 7], [0.05, 2.5])
 # Effectuons une PCA avec scikit-learn avec un changemment de base
 # conservant les 4 dimensions pour illustrer leurs différences :
 # Gardons toutes les composantes pour le moment,
-# nous pourrons toujours en retirer ensuite puisqu'elles seront triées par significativité
+# nous pourrons toujours en retirer ensuite puisqu'elles
+# seront triées par significativité
 
 pca = decomposition.PCA(n_components=4)
 X_iris_PCA = pca.fit(X_iris).transform(X_iris)
@@ -223,7 +227,8 @@ graph_acp2(X_iris_PCA, y_iris)
 ###############################
 # Composantes.
 
-print("Composantes identifiées par le LDA (on remarque une meilleure séparation des classes sur la 1ère composante) :")
+print("Composantes identifiées par le LDA (on remarque une meilleure "
+      "séparation des classes sur la 1ère composante) :")
 graph_acp2(X_iris_LDA, y_iris)
 
 
@@ -231,7 +236,8 @@ graph_acp2(X_iris_LDA, y_iris)
 # Factorisation de matrice
 # ++++++++++++++++++++++++
 #
-# Voir `NMF  <http://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html>`_
+# Voir `NMF  <http://scikit-learn.org/stable/modules/generated/
+# sklearn.decomposition.NMF.html>`_.
 #
 # On va ici chercher à approcher une matrice **V de dimensions m\*n**, de
 # grande taille souvent creuse et positive (e.g. les évaluations de tous
@@ -296,7 +302,8 @@ df = pd.DataFrame.from_dict({'loves_everything': [9, 9, 9, 9, 9, 9, 0],
                             ).transpose()
 df.index.name = "Users"
 df.columns = ['Charming prince', 'First date', 'Lovely love',
-              'Guns are cool', 'Ultra badass 4', 'My fist in your face', 'Guns & roses']
+              'Guns are cool', 'Ultra badass 4', 'My fist in your face',
+              'Guns & roses']
 df.columns.name = "Movies"
 print(df)
 
