@@ -5,7 +5,10 @@
 History
 =======
 
-current - 2020-06-03 - 0.00Mb
+current - 2021-01-01 - 0.00Mb
+=============================
+
+0.2.350 - 2020-06-03 - 1.80Mb
 =============================
 
 * `31`: Moves ConstraintKMeans to mlinsights (2020-06-03)
@@ -19,10 +22,6 @@ current - 2020-06-03 - 0.00Mb
 * `22`: replaces as_matrix by values (pandas deprecated warning) (2018-07-29)
 * `21`: take a dependency on mlinsights where some code was moved (sklapi) (2018-07-29)
 * `19`: ajouter un code pour télécharger les données spacy du notebook sur word2vec (2018-06-17)
-
-0.1.178 - 2018-06-12 - 1.75Mb
-=============================
-
 * `17`: calculer ACP notebook word2vec (2018-06-12)
 * `15`: ajouter un notebook sur word2vec (2018-06-11)
 * `8`: ajouter un notebook sur les données carroyées (2018-06-11)
