@@ -94,7 +94,13 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            pip install category_encoders --no-deps
+
+      - run:
+          name: install dependencies (3)
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements_geo.txt
 
       - save_cache:
           paths:
