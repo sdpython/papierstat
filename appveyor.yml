@@ -14,6 +14,7 @@ install:
   - "%PYTHON%\\Scripts\\pip install numpy"
   - "%PYTHON%\\Scripts\\pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio===0.7.2 -f https://download.pytorch.org/whl/torch_stable.html"
   - "%PYTHON%\\Scripts\\pymy_install3 fiona cartopy pyproj gdal shapely llvmlite"
+  - "%PYTHON%\\Scripts\\pip install numba --no-deps"
   - "%PYTHON%\\Scripts\\pip install -r requirements_conda.txt"
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt"
   - "%PYTHON%\\Scripts\\pip install -r requirements_geo.txt"
