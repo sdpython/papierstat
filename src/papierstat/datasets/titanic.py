@@ -31,8 +31,8 @@ def load_titanic_dataset(download=False, subset="A"):
     @return             :epkg:`pandas:DataFrame`
     """
     urls = dict(
-        A='http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic3.csv',
-        B='http://biostat.mc.vanderbilt.edu/wiki/pub/Main/DataSets/titanic.txt'
+        A='https://biostat.app.vumc.org/wiki/pub/Main/DataSets/titanic3.csv',
+        B='https://biostat.app.vumc.org/wiki/pub/Main/DataSets/titanic.txt'
     )
     url = urls[subset]
     if download:
