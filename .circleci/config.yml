@@ -22,15 +22,6 @@ jobs:
                     sudo dpkg -i pandoc-2.11.3.2-1-amd64.deb
           
       - run:
-          name: Install tex
-          command: |
-                    sudo apt-get install -y texlive
-                    sudo apt-get install -y texlive-latex-extra
-                    sudo apt-get install -y texlive-lang-french
-                    sudo apt-get install -y texlive-xetex
-                    sudo apt-get install -y dvipng
-          
-      - run:
           name: Install 7z, unrar
           command: |
                     sudo apt-get install -y p7zip-full
@@ -39,68 +30,59 @@ jobs:
           name: Install InkScape
           command: |
                     sudo apt-get install -y inkscape
-
+          
       - run:
           name: Install graphviz
           command: |
                     sudo apt-get install -y graphviz
+          
+      - run:
+          name: Install libproj
+          command: |
+            sudo apt-get install -y libgeos-dev libproj-dev proj-data graphviz
 
       - run:
-          name: Install cython
+          name: Install llvmlite
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install cython
+            sudo apt-get install lsb-release wget software-properties-common
+            wget https://apt.llvm.org/llvm.sh
+            chmod +x llvm.sh
+            sudo ./llvm.sh 10
+            ls /usr/bin/llvm*
 
       - run:
-          name: Install pyproj for cartopy
+          name: Install standard libraries
           command: |
-            echo "deb http://deb.debian.org/debian sid main" | sudo tee /etc/apt/sources.list.d/proj.list
-            sudo apt-get -qq update
-            sudo apt-get -t sid install -y libproj-dev proj-bin=6.1.1-1 proj-data libgeos-dev python-gdal gdal-bin libc6
-            wget http://es.archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj9_4.9.2-2_amd64.deb 
-            sudo dpkg -i libproj9_4.9.2-2_amd64.deb 
-            wget http://es.archive.ubuntu.com/ubuntu/pool/universe/p/proj/libproj-dev_4.9.2-2_amd64.deb
-            sudo dpkg -i libproj-dev_4.9.2-2_amd64.deb
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            sudo pip install git+https://github.com/pyproj4/pyproj.git
-
-      # statsmodels setup.py requires it
-      - run:
-          name: install numpy
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install numpy
+            pip install scipy matplotlib numpy cython pandas
 
       - run:
-          name: install dependencies (1)
+          name: Install pyproj, shapely, cartopy
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            pip install -r requirements_conda.txt
-            
-      - run:
-          name: install cartopy
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
+            pip install pyproj
+            pip uninstall -y shapely
+            pip install --no-binary shapely shapely
             pip install cartopy
 
       - run:
-          name: install dependencies (2)
+          name: Install numba, llvmlite
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            pip install -r requirements.txt
+            # export LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config
+            sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
+            pip install llvmlite numba
 
       - run:
-          name: install dependencies (3)
+          name: install dependencies
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
-            pip install -r requirements_geo.txt
+            pip install wheel
+            pip install -r requirements.txt
 
       - save_cache:
           paths:
@@ -108,44 +90,39 @@ jobs:
           key: v2-dependencies-{{ checksum "requirements.txt" }}
         
       - run:
-          name: compile and build
+          name: check list of dependencies
           command: |
+            python -m venv venv
             . venv/bin/activate
-            python setup.py build_ext --inplace
-
+            pip freeze
+            apt list --installed
+        
       - run:
           name: run tests
           command: |
             . venv/bin/activate
-            export PYTHONPATH=src
             python setup.py unittests
 
-      - run:
-          name: wheel
-          command: |
-            . venv/bin/activate
-            export PYTHONPATH=src
-            python setup.py bdist_wheel
-            mkdir -p test-reports/dist
-            cp dist/*.whl test-reports/dist
-            mkdir -p test-reports/src
-            cp -r  src/papierstat test-reports/src
-
-      - run:
-          name: documentation
-          command: |
-            . venv/bin/activate
-            export PYTHONPATH=src
-            python setup.py build_sphinx
+#      - run:
+#          name: wheel
+#          command: |
+#            . venv/bin/activate
+#            python setup.py bdist_wheel
+#            mkdir -p test-reports/dist
+#            cp dist/*.whl test-reports/dist
+#
+#      - run:
+#          name: documentation
+#          command: |
+#            . venv/bin/activate
+#            python setup.py build_sphinx
             
       - run:
           name: copy documentation
           command: |
             mkdir -p test-reports/doc
-            zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
             mkdir -p test-reports/pdf
-            cp _doc/sphinxdoc/build/elatex/*.pdf test-reports/pdf
-            cp _doc/sphinxdoc/build/elatex/pap*.tex* test-reports/pdf
+            zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
             
       - store_artifacts:
           path: test-reports
