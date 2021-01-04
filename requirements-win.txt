@@ -1,6 +1,8 @@
 astroid
 importlib_metadata
+IPython
 isort
+jupyter
 matplotlib
 numpy
 pylint
