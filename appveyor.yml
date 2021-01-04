@@ -16,6 +16,7 @@ install:
   - "%PYTHON%\\Scripts\\pymy_install3 cartopy pyproj shapely llvmlite numba"
   # other dependencies
   - "%PYTHON%\\Scripts\\pip install -r requirements.txt --no-deps"
+  - set PYTHONPATH=src
 build: off
 
 test_script:
