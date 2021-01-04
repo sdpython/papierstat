@@ -5,6 +5,8 @@ isort
 jupyter
 matplotlib
 numpy
+pandas
 pylint
 pymyinstall
 pyshp
+pytz
