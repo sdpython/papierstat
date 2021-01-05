@@ -13,3 +13,4 @@ pyshp
 pytz
 pyyaml
 scikit-learn
+statsmodels
