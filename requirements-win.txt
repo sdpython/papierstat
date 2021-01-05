@@ -1,5 +1,6 @@
 astroid
 bokeh
+ijson
 importlib_metadata
 IPython
 isort
