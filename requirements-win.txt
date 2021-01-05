@@ -1,4 +1,5 @@
 astroid
+bokeh
 importlib_metadata
 IPython
 isort
@@ -14,3 +15,4 @@ pytz
 pyyaml
 scikit-learn
 statsmodels
+typing_extensions

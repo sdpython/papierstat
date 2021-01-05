@@ -48,6 +48,7 @@ shapely
 sphinx-bootstrap-theme
 sphinx-gallery
 sphinxcontrib-imagesvg
+typing_extensions
 ujson
 wheel
 xgboost
