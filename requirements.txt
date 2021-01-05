@@ -41,7 +41,8 @@ pandas_streaming
 pycodestyle
 pyensae
 pylint
-pyquickhelper>=1.9.3240
+pyquickhelper>=1.10
+pyyaml
 spacy
 shapely
 sphinx-bootstrap-theme

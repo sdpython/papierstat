@@ -11,4 +11,5 @@ pylint
 pymyinstall
 pyshp
 pytz
+pyyaml
 scikit-learn
