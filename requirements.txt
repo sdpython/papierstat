@@ -23,6 +23,7 @@ statsmodels
 toolz
 
 # other
+branca
 dbfread
 cairocffi
 cairosvg
