@@ -2,6 +2,7 @@ astroid
 importlib_metadata
 IPython
 isort
+joblib
 jupyter
 matplotlib
 numpy
@@ -10,3 +11,4 @@ pylint
 pymyinstall
 pyshp
 pytz
+scikit-learn
