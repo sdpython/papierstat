@@ -16,4 +16,5 @@ pytz
 pyyaml
 scikit-learn
 statsmodels
+tqdm
 typing_extensions
