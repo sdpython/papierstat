@@ -17,7 +17,8 @@ install:
 
 script:
   - { CMD: "$PYINT -u setup.py unittests", NAME: "UT" }
-  - { CMD: "$PYINT -u setup.py unittests_LONG", NAME: "UT_LONG", TIMEOUT: 4800 }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*LONG.*\" -g \".*cartopy.*\"", NAME: "UT_LONG", TIMEOUT: 4800 }
+  - { CMD: "$PYINT -u setup.py unittests -e \".*cartopy.*\"", NAME: "UT_MAP", TIMEOUT: 4800 }
 
 after_script:
   - $PYINT -u setup.py bdist_wheel
