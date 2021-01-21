@@ -2,7 +2,7 @@
 import sys
 import os
 # import guzzle_sphinx_theme
-import sphinx_bootstrap_theme
+import pydata_sphinx_theme
 from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
 
 
@@ -12,8 +12,7 @@ local_template = os.path.join(os.path.abspath(
     os.path.dirname(__file__)), "phdoc_templates")
 
 set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2021,
-                     # "guzzle_sphinx_theme", guzzle_sphinx_theme.html_theme_path(),
-                     "bootstrap", sphinx_bootstrap_theme.get_html_theme_path(),
+                     "pydata_sphinx_theme", pydata_sphinx_theme.get_html_theme_path(),
                      locals(), extlinks=dict(
                          issue=('https://github.com/sdpython/papierstat/issues/%s', 'issue')),
                      title="papierstat", book=True, nblayout='table')

@@ -40,6 +40,7 @@ mlinsights>=0.2
 msgpack
 pandas_streaming
 pycodestyle
+pydata_sphinx_theme
 pyensae
 pylint
 pyquickhelper>=1.10
