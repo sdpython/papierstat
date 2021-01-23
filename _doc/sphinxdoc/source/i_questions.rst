@@ -1,7 +1,7 @@
 
-=======================
-Devinettes et problèmes
-=======================
+==========
+Devinettes
+==========
 
 Cette page regroupe quelques questions et problèmes
 dont les solutions figurent dans les pages de ce site
@@ -18,9 +18,15 @@ Ces exercices abordent des sujets liés au machine learning,
 inventés pour des examens, un entretien d'embauche,
 ou tirés de l'expérience d'un data-scientiste.
 
-* `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
-* `Nearest Neighbours and Sparse Features <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
-* `Reconstruction de synonymes <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_
+* `Comparer deux régressions
+  <http://www.xavierdupre.fr/app/actuariat_python/
+  helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
+* `Nearest Neighbours and Sparse Features
+  <http://www.xavierdupre.fr/app/ensae_projects/
+  helpsphinx/notebooks/nearest_neighbours_sparse_features.html>`_
+* `Reconstruction de synonymes
+  <http://www.xavierdupre.fr/app/actuariat_python/
+  helpsphinx/notebooks/reconstruction_synonymes_enonce.html>`_
 
 Mathématiques
 =============
@@ -31,9 +37,11 @@ Mathématiques
 Corrélations non linéaires
 ++++++++++++++++++++++++++
 
-Le `coefficient de Pearson <https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_
+Le `coefficient de Pearson
+<https://en.wikipedia.org/wiki/Pearson_correlation_coefficient>`_
 est sans aucun doute le coefficient de corrélation le plus
-connu. Le `coefficient de Spearman <https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`_
+connu. Le `coefficient de Spearman
+<https://en.wikipedia.org/wiki/Spearman%27s_rank_correlation_coefficient>`_
 mesure la corrélation entre deux variables à partir de leur rang.
 Et si on essayait de définir un coefficient de corrélation
 non linéaire ? A base d'arbre de décision ? Pas forcémenet symétrique ?
@@ -52,7 +60,8 @@ p-value et intervalle de confiance
 L'école anglaise a tendance à préférer les
 `p-values <https://en.wikipedia.org/wiki/P-value>`_,
 l'école française préfère les
-`intervalles de confiance <https://fr.wikipedia.org/wiki/Intervalle_de_confiance>`_.
+`intervalles de confiance
+<https://fr.wikipedia.org/wiki/Intervalle_de_confiance>`_.
 Ces deux notions sont équivalentes mais connaissez-vous le lien
 qui les unit ?
 

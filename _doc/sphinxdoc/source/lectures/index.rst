@@ -1,6 +1,6 @@
-================================
-Lectures sur le machine learning
-================================
+========
+Lectures
+========
 
 Le :epkg:`machine learning` répond à de plus en plus de
 problématiques, beaucoup d'entre elles sont citées

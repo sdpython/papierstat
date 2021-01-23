@@ -1,6 +1,6 @@
-=============================
-Histoires de machine learning
-=============================
+=========
+Histoires
+=========
 
 L'idée de cette partie est d'aborder le machine
 learning comme une histoire et d'oublier les données,
