@@ -9,7 +9,7 @@
     du cours de machine learning pour l'économie et
     la finance.
 
-    ** Séance 1**
+    **Séance 1**
 
     * `Python <https://www.python.org/>`_,
       `Anaconda <https://www.anaconda.com/>`_,
@@ -35,6 +35,7 @@
       `Valeurs manquantes (notebooks) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
     * `Réseaux de neurones <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
       (inférence, gradient)
+    * Apprentissage à base de gradients, différences avec les arbres
 	* `Deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
 	* :epkg:`tensorflow`, :epkg:`pytorch`, :epkg:`paddlepaddle`, :epkg:`chainer`
 	* GPU ?
@@ -71,8 +72,9 @@
     * Interprétabilité des modèles
 	* Modèles éthiques
     * Machine learning crypté
+    * Survival analysis
 
-    **Un peu plus de détail sur la séance 1**
+    **Un peu plus de détails sur la séance 1**
 
     Projet de machine learning
 	* Récupérer les données  --> dataframe (pandas.read_csv("...", sep=";"))
