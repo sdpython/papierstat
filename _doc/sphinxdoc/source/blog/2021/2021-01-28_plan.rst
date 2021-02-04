@@ -41,7 +41,8 @@
       <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
       (inférence, gradient)
     * Apprentissage à base de gradients, différences avec les arbres
-	* `Deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
+	* `Deep learning
+      <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
 	* :epkg:`tensorflow`, :epkg:`pytorch`, :epkg:`paddlepaddle`, :epkg:`chainer`
 	* GPU ?
 	* Zoo de modèles, `paddlepaddle <https://github.com/PaddlePaddle/PaddleClas>`_,
