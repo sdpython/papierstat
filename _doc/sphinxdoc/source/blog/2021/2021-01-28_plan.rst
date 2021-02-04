@@ -26,14 +26,19 @@
       `graphe erreur ROC <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html#graphe-erreur-roc>`_
     * `Ridge, Lasso <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/2020-02-07_sklapi.html>`_
     * Decision Tree,
-      `Arbres de décision / Random Forest <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_3B.html>`_,
-      `Prédiction d’une durée <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/artificiel_duration_prediction.html>`_
+      `Arbres de décision / Random Forest
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_3B.html>`_,
+      `Prédiction d'une durée
+      <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/artificiel_duration_prediction.html>`_
 
     **Séance 2**
 
-    * `Valeurs manquantes (cheatsheet) <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
-      `Valeurs manquantes (notebooks) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
-    * `Réseaux de neurones <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
+    * `Valeurs manquantes (cheatsheet)
+      <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
+      `Valeurs manquantes (notebooks)
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
+    * `Réseaux de neurones
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
       (inférence, gradient)
     * Apprentissage à base de gradients, différences avec les arbres
 	* `Deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
@@ -92,3 +97,57 @@
     * `Courbe ROC <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html>`_
     * Pour la régression Lasso est utilisée pour sélectionner les variables
       en annulant les coefficients : :ref:`Lasso <2020-02-07sklapirst>`.
+
+    **Un peu plus de détails sur la séance 2**
+    
+    * `Valeurs manquantes (cheatsheet)
+      <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
+      `Valeurs manquantes (notebooks)
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_ :
+        * méthode naïve
+        * corrélations
+        * `KNNImputer
+          <https://scikit-learn.org/stable/modules/generated/sklearn.impute.KNNImputer.html>`_
+    * `Réseaux de neurones
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
+      (inférence, gradient)
+        * `un neurone <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_1_def.html#un-neurone>`_
+        * `réseau de neurones
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_1_def.html#un-reseau-de-neurones-le-perceptron>`_
+        * propagation (évaluation)
+        * `densité
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_4_densite.html#densite-des-reseaux-de-neurones>`_
+        * `apprentissage à base de gradient
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_5_newton.html>`_
+        * `rétropropagation
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_5_newton.html#calcul-du-gradient-ou-retropropagation>`_
+        * `gradient stochastique
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_6_apprentissage.html#apprentissage-avec-gradient-stochastique>`_,
+          `implémentation
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/mlstatpy/optim/sgd.html#mlstatpy.optim.sgd.SGDOptimizer>`_
+        * `régression
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_2_reg.html>`_
+        * `classification
+          <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_7_clas2.html#reseau-de-neurones-adequat>`_
+        * normalisation
+    * Réseau de neurones ou arbres ?
+    * `Gradient Boosting
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/gradient_boosting.html>`_
+	* `Deep learning
+      <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
+    * `Réseaux à convolution <https://en.wikipedia.org/wiki/Convolutional_neural_network>`_
+	* :epkg:`tensorflow`, :epkg:`pytorch`, :epkg:`paddlepaddle`, :epkg:`chainer`
+    * `exemple
+      <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/all_notebooks.html>`_
+    * `Yolo <https://www.youtube.com/watch?v=Cgxsv1riJhI>`_,
+      `Yolo explanations <https://www.youtube.com/watch?v=NM6lrxy0bxs>`_
+    * `Parler avec les mains à une machine
+      <https://research.fb.com/publications/constraining-dense-hand-surface-tracking-with-elasticity/>`_
+	* GPU ?
+	* Zoo de modèles, `paddlepaddle <https://github.com/PaddlePaddle/PaddleClas>`_,
+      `TensorFlow Hub <https://www.tensorflow.org/hub>`_,
+      `PyTorch Zoo <https://pytorch.org/docs/stable/torchvision/models.html>`_
+	* `Transfer Learning <http://www.xavierdupre.fr/app/mlprodict/helpsphinx/notebooks/transfer_learning.html>`_
+    * Mise en production... `docker <https://www.docker.com/>`_,
+      `ONNX <https://onnx.ai/>`_ ?
+    * attention, transformers
