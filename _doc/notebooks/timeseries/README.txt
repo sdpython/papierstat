@@ -1,7 +1,7 @@
 Timeseries
 ==========
 
-Ou séries temporelles.
+Ou sÃ©ries temporelles.
 
 .. contents::
     :local:
