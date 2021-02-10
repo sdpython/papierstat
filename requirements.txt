@@ -23,6 +23,7 @@ statsmodels
 toolz
 
 # other
+aftercovid
 branca
 dbfread
 cairocffi
@@ -34,6 +35,7 @@ coverage
 dtreeviz
 folium
 google_compute_engine
+hmmlearn
 jyquickhelper>=0.3
 lightgbm
 mlinsights>=0.2
@@ -45,6 +47,7 @@ pyensae
 pylint
 pyquickhelper>=1.10
 pyyaml
+ruptures
 spacy
 shapely
 sphinx-bootstrap-theme
