@@ -6,3 +6,4 @@ Séries temporelles
     :local:
 
     ../notebooks/ts_covid
+    ../notebooks/ts_pred

@@ -156,7 +156,9 @@
     **Un peu plus de détails sur la séance 3**
 
     * :ref:`tscovidrst`
+    * :ref:`tspredrst`
+    * `Single Spectrum Analysis (SSA)
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/timeseries_ssa.html>`_
     * `aftercovid <http://www.xavierdupre.fr/app/aftercovid/helpsphinx/index.html>`_
     * `Algo - simulation COVID
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2020_covid.html>`_
-
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2020_covid.html>`_

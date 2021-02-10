@@ -27,6 +27,18 @@ class TestNotebookTsCovid(unittest.TestCase):
         test_notebook_execution_coverage(
             __file__, "ts_covid", folder, 'papierstat', copy_files=[], fLOG=fLOG)
 
+    def test_notebook_ts_pred(self):
+        fLOG(
+            __file__,
+            self._testMethodName,
+            OutputPrint=__name__ == "__main__")
+
+        self.assertTrue(papierstat is not None)
+        folder = os.path.join(os.path.dirname(__file__),
+                              "..", "..", "_doc", "notebooks", "timeseries")
+        test_notebook_execution_coverage(
+            __file__, "ts_pred", folder, 'papierstat', copy_files=[], fLOG=fLOG)
+
 
 if __name__ == "__main__":
     unittest.main()
