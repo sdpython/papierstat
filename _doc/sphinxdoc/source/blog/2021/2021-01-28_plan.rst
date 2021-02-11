@@ -132,10 +132,8 @@
           <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn_7_clas2.html#reseau-de-neurones-adequat>`_
         * normalisation
     * Réseau de neurones ou arbres ?
-    * `Gradient Boosting
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/gradient_boosting.html>`_
-	* `Deep learning
-      <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
+    * `Gradient Boosting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/gradient_boosting.html>`_
+	* `Deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
     * `Réseaux à convolution <https://en.wikipedia.org/wiki/Convolutional_neural_network>`_
 	* :epkg:`tensorflow`, :epkg:`pytorch`, :epkg:`paddlepaddle`, :epkg:`chainer`
     * `exemple
@@ -162,3 +160,5 @@
     * `aftercovid <http://www.xavierdupre.fr/app/aftercovid/helpsphinx/index.html>`_
     * `Algo - simulation COVID
       <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2020_covid.html>`_
+    * `Evolution d'un voisinage, d'une population
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/specials/voisinage.html?highlight=propagation_epidemic>`_
