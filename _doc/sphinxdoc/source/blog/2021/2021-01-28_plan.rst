@@ -162,3 +162,7 @@
       <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2020_covid.html>`_
     * `Evolution d'un voisinage, d'une population
       <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/specials/voisinage.html?highlight=propagation_epidemic>`_
+
+    Les données du jour :
+    `Chiffres-clés concernant l'épidémie de COVID19 en France
+    <https://www.data.gouv.fr/en/datasets/chiffres-cles-concernant-lepidemie-de-covid19-en-france/>`_.
