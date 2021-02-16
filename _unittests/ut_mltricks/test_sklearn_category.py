@@ -150,7 +150,7 @@ class TestSklearnCategory(ExtTestCase):
         acc2 = accuracy_score(y_test, clr.predict(X_test))
         self.assertGreater(acc1, 0.45)
         self.assertGreater(acc2, 0.45)
-        self.assertGreater(acc1, acc2 * 0.999)
+        self.assertGreater(acc1, acc2 * 0.9999)
 
 
 if __name__ == "__main__":
