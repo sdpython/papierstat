@@ -166,3 +166,60 @@
     Les données du jour :
     `Chiffres-clés concernant l'épidémie de COVID19 en France
     <https://www.data.gouv.fr/en/datasets/chiffres-cles-concernant-lepidemie-de-covid19-en-france/>`_.
+
+    **Un peu plus de détails sur la séance 4**
+
+    Covid ?
+
+    *scraping*
+
+    * `JSON <https://www.json.org/json-en.html>`_,
+      `xml <https://fr.wikipedia.org/wiki/Extensible_Markup_Language>`_
+    * `Web-Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_,
+      `Web-Scraping (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_,
+      `Scraping, récupérer une image depuis LeMonde <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2018-10-02_scraping_recuperer_images.html>`_
+    * cache, javascript
+    * blacklist
+    * `TOR <https://fr.wikipedia.org/wiki/Tor_(r%C3%A9seau)>`_
+    * `wikipedia dump <https://dumps.wikimedia.org/>`_
+    * `expression régulière <https://docs.python.org/3/library/re.html>`_
+
+    *API REST*
+
+    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html>`_,
+      `API REST SNCF <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_API_SNCF.html>`_,
+      `API REST SNCF (corrigé) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_API_SNCF_corrige.html>`_
+    * `Créer sa propre API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2020_rest.html>`_
+
+    *Catégories*
+
+    * `OneHotEncoder <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html>`_
+    * `category_encoders <https://contrib.scikit-learn.org/category_encoders/>`_
+    * 1 colonne par catégorie ça fait beaucoup de colonne
+    * pourquoi encoder --> ordre des catégories
+    * `dirty_cat <https://dirty-cat.github.io/stable/>`_
+
+    *Texte libre*
+
+    * `Introduction au text mining <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_,
+      `Analyse de sentiments - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis_correction.html>`_
+    * bag of words (sac de mots), tokenisation, stop-words, TD-IDF, n-grammes
+    * word embedding (word2vec, gloves)
+    * `auto-encoders <https://en.wikipedia.org/wiki/Autoencoder>`_
+    * `HuggingFace <https://huggingface.co/>`_,
+      `hugging face transformers <https://huggingface.co/transformers/>`_,
+      `huggingface github <https://github.com/huggingface/transformers>`_
+    * `spacy <https://spacy.io/>`_,
+      `nltk <https://www.nltk.org/>`_,
+      `gensim <https://radimrehurek.com/gensim/auto_examples/index.html>`_
+
+    *topics*
+
+    * `LDA <https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation>`_
+
+    *devinette*
+
+    Un chalutier mesure la taille de tous les poissons pris.
+    Comment estimer la proportion de mâles et femelles sachant
+    qu'ils n'ont en moyenne pas la même taille ?

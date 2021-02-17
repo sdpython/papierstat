@@ -26,26 +26,9 @@ if False:
     html_sidebars['*'] = html_sidebars['**']
     html_sidebars[''] = html_sidebars['*']
 
-if html_theme == "bootstrap":
-    html_theme_options = {
-        'navbar_title': "BASE",
-        'navbar_site_name': "Site",
-        'navbar_links': [
-            ("XD", "http://www.xavierdupre.fr", True),
-        ],
-        'navbar_sidebarrel': True,
-        'navbar_pagenav': True,
-        'navbar_pagenav_name': "Page",
-        'bootswatch_theme': "readable",
-        # united = weird colors, sandstone=green, simplex=red, paper=trop bleu
-        # lumen: OK
-        # to try, yeti, flatly, paper
-        'bootstrap_version': "3",
-        'source_link_position': "footer",
-    }
-
 html_context = {
-    'css_files': get_default_stylesheet() + ['_static/my-styles.css', '_static/gallery.css'],
+    'css_files': get_default_stylesheet(
+        ['_static/my-styles.css', '_static/gallery.css']),
 }
 
 
