@@ -223,3 +223,49 @@
     Un chalutier mesure la taille de tous les poissons pris.
     Comment estimer la proportion de mâles et femelles sachant
     qu'ils n'ont en moyenne pas la même taille ?
+
+    **Un peu plus de détails sur la séance 5**
+    
+    *scikit-learn API*
+    
+    Construire un modèle qui effectue
+    une rotation des features avant un arbre de décision,
+    voir `API de sciki-learn et modèles customisés
+    <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/sklearn_api.html>`_,
+    `FunctionTransformer
+    <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.FunctionTransformer.html>`_.
+    
+    *Analyse de survie*
+    
+    `Analyse de survie
+    <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/survival_analysis.html>`_
+    
+    *Interprétabilité* (voir `Interpretable Machine Learning
+    <https://christophm.github.io/interpretable-ml-book/>`_)
+    
+    * `Partial Dependence and Individual Conditional Expectation plots
+      <https://scikit-learn.org/stable/modules/partial_dependence.html>`_
+    * `LIME (Local Interpretable Model-Agnostic Explanations) <https://arxiv.org/pdf/1602.04938v1.pdf>`_
+        * Approximer localement la prédiction d'un modèle par un modèle interprétable (comme une régression Lasso),
+          cela revient en quelque sorte à calculer le gradient du modèle en chaque feature pour un point donnée.
+        * .. image:: lime.png
+    	* Simplifier l'analyse en groupant les variables (pixels) si trop de variables
+    * `SHAP (SHapley Additive exPlanations) <https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf>`_
+		* Value d'une variable : on calcule l'espérance de la prédiction
+          en tirant aléatoirement des valeurs pour cette variable (loi marginal),
+          on fait la différence avec la prédiction moyenne.
+        * Lire `Shapley Values <https://christophm.github.io/interpretable-ml-book/shapley.html>`_
+		* .. image:: shap.png
+		* .. image:: shap2.png
+    * `CounterFactual <https://christophm.github.io/interpretable-ml-book/counterfactual.html>`_
+		* Dérivées partielles
+        * La prédiction est *Y*, on souhaite *Z*,
+          quelle est le plus petit changement dans *X* pour avoir *Z* ?
+    * Cas des variables corrélées
+
+    *Ethique*
+
+    * `Machine Learning éthique
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_machine_learning_ethique.html>`_
+    * `fairlearn <https://github.com/fairlearn/fairlearn>`_
+    * variable de contrôle
