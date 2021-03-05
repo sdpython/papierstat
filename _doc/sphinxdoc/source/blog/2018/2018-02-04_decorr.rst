@@ -9,4 +9,4 @@
     les prennent tous, forment une base orthogonale de l'espace
     initiale. Une autre approche consiste à calculer la
     racine carrée de la matrice des covariance :
-    `Décorrélation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/decorrelation_correction.html#decorrelationcorrectionrst>`_.
+    `Décorrélation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/decorrelation_correction.html#decorrelationcorrectionrst>`_.

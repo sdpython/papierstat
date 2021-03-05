@@ -16,14 +16,14 @@
       :epkg:`pandas`, :epkg:`numpy`, :epkg:`jupyter`,
       :epkg:`matplotlib`
     * Ressource `www.xavierdupre.fr <www.xavierdupre.fr>`_
-    * `Source de données <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ressources.html#source-de-donnees>`_
+    * `Source de données <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ressources.html#source-de-donnees>`_
     * :epkg:`scikit-learn`
     * :ref:`l-regclass`, multi-classification
     * `métriques <https://scikit-learn.org/stable/modules/model_evaluation.html>`_
     * `Imbalanced problem <https://github.com/scikit-learn-contrib/imbalanced-learn>`_
     * Courbe ROC, AUC, voir :ref:`winescolorrocrst`,
       `Courbe ROC <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html>`_,
-      `graphe erreur ROC <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html#graphe-erreur-roc>`_
+      `graphe erreur ROC <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_c_machine_learning_problems.html#graphe-erreur-roc>`_
     * `Ridge, Lasso <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/2020-02-07_sklapi.html>`_
     * Decision Tree,
       `Arbres de décision / Random Forest
@@ -36,7 +36,7 @@
     * `Valeurs manquantes (cheatsheet)
       <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
       `Valeurs manquantes (notebooks)
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
     * `Réseaux de neurones
       <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
       (inférence, gradient)
@@ -104,7 +104,7 @@
     * `Valeurs manquantes (cheatsheet)
       <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
       `Valeurs manquantes (notebooks)
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_ :
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_ :
         * méthode naïve
         * corrélations
         * `KNNImputer
@@ -156,7 +156,7 @@
     * :ref:`tscovidrst`
     * :ref:`tspredrst`
     * `Single Spectrum Analysis (SSA)
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/timeseries_ssa.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/timeseries_ssa.html>`_
     * `aftercovid <http://www.xavierdupre.fr/app/aftercovid/helpsphinx/index.html>`_
     * `Algo - simulation COVID
       <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2020_covid.html>`_
@@ -175,9 +175,9 @@
 
     * `JSON <https://www.json.org/json-en.html>`_,
       `xml <https://fr.wikipedia.org/wiki/Extensible_Markup_Language>`_
-    * `Web-Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_,
-      `Web-Scraping (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_,
-      `Scraping, récupérer une image depuis LeMonde <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2018-10-02_scraping_recuperer_images.html>`_
+    * `Web-Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping.html>`_,
+      `Web-Scraping (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_,
+      `Scraping, récupérer une image depuis LeMonde <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2018-10-02_scraping_recuperer_images.html>`_
     * cache, javascript
     * blacklist
     * `TOR <https://fr.wikipedia.org/wiki/Tor_(r%C3%A9seau)>`_
@@ -186,10 +186,10 @@
 
     *API REST*
 
-    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html>`_,
-      `API REST SNCF <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_API_SNCF.html>`_,
-      `API REST SNCF (corrigé) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_API_SNCF_corrige.html>`_
-    * `Créer sa propre API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2020_rest.html>`_
+    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_eco_les_API.html>`_,
+      `API REST SNCF <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_eco_API_SNCF.html>`_,
+      `API REST SNCF (corrigé) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_eco_API_SNCF_corrige.html>`_
+    * `Créer sa propre API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2020_rest.html>`_
 
     *Catégories*
 
@@ -201,9 +201,9 @@
 
     *Texte libre*
 
-    * `Introduction au text mining <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
-    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_,
-      `Analyse de sentiments - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis_correction.html>`_
+    * `Introduction au text mining <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis.html>`_,
+      `Analyse de sentiments - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis_correction.html>`_
     * bag of words (sac de mots), tokenisation, stop-words, TD-IDF, n-grammes
     * word embedding (word2vec, gloves)
     * `auto-encoders <https://en.wikipedia.org/wiki/Autoencoder>`_
@@ -268,6 +268,6 @@
     *Ethique*
 
     * `Machine Learning éthique
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_machine_learning_ethique.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlplus_machine_learning_ethique.html>`_
     * `fairlearn <https://github.com/fairlearn/fairlearn>`_
     * variable de contrôle

@@ -7,7 +7,7 @@
 
     Séries temporelles :
 
-    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a_mlplus.html#timeseries-series-temporelles>`_
+    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/td_2a_mlplus.html#timeseries-series-temporelles>`_
 
     Deep Learning
 

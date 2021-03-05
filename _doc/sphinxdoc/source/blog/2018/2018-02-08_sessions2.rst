@@ -24,7 +24,7 @@
       avec le même modèle appris sur l'ensemble de la base
     * Pourrait-on envisager l'écriture d'un régresseur un peu plus générique
       qui estimerait un modèle sur chacune des modalités prises par une variable de la base.
-      On pourra s'inspirer de `SkLearnerBase <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ensae_teaching_cs/ml/sklearn_base_learner.html?highlight=skbaselearner#ensae_teaching_cs.ml.sklearn_base_learner.SkBaseLearner>`_.
+      On pourra s'inspirer de `SkLearnerBase <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ensae_teaching_cs/ml/sklearn_base_learner.html?highlight=skbaselearner#ensae_teaching_cs.ml.sklearn_base_learner.SkBaseLearner>`_.
     * Comparer un arbre de décision appris sur un problème multi-classe
       et un ensemble d'arbres de décision binaire avec
       `OneVsRestClassifier <http://scikit-learn.org/stable/modules/generated/sklearn.multiclass.OneVsRestClassifier.html>`_.

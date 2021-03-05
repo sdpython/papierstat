@@ -4,7 +4,7 @@ Bibliographie
 
 *Anti-sèches*
 
-* `Anti-sèches de machine learning <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ii_antiseches.html>`_
+* `Anti-sèches de machine learning <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ii_antiseches.html>`_
 
 *Blog*
 

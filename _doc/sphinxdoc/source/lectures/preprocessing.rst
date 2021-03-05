@@ -88,7 +88,7 @@ du nombre de catégories : il y en a trop parfois.
     ../notebooks/artificiel_category_2
     ../notebooks/adult_cat
 
-Une fonction de `hash <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html?highlight=hash>`_
+Une fonction de `hash <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/hash_distribution.html?highlight=hash>`_
 possède des propriétés statistiques intéressantes car elle permet
 de lisser une distribution. On s'en sert lorsque le nombre
 de modalités est trop important. Plutôt que de choisir quelles

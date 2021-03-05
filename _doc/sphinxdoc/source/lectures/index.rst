@@ -4,7 +4,7 @@ Lectures
 
 Le :epkg:`machine learning` répond à de plus en plus de
 problématiques, beaucoup d'entre elles sont citées
-sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_2a.html>`_
+sur ce cours `Python pour un Data Scientist / Economiste <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/td_2a.html>`_
 proposé à l':epkg:`ENSAE` qui comprend des exercices, des articles et les modules
 qui implémentent quelques algorithmes.
 Quelques thèmes liés au :epkg:`machine learning`

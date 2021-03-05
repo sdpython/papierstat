@@ -8,13 +8,13 @@
     *Scrapping*
 
     * `Scraping, récupérer une image depuis LeMonde
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2018-10-02_scraping_recuperer_images.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2018-10-02_scraping_recuperer_images.html>`_
     * `Web-Scraping
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_,
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping.html>`_,
       `Web-Scraping - correction
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping_corrige.html>`_
     * `API, API REST
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_eco_les_API.html>`_
 
     *Séries temporelles*
 
@@ -28,20 +28,20 @@
     des jours fériés.
     Trois notebooks extraits de la page
     `Timeseries - Séries temporelles
-    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_timeseries_series_temporelles.html>`_.
+    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlplus_timeseries_series_temporelles.html>`_.
 
-    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_timeseries.html>`_
-    * `Séries temporelles - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_timeseries_correction.html>`_
-    * `Timeseries et machine learning <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_timeseries_base.html>`_
-    * `Single Spectrum Analysis (SSA) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/timeseries_ssa.html?highlight=statsmodels>`_
+    * `Séries temporelles <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_timeseries.html>`_
+    * `Séries temporelles - correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_timeseries_correction.html>`_
+    * `Timeseries et machine learning <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_timeseries_base.html>`_
+    * `Single Spectrum Analysis (SSA) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/timeseries_ssa.html?highlight=statsmodels>`_
 
     *Texte*
 
     * `Introduction au text mining
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
-    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
-    * `Analyse de sentiments correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_eco_NLP_tf_idf_ngrams_LDA_word2vec_sur_des_extraits_litteraires.html>`_
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis.html>`_
+    * `Analyse de sentiments correction <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis.html>`_
 
     Quelques liens :
     `Cours de deep learning appliqués au NLP
-    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/blog/2017/2017-11-13_nlp.html>`_.
+    <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/blog/2017/2017-11-13_nlp.html>`_.

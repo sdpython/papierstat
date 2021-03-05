@@ -7,10 +7,10 @@
 
     **Scraping**
 
-    * `Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3///notebooks/2018-10-02_scraping_recuperer_images.html>`_
-    * `Un peu plus sur le scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping.html>`_
-      (`éléments de réponses <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_Eco_Web_Scraping_corrige.html?highlight=scraping>`_)
-    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/TD2A_eco_les_API.html?highlight=scraping>`_
+    * `Scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx///notebooks/2018-10-02_scraping_recuperer_images.html>`_
+    * `Un peu plus sur le scraping <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping.html>`_
+      (`éléments de réponses <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_Eco_Web_Scraping_corrige.html?highlight=scraping>`_)
+    * `API REST <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/TD2A_eco_les_API.html?highlight=scraping>`_
 
     **Devinettes**
 
@@ -20,8 +20,8 @@
 
     * :ref:`l-preprocessing`
     * :ref:`artificieltokenizerst`
-    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis.html>`_
-      (`éléments de réponse <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_sentiment_analysis_correction.html>`_)
+    * `Analyse de sentiments <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis.html>`_
+      (`éléments de réponse <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_sentiment_analysis_correction.html>`_)
 
     **Regarder les données**
 

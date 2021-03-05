@@ -13,8 +13,8 @@
     * `Tracer une pyramide bigarrée <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/pyramide_bigarree.html#pyramidebigarreerst>`_
     * `Reconstruction de synonymes - énoncé <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_enonce.html#reconstructionsynonymesenoncerst>`_
     * `Reconstruction de synonymes - correction <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/reconstruction_synonymes_correction.html#reconstructionsynonymescorrectionrst>`_
-    * `Tests unitaires, setup et ingéniérie logicielle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_unit_test_ci.html>`_
-    * `Tests unitaires, setup et ingéniérie logiciel (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_unit_test_ci_correction.html>`_
+    * `Tests unitaires, setup et ingéniérie logicielle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_unit_test_ci.html>`_
+    * `Tests unitaires, setup et ingéniérie logiciel (correction) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_unit_test_ci_correction.html>`_
 
     Les outils open source évoqués pour la mise en production
     de modèles de machine learning :

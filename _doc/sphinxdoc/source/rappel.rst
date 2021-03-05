@@ -312,14 +312,14 @@ Il vaut mieux savoir programmer avant de lire la suite
 avoir la volonté de pratiquer. Tous les exemples sont
 proposés en langage :epkg:`Python` et voici quelques points
 qu'il vous faudra savoir maîtriser :
-`Rappel de ce que vous savez déjà mais avez peut-être oublié <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2_eco_rappels_1a.html>`_.
+`Rappel de ce que vous savez déjà mais avez peut-être oublié <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2_eco_rappels_1a.html>`_.
 Vous devriez également savoir faire sans regarder la solution
 les exercices
-`Exemples classiques <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/i_examples_classiques.html>`_,
+`Exemples classiques <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/i_examples_classiques.html>`_,
 vous devriez comprendre les gammes proposées par
-`D'une structure de données à l'autre <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/structures_donnees_conversion.html>`_
+`D'une structure de données à l'autre <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/structures_donnees_conversion.html>`_
 et savoir choisir quel objet est le plus approprié :
-`Liste, tuple, ensemble, dictionnaire, liste chaînée, coût des opérations <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/code_liste_tuple.html>`_.
+`Liste, tuple, ensemble, dictionnaire, liste chaînée, coût des opérations <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/code_liste_tuple.html>`_.
 La programmation a pris beaucoup d'ampleur aujourd'hui.
 Il faut imaginer que les mathématiciens ont fait tous leur calculs
 sans machine jusqu'à la seconde guerre mondiale alors qu'il est
@@ -357,7 +357,7 @@ type d'information, nombre ou texte le plus souvent.
 Le module :epkg:`pandas` a considérablement
 facilité leur utilisation en :epkg:`Python`.
 Pour vous exercez
-`DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_1.html>`_.
+`DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_1.html>`_.
 
 .. index:: array
 
@@ -367,9 +367,9 @@ Array
 C'est la représentation informatique d'une matrice
 et des opérations qui lui sont associées.
 Pour vous exercez :
-`Calcul Matriciel, Optimisation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_2A.html>`_.
+`Calcul Matriciel, Optimisation <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_2A.html>`_.
 Lire également
-`Pourquoi pandas et numpy, pourquoi pas seulement pandas (2A) ? <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/blog/2017/2017-09-19_pandas_numpy.html>`_.
+`Pourquoi pandas et numpy, pourquoi pas seulement pandas (2A) ? <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/blog/2017/2017-09-19_pandas_numpy.html>`_.
 
 .. index:: fonction de hash, hash
 
@@ -384,7 +384,7 @@ une fois *hashées*. Cette fonction est aussi une façon d'uniformiser une distr
 Cette propriété est utilisée pour optimiser le coût de nombreux algorithmes. Elle
 garantit la construction d'arbres équilibrés et améliore la répartition des calculs.
 Pour en savoir plus à ce sujet :
-`Hash et distribution <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/hash_distribution.html>`_.
+`Hash et distribution <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/hash_distribution.html>`_.
 
 .. index:: arbre, graphe
 
@@ -398,7 +398,7 @@ Les deux examens suivant illustrent en quoi les arbres de décision
 sont intéressants :
 `ENSAE TD noté, mardi 12 décembre 2017 <http://www.xavierdupre.fr/site2013/enseignements/tdnoteseul/td_note_2018.pdf>`_.
 Les exercices suivant vous montre un cas concret d'utilisation :
-`Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session8.html>`_.
+`Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_cenonce_session8.html>`_.
 
 Rappels algorithmiques
 ======================
@@ -409,7 +409,7 @@ veut écrire un programme efficace. C'est un enseignement qui est
 dispensé au lycée dans les pays de l'Est, souvent après 20 ans
 et pas dans toutes les écoles en France.
 Pour avoir un aperçu de tout ce que vous avez raté :
-`Culture Algorithmique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/specials/algorithm_culture.html>`_.
+`Culture Algorithmique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/specials/algorithm_culture.html>`_.
 En accéléré, très accéléré, il faut absolument connaître l'algorithme
 du `plus court chemin <https://fr.wikipedia.org/wiki/Probl%C3%A8me_de_plus_court_chemin>`_,
 celui du `voyageur de commerce <https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_voyageur_de_commerce>`_
@@ -424,7 +424,7 @@ temps quadratique pour la recherche du plus court chemin,
 temps exponentiel et quasiment infini pour le voyageur
 du commerce, temps logarithmique pour la recherche  dichotomique.
 Pour vous exercer :
-`Algorithmes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/td_1a.html#td-algorithmes>`_.
+`Algorithmes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/td_1a.html#td-algorithmes>`_.
 
 .. index:: plus court chemin dans un graphe, Dijkstra
 
@@ -441,8 +441,8 @@ l'`algorithme de Viterbi <https://fr.wikipedia.org/wiki/Algorithme_de_Viterbi>`_
 On le retrouve également dans la distance d'édition ou de
 `Levenstein <https://fr.wikipedia.org/wiki/Distance_de_Levenshtein>`_.
 Quelques exerices pour vous exercer :
-`Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7.html>`_,
-`La distance d'édition <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7_edition.html>`_.
+`Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_cenonce_session7.html>`_,
+`La distance d'édition <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_cenonce_session7_edition.html>`_.
 La page suivante `Distance d'édition <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_dist/edit_distance.html>`_
 se propose d'aller un peu plus loin.
 
@@ -456,7 +456,7 @@ Il consiste à optimiser la recherche d'un élément dans un tableau trié.
 La `recherche dichotomique <https://fr.wikipedia.org/wiki/Recherche_dichotomique>`_
 est une des petites choses qu'on teste lors d'un entretien d'embauche.
 Quelques exercices pour vous exercer :
-`Recherche dichotomique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/recherche_dichotomique.html?highlight=dichotomie>`_.
+`Recherche dichotomique <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/recherche_dichotomique.html?highlight=dichotomie>`_.
 La recherche dichotomique en plusieurs dimensions
 est utilisée via des structures telles que
 `k-d tree <https://fr.wikipedia.org/wiki/Arbre_kd>`_.
@@ -556,14 +556,14 @@ Si tous ces rappels vous sont connus, vous devriez être prêt
 à résoudre quelques exercices et énigmes :
 
 * `Tracer une pyramide bigarrée <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/pyramide_bigarree.html>`_
-* `2048 - stratégie gagnante <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/j2048.html>`_
-* `Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session7.html>`_
-* `Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td1a_cenonce_session8.html>`_
-* `Spectral Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/graph_spectral_clustering.html>`_
-* `Décorrélation de variables aléatoires <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/decorrelation.html>`_
+* `2048 - stratégie gagnante <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/j2048.html>`_
+* `Programmation dynamique et plus court chemin <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_cenonce_session7.html>`_
+* `Arbre et Trie <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td1a_cenonce_session8.html>`_
+* `Spectral Clustering <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/graph_spectral_clustering.html>`_
+* `Décorrélation de variables aléatoires <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/decorrelation.html>`_
 * `Challenges algorithmiques <http://www.xavierdupre.fr/app/ensae_projects/helpsphinx/index.html#challenges>`_
 
 Un dernier lien vers des exercices dont les questions sont plus détaillées et
 corrigées :
 
-* `exercices corrigés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/questions/exams_1A.html#seances-notees>`_
+* `exercices corrigés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/questions/exams_1A.html#seances-notees>`_

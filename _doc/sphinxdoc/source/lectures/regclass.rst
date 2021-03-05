@@ -29,8 +29,8 @@ composants.
 
 *Quelques lectures :*
 
-* `Problèmes classiques de machine learning illustrés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_c_machine_learning_problems.html>`_
-* `Machine Learning par Gaël Varoquaux <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/all_notebooks.html#a-sklearn-ensae-course>`_
+* `Problèmes classiques de machine learning illustrés <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_c_machine_learning_problems.html>`_
+* `Machine Learning par Gaël Varoquaux <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/all_notebooks.html#a-sklearn-ensae-course>`_
 
 Ce jeu de données peut également être téléchargé avec la fonction
 :func:`load_wines_dataset <papierstat.datasets.wines.load_wines_dataset>`.
@@ -484,7 +484,7 @@ Un modèle plus compliqué améliore souvent les performances.
 Il est possible aussi d'ajouter des variables construites
 de façon non linéaire à partir des premières. Le procédé est plus
 ou moins automatique mais donne parfois de bons résultats :
-`Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_features_model.html>`_.
+`Features ou modèle <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_features_model.html>`_.
 
 .. _l-multiclass:
 
@@ -557,7 +557,7 @@ nativement la multi-classification.
 Machine learning et programmation
 +++++++++++++++++++++++++++++++++
 
-L'`API de scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_
+L'`API de scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/02_basic_of_machine_learning_with_scikit-learn.html#a-recap-on-scikit-learn-s-estimator-interface>`_
 se résume à peu de choses et permet déjà de faire des choses assez
 puissantes. On peut par exemple faire de l'optimisation d'hyperparamètres
 sur des assemblages de *transform*, *learner*. On appelle
@@ -608,9 +608,9 @@ d'automatiser.
 Exercices
 +++++++++
 
-* `Arbres de décision / Random Forest <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_3B.html>`_
-* `Machine Learning et Marketting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_4A.html>`_
-* `Tree, overfitting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/ml_a_tree_overfitting.html>`_
+* `Arbres de décision / Random Forest <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_3B.html>`_
+* `Machine Learning et Marketting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_4A.html>`_
+* `Tree, overfitting <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_a_tree_overfitting.html>`_
 * `Comparaison de deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
 
 Bibliographie

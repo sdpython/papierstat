@@ -18,7 +18,7 @@
     `Cheat Sheet Pandas <https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf>`_.
     Quelques exercices :
 
-    * `DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/td2a_cenonce_session_1.html>`_
+    * `DataFrame et Graphes <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_1.html>`_
     * `Comparer deux régressions <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/enonce_2017.html#enonce2017rst>`_
 
     Le contenu est hébergé sur `github/papierstat <https://github.com/sdpython/papierstat/>`_,

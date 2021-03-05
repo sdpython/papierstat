@@ -15,5 +15,5 @@
       `ElasticNet <http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html#sklearn.linear_model.ElasticNet>`_
     * :ref:`l-cheatsheet-ml`
     * Notions de pipeline
-      `API de scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/notebooks/2018-09-18_sklearn_api.html>`_,
+      `API de scikit-learn <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/2018-09-18_sklearn_api.html>`_,
       `Visualisation de pipeline <http://www.xavierdupre.fr/app/mlinsights/helpsphinx/all_notebooks.html>`_
