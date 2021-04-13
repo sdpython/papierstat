@@ -46,6 +46,7 @@ pydata_sphinx_theme
 pyensae
 pylint
 pyquickhelper>=1.10
+pyquicksetup
 pyyaml
 ruptures
 spacy
