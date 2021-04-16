@@ -225,24 +225,24 @@
     qu'ils n'ont en moyenne pas la même taille ?
 
     **Un peu plus de détails sur la séance 5**
-    
+
     *scikit-learn API*
-    
+
     Construire un modèle qui effectue
     une rotation des features avant un arbre de décision,
     voir `API de sciki-learn et modèles customisés
     <http://www.xavierdupre.fr/app/jupytalk/helpsphinx/notebooks/sklearn_api.html>`_,
     `FunctionTransformer
     <https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.FunctionTransformer.html>`_.
-    
+
     *Analyse de survie*
-    
+
     `Analyse de survie
     <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/survival_analysis.html>`_
-    
+
     *Interprétabilité* (voir `Interpretable Machine Learning
     <https://christophm.github.io/interpretable-ml-book/>`_)
-    
+
     * `Partial Dependence and Individual Conditional Expectation plots
       <https://scikit-learn.org/stable/modules/partial_dependence.html>`_,
       `SOME GENERAL THOUGHTS ON PARTIAL DEPENDENCE PLOTS WITH CORRELATED COVARIATES
