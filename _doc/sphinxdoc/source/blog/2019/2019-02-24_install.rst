@@ -188,7 +188,6 @@
         sphinx-rtd-theme==0.4.3
         sphinxcontrib-blockdiag==1.5.5
         sphinxcontrib-imagesvg==0.1
-        sphinxcontrib-jsdemo==0.1.4
         sphinxcontrib-websupport==1.1.0
         statsmodels==0.9.0
         tabledata==0.8.0
