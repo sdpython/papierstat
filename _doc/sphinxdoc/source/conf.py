@@ -3,7 +3,7 @@ import sys
 import os
 # import guzzle_sphinx_theme
 import pydata_sphinx_theme
-from pyquickhelper.helpgen.default_conf import set_sphinx_variables, get_default_stylesheet
+from pyquickhelper.helpgen.default_conf import set_sphinx_variables
 
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.split(__file__)[0])))
@@ -26,11 +26,7 @@ if False:
     html_sidebars['*'] = html_sidebars['**']
     html_sidebars[''] = html_sidebars['*']
 
-html_context = {
-    'css_files': get_default_stylesheet(
-        ['_static/my-styles.css', '_static/gallery.css']),
-}
-
+html_css_files = ['my-styles.css']
 
 html_logo = "phdoc_static/project_ico.png"
 
