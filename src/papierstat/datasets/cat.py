@@ -73,7 +73,7 @@ def load_adult_dataset(download=True, small=False, url='uci'):
     test[label] = test[label].str.strip(' .')
     cols = train.select_dtypes(object).columns
     for c in cols:
-        train[c] = train[c].str.strip()
+        train[c] = train[c].str.strip()  # pylint: disable=E1136,E1137
     for c in cols:
         test[c] = test[c].str.strip()
     return train, test

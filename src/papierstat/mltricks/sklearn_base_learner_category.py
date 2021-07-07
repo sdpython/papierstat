@@ -115,12 +115,13 @@ class SkBaseLearnerCategory(SkBaseLearner):
     # API scikit-learn
     ###################
 
-    def fit(self, X, y=None, **kwargs):
+    def fit(self, X, y=None, sample_weight=None, **kwargs):
         """
         Apprends un modèle pour chaque modalité d'une catégorie.
 
         @param      X               features
         @param      y               cibles
+        @param      sample_weight   poids de chaque observation
         @return                     self, lui-même
 
         La fonction n'est pas parallélisée mais elle le pourrait.
@@ -131,7 +132,6 @@ class SkBaseLearnerCategory(SkBaseLearner):
                 raise ValueError(  # pragma: no cover
                     "One of the row has a missing category.")
 
-        sample_weight = kwargs.get('sample_weight', None)
         res = {}
         for c in sorted(cats):
             _, xcat, ycat, scat = self._filter_cat(c, X, y, sample_weight)
