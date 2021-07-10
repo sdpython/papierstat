@@ -79,7 +79,7 @@ def load_wine_dataset(download=False, shuffle=False):
     s += " OD280_OD315_diluted_wine Proline"
     df.columns = s.split()
     if shuffle:
-        df = df.reset_index(drop=True)
+        df = df.reset_index(drop=True)  # pylint: disable=E1101
         ind = permutation(df.index)
         df = df.iloc[ind, :].reset_index(drop=True)
     return df
