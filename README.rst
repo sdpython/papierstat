@@ -17,10 +17,6 @@
     :alt: MIT License
     :target: http://opensource.org/licenses/MIT
 
-.. image:: https://requires.io/github/sdpython/papierstat/requirements.svg?branch=master
-     :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
-     :alt: Requirements Status
-
 .. image:: https://codecov.io/github/sdpython/papierstat/coverage.svg?branch=master
     :target: https://codecov.io/github/sdpython/papierstat?branch=master
 

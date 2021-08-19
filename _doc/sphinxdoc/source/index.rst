@@ -66,10 +66,6 @@ pour rédiger cette sorte de palimpseste. Disponible aussi en
         :alt: MIT License
         :target: http://opensource.org/licenses/MIT
 
-    .. image:: https://requires.io/github/sdpython/papierstat/requirements.svg?branch=master
-         :target: https://requires.io/github/sdpython/papierstat/requirements/?branch=master
-         :alt: Requirements Status
-
     .. image:: http://img.shields.io/github/issues/sdpython/papierstat.png
         :alt: GitHub Issues
         :target: https://github.com/sdpython/papierstat/issues
