@@ -1,6 +1,6 @@
 
 .. image:: https://travis-ci.com/sdpython/papierstat.svg?branch=master
-    :target: https://travis-ci.com/sdpython/papierstat
+    :target: https://app.travis-ci.com/github/sdpython/papierstat
     :alt: Build status
 
 .. image:: https://ci.appveyor.com/api/projects/status/34isqaj7je3u1xil?svg=true
