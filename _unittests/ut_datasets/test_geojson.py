@@ -13,7 +13,7 @@ class TestGeoJSON(ExtTestCase):
     def test_geojson(self):
         name = get_geojson_countries()
         self.assertExists(name)
-        with open(name, 'r') as f:  # pylint: disable=W1514
+        with open(name, 'r', encoding='utf-8') as f:
             geo = GeoJSONDataSource(geojson=f.read())
         self.assertTrue(geo is not None)
 
