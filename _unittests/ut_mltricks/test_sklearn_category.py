@@ -104,13 +104,14 @@ class TestSklearnCategory(ExtTestCase):
             if c in res:
                 del res[c]
 
-        self.assertEqual(res, {'colnameind': 'cat', 'model__class_weight': None,
-                               'model__criterion': 'gini', 'model__max_depth': None,
-                               'model__max_features': None, 'model__max_leaf_nodes': None,
-                               'model__min_impurity_decrease': 0.0, 'model__min_impurity_split': None,
-                               'model__min_samples_leaf': 1,
-                               'model__min_samples_split': 2, 'model__min_weight_fraction_leaf': 0.0,
-                               'model__random_state': None, 'model__splitter': 'best'})
+        self.assertEqual(res, {
+            'colnameind': 'cat', 'model__class_weight': None,
+            'model__criterion': 'gini', 'model__max_depth': None,
+            'model__max_features': None, 'model__max_leaf_nodes': None,
+            'model__min_impurity_decrease': 0.0,
+            'model__min_samples_leaf': 1,
+            'model__min_samples_split': 2, 'model__min_weight_fraction_leaf': 0.0,
+            'model__random_state': None, 'model__splitter': 'best'})
 
         parameters = {'model__max_depth': [2, 3]}
         clf = GridSearchCV(model, parameters, cv=3)
