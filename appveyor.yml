@@ -20,7 +20,7 @@ install:
 build: off
 
 test_script:
-  - "%PYTHON%\\python -u setup.py unittests"
+  - "%PYTHON%\\python -u setup.py unittests -d 40 -g \".*LONG.*\""
 
 after_test:
   - "%PYTHON%\\python -u setup.py bdist_wheel"
