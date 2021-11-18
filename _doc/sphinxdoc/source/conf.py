@@ -108,6 +108,7 @@ epkg_dictionary.update({
     'GeoDataFrame': 'http://geopandas.org/reference/geopandas.GeoDataFrame.html',
     'GeoJSON': 'https://fr.wikipedia.org/wiki/GeoJSON',
     'geopandas': 'http://geopandas.org/',
+    'joblib': 'https://joblib.readthedocs.io/en/latest/',
     'k-means': "http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html",
     'machine learning': 'https://fr.wikipedia.org/wiki/Apprentissage_automatique',
     'Master 2 ISF': 'http://isf.u-paris2.fr/master-2/',
