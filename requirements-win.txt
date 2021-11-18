@@ -1,6 +1,7 @@
 astroid
 bokeh
 branca
+Cython
 docutils
 ijson
 importlib_metadata
