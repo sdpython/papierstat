@@ -18,11 +18,11 @@ from papierstat.mltricks import SkBaseLearnerCategory
 class TestSklearnCategory(ExtTestCase):
 
     def test_fit_cat(self):
-        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
-                                   X1=[0.5, 0.6, 0.52, 0.62,
-                                       0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
-                                   cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
+        df = pandas.DataFrame(
+            dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                 X1=[0.5, 0.6, 0.52, 0.62, 0.5, 0.6, 0.51, 0.61],
+                 X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
+                 cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
         X = df.drop('y', axis=1)
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
@@ -32,11 +32,11 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_fit_cat_array(self):
-        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
-                                   X1=[0.5, 0.6, 0.52, 0.62,
-                                       0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
-                                   cat=[9, 10, 9, 10, 9, 10, 9, 10]))
+        df = pandas.DataFrame(
+            dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                 X1=[0.5, 0.6, 0.52, 0.62, 0.5, 0.6, 0.51, 0.61],
+                 X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
+                 cat=[9, 10, 9, 10, 9, 10, 9, 10]))
         X = df.drop('y', axis=1)
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
@@ -46,11 +46,11 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(y, pred)
 
     def test_fit_predict(self):
-        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
-                                   X1=[0.5, 0.6, 0.52, 0.62,
-                                       0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
-                                   cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
+        df = pandas.DataFrame(
+            dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                 X1=[0.5, 0.6, 0.52, 0.62, 0.5, 0.6, 0.51, 0.61],
+                 X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
+                 cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
         X = df.drop('y', axis=1)
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
@@ -70,11 +70,11 @@ class TestSklearnCategory(ExtTestCase):
                          NotImplementedError)
 
     def test_pickle(self):
-        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
-                                   X1=[0.5, 0.6, 0.52, 0.62,
-                                       0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
-                                   cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
+        df = pandas.DataFrame(
+            dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                 X1=[0.5, 0.6, 0.52, 0.62, 0.5, 0.6, 0.51, 0.61],
+                 X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
+                 cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
         X = df.drop('y', axis=1)
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
@@ -90,11 +90,11 @@ class TestSklearnCategory(ExtTestCase):
         self.assertEqualArray(pred, pred2)
 
     def test_grid(self):
-        df = pandas.DataFrame(dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
-                                   X1=[0.5, 0.6, 0.52, 0.62,
-                                       0.5, 0.6, 0.51, 0.61],
-                                   X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
-                                   cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
+        df = pandas.DataFrame(
+            dict(y=[0, 1, 0, 1, 0, 1, 0, 1],
+                 X1=[0.5, 0.6, 0.52, 0.62, 0.5, 0.6, 0.51, 0.61],
+                 X2=[0.5, 0.6, 0.7, 0.5, 1.5, 1.6, 1.7, 1.8],
+                 cat=['red', 'red', 'blue', 'blue', 'red', 'red', 'red', 'blue']))
         X = df.drop('y', axis=1)
         y = df['y']
         model = SkBaseLearnerCategory('cat', DecisionTreeClassifier())
@@ -151,7 +151,7 @@ class TestSklearnCategory(ExtTestCase):
         acc2 = accuracy_score(y_test, clr.predict(X_test))
         self.assertGreater(acc1, 0.45)
         self.assertGreater(acc2, 0.45)
-        self.assertGreater(acc1, acc2 * 0.99)
+        self.assertGreater(acc1, acc2 * 0.98)
 
 
 if __name__ == "__main__":
