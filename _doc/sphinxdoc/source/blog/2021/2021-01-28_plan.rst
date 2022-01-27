@@ -33,16 +33,12 @@
 
     **Séance 2**
 
-    * `Valeurs manquantes (cheatsheet)
-      <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
-      `Valeurs manquantes (notebooks)
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
-    * `Réseaux de neurones
-      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
+    * `Valeurs manquantes (cheatsheet) <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
+      `Valeurs manquantes (notebooks) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
+    * `Réseaux de neurones <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
       (inférence, gradient)
     * Apprentissage à base de gradients, différences avec les arbres
-	* `Deep learning
-      <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
+	* `Deep learning <http://www.xavierdupre.fr/app/ensae_teaching_dl/helpsphinx/chapters/deep_reseaux_de_neurones_et_deep_learning.html>`_
 	* :epkg:`tensorflow`, :epkg:`pytorch`, :epkg:`paddlepaddle`, :epkg:`chainer`
 	* GPU ?
 	* Zoo de modèles, `paddlepaddle <https://github.com/PaddlePaddle/PaddleClas>`_,
