@@ -2,10 +2,10 @@
 .. blogpost::
     :title: Plan séances 1
     :keywords: plan
-    :date: 2021-01-28
+    :date: 2022-01-28
     :categories: session
 
-    Voici le plan prévu pour les cinq séances
+    Voici le plan prévu pour la première séance
     du cours de machine learning pour l'économie et
     la finance.
 
