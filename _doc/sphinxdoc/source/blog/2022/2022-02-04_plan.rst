@@ -1,0 +1,30 @@
+
+.. blogpost::
+    :title: Plan séances 1
+    :keywords: plan
+    :date: 2022-02-04
+    :categories: session
+
+    Voici le plan prévu pour la première séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **Séance 2 - partie 1**
+
+    * `métriques <https://scikit-learn.org/stable/modules/model_evaluation.html>`_
+    * `Imbalanced problem <https://github.com/scikit-learn-contrib/imbalanced-learn>`_
+    * Decision Tree,
+      `Arbres de décision / Random Forest
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_3B.html>`_,
+      `Prédiction d'une durée
+      <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/artificiel_duration_prediction.html>`_
+    * `Valeurs manquantes (cheatsheet) <https://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-app-idm.pdf>`_,
+      `Valeurs manquantes (notebooks) <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlbasic_valeurs_manquantes.html>`_
+    * `Réseaux de neurones <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
+      (inférence, gradient)
+
+    **Séance 2 - partie 2**
+
+    API de :epkg:`scikit-learn`. Créer son propre estimateur.
+    On souhaite créer un estimateur qui estime une régression
+    linéaire sur chaque cluster tiré d'un KMeans.

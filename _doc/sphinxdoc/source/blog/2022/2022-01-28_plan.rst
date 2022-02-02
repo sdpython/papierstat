@@ -19,14 +19,7 @@
     * `Source de données <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ressources.html#source-de-donnees>`_
     * :epkg:`scikit-learn`
     * :ref:`l-regclass`, multi-classification
-    * `métriques <https://scikit-learn.org/stable/modules/model_evaluation.html>`_
-    * `Imbalanced problem <https://github.com/scikit-learn-contrib/imbalanced-learn>`_
     * Courbe ROC, AUC, voir :ref:`winescolorrocrst`,
       `Courbe ROC <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html>`_,
       `graphe erreur ROC <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_c_machine_learning_problems.html#graphe-erreur-roc>`_
     * `Ridge, Lasso <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/2020-02-07_sklapi.html>`_
-    * Decision Tree,
-      `Arbres de décision / Random Forest
-      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/td2a_cenonce_session_3B.html>`_,
-      `Prédiction d'une durée
-      <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/artificiel_duration_prediction.html>`_
