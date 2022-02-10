@@ -1,6 +1,6 @@
 
 .. blogpost::
-    :title: Plan séances 2
+    :title: Plan séance 2
     :keywords: plan
     :date: 2022-02-04
     :categories: session
@@ -25,6 +25,5 @@
 
     **Séance 2 - partie 2**
 
-    API de :epkg:`scikit-learn`. Créer son propre estimateur.
-    On souhaite créer un estimateur qui estime une régression
-    linéaire sur chaque cluster tiré d'un KMeans.
+    API de :epkg:`scikit-learn`. Utiliser une grille de recherche
+    pour sélectionner un modèle.

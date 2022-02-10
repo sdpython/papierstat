@@ -1,0 +1,36 @@
+
+.. blogpost::
+    :title: Plan séance 3
+    :keywords: plan
+    :date: 2022-02-11
+    :categories: session
+
+    Voici le plan prévu pour la première séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **Séance 3 - partie 1**
+    
+    * API de :epkg:`scikit-learn`. Utiliser une grille de recherche
+      pour sélectionner un modèle.
+    * Description de l'API :epkg:`scikit-learn` (fit, predict)
+    * ColumnTransformer
+    * nom des variables
+    * exercice
+    * gradient
+    * ensemble
+
+    **Séance 3 - partie 2**
+    
+    * série temporelle
+    * split train test dans le cas d'une série temporelle
+    * prédiction de la veille
+    * tendance...
+    * `prophet <https://facebook.github.io/prophet/>`_
+      (Sous Windows, c'est compliqué)
+    * `sktime <https://www.sktime.org/en/stable/>`_
+    * jours fériés, décompositions en séries périodiques
+    * dynamic time warping `dtw-python <https://dynamictimewarping.github.io/>`_
+    * `ruptures <https://github.com/deepcharles/ruptures>`_,
+      segmentation de séries temporelles, détection de changements
+

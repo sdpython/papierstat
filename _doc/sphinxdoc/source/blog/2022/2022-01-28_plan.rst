@@ -1,6 +1,6 @@
 
 .. blogpost::
-    :title: Plan séances 1
+    :title: Plan séance 1
     :keywords: plan
     :date: 2022-01-28
     :categories: session
