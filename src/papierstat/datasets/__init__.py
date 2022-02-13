@@ -3,6 +3,7 @@
 @file
 @brief Fonctions retournant des jeux de données.
 """
+from .biased import load_biased
 from .cat import load_adult_dataset
 from .carreau import load_carreau_from_zip
 from .dummies import line2d

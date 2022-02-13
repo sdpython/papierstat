@@ -10,7 +10,7 @@
     la finance.
 
     **Séance 3 - partie 1**
-    
+
     * API de :epkg:`scikit-learn`. Utiliser une grille de recherche
       pour sélectionner un modèle.
     * Description de l'API :epkg:`scikit-learn` (fit, predict)
@@ -21,7 +21,7 @@
     * ensemble
 
     **Séance 3 - partie 2**
-    
+
     * série temporelle
     * split train test dans le cas d'une série temporelle
     * prédiction de la veille
@@ -33,4 +33,3 @@
     * dynamic time warping `dtw-python <https://dynamictimewarping.github.io/>`_
     * `ruptures <https://github.com/deepcharles/ruptures>`_,
       segmentation de séries temporelles, détection de changements
-
