@@ -1,0 +1,29 @@
+
+.. blogpost::
+    :title: Plan séance 4
+    :keywords: plan
+    :date: 2022-02-18
+    :categories: session
+
+    Voici le plan prévu pour la première séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **Séance 4 - partie 1**
+
+    * réseau de neurones
+    * transfer learning
+
+    **Séance 4 - partie 2**
+
+    * web scraping
+    * json, rest, javascript
+    * cartes
+
+    **Séance 4 - partie 3**
+
+    quelques histoires à programmer
+
+    * deviner le nom d'un quartier
+    * évaluer un système de suggestion
+    * trouver les doublons dans un annuaire
