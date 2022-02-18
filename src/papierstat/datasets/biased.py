@@ -14,16 +14,7 @@ __all__ = ['load_biased']
 
 def load_biased(N=250):
     """
-    Retourne un jeu de données biasés.
-    Notebooks associés à ce jeu de données :
-
-    .. runpython::
-        :rst:
-
-        from papierstat.datasets.documentation import list_notebooks_rst_links
-        links = list_notebooks_rst_links('lectures', 'biased')
-        links = ['    * %s' % s for s in links]
-        print('\\n'.join(links))
+    Retourne un jeu de données biaisé.
 
     :param N: number of observations
     :return: :epkg:`pandas:DataFrame`
