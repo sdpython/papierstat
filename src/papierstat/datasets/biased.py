@@ -4,7 +4,7 @@
 @brief Jeux de données biaisés.
 """
 import numpy
-from scipy.special import expit  # pylint: disable=E061
+from scipy.special import expit  # pylint: disable=E0611
 import pandas
 from sklearn.model_selection import train_test_split
 
