@@ -17,8 +17,6 @@
     **Séance 4 - partie 2**
 
     * texte embedding, word2vec, gloves, gensim, spacy
-    * web scraping
-    * json, rest, javascript
     * cartes
 
     **Séance 4 - partie 3**

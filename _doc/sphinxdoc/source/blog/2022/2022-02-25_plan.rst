@@ -1,0 +1,30 @@
+
+.. blogpost::
+    :title: Plan séance 5
+    :keywords: plan
+    :date: 2022-02-25
+    :categories: session
+
+    Voici le plan prévu pour la première séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **Séance 4 - partie 1**
+
+    * json, rest, javascript
+    * `analyse de survie
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/survival_analysis.html>`_
+
+    **Séance 4 - partie 2**
+
+    * interprétabilité, `LIME <https://arxiv.org/pdf/1602.04938v1.pdf>`_,
+      `Shapeley <https://proceedings.neurips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf>`_,
+      `Counter Factual
+      <https://christophm.github.io/interpretable-ml-book/counterfactual.html>`_,
+      `Partial Dependence
+      <https://scikit-learn.org/stable/modules/partial_dependence.html>`_
+    * biais en machine learning
+    * `machine learning éthique
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ml2a/td2a_mlplus_machine_learning_ethique.html>`_
+    * le projet
+
