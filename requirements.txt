@@ -36,6 +36,7 @@ dtreeviz
 folium
 google_compute_engine
 hmmlearn
+interpret
 jyquickhelper>=0.3
 lightgbm
 mlinsights>=0.2

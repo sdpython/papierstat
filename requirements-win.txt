@@ -6,6 +6,7 @@ docutils
 ijson
 importlib_metadata
 IPython
+interpret
 isort
 joblib
 jupyter
