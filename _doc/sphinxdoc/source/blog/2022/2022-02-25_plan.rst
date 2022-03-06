@@ -65,6 +65,13 @@
       intrinsèquement nuisible car elle reproduit et ancre dans la réalité une
       situation contre laquelle il faut lutter.
 
+    A propos du biais de type 1, il apparaît également lorsqu'une nomenclature
+    n'évolue pas et ne reflète plus les données d'aujourd'hui.
+    L'indice des prix est une statistique dont le sens ne change pas mais dont la
+    pondération change :
+    `Pour comprendre l'indice des prix
+    <https://www.insee.fr/fr/metadonnees/source/fichier/Indice_des_prix.pdf>`_.
+
     *Machine Learning privé*
 
     * `Calibrating Noise to Sensitivity in Private Data Analysis
