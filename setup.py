@@ -17,7 +17,7 @@ readme = 'README.rst'
 history = "HISTORY.rst"
 requirements = None
 
-KEYWORDS = project_var_name + ', Xavier Dupré'
+KEYWORDS = [project_var_name, 'Xavier Dupré', 'teachings', 'machine learning']
 DESCRIPTION = """Helpers for teaching materials about machine learning."""
 CLASSIFIERS = [
     'Programming Language :: Python :: 3',
