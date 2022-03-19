@@ -36,7 +36,7 @@ def load_movielens_dataset(name='small', cache=None, fLOG=None):
         with open(cache, 'rb') as f:
             return pickle.load(f)
     if name == 'small':
-        url = 'http://files.grouplens.org/datasets/movielens/ml-latest-small.zip'
+        url = 'https://files.grouplens.org/datasets/movielens/ml-latest-small.zip'
     else:
         raise ValueError(  # pragma: no cover
             "Value '{0}' is not implemented.".format(name))
