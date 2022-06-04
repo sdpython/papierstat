@@ -13,7 +13,7 @@ jupyter
 matplotlib
 numpy
 pandas
-pylint
+pylint>=2.14.0
 pymyinstall
 pyshp
 pytz

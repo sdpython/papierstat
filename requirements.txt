@@ -45,7 +45,7 @@ pandas_streaming
 pycodestyle
 pydata_sphinx_theme
 pyensae
-pylint
+pylint>=2.14.0
 pyquickhelper>=1.10
 pyquicksetup
 pyyaml
