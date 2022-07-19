@@ -38,7 +38,7 @@ class TestMovieLens(ExtTestCase):
         name = os.path.join(temp, '..', 'ml-latest-small.zip')
         if os.path.exists(name):
             raise Exception(
-                "This file '{0}' should not be present.".format(name))
+                f"This file '{name}' should not be present.")
 
 
 if __name__ == "__main__":

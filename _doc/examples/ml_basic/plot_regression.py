@@ -117,7 +117,7 @@ ax = plt.subplot()
 ax.plot(y_test, pred, '.')
 ax.set_xlabel("expected")
 ax.set_ylabel("predicted")
-ax.set_title("ERR2={0}".format(err))
+ax.set_title(f"ERR2={err}")
 
 ##############################################
 #

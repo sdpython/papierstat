@@ -130,7 +130,7 @@ def load_dbf_from_zip(filename):
         names = [_.filename for _ in names0 if _.filename.endswith(".dbf")]
         if len(names) == 0:
             raise FileNotFoundError(  # pragma: no cover
-                "No dbf file in '{0}'".format(filename))
+                f"No dbf file in '{filename}'")
         with myzip.open(names[0], "r") as f:
             content = f.read()
     data = list(DBFInMemory(content))
@@ -176,13 +176,13 @@ def load_shapes_from_zip(filename):
         names = [_.filename for _ in names0 if _.filename.endswith(".mif")]
         if len(names) == 0:
             raise FileNotFoundError(  # pragma: no cover
-                "No mif file in '{0}'".format(filename))
+                f"No mif file in '{filename}'")
         with myzip.open(names[0], "r") as f:
             mif = f.read()
         names = [_.filename for _ in names0 if _.filename.endswith(".mid")]
         if len(names) == 0:
             raise FileNotFoundError(  # pragma: no cover
-                "No mid file in '{0}'".format(filename))
+                f"No mid file in '{filename}'")
         with myzip.open(names[0], "r") as f:
             mid = f.read()
 

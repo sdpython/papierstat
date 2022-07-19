@@ -82,7 +82,7 @@ iris = datasets.load_iris()
 X_iris = iris.data
 y_iris = iris.target
 
-print("Dimensions de l'espace de départ : {}".format(X_iris.shape[1]))
+print(f"Dimensions de l'espace de départ : {X_iris.shape[1]}")
 print("Représentation des données dans ces dimensions :")
 
 plt.figure(figsize=(12, 4))

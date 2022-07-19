@@ -178,7 +178,7 @@ fpr, tpr, th = roc_curve((y_pred == y_test).ravel(), prob_pred)
 # le score du modèle est supérieur ``th[i]``.
 
 print("i=2", th[2], tpr[2], fpr[2])
-print("i={0}".format(len(th) - 2), th[-2], tpr[-2], fpr[-2])
+print(f"i={len(th) - 2}", th[-2], tpr[-2], fpr[-2])
 
 ##############################
 # Plus le score est faible, plus ces proportions sont grandes.

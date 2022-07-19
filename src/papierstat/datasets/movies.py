@@ -39,15 +39,15 @@ def load_movielens_dataset(name='small', cache=None, fLOG=None):
         url = 'https://files.grouplens.org/datasets/movielens/ml-latest-small.zip'
     else:
         raise ValueError(  # pragma: no cover
-            "Value '{0}' is not implemented.".format(name))
+            f"Value '{name}' is not implemented.")
     if fLOG:
-        fLOG("[load_movielens_dataset] download '{0}'".format(url))
+        fLOG(f"[load_movielens_dataset] download '{url}'")
     res = get_url_content_timeout(url, encoding=None, fLOG=fLOG)
     if fLOG:
-        fLOG("[load_movielens_dataset] unzip {0} bytes".format(len(res)))
+        fLOG(f"[load_movielens_dataset] unzip {len(res)} bytes")
     found = unzip_files(res, fLOG=fLOG)
     if fLOG:
-        fLOG("[load_movielens_dataset] found {0} files".format(len(found)))
+        fLOG(f"[load_movielens_dataset] found {len(found)} files")
     dfiles = {}
     for name_, text in found:
         if name_.endswith('.csv'):

@@ -39,7 +39,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         if not isinstance(colnameind, (int, str)):
             raise TypeError(  # pragma: no cover
-                "colnameind must be str or int not {0}".format(type(colnameind)))
+                f"colnameind must be str or int not {type(colnameind)}")
         if model is None:
             raise ValueError("model must not be None")  # pragma: no cover
         kwargs['colnameind'] = colnameind
@@ -208,7 +208,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         if hasattr(self.model, 'decision_function'):
             return self._any_predict(X, 'decision_function')
         raise NotImplementedError(
-            "No decision_function for {0}".format(self.model))
+            f"No decision_function for {self.model}")
 
     def predict_proba(self, X):
         """
@@ -221,7 +221,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         if hasattr(self.model, 'predict_proba'):
             return self._any_predict(X, 'predict_proba')
         raise NotImplementedError(  # pragma: no cover
-            "No method predict_proba for {0}".format(self.model))
+            f"No method predict_proba for {self.model}")
 
     def score(self, X, y=None, sample_weight=None):
         """
@@ -258,8 +258,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
         res['model'] = self.model
         if deep:
             p = self.model.get_params(deep)
-            ps = {'model__{0}'.format(
-                name): value for name, value in p.items()}
+            ps = {f'model__{name}': value for name, value in p.items()}
             res.update(ps)
         return res
 
@@ -276,8 +275,7 @@ class SkBaseLearnerCategory(SkBaseLearner):
             del values['model']
         elif not hasattr(self, 'model') or self.model is None:
             raise KeyError(  # pragma: no cover
-                "Missing key '{0}' in [{1}]".format(
-                    'model', ', '.join(sorted(values))))
+                f"Missing key 'model' in [{', '.join(sorted(values))}]")
         prefix = 'model__'
         ext = {k[len(prefix):]: v for k, v in values.items()
                if k.startswith(prefix)}
@@ -297,4 +295,4 @@ class SkBaseLearnerCategory(SkBaseLearner):
         """
         usual
         """
-        return "{0}({2},{1})".format(self.__class__.__name__, repr(self.P), repr(self.model))
+        return f"{self.__class__.__name__}({repr(self.model)},{repr(self.P)})"

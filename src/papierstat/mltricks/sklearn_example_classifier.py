@@ -39,17 +39,14 @@ class SkCustomKnn(SkBaseClassifier):
                 "sample_weight must be None")
         if len(X) < self.P.k:
             raise SkException(  # pragma: no cover
-                "number of samples cannot be smaller than k={0}".format(
-                    self.P.k))
+                f"number of samples cannot be smaller than k={self.P.k}")
         if isinstance(X, pandas.DataFrame):
             X = X.asmatrix()
         if isinstance(y, pandas.DataFrame):
             y = y.asmatrix()
         if len(X) != len(y):
             raise SkException(  # pragma: no cover
-                "X and y should have the same dimension not: {0} != {1}".format(
-                    len(X),
-                    len(y)))
+                f"X and y should have the same dimension not: {len(X)} != {len(y)}")
         if min(y) < 0:
             raise SkException(  # pragma: no cover
                 "class should be positive or null integer")
