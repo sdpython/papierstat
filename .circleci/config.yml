@@ -55,6 +55,11 @@ jobs:
             cd ..
 
       - run:
+          name: install ldconfig
+          command: |
+            sudo ldconfig
+
+      - run:
           name: Install llvmlite
           command: |
             sudo apt-get install lsb-release wget software-properties-common
