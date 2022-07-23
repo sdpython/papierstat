@@ -37,9 +37,22 @@ jobs:
                     sudo apt-get install -y graphviz
           
       - run:
-          name: Install libproj
+          name: Install dependencies for proj
           command: |
-            sudo apt-get install -y libgeos-dev libproj-dev proj-data graphviz
+            sudo apt-get install -y libgeos-dev proj-data graphviz sqlite3 libtiff5 libtiff5-dev libtiff-dev libsqlite3-dev libcurl4-gnutls-dev
+
+      - run:
+          name: build proj
+          command: |
+            # see https://stackoverflow.com/questions/72442087/cant-install-proj-8-0-0-for-cartopy-linux
+            wget https://download.osgeo.org/proj/proj-9.0.0.tar.gz
+            tar -xf proj-9.0.0.tar.gz
+            cd proj-9.0.0
+            mkdir build && cd build
+            cmake ..
+            cmake --build .
+            sudo cmake --build . --target install
+            cd ..
 
       - run:
           name: Install llvmlite
@@ -49,11 +62,6 @@ jobs:
             chmod +x llvm.sh
             sudo ./llvm.sh 10
             ls /usr/bin/llvm*
-
-      - run:
-          name: Install standard libraries
-          command: |
-            pip install scipy matplotlib numpy cython pandas
 
       - run:
           name: install dependencies
@@ -85,19 +93,6 @@ jobs:
             python setup.py bdist_wheel
             mkdir -p test-reports/dist
             cp dist/*.whl test-reports/dist
-
-#      - run:
-#          name: documentation
-#          command: |
-#            . venv/bin/activate
-#            python setup.py build_sphinx
-            
-      - run:
-          name: copy documentation
-          command: |
-            mkdir -p test-reports/doc
-            mkdir -p test-reports/pdf
-            zip -r -9  test-reports/doc/documentation_html.zip _doc/sphinxdoc/build/html
             
       - store_artifacts:
           path: test-reports
