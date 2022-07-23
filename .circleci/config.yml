@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:3.9.1
+      - image: cimg/python:3.10.5
     
     working_directory: ~/repo
     
@@ -18,8 +18,8 @@ jobs:
           name: Install pandoc
           command: |
                     sudo apt-get update 
-                    wget https://github.com/jgm/pandoc/releases/download/2.11.3.2/pandoc-2.11.3.2-1-amd64.deb
-                    sudo dpkg -i pandoc-2.11.3.2-1-amd64.deb
+                    wget https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-1-amd64.deb
+                    sudo dpkg -i pandoc-2.18-1-amd64.deb
           
       - run:
           name: Install 7z, unrar
@@ -53,34 +53,11 @@ jobs:
       - run:
           name: Install standard libraries
           command: |
-            python -m venv venv
-            . venv/bin/activate
             pip install scipy matplotlib numpy cython pandas
-
-      - run:
-          name: Install pyproj, shapely, cartopy
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install pyproj
-            pip uninstall -y shapely
-            pip install --no-binary shapely shapely
-            pip install cartopy
-
-      - run:
-          name: Install numba, llvmlite
-          command: |
-            python -m venv venv
-            . venv/bin/activate
-            # export LLVM_CONFIG=/usr/local/opt/llvm/bin/llvm-config
-            sudo ln -s /usr/bin/llvm-config-10 /usr/bin/llvm-config
-            pip install llvmlite numba
 
       - run:
           name: install dependencies
           command: |
-            python -m venv venv
-            . venv/bin/activate
             pip install wheel
             pip install -r requirements.txt
 
@@ -92,22 +69,18 @@ jobs:
       - run:
           name: check list of dependencies
           command: |
-            python -m venv venv
-            . venv/bin/activate
             pip freeze
             apt list --installed
         
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
             export PYTHONPATH=src
             python setup.py unittests
 
       - run:
           name: wheel
           command: |
-            . venv/bin/activate
             export PYTHONPATH=src
             python setup.py bdist_wheel
             mkdir -p test-reports/dist
