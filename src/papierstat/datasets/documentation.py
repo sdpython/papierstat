@@ -52,4 +52,4 @@ def list_notebooks_rst_links(subfolder, name=None, contains=None):
     """
     names = list_notebooks(subfolder, name, contains)
     return [f":ref:`{os.path.splitext(os.path.split(name)[1])[0].replace('_', '')}rst`"
-        for name in names]
+            for name in names]
