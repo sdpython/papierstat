@@ -1,0 +1,11 @@
+
+.. blogpost::
+    :title: A lire
+    :keywords: plan
+    :date: 2022-09-14
+    :categories: article
+
+    * `INTERPRÉTABILITÉ ET EXPLICABILITÉ (FORMALISÉ) DES MODÈLES PRÉDICTIFS
+      <https://freakonometrics.hypotheses.org/64328#more-64328>`_
+    * `A Tutorial on Thompson Sampling
+      <https://web.stanford.edu/~bvr/pubs/TS_Tutorial.pdf>`_
