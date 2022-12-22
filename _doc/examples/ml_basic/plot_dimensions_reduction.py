@@ -312,7 +312,8 @@ print(df)
 
 nmf = decomposition.NMF(n_components=2,
                         random_state=1,
-                        alpha=.1,
+                        alpha_W=0.1,
+                        alpha_H='same',
                         l1_ratio=.5).fit(df)
 
 profiles = pd.DataFrame(nmf.transform(df),
