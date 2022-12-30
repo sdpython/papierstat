@@ -13,8 +13,9 @@ local_template = os.path.join(os.path.abspath(
 
 set_sphinx_variables(__file__, "papierstat", "Xavier Dupré", 2022,
                      "pydata_sphinx_theme", ['_static'],
-                     locals(), extlinks=dict(
-                         issue=('https://github.com/sdpython/papierstat/issues/%s', 'issue')),
+                     locals(), extlinks=dict(issue=(
+                         'https://github.com/sdpython/papierstat/issues/%s',
+                         'issue %s')),
                      title="papierstat", book=True, nblayout='table')
 
 blog_root = "http://www.xavierdupre.fr/app/papierstat/helpsphinx/"
