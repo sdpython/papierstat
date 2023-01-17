@@ -1,0 +1,91 @@
+
+.. blogpost::
+    :title: Plan séance 1
+    :keywords: plan
+    :date: 2023-01-20
+    :categories: session
+
+    Voici le plan prévu pour la première séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **Séance 1**
+
+    * `Python <https://www.python.org/>`_,
+      `Anaconda <https://www.anaconda.com/>`_,
+      :epkg:`pandas`, :epkg:`numpy`, :epkg:`jupyter`,
+      :epkg:`matplotlib`, expressions régulières, fichiers
+    * Ressource `www.xavierdupre.fr <www.xavierdupre.fr>`_
+    * `Source de données
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/ressources.html#source-de-donnees>`_
+    * :epkg:`scikit-learn` : API
+    * :ref:`l-regclass`, multi-classification
+    * Courbe ROC, AUC, voir :ref:`winescolorrocrst`,
+      `Courbe ROC <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_metric/roc.html>`_,
+      `graphe erreur ROC
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx/notebooks/ml_c_machine_learning_problems.html#graphe-erreur-roc>`_
+    * `Ridge, Lasso <http://www.xavierdupre.fr/app/papierstat/helpsphinx/notebooks/2020-02-07_sklapi.html>`_
+    * Ranking, Clustering
+
+    Une discussion recopiée depuis un article sur Linkedin
+    à propos de `ChatGPT <https://openai.com/blog/chatgpt/>`_
+    qui montre que c'est un outil efficace mais seulement
+    un outil.
+
+    * **JP :** Hey Chat GPT : La mère de Jean a 4 enfants.
+      3 des enfants s'appellent Pédro, Caroline et Robert.
+      Quel est le prénom du quatrième ? 
+    * **ChatGPT :** "Il n'est pas possible de déterminer le prénom
+      du quatrième enfant de la mère de Jean uniquement
+      avec l'information donnée."
+    * **JP :** si c’est possible. c’est dans l'énoncé
+    * **ChatGPT :** "Il n'y a pas assez d'informations dans l'énoncé pour 
+      déterminer le prénom du quatrième enfant. Il est seulement 
+      mentionné que les trois premiers enfants s'appellent 
+      Pedro, Caroline et Robert."
+    * **JP :** pourtant il est dit « La mère de Jean» c’est la mère de qui ?
+    * **ChatGPT :** "Vous avez raison, dans l'énoncé il est mentionné "La mère de Jean",
+      donc Jean est un individu dont on ne sait rien,
+      à part qu'il a une mère et qu'elle a 4 enfants."
+
+    Cela dit, il est possible que son utilisation change un peu
+    la donne quant aux moteurs de recherches si ce n'est que son
+    coût est sans doute encore prohibitif pour un usage si massif.
+
+    `Training language models to follow instructions with human feedback
+    <https://arxiv.org/abs/2203.02155>`_
+
+    Un article intéressant sur l'inflation :
+    `De nouveaux indicateurs de perception de l’inflation en France issus des médias
+    <https://blocnotesdeleco.banque-france.fr/billet-de-blog/de-nouveaux-indicateurs-de-perception-de-linflation-en-france-issus-des-medias>`_.
+    A quoi ressemble le bruit d'une foule ?
+
+    Parmi les sujets abordés cette année :
+    
+    * expressions régulières, fichiers, calcul matriciel, dataframe, graphes ?
+    * :epkg:`scikit-learn` : concepts de transformer
+       et prédicteur, revue des modèles les plus couramment utilisés,
+       présentation de la validation croisée, et grille de recherche,
+       notion de pipe-line en machine learning
+    * valeurs manquantes, problème de classification avec des classes
+      sous représentées, 
+    * ingénierie logicielle ? tests unitaires, git, pull request,
+       notebook, librairies, réalisation d'un package pour partager son code,
+       écrire une documentation. Cette partie est utile si on travaille
+       à plusieurs sur le même code.
+    * notions de séries temporelles ? prédiction, analyse de survie.
+    * Grands jeux de données
+    * Quelques mots de deep learning : encoding, transfer learning
+    * Mise en production : déploiement de modèles de machine learning
+    * machine learning éthique
+    * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
+
+    La médecine de demain :
+    
+    * `Intelligence artificielle et médecine, par le Pr. Jean-Emmanuel Bibault
+      <https://www.radiofrance.fr/franceinter/podcasts/le-13-14/le-13-14-du-mardi-17-janvier-2023-2160832>`_,
+      aide à l'interprétation des images, à la localisation des tumeurs,
+      assistance chirurgicale
+    * enregistrement des données en temps réel, détection de symptômes sur des données
+      qu'on n'avait pas avant
+    * ...
