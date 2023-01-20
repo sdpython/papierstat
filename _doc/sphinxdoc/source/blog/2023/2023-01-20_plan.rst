@@ -89,3 +89,12 @@
     * enregistrement des données en temps réel, détection de symptômes sur des données
       qu'on n'avait pas avant
     * ...
+
+    Ethique
+
+    * `IS THERE DISCRIMINATION AGAINST THE POOR?
+      <https://freakonometrics.hypotheses.org/65970>`_
+    * `Y-A-T-IL UNE DISCRIMINATION CONTRE LES PAUVRES ?
+      <https://freakonometrics.hypotheses.org/65955>`_
+    * `ASSURANCES, VERS UNE UTILISATION ÉTHIQUE DE L’INTELLIGENCE ARTIFICIELLE
+      <https://freakonometrics.hypotheses.org/65345>`_
