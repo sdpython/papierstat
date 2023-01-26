@@ -1,0 +1,78 @@
+
+.. blogpost::
+    :title: Plan séance 2
+    :keywords: plan
+    :date: 2023-01-20
+    :categories: session
+
+    Voici le plan prévu pour la seconde séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **exercices**
+    
+    * exercice autour du `pivot de gauss
+      <https://github.com/sdpython/ensae_teaching_cs/blob/master/_doc/notebooks/1a/pivot_gauss.ipynb>`_
+    * `Evoluation d’une population
+      <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/seance4_projection_population_correction.html>`_
+
+    **résumé**
+    
+    * :epkg:`numpy`
+    * :epkg:`pandas`
+    
+    **exemples de problèmes rencontrés**
+        
+    * économie, sociologie : études statistiques, analyse de biais, prévision
+    * finance : trading, analyse de nouvelles, vitesse de trading, scoring
+    * actuariat : prédiction des sinistres
+    * statégie : emplacement d'un entrepôt
+    
+    **machine learning**
+    
+    * prétraitement : transformer toutes les variables, quelles
+      qu'elles soient, en variables numériques
+    * optimisation d'un modèle
+    
+    Données supervisées, non supervisées...
+
+    **scikit-learn**
+    
+    * transformer / prédicteur
+    * régression, classification, clustering, ranking,
+      réduction de dimension, recommandation
+    * hyperparamètres, grille de recherche
+    * validation croisée
+    * notion de pipeline
+    * sérialisation
+    
+    **pour aller plus loin**
+    
+    * créer son propre transformer ou prédicteur
+    * `factorisation de matrices
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/missing_values_mf.html>`_
+    * `TSNE <https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
+    
+    **autres packages**
+    
+    * `category_encoders <https://contrib.scikit-learn.org/category_encoders/>`_
+    * `dirty_cat <https://github.com/dirty-cat/dirty_cat>`_
+    * `xgboost <https://xgboost.readthedocs.io/en/stable/>`_
+    * `lightgbm <https://lightgbm.readthedocs.io/en/v3.3.2/>`_
+    * `catboost <https://catboost.ai/>`_
+    * cheatcheet numpy, or `awesome machine learning
+      <https://github.com/sorend/awesome-python-machine-learning>`_,
+      `Track Awesome Machine Learning Updates Daily
+      <https://www.trackawesomelist.com/josephmisiti/awesome-machine-learning/>`_
+    * `statsmodels <https://www.statsmodels.org/stable/index.html>`_
+
+    **exercice**
+    
+    On veut constuire un modèle qui prédit le loyer moyen en fonction
+    de caractéristiques moyennes, données : 
+    `Résultats nationaux des observatoires locaux des loyers
+    <https://www.data.gouv.fr/fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers/#resources>`_
+
+    Il faut construire un pipeline simple avec au moins une classe
+    `ColumnTransformer
+    <https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html>`_.
