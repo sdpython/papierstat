@@ -26,7 +26,7 @@
     * économie, sociologie : études statistiques, analyse de biais, prévision
     * finance : trading, analyse de nouvelles, vitesse de trading, scoring
     * actuariat : prédiction des sinistres
-    * statégie : emplacement d'un entrepôt
+    * stratégie : emplacement d'un entrepôt
     
     **machine learning**
     
@@ -68,7 +68,7 @@
 
     **exercice**
     
-    On veut constuire un modèle qui prédit le loyer moyen en fonction
+    On veut construire un modèle qui prédit le loyer moyen en fonction
     de caractéristiques moyennes, données : 
     `Résultats nationaux des observatoires locaux des loyers
     <https://www.data.gouv.fr/fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers/#resources>`_
