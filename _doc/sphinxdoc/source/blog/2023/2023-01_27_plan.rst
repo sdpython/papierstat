@@ -2,7 +2,7 @@
 .. blogpost::
     :title: Plan séance 2
     :keywords: plan
-    :date: 2023-01-20
+    :date: 2023-01-27
     :categories: session
 
     Voici le plan prévu pour la seconde séance
@@ -12,7 +12,7 @@
     **exercices**
     
     * exercice autour du `pivot de gauss
-      <https://github.com/sdpython/ensae_teaching_cs/blob/master/_doc/notebooks/1a/pivot_gauss.ipynb>`_
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3//notebooks/pivot_gauss.html>`_
     * `Evoluation d’une population
       <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/seance4_projection_population_correction.html>`_
 
