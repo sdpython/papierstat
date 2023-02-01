@@ -1,0 +1,53 @@
+
+.. blogpost::
+    :title: Plan séance 3
+    :keywords: plan
+    :date: 2023-02-03
+    :categories: session
+
+    Voici le plan prévu pour la seconde séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **théorie**
+
+    * recommandations
+      `NMF <https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html>`_
+    * `factorisation de matrices
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/missing_values_mf.html>`_
+    * ranking 
+    * traitement des valeurs manquantes
+    * `TSNE <https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
+
+    **exercice**
+
+    On veut construire un modèle qui prédit le loyer moyen en fonction
+    de caractéristiques moyennes, données : 
+    `Résultats nationaux des observatoires locaux des loyers
+    <https://www.data.gouv.fr/fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers/#resources>`_
+
+    Il faut construire un pipeline simple avec au moins une classe
+    `ColumnTransformer
+    <https://scikit-learn.org/stable/modules/generated/sklearn.compose.ColumnTransformer.html>`_.
+
+    **développement**
+
+    * créer son propre transformer ou prédicteur
+    * manipulation de gros fichiers
+      exemple `Demandes de valeurs foncières
+      <https://www.data.gouv.fr/fr/datasets/5c4ae55a634f4117716d5656/>`_
+    * créer son propre package et documentation
+    * git
+
+    **autres packages**
+
+    * `category_encoders <https://contrib.scikit-learn.org/category_encoders/>`_
+    * `dirty_cat <https://github.com/dirty-cat/dirty_cat>`_
+    * `xgboost <https://xgboost.readthedocs.io/en/stable/>`_
+    * `lightgbm <https://lightgbm.readthedocs.io/en/v3.3.2/>`_
+    * `catboost <https://catboost.ai/>`_
+    * cheatcheet numpy, or `awesome machine learning
+      <https://github.com/sorend/awesome-python-machine-learning>`_,
+      `Track Awesome Machine Learning Updates Daily
+      <https://www.trackawesomelist.com/josephmisiti/awesome-machine-learning/>`_
+    * `statsmodels <https://www.statsmodels.org/stable/index.html>`_
