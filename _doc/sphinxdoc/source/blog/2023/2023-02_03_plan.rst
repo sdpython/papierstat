@@ -38,6 +38,7 @@
       <https://www.data.gouv.fr/fr/datasets/5c4ae55a634f4117716d5656/>`_
     * créer son propre package et documentation
     * git
+    * tests unitaires
 
     **autres packages**
 
@@ -51,3 +52,12 @@
       `Track Awesome Machine Learning Updates Daily
       <https://www.trackawesomelist.com/josephmisiti/awesome-machine-learning/>`_
     * `statsmodels <https://www.statsmodels.org/stable/index.html>`_
+
+    **suite**
+    
+    * notions de séries temporelles ? prédiction, analyse de survie.
+    * Quelques mots de deep learning : encoding, transfer learning
+    * Mise en production : déploiement de modèles de machine learning
+    * machine learning éthique
+    * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
+    
