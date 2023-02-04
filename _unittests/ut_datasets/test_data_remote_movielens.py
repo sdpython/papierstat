@@ -37,7 +37,7 @@ class TestMovieLens(ExtTestCase):
             self.assertEqualDataFrame(dfs[k], dfs2[k])
         name = os.path.join(temp, '..', 'ml-latest-small.zip')
         if os.path.exists(name):
-            raise Exception(
+            raise AssertionError(
                 f"This file '{name}' should not be present.")
 
 
