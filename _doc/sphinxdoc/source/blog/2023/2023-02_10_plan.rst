@@ -1,0 +1,40 @@
+
+.. blogpost::
+    :title: Plan séance 3
+    :keywords: plan
+    :date: 2023-02-10
+    :categories: session
+
+    Voici le plan prévu pour la seconde séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    **théorie**
+
+    * `réseau de neurones
+      <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/rn/rn.html>`_
+    * gradient stochastique
+    * méthodes ensemblistes, gradient boosting
+    * quand faut-il normaliser les données ?
+    * deep learning
+    * du deep learning à ChatGPT
+    * transfert learning
+
+    **développement**
+
+    * `pytorch <https://pytorch.org/>`_
+    * manipulation de gros fichiers
+      exemple `Demandes de valeurs foncières
+      <https://www.data.gouv.fr/fr/datasets/5c4ae55a634f4117716d5656/>`_
+    * créer son propre package et documentation
+    * git
+    * tests unitaires
+    * série temporelles
+    * analyse de survie
+
+    **suite**
+
+    * Mise en production : déploiement de modèles de machine learning
+    * machine learning éthique
+    * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
+    * carte avec `geopandas <https://geopandas.org/en/stable/>`_
