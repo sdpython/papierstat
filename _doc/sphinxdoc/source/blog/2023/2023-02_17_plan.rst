@@ -1,0 +1,79 @@
+
+.. blogpost::
+    :title: Plan séance 3
+    :keywords: plan
+    :date: 2023-02-10
+    :categories: session
+
+    Voici le plan prévu pour la cinquième séance
+    du cours de machine learning pour l'économie et
+    la finance.
+
+    Comment manipuler de gros jeux de données ?
+
+    **séries temporelles**
+
+    * prédictions
+    * décomposition, `Holt Winters <https://otexts.com/fpp2/holt-winters.html>`_
+    * détection des changements de régime
+    
+    * `Filtre de Kalman <http://www.cs.unc.edu/~welch/media/pdf/kalman_intro.pdf>`_
+    * `SSA <https://en.wikipedia.org/wiki/Singular_spectrum_analysis>`_
+    * packages  `prophet <https://facebook.github.io/prophet/docs/quick_start.html>`_,
+      `statsmodels <https://www.statsmodels.org/stable/index.html>`_,
+      `ruptures <https://github.com/deepcharles/ruptures>`_,
+      `tslearn <https://github.com/tslearn-team/tslearn>`_
+
+    **anomalie**
+    
+    * densité
+    * `GAN <https://en.wikipedia.org/wiki/Generative_adversarial_network>`_
+    * prédictions aberrantes
+    * astuce : comment s'assurer que la base d'apprentissage et de test
+      sont semblables ?
+
+    **éthique**
+
+    * `interprétabilité
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_interpretabilite_des_modeles.html>`_
+    * `machine learning éthique
+      <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3/ml2a/td2a_mlplus_machine_learning_ethique.html>`_,
+      `Latanya Sweeney: How technology impacts humans and dictates our civic future
+      <https://www.youtube.com/watch?v=Buf0wLb86Lo>`_
+    
+    **mise en production**
+
+    * Mise en production : déploiement de modèles de machine learning
+    * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
+    * carte avec `geopandas <https://geopandas.org/en/stable/>`_
+    
+    Les projets sont à rendre pour le 30 juin 2023, à faire par groupe de deux ou trois.
+    
+    **projet 1**
+    
+    26 septembre 2019 : `Incendie de l'usine Lubrizol à Rouen
+    <https://fr.wikipedia.org/wiki/Incendie_de_l%27usine_Lubrizol_%C3%A0_Rouen>`_
+    
+    Données : `Demandes de valeurs foncières
+    <https://www.data.gouv.fr/fr/datasets/5c4ae55a634f4117716d5656/>`_,
+    voir aussi `DVF <https://app.dvf.etalab.gouv.fr/>`_.
+    
+    Il faut répondre à une des questions suivantes :
+    
+    * Quel est l'impact de l'accident sur le foncier autour de l'indicent ?
+    * Les prix de l'immobilier ont-ils augmenté dans les
+      villes gares TGV après le confinement ?
+    
+    **projet 2**
+    
+    Données `Résultats du contrôle sanitaire de l'eau distribuée commune par commune
+    <https://www.data.gouv.fr/fr/datasets/resultats-du-controle-sanitaire-de-leau-distribuee-commune-par-commune/#resources>`_,
+    voir aussi `Ce que l'on sait des résidus de pesticides dans l'eau du robinet de milliers de communes (et des incertitudes sur leur toxicité)
+    <https://www.francetvinfo.fr/sante/environnement-et-sante/infographies-ce-que-l-on-sait-des-residus-de-pesticides-dans-l-eau-du-robinet-de-milliers-de-communes-et-des-incertitudes-sur-leur-toxicite_5360212.html>`_,    
+    `Achats de pesticides par code postal
+    <https://www.data.gouv.fr/fr/datasets/achats-de-pesticides-par-code-postal/#resources>`_,
+    `Prix de l'eau par commune <https://www.services.eaufrance.fr/donnees/telechargement>`_
+    
+    Il faut répondre à une des questions suivantes :
+    
+    * Sur un département donné, peut-on prédire le prix de l'eau ?

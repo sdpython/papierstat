@@ -5,7 +5,7 @@
     :date: 2023-02-03
     :categories: session
 
-    Voici le plan prévu pour la seconde séance
+    Voici le plan prévu pour la troisième séance
     du cours de machine learning pour l'économie et
     la finance.
 
