@@ -1,6 +1,6 @@
 
 .. blogpost::
-    :title: Plan séance 3
+    :title: Plan séance 5
     :keywords: plan
     :date: 2023-02-10
     :categories: session
