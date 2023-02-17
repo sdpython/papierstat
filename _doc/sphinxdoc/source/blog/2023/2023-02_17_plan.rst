@@ -2,7 +2,7 @@
 .. blogpost::
     :title: Plan séance 5
     :keywords: plan
-    :date: 2023-02-10
+    :date: 2023-02-17
     :categories: session
 
     Voici le plan prévu pour la cinquième séance
