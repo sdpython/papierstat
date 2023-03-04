@@ -10,34 +10,34 @@
     la finance.
 
     **exercices**
-    
+
     * exercice autour du `pivot de gauss
       <http://www.xavierdupre.fr/app/ensae_teaching_cs/helpsphinx3//notebooks/pivot_gauss.html>`_
     * `Evoluation d’une population
       <http://www.xavierdupre.fr/app/actuariat_python/helpsphinx/notebooks/seance4_projection_population_correction.html>`_
 
     **résumé**
-    
+
     * :epkg:`numpy`
     * :epkg:`pandas`
-    
+
     **exemples de problèmes rencontrés**
-        
+
     * économie, sociologie : études statistiques, analyse de biais, prévision
     * finance : trading, analyse de nouvelles, vitesse de trading, scoring
     * actuariat : prédiction des sinistres
     * stratégie : emplacement d'un entrepôt
-    
+
     **machine learning**
-    
+
     * prétraitement : transformer toutes les variables, quelles
       qu'elles soient, en variables numériques
     * optimisation d'un modèle
-    
+
     Données supervisées, non supervisées...
 
     **scikit-learn**
-    
+
     * transformer / prédicteur
     * régression, classification, clustering, ranking,
       réduction de dimension, recommandation
@@ -45,16 +45,16 @@
     * validation croisée
     * notion de pipeline
     * sérialisation
-    
+
     **pour aller plus loin**
-    
+
     * créer son propre transformer ou prédicteur
     * `factorisation de matrices
       <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/missing_values_mf.html>`_
     * `TSNE <https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
-    
+
     **autres packages**
-    
+
     * `category_encoders <https://contrib.scikit-learn.org/category_encoders/>`_
     * `dirty_cat <https://github.com/dirty-cat/dirty_cat>`_
     * `xgboost <https://xgboost.readthedocs.io/en/stable/>`_
@@ -67,9 +67,9 @@
     * `statsmodels <https://www.statsmodels.org/stable/index.html>`_
 
     **exercice**
-    
+
     On veut construire un modèle qui prédit le loyer moyen en fonction
-    de caractéristiques moyennes, données : 
+    de caractéristiques moyennes, données :
     `Résultats nationaux des observatoires locaux des loyers
     <https://www.data.gouv.fr/fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers/#resources>`_
 

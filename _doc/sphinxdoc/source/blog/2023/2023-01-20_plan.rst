@@ -34,14 +34,14 @@
 
     * **JP :** Hey Chat GPT : La mère de Jean a 4 enfants.
       3 des enfants s'appellent Pédro, Caroline et Robert.
-      Quel est le prénom du quatrième ? 
+      Quel est le prénom du quatrième ?
     * **ChatGPT :** "Il n'est pas possible de déterminer le prénom
       du quatrième enfant de la mère de Jean uniquement
       avec l'information donnée."
     * **JP :** si c’est possible. c’est dans l'énoncé
-    * **ChatGPT :** "Il n'y a pas assez d'informations dans l'énoncé pour 
-      déterminer le prénom du quatrième enfant. Il est seulement 
-      mentionné que les trois premiers enfants s'appellent 
+    * **ChatGPT :** "Il n'y a pas assez d'informations dans l'énoncé pour
+      déterminer le prénom du quatrième enfant. Il est seulement
+      mentionné que les trois premiers enfants s'appellent
       Pedro, Caroline et Robert."
     * **JP :** pourtant il est dit « La mère de Jean» c’est la mère de qui ?
     * **ChatGPT :** "Vous avez raison, dans l'énoncé il est mentionné "La mère de Jean",
@@ -61,14 +61,14 @@
     A quoi ressemble le bruit d'une foule ?
 
     Parmi les sujets abordés cette année :
-    
+
     * expressions régulières, fichiers, calcul matriciel, dataframe, graphes ?
     * :epkg:`scikit-learn` : concepts de transformer
        et prédicteur, revue des modèles les plus couramment utilisés,
        présentation de la validation croisée, et grille de recherche,
        notion de pipe-line en machine learning
     * valeurs manquantes, problème de classification avec des classes
-      sous représentées, 
+      sous représentées,
     * ingénierie logicielle ? tests unitaires, git, pull request,
        notebook, librairies, réalisation d'un package pour partager son code,
        écrire une documentation. Cette partie est utile si on travaille
@@ -81,7 +81,7 @@
     * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
 
     La médecine de demain :
-    
+
     * `Intelligence artificielle et médecine, par le Pr. Jean-Emmanuel Bibault
       <https://www.radiofrance.fr/franceinter/podcasts/le-13-14/le-13-14-du-mardi-17-janvier-2023-2160832>`_,
       aide à l'interprétation des images, à la localisation des tumeurs,

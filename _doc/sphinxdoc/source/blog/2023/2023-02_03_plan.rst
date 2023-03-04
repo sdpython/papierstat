@@ -15,14 +15,14 @@
       `NMF <https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html>`_
     * `factorisation de matrices
       <http://www.xavierdupre.fr/app/mlstatpy/helpsphinx/c_ml/missing_values_mf.html>`_
-    * ranking 
+    * ranking
     * traitement des valeurs manquantes
     * `TSNE <https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html>`_
 
     **exercice**
 
     On veut construire un modèle qui prédit le loyer moyen en fonction
-    de caractéristiques moyennes, données : 
+    de caractéristiques moyennes, données :
     `Résultats nationaux des observatoires locaux des loyers
     <https://www.data.gouv.fr/fr/datasets/resultats-nationaux-des-observatoires-locaux-des-loyers/#resources>`_
 
@@ -54,10 +54,9 @@
     * `statsmodels <https://www.statsmodels.org/stable/index.html>`_
 
     **suite**
-    
+
     * notions de séries temporelles ? prédiction, analyse de survie.
     * Quelques mots de deep learning : encoding, transfer learning
     * Mise en production : déploiement de modèles de machine learning
     * machine learning éthique
     * algorithmes, plus court chemin dans un graphe, recherche dichotomique ?
-    
